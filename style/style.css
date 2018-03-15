@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header .menu {
+  width: 100%;
+  height: 10vh;
+  background: black;
+}
+
+header .menu li {
+  display: inline-block;
+}
+
+header .menu li a {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
