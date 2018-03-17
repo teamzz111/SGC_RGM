@@ -68,20 +68,22 @@ header {
 }
 
 header .fors {
-  /* margin-left: -100%;*/
+  margin-left: -100%;
 }
 
 header .fors .barra {
   height: 100vh;
   background: white;
-  max-width: 290px;
+  max-width: 250px;
 }
 
 header .fors h3 {
+  padding: 5%;
   font-weight: 300;
-  font-size: 3em;
+  font-size: 2em;
   color: #1c2624;
   font-family: "Sans";
+  font-weight: 400;
 }
 
 header .fors ul {
@@ -92,18 +94,22 @@ header .fors ul {
 header .fors li {
   display: block;
   list-style-type: none;
-  padding: 5%;
+  padding: 2.45%;
 }
 
 header .fors li a {
   text-decoration: none;
   color: #1c2624;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-family: Roboto;
 }
 
 header .normal {
   height: 100%;
+}
+
+header .normal ul {
+  padding: 1%;
 }
 
 header .normal .izq {
@@ -157,12 +163,17 @@ header .normal ul li a {
 }
 
 header .normal ul li a:hover {
-  color: #18099c;
+  color: white;
 }
 
 /*
 =================================
 MAIN
+=================================
+*/
+/*
+=================================
+RESPONSIVE WEB DESIGN
 =================================
 */
 @media screen and (max-width: 800px) {
@@ -172,6 +183,9 @@ MAIN
   header .normal ul {
     padding: 4%;
   }
+  header .normal li a:hover {
+    color: white;
+  }
   header .normal .izq .a1 {
     display: flex;
   }
@@ -180,6 +194,30 @@ MAIN
   }
   main {
     height: 100%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  header {
+    height: 12vh;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  header {
+    height: 14vh;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-height: 749px) {
+  header .normal ul .izq li a img {
+    max-width: 140px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-height: 537px) {
+  header .normal ul .izq li a img {
+    max-width: 100px;
   }
 }
 /*# sourceMappingURL=style.css.map */
