@@ -1,7 +1,7 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
-  
 }
 
 /*
@@ -9,12 +9,11 @@
 INICIALIZACIÓN
 =================================
 */
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url('fuente/iconos.woff2') format('woff2');
+  src: url("fuente/iconos.woff2") format("woff2");
 }
 
 @font-face {
@@ -81,89 +80,98 @@ INICIALIZACIÓN
 HEADER
 =================================
 */
-
 header {
   height: 10vh;
-  background: rgb(0, 0, 0);
+  background: black;
   -webkit-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   width: 100%;
   position: fixed;
-  .fors {
-    background: black;
-    margin-left: -100%;
-    .barra {
-      height: 100vh;
-      background: white;
-      position: fixed;
-      width: 60%;
-      max-width: 200px;
-    }
-    h3 {
-      margin: 4%;
-      font-weight: 300;
-      font-size: 2em;
-      color: rgb(28, 38, 36);
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      display: block;
-      list-style-type: none;
-      padding: 5%;
-      a {
-        text-decoration: none;
-        color: rgb(28, 38, 36);
-        font-size: 1.8em;
-        font-family: Roboto;
-      }
-    }
-  }
-  .normal {
-    height: 100%;
-    .izq {
-      width: 30%;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap;
-      li{
-        a{
-          img{
-            max-width: 200px;
-         }
-        }
-      }
-    }
-    .der {
-      width: 70%;
-      text-align: right;
-    }
-    ul {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin: 0;
-      li {
-        display: inline-block;
-        list-style-type: none;
-        padding: 1.1%;
-        a {
-          text-decoration: none;
-          color: white;
-          font-family: Roboto;
-          font-size: 1.6em;
-          white-space: nowrap;
-          &:hover {
-            color: rgb(24, 9, 156);
-          }
-        }
-      }
-    }
-  }
+}
+
+header .fors {
+  background: black;
+  margin-left: -100%;
+}
+
+header .fors .barra {
+  height: 100vh;
+  background: white;
+  position: fixed;
+  width: 60%;
+  max-width: 200px;
+}
+
+header .fors h3 {
+  margin: 4%;
+  font-weight: 300;
+  font-size: 2em;
+  color: #1c2624;
+}
+
+header .fors ul {
+  margin: 0;
+  padding: 0;
+}
+
+header .fors li {
+  display: block;
+  list-style-type: none;
+  padding: 5%;
+}
+
+header .fors li a {
+  text-decoration: none;
+  color: #1c2624;
+  font-size: 1.8em;
+  font-family: Roboto;
+}
+
+header .normal {
+  height: 100%;
+}
+
+header .normal .izq {
+  width: 30%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+header .normal .izq li a img {
+  max-width: 200px;
+}
+
+header .normal .der {
+  width: 70%;
+  text-align: right;
+}
+
+header .normal ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+header .normal ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1.1%;
+}
+
+header .normal ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: Roboto;
+  font-size: 1.6em;
+  white-space: nowrap;
+}
+
+header .normal ul li a:hover {
+  color: #18099c;
 }
 
 /*
@@ -171,9 +179,8 @@ header {
 MAIN
 =================================
 */
-
 main {
-  background: rgb(19, 35, 149);
+  background: #132395;
   height: 90vh;
 }
 
@@ -189,15 +196,12 @@ h3 {
   font-size: 1.5em;
 }
 
-
-
 @media screen and (max-width: 800px) {
-  header {
-    .der {
-      display: none;
-    }
+  header .der {
+    display: none;
   }
   main {
     height: 100%;
   }
 }
+/*# sourceMappingURL=style.css.map */
