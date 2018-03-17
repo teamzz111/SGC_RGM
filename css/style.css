@@ -10,10 +10,8 @@ INICIALIZACIÓN
 =================================
 */
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url("fuente/iconos.woff2") format("woff2");
+  font-family: "Awesome";
+  src: url("fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
 }
 
 @font-face {
@@ -49,26 +47,6 @@ INICIALIZACIÓN
   src: url("fuentes/Roboto.ttf") format("truetype");
 }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  font-size: 1.85em;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 .contenedor {
   max-width: 1200px;
   margin: auto;
@@ -87,27 +65,23 @@ header {
   -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   width: 100%;
-  position: fixed;
 }
 
 header .fors {
-  background: black;
-  margin-left: -100%;
+  /* margin-left: -100%;*/
 }
 
 header .fors .barra {
   height: 100vh;
   background: white;
-  position: fixed;
-  width: 60%;
-  max-width: 200px;
+  max-width: 290px;
 }
 
 header .fors h3 {
-  margin: 4%;
   font-weight: 300;
-  font-size: 2em;
+  font-size: 3em;
   color: #1c2624;
+  font-family: "Sans";
 }
 
 header .fors ul {
@@ -134,10 +108,21 @@ header .normal {
 
 header .normal .izq {
   width: 30%;
-  text-align: left;
-  display: flex;
-  align-items: center;
   flex-wrap: nowrap;
+}
+
+header .normal .izq .a1 {
+  display: none;
+}
+
+header .normal .izq li a {
+  font-family: "Awesome";
+}
+
+header .normal .izq li a span {
+  font-family: "Sans";
+  font-weight: 300;
+  padding-left: 10%;
 }
 
 header .normal .izq li a img {
@@ -154,6 +139,7 @@ header .normal ul {
   display: flex;
   align-items: center;
   margin: 0;
+  width: 100%;
 }
 
 header .normal ul li {
@@ -179,25 +165,17 @@ header .normal ul li a:hover {
 MAIN
 =================================
 */
-main {
-  background: #132395;
-  height: 90vh;
-}
-
-h1 {
-  font-weight: 700;
-  text-align: center;
-  font-size: 3em;
-  margin-bottom: 5%;
-}
-
-h3 {
-  font-weight: 400;
-  font-size: 1.5em;
-}
-
 @media screen and (max-width: 800px) {
   header .der {
+    display: none;
+  }
+  header .normal ul {
+    padding: 4%;
+  }
+  header .normal .izq .a1 {
+    display: flex;
+  }
+  header .normal .izq .a2 {
     display: none;
   }
   main {
