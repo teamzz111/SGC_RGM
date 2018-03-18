@@ -270,6 +270,80 @@ section#acerca .padre .cont span {
   font-family: "Sans";
 }
 
+section#contacto {
+  background: url("../img/circles-and-roundabouts.png");
+}
+
+section#contacto .padre {
+  padding: 5%;
+  display: flex;
+}
+
+section#contacto .padre .img {
+  width: 44%;
+  margin-right: 2%;
+}
+
+section#contacto .padre .img img {
+  width: 60%;
+  border-radius: 3%;
+}
+
+section#contacto .padre .img h2 {
+  font-size: 3.5em;
+  font-family: "Sans";
+  font-weight: 300;
+  margin-bottom: 1%;
+}
+
+section#contacto .padre .img h4 {
+  font-family: "Sans";
+  font-weight: 300;
+  font-size: 1.3em;
+  margin-bottom: 10%;
+}
+
+section#contacto .padre .cont {
+  padding: 5%;
+  width: 50%;
+  background: white;
+  border: 1px solid black;
+  border-radius: 2.5%;
+}
+
+section#contacto .padre .cont h2 {
+  font-family: "Sans";
+  font-weight: 300;
+  margin-bottom: 7%;
+}
+
+section#contacto .padre .cont input[type="text"],
+section#contacto .padre .cont input[type="email"],
+section#contacto .padre .cont textarea {
+  width: 100%;
+  padding: 2%;
+  font-size: 1em;
+  font-family: "Josefin";
+  margin-bottom: 5%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+}
+
+section#contacto .padre .cont input[type="submit"] {
+  background: black;
+  color: white;
+  border: 1px solid transparent;
+  text-align: center;
+  font-size: 1.3em;
+  border: 1px solid black;
+  padding: 3%;
+  font-family: "Josefin";
+  border-radius: 1.5%;
+  margin: auto;
+  width: 100%;
+  margin-top: 3%;
+}
+
 /*
 =================================
 RESPONSIVE WEB DESIGN
@@ -325,6 +399,19 @@ RESPONSIVE WEB DESIGN
   section#acerca .padre .cont span {
     font-size: 1.1em;
     font-family: "Sans";
+  }
+  section#contacto .padre {
+    flex-direction: column;
+  }
+  section#contacto .padre .img {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  section#contacto .padre .cont {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
   }
 }
 
