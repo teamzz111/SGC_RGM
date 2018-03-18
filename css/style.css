@@ -181,7 +181,7 @@ MAIN
 =================================
 */
 main {
-  height: 60vh;
+  height: 55.5vh;
 }
 
 main .cont {
@@ -193,6 +193,9 @@ main .cont {
   color: white;
   display: flex;
   justify-content: center;
+  -webkit-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
 }
 
 main .cont h1 {
@@ -235,6 +238,35 @@ main .cont #button:hover {
   color: black;
 }
 
+section#acerca {
+  background: url("../img/polaroid.png");
+}
+
+section#acerca .padre {
+  padding: 3%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+section#acerca .padre img {
+  width: 55%;
+}
+
+section#acerca .padre .cont {
+  padding: 2%;
+}
+
+section#acerca .padre .cont h2 {
+  font-family: "Great";
+  font-size: 2.9em;
+}
+
+section#acerca .padre .cont span {
+  font-size: 1.1em;
+  font-family: "Sans";
+}
+
 /*
 =================================
 RESPONSIVE WEB DESIGN
@@ -256,8 +288,36 @@ RESPONSIVE WEB DESIGN
   header .normal .izq .a2 {
     display: none;
   }
-  main {
-    height: 100%;
+  main .cont h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  main .cont h2 {
+    margin-bottom: 4%;
+    text-align: center;
+  }
+  main .cont .iniciarS {
+    width: 30%;
+  }
+  main .cont #button {
+    font-family: "Roboto";
+  }
+  section#acerca .padre {
+    flex-direction: column;
+  }
+  section#acerca .padre img {
+    width: 45%;
+  }
+  section#acerca .padre .cont {
+    padding: 2%;
+  }
+  section#acerca .padre .cont h2 {
+    font-family: "Great";
+    font-size: 2.9em;
+  }
+  section#acerca .padre .cont span {
+    font-size: 1.1em;
+    font-family: "Sans";
   }
 }
 
