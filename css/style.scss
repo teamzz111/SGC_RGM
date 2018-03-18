@@ -229,11 +229,11 @@ section#acerca {
     }
     .cont {
       padding: 2%;
-      h2{
+      h2 {
         font-family: "Great";
         font-size: 2.9em;
       }
-      span{
+      span {
         font-size: 1.1em;
         font-family: "Sans";
       }
@@ -273,45 +273,43 @@ RESPONSIVE WEB DESIGN
       }
     }
   }
-main {
-  .cont {
-    h1 {
-      font-size: 2em;
-      text-align: center;
-    }
-    h2 {
-      margin-bottom: 4%;
-      text-align: center;
-    }
-    .iniciarS {
-      width: 30%;
-    }
-    #button {
-      font-family: "Roboto";
-    }
-  }
-}
-section#acerca {
-  .padre {
-    flex-direction: column;
-    img {
-      width: 45%;
-    }
+  main {
     .cont {
-      padding: 2%;
-      h2 {
-        font-family: "Great";
-        font-size: 2.9em;
+      h1 {
+        font-size: 2em;
+        text-align: center;
       }
-      span {
-        font-size: 1.1em;
-        font-family: "Sans";
+      h2 {
+        margin-bottom: 4%;
+        text-align: center;
+      }
+      .iniciarS {
+        width: 30%;
+      }
+      #button {
+        font-family: "Roboto";
       }
     }
   }
-}
-
-
+  section#acerca {
+    .padre {
+      flex-direction: column;
+      img {
+        width: 45%;
+      }
+      .cont {
+        padding: 2%;
+        h2 {
+          font-family: "Great";
+          font-size: 2.9em;
+        }
+        span {
+          font-size: 1.1em;
+          font-family: "Sans";
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-height: 450px) {
@@ -360,4 +358,8 @@ section#acerca {
       }
     }
   }
+}
+
+@media screen and (max-width: 360px){
+
 }
