@@ -43,6 +43,16 @@ INICIALIZACIÓN
 }
 
 @font-face {
+  font-family: "Josefin";
+  src: url("fuentes/Josefin/Dosis-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Great";
+  src: url("fuentes/GreaVibes/GreatVibes-Regular.ttf?#iefix") format("truetype");
+}
+
+@font-face {
   font-family: "Roboto";
   src: url("fuentes/Roboto.ttf") format("truetype");
 }
@@ -50,7 +60,6 @@ INICIALIZACIÓN
 .contenedor {
   max-width: 1200px;
   margin: auto;
-  height: 100%;
 }
 
 /*
@@ -171,6 +180,61 @@ header .normal ul li a:hover {
 MAIN
 =================================
 */
+main {
+  height: 60vh;
+}
+
+main .cont {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/fp.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+main .cont h1 {
+  font-family: "Sans";
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+}
+
+main .cont h1 span {
+  font-weight: 300;
+}
+
+main .cont h2 {
+  font-family: "Sans";
+  font-weight: 300;
+  margin-bottom: 4%;
+}
+
+main .cont .iniciarS {
+  margin: auto;
+  width: 30%;
+}
+
+main .cont #button {
+  font-family: "Roboto";
+  font-size: 1.5em;
+  margin: auto;
+  width: 40%;
+  padding: 1%;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: 1s linear;
+}
+
+main .cont #button:hover {
+  background: white;
+  cursor: pointer;
+  color: black;
+}
+
 /*
 =================================
 RESPONSIVE WEB DESIGN
