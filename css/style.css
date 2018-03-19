@@ -274,6 +274,14 @@ section#contacto {
   background: url("../img/circles-and-roundabouts.png");
 }
 
+section#contacto h2 {
+  text-align: center;
+  font-family: "Sans";
+  font-weight: 300;
+  padding-bottom: 2%;
+  font-size: 3em;
+}
+
 section#contacto .padre {
   padding: 5%;
   display: flex;
@@ -342,6 +350,22 @@ section#contacto .padre .cont input[type="submit"] {
   margin: auto;
   width: 100%;
   margin-top: 3%;
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+footer iframe {
+  width: 100%;
+}
+
+footer .creditos {
+  text-align: center;
+  padding: 2%;
+  font-size: .8em;
+  font-family: "Sans";
 }
 
 /*
