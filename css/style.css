@@ -307,6 +307,7 @@ section#contacto .padre .img h2 {
   font-family: "Sans";
   font-weight: 300;
   margin-bottom: 1%;
+  text-align: left;
 }
 
 section#contacto .padre .img h4 {
@@ -314,6 +315,7 @@ section#contacto .padre .img h4 {
   font-weight: 300;
   font-size: 1.3em;
   margin-bottom: 10%;
+  text-align: left;
 }
 
 section#contacto .padre .cont {
@@ -470,7 +472,7 @@ RESPONSIVE WEB DESIGN
 
 @media screen and (max-height: 410px) {
   main {
-    height: 80vh;
+    height: 100vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
