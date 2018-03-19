@@ -223,7 +223,12 @@ main .cont .iniciarS {
   width: 30%;
 }
 
-main .cont #button {
+main .cont a {
+  text-decoration: none;
+  color: white;
+}
+
+main .cont a #button {
   font-family: "Roboto";
   font-size: 1.5em;
   margin: auto;
@@ -235,7 +240,7 @@ main .cont #button {
   transition: 1s linear;
 }
 
-main .cont #button:hover {
+main .cont a #button:hover {
   background: white;
   cursor: pointer;
   color: black;

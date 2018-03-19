@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Sans";
+    src: url("fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("fuentes/Sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+main{
+    height: 100vh;
+    background: url('../img/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .cont{
+        max-width: 700px;
+        width: 99%;
+        padding: 1.5%;
+        border-radius: 1%;
+
+        h1{
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 3em;
+        margin-bottom: 5%;
+        color: white;
+        }
+        input[type="text"], input[type="password"]{
+            max-width: 500px;
+            width: 95%;
+            padding: 1%;
+            font-size: 1.2em;
+            font-family: "Sans";
+            font-style: italic;
+            margin-bottom: 1.5%;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        input[type="submit"]{
+            background: transparent;
+            padding: 1.5%;
+            max-width: 200px;
+            width: 99%;
+            background: black;
+            color: white;
+            font-size: 1.25em;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
+}
