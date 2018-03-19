@@ -73,6 +73,16 @@ main{
             font-size: 1.25em;
             border: 1px solid black;
             border-radius: 5px;
+            transition: 1s linear;
+            font-family: "Sans";
+            font-weight: 300;
+            font-size: 1.2em;
+            &:hover{
+                background: transparent;
+                color: white;
+                border-color: white;
+                cursor: pointer;
+            }
         }
     }
 }
