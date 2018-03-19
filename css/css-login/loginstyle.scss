@@ -5,34 +5,34 @@
 }
 @font-face {
     font-family: "Sans";
-    src: url("fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
+    src: url("../fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Sans";
-    src: url("fuentes/Sans/OpenSans-Light.ttf") format("truetype");
+    src: url("../fuentes/Sans/OpenSans-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Sans";
-    src: url("fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
+    src: url("../fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Sans";
-    src: url("fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
+    src: url("../fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 main{
     height: 100vh;
-    background: url('../img/photo.jpg');
+    background: url('../../img/photo.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
