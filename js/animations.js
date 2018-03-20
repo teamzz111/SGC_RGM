@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     $lateral = 0;
 
+   
     $('#lat').click(function(){
         
         if($lateral == 0){

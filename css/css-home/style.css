@@ -475,4 +475,30 @@ RESPONSIVE WEB DESIGN
     height: 100vh;
   }
 }
+
+@media screen and (max-width: 1400px) {
+  header .normal ul .der li a {
+    font-size: 1.3em;
+  }
+  main .cont .contenedor h1 {
+    font-size: 2.2em;
+  }
+  main .cont .contenedor h2 {
+    font-size: 1.3em;
+  }
+  section#acerca .contenedor .padre .cont h2 {
+    font-size: 2.2em;
+  }
+  section#acerca .contenedor .padre .cont img {
+    width: 40%;
+  }
+  section#acerca .contenedor .padre .cont span {
+    font-size: 1em;
+  }
+  section#contacto .contenedor .padre .cont h2 {
+    font-size: 2.15em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
