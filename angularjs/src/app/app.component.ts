@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'SGC - APP';
   version = '0.1';
+  nombre = 'Andrés Felipe Largo Rodríguez';
+  cargo = 'GERENTE NACIONAL';
 }
