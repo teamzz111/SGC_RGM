@@ -1,8 +1,9 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
 @font-face {
   font-family: "Awesome";
   src: url("../assets/fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
@@ -11,7 +12,6 @@
 @font-face {
   font-family: "Sans";
   src: url("../assets/fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
-
   font-weight: 400;
   font-style: normal;
 }
@@ -19,7 +19,6 @@
 @font-face {
   font-family: "Sans";
   src: url("../assets/fuentes/Sans/OpenSans-Light.ttf") format("truetype");
-
   font-weight: 300;
   font-style: normal;
 }
@@ -27,7 +26,6 @@
 @font-face {
   font-family: "Sans";
   src: url("../assets/fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
-
   font-weight: 300;
   font-style: italic;
 }
@@ -35,7 +33,6 @@
 @font-face {
   font-family: "Sans";
   src: url("../assets/fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
-
   font-weight: 700;
   font-style: normal;
 }
@@ -43,85 +40,117 @@
 @font-face {
   font-family: "Josefin";
   src: url("../assets/fuentes/Josefin/Dosis-Light.ttf") format("truetype");
-
 }
 
 @font-face {
   font-family: "Great";
   src: url("../assets/fuentes/GreaVibes/GreatVibes-Regular.ttf?#iefix") format("truetype");
-
 }
 
 @font-face {
   font-family: "Roboto";
   src: url("../assets/fuentes/Roboto.ttf") format("truetype");
-
 }
+
 @font-face {
   font-family: "Awesome";
   src: url("../assets/fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
 }
 
-
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
-main{
-    display: flex;
-    .lat{
-        width: 30%;
-        background: black;
-        height: 100vh;
-        max-width: 250px;
-        min-width: 220px;
-        img{
-            width: 100%;
-            margin: auto;
-            padding: 2%;
-            margin-top: 15%;
-            margin-bottom: 7%;
-        }
+
+main {
+  display: flex;
+  .lat {
+    width: 30%;
+    background: black;
+    height: 100vh;
+    max-width: 250px;
+    min-width: 220px;
+    img {
+      width: 100%;
+      margin: auto;
+      padding: 2%;
+      margin-top: 15%;
+      margin-bottom: 7%;
     }
-    a{  
-        button{
-            width: 100%;
-            padding: 4%;
-            font-family: "Sans";
-            font-weight: 300;
-            font-size: 1.6em;
-            background: transparent;
-            color: white;
-            border-color: transparent;
-            span{
-                font-family: "Awesome";
-                float: left;
-            }
-            &:hover{
-                background: rgba(36, 35, 35,.9);
-                cursor: pointer;
-            }
-        }
+  }
+  a {
+    button {
+      width: 100%;
+      padding: 4%;
+      font-family: "Sans";
+      font-weight: 300;
+      font-size: 1.6em;
+      background: transparent;
+      color: white;
+      border-color: transparent;
+      span {
+        font-family: "Awesome";
+        float: left;
+      }
+      &:hover {
+        background: rgba(36, 35, 35, .9);
+        cursor: pointer;
+      }
     }
-    .der{
+  }
+  .der {
+    width: 100%;
+    .buscador {
+      width: 100%;
+      padding: 1%;
+      input[type="text"] {
+        width: 50%;
+        border-color: transparent;
+        border-bottom: 1px solid black;
+        padding: 0.5%;
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 1.3em;
+      }
+    }
+    .user {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(61, 61, 61);
+      width: 100%;
+      height: 8em;
+      .img {
+        position: absolute;
+        background-image: url('../assets/img/man.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 100em;
+        left: 4em;
+        bottom: -5em;
+        width: 10em;
+        height: 10em;
+        img {
+          width: 50%;
+        }
+      }
+      .name {
+        display: flex;
         width: 100%;
-        .buscador{
-            width: 100%;
-            padding: 1%;
-            input[type="text"]{
-                width: 50%;
-                border-color: transparent;
-                border-bottom: 1px solid black;
-                padding: 0.5%;
-                font-family: "Sans";
-                font-weight: 300;
-                font-size: 1.3em;
-            }
-        } 
-        .user{
-            width: 100%;
-            height: 18vh;
-            background: rgb(27, 27, 27);
-            display: flex;
-        }     
+        justify-content: right;
+        height: 100%;
+        align-items: center;
+        .conte {
+          width: 100%;
+          text-align: right;
+          padding: 3%;
+          color: white;
+          font-family: "Sans";
+          text-transform: uppercase;
+          h2{
+              font-weight: 300;
+          }
+        }
+      }
     }
+  }
 }

@@ -122,9 +122,48 @@ main .der .buscador input[type="text"] {
 }
 
 main .der .user {
-  width: 100%;
-  height: 18vh;
-  background: #1b1b1b;
+  position: relative;
   display: flex;
+  flex-direction: column;
+  background-color: #3d3d3d;
+  width: 100%;
+  height: 8em;
+}
+
+main .der .user .img {
+  position: absolute;
+  background-image: url("../assets/img/man.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 100em;
+  left: 4em;
+  bottom: -5em;
+  width: 10em;
+  height: 10em;
+}
+
+main .der .user .img img {
+  width: 50%;
+}
+
+main .der .user .name {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  height: 100%;
+  align-items: center;
+}
+
+main .der .user .name .conte {
+  width: 100%;
+  text-align: right;
+  padding: 3%;
+  color: white;
+  font-family: "Sans";
+  text-transform: uppercase;
+}
+
+main .der .user .name .conte h2 {
+  font-weight: 300;
 }
 /*# sourceMappingURL=app.component.css.map */
