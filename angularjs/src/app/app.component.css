@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+}
+
+body,
+html {
   padding: 0;
   margin: 0;
 }
@@ -167,6 +171,37 @@ main .der .user .name .conte h2 {
   font-weight: 300;
 }
 
+main .der .user .name .conte h2 span {
+  font-size: 0.78em;
+}
+
+main .der .desk1, main .der .desk2, main .der .desk3 {
+  margin-top: 5em;
+  max-height: 49.2em;
+  height: 100%;
+  padding: 2%;
+}
+
+main .der .desk1 h2, main .der .desk2 h2, main .der .desk3 h2 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Sans";
+  font-weight: 300;
+}
+
+main .der .desk1 {
+  background: blue;
+}
+
+main .der .desk2 {
+  background: black;
+}
+
+main .der .desk3 {
+  background: green;
+}
+
 @media screen and (max-width: 1400px) {
   main .lat {
     max-width: 179px;
@@ -197,6 +232,39 @@ main .der .user .name .conte h2 {
   }
   main .der .user .name h2 {
     font-size: 1.2em;
+  }
+  main .der .desk1, main .der .desk2, main .der .desk3 {
+    margin-top: 4.2em;
+    max-height: 859px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  main .lat {
+    max-width: 179px;
+    min-width: 170px;
+  }
+  main .lat a button {
+    font-size: 1.2em;
+  }
+  main .der .desk1,
+  main .der .desk2,
+  main .der .desk3 {
+    max-height: 445px;
+    height: 100%;
+    color: white;
+    padding: 2%;
+    text-align: center;
+  }
+  main .der .desk1 {
+    background: blue;
+  }
+  main .der .desk2 {
+    background: black;
+  }
+  main .der .desk3 {
+    background: green;
   }
 }
 /*# sourceMappingURL=app.component.css.map */

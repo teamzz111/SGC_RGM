@@ -2,9 +2,9 @@
 <main>
   <div class="lat">
     <img src="assets/img/sgc.png" alt="">
-    <a href="#"><button> <span></span> Inicio</button></a>
-    <a href="#"><button> <span></span> Cuenta</button></a>
-    <a href="#"><button> <span></span> Gestionar</button></a>
+    <a href="#"><button (click)="showDesk(1)"> <span></span> Inicio</button></a>
+    <a href="#"><button (click)="showDesk(2)"> <span></span> Cuenta</button></a>
+    <a href="#"><button (click)="showDesk(3)"> <span></span> Gestionar</button></a>
     <a href="#"><button> <span></span> Cerrar sesión</button></a>
 
 
@@ -17,18 +17,26 @@
     </div>
     <div class="user">
       <div class="img">
-
       </div>
       <div class="name">
         <div class="conte">
-          
-        <h2>{{nombre}}</h2>
+        <h2>{{nombre}} <br><span>{{cargo}}</span></h2>
         
-        <p>{{cargo}}</p>
-
         </div>
       </div>
     </div>
+    <div *ngIf="desk == 1" class="desk1">
+      <h2>PRIMER ESCRITORIO ACTIVADO</h2>
+  
+    </div>
+    <div *ngIf = "desk == 2" class="desk2">
+      <h2>SEGUNDO ESCRITORIO ACTIVADO</h2>
+    </div>
+    <div *ngIf = "desk == 3" class="desk3">
+      <h2>TERCER ESCRITORIO ACTIVADO</h2>
+    </div>
+
+
   </div>
 </main>
 

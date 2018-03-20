@@ -122,6 +122,10 @@ MIT
 MIT
 MIT
 
+@angular/animations@5.2.9
+MIT
+MIT
+
 @angular/common@5.2.9
 MIT
 MIT

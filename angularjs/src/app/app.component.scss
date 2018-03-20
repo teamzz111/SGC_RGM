@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+}
+
+body,
+html {
   padding: 0;
   margin: 0;
 }
@@ -148,9 +152,34 @@ main {
           text-transform: uppercase;
           h2 {
             font-weight: 300;
+            span{
+              font-size: 0.78em;
+            }
           }
         }
       }
+    }
+    .desk1, .desk2, .desk3 {
+      margin-top: 5em;
+      max-height: 49.2em;
+      height: 100%;
+      padding: 2%;
+      h2{
+        color: white;
+        text-align: center;
+        font-size: 2em;
+        font-family: "Sans";
+        font-weight: 300;
+      }
+    }
+    .desk1 {
+      background: blue;
+    }
+    .desk2 {
+      background: black;
+    }
+    .desk3 {
+      background: green;
     }
   }
 }
@@ -189,6 +218,45 @@ main {
             font-size: 1.2em;
           }
         }
+      }
+    .desk1, .desk2, .desk3 {
+      margin-top: 4.2em;
+      max-height: 859px;
+      height: 100%;
+    }
+    }
+  }
+}
+
+@media screen and (max-height: 800px) {
+  main {
+    .lat {
+      max-width: 179px;
+      min-width: 170px;
+      a {
+        button {
+          font-size: 1.2em;
+        }
+      }
+    }
+    .der {
+      .desk1,
+      .desk2,
+      .desk3 {
+        max-height: 445px;
+        height: 100%;
+        color: white;
+        padding: 2%;
+        text-align: center;
+      }
+      .desk1 {
+        background: blue;
+      }
+      .desk2 {
+        background: black;
+      }
+      .desk3 {
+        background: green;
       }
     }
   }
