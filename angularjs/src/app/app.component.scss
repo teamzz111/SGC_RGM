@@ -146,8 +146,47 @@ main {
           color: white;
           font-family: "Sans";
           text-transform: uppercase;
-          h2{
-              font-weight: 300;
+          h2 {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    .lat {
+      max-width: 179px;
+      min-width: 170px;
+      a {
+        button {
+          font-size: 1.2em;
+        }
+      }
+    }
+    .der {
+      .buscador {
+        padding: 0.5%;
+        input[type="text"] {
+          padding: 0.3%;
+          font-size: 1em;
+        }
+      }
+      .user {
+        height: 6em;
+        .img {
+          border-radius: 80em;
+          left: 4em;
+          bottom: -4em;
+          width: 8em;
+          height: 8em;
+        }
+        .name {
+          padding: 2%;
+          h2 {
+            font-size: 1.2em;
           }
         }
       }

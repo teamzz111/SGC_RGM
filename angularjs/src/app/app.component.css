@@ -166,4 +166,37 @@ main .der .user .name .conte {
 main .der .user .name .conte h2 {
   font-weight: 300;
 }
+
+@media screen and (max-width: 1400px) {
+  main .lat {
+    max-width: 179px;
+    min-width: 170px;
+  }
+  main .lat a button {
+    font-size: 1.2em;
+  }
+  main .der .buscador {
+    padding: 0.5%;
+  }
+  main .der .buscador input[type="text"] {
+    padding: 0.3%;
+    font-size: 1em;
+  }
+  main .der .user {
+    height: 6em;
+  }
+  main .der .user .img {
+    border-radius: 80em;
+    left: 4em;
+    bottom: -4em;
+    width: 8em;
+    height: 8em;
+  }
+  main .der .user .name {
+    padding: 2%;
+  }
+  main .der .user .name h2 {
+    font-size: 1.2em;
+  }
+}
 /*# sourceMappingURL=app.component.css.map */
