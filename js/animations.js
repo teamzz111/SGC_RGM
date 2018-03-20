@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $lateral = 0;
-    alert($(window).width());
+
     $('#lat').click(function(){
         
         if($lateral == 0){
