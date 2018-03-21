@@ -10,7 +10,7 @@ FrontEnd
 
 1. HTML5 - Structure
 2. CSS3 - Stylesheet
-3. JavaScript - Animations.
+3. JavaScript (JQUERY) - Animations.
 4. AngularJS - Framework MVC.
 
 # Server-Side (BACK-END)
