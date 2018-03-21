@@ -6,8 +6,6 @@ Facilitating optimization of quality process we will make a faster world.
 
 In our project we are going to use:
 
-FrontEnd 
-
 1. HTML5 - Structure
 2. CSS3 - Stylesheet
 3. JavaScript (JQUERY) - Animations.
