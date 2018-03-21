@@ -2,7 +2,7 @@
 
 Facilitating optimization of quality process we will make a faster world.
 
-# FrontEnd & BackEnd
+# Visual Part (FRONT-END)
 
 In our project we are going to use:
 
@@ -13,7 +13,10 @@ FrontEnd
 3. JavaScript - Animations.
 4. AngularJS - Framework MVC.
 
-BackEnd
+# Back Zone (BACK-END)
+
+In our project we are going to use:
+
 1. PHP7 - Logic part.
 2. MySQL - Relational Database.
 3. MongoDB - NoSQL. (Maybe)
