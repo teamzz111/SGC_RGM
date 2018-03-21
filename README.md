@@ -13,7 +13,7 @@ FrontEnd
 3. JavaScript - Animations.
 4. AngularJS - Framework MVC.
 
-# Back Zone (BACK-END)
+# Server-Side (BACK-END)
 
 In our project we are going to use:
 
