@@ -22,15 +22,15 @@
 
     if($result->num_rows > 0){
         $row = $result ->fetch_array(MYSQLI_ASSOC);
-        if (password_verify(encrypt($pass), $row['contrasena']){
-            echo 'true';
+        if (password_verify(encrypt($pass), $row['contrasena'])){
+            echo "true";
         }
         else{
-            echo 'false';
+            echo "false";
         }
     }
     else{
-        echo '1false';
+        echo "false";
     }
 
 ?>
