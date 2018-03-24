@@ -44,7 +44,19 @@ main{
         width: 99%;
         padding: 1.5%;
         border-radius: 1%;
-
+        .noti{
+            font-size: 1.2em;
+            padding: 1%;
+            background: red;
+            max-width: 500px;
+            margin: auto;
+            margin-bottom: 1%;
+            border-radius: 10px;
+            color: white;
+            transition: 1s linear;
+            font-family: "Sans";
+            display: none;
+        }
         h1{
         font-family: "Sans";
         font-weight: 300;
