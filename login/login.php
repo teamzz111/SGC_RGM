@@ -23,7 +23,7 @@
 
     if($result->num_rows > 0){
         $row = $result ->fetch_array(MYSQLI_ASSOC);
-        if (password_verify(encrypt($pass), $row['contrasena'])){
+        if (encrypt($pass, $key) == $row['contrasena']){
             echo $user;
         }
         else{
