@@ -20,11 +20,13 @@
     $query = "SELECT contrasena FROM Cuenta WHERE Empleado_cedula = '$user'";
 
     $result = $con->query($query);
-
+    //mysqli->close();
     if($result->num_rows > 0){
         $row = $result ->fetch_array(MYSQLI_ASSOC);
         if (encrypt($pass, $key) == $row['contrasena']){
-            echo $user;
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $user;
+            echo "true";
         }
         else{
             echo "false";
