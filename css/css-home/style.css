@@ -247,7 +247,18 @@ main .cont a #button:hover {
 }
 
 section#acerca {
-  background: url("../../img/polaroid.png");
+  background: url("../../img/new.png");
+  background-size: cover;
+  background-position: center;
+}
+
+section#acerca h2 {
+  color: white;
+  text-align: center;
+  font-size: 4.2em;
+  padding: 2%;
+  font-family: "Roboto";
+  font-weight: 300;
 }
 
 section#acerca .padre {
@@ -255,6 +266,7 @@ section#acerca .padre {
   display: flex;
   flex-direction: row;
   text-align: center;
+  color: white;
 }
 
 section#acerca .padre img {
@@ -266,7 +278,7 @@ section#acerca .padre .cont {
 }
 
 section#acerca .padre .cont h2 {
-  font-family: "Great";
+  font-family: "Roboto";
   font-size: 2.9em;
 }
 
