@@ -3,9 +3,9 @@
 
     session_start();
     $host = "localhost";
-    $user = "root";
-    $db = "bd";
-    $pass = "";
+    $user = "u462448961_teamz";
+    $db = "u462448961_bd";
+    $pass = "KSTgUUPnu5Mj";
     $key = "92AE31B89FEEB2A3"; //llave
     $con = new mysqli($host, $user, $pass, $db);
 

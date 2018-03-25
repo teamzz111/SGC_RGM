@@ -11,7 +11,7 @@ $(document).ready(function () {
         } else {
             $('.fors').css("marginLeft", "-100%");
             $lateral = 0;
-        }Exac
+        }
     });
 
     $('#formulario').submit(function (e) {
