@@ -11,16 +11,17 @@ $(document).ready(function () {
         } else {
             $('.fors').css("marginLeft", "-100%");
             $lateral = 0;
-        }
+        }Exac
     });
 
     $('#formulario').submit(function (e) {
+      
         $.ajax({
             type: 'POST',
             url: 'login/login.php',
             data: $('#formulario').serialize(),
             success: function (data) {
-                $('main .cont .noti').fadeIn(1000);
+                $('main .cont .noti').fadeIn(2000);
                 if (data == 'true') {
                     $('main .cont .noti').css('background', '#62E246');
                     $('main .cont .noti').html('Autenticación exitosa...');
@@ -53,5 +54,34 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+    $('#formulario2').submit(function (e) {
+        $.ajax({
+            type: 'POST',
+            url: '../login/email.php',
+            data: $('#formulario2').serialize(),
+            success: function (data) {
+                $('#contacto .contenedor .padre .cont .alert').fadeIn(2000);
+                if (data == 'true') {
+                    $('#contacto .contenedor .padre .cont .alert').css('background', '#62E246');
+                    $('#contacto .contenedor .padre .cont .alert').html('¡El mensaje se ha ido a viajar a nuestro servidor! Gracias.');
+                    setTimeout(function () {
+                        $('#nombre').val("");
+                        $('#correo').val("");
+                        $('#mensaje').val("");
+                        $('#contacto .contenedor .padre .cont .alert').css('display', 'none');
 
+                    }, 1500);
+                } else if (data == 'false') {
+                    $('#contacto .contenedor .padre .cont .alert').css('background', 'red');
+                    $('#contacto .contenedor .padre .cont .alert').html('Se ha encontrado un terrible error en el área 52 de nuestro código ¡Lo sentimos!');
+                }
+            },
+            error: function (data) {
+                $('#contacto .contenedor .padre .cont .alert').css('background', 'red');
+                $('#contacto .contenedor .padre .cont .alert').html('¡Lo sentimos! Tus datos se han quedado en el limbo, reinicia la página e intenta de nuevo.');
+                $('#contacto .contenedor .padre .cont .alert').css('display', 'block');
+            }
+        });
+        e.preventDefault();
+    });
 });

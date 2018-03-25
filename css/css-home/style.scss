@@ -318,6 +318,21 @@ section#contacto {
         margin: auto;
         width: 100%;
         margin-top: 3%;
+        cursor: pointer;
+        &:hover{
+          opacity: .7;
+        }
+      }
+      .alert{
+        background: rgb(57, 252, 8);
+        color: white;
+        padding: 2%;
+        text-align: center;
+        font-family: "Sans";
+        font-size: .9em;
+        border-radius: 4px;
+        transition: 1s linear;
+        display: none;
       }
     }
   }

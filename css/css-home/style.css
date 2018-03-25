@@ -357,6 +357,23 @@ section#contacto .padre .cont input[type="submit"] {
   margin: auto;
   width: 100%;
   margin-top: 3%;
+  cursor: pointer;
+}
+
+section#contacto .padre .cont input[type="submit"]:hover {
+  opacity: .7;
+}
+
+section#contacto .padre .cont .alert {
+  background: #39fc08;
+  color: white;
+  padding: 2%;
+  text-align: center;
+  font-family: "Sans";
+  font-size: .9em;
+  border-radius: 4px;
+  transition: 1s linear;
+  display: none;
 }
 
 footer {

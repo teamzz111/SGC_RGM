@@ -83,12 +83,14 @@
             </div>
             <div class="cont">
               <h2>Tú hablas, nosotros te escuchamos.</h2>
-              <form action="login/email.php" method="POST">
-                <input type="text" name="fname" placeholder="Ingresa tu nombre">
-                <input type="email" name="lname" placeholder="Correo electrónico">
+              <form action="login/email.php" method="POST" id="formulario2" required>
+                <input id="nombre" type="text" name="fname" placeholder="Ingresa tu nombre" required>
+                <input id="correo" type="email" name="lname" placeholder="Correo electrónico" required>
+                <textarea id = "mensaje" name = "textarea" placeholder="Ingresa tu mensaje" rows="4" cols="40" required></textarea>
                 <br>
-                <textarea name = "textarea" placeholder="Ingresa tu mensaje" rows="4" cols="40" ></textarea>
-                <br>
+                <div class="alert">
+                  ¡Mensaje enviado, gracias!
+                </div>
                 <input type="submit" value="Enviar">
               </form>
             </div>
@@ -106,8 +108,7 @@
           <br> Copyright 2018
         </div>
         </footer>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-      crossorigin="anonymous"></script>
+      <script src="js/jquery.min.js"></script>
       <script src="js/animations.js"></script>
     </body>
 
