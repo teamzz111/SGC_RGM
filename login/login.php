@@ -17,7 +17,7 @@
     $pass = $_POST['pass'];
 
    // $query = "SELECT cuenta.idCuenta, cuenta.contrasena, empleado.nombre, empleado.apellido, cuenta.cargo FROM Cuenta, empleado WHERE empleado.cedula = '$user' AND empleado.cedula = Cuenta.Empleado_cedula";
-    $query = "SELECT contrasena FROM Cuenta WHERE Empleado_cedula = '$user'";
+    $query = "SELECT contrasena FROM cuenta WHERE Empleado_cedula = '$user'";
 
     $result = $con->query($query);
     //mysqli->close();
