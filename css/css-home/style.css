@@ -255,14 +255,14 @@ section#acerca {
 section#acerca h2 {
   color: white;
   text-align: center;
-  font-size: 4.2em;
+  font-size: 3.7em;
   padding: 2%;
   font-family: "Roboto";
   font-weight: 300;
 }
 
 section#acerca .padre {
-  padding: 3%;
+  padding: 1.6%;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -274,7 +274,7 @@ section#acerca .padre img {
 }
 
 section#acerca .padre .cont {
-  padding: 2%;
+  padding: 1%;
 }
 
 section#acerca .padre .cont h2 {
