@@ -297,7 +297,7 @@ section#acerca .contenedor {
 section#acerca h2 {
   color: white;
   text-align: center;
-  font-size: 4.7em;
+  font-size: 4.4em;
   padding: 2%;
   font-family: "Roboto";
   font-weight: 300;
@@ -312,7 +312,7 @@ section#acerca .padre {
 }
 
 section#acerca .padre img {
-  width: 55%;
+  width: 60%;
 }
 
 section#acerca .padre .cont {
@@ -325,8 +325,9 @@ section#acerca .padre .cont h2 {
 }
 
 section#acerca .padre .cont span {
-  font-size: 1.9em;
+  font-size: 1.4em;
   font-family: "Sans";
+  font-weight: 300;
 }
 
 section#contacto {
@@ -452,6 +453,9 @@ RESPONSIVE WEB DESIGN
 =================================
 */
 @media screen and (max-width: 800px) {
+  header {
+    position: fixed;
+  }
   header .der {
     display: none;
   }
@@ -466,6 +470,9 @@ RESPONSIVE WEB DESIGN
   }
   header .normal .izq .a2 {
     display: none;
+  }
+  main {
+    height: 100vh;
   }
   main .cont .e #e1 .nav p .c1, main .cont .e #e1 .nav p .c2, main .cont .e #e1 .nav p .c3, main .cont .e #e1 .nav p .c4, main .cont .e #e2 .nav p .c1, main .cont .e #e2 .nav p .c2, main .cont .e #e2 .nav p .c3, main .cont .e #e2 .nav p .c4, main .cont .e #e3 .nav p .c1, main .cont .e #e3 .nav p .c2, main .cont .e #e3 .nav p .c3, main .cont .e #e3 .nav p .c4, main .cont .e #e4 .nav p .c1, main .cont .e #e4 .nav p .c2, main .cont .e #e4 .nav p .c3, main .cont .e #e4 .nav p .c4 {
     font-size: .7em;
@@ -488,8 +495,15 @@ RESPONSIVE WEB DESIGN
   main .cont #button {
     font-family: "Roboto";
   }
+  section#acerca {
+    height: 100%;
+  }
+  section#acerca h2 {
+    margin-top: 10%;
+  }
   section#acerca .padre {
     flex-direction: column;
+    margin-bottom: 10%;
   }
   section#acerca .padre img {
     width: 45%;
@@ -498,12 +512,10 @@ RESPONSIVE WEB DESIGN
     padding: 2%;
   }
   section#acerca .padre .cont h2 {
-    font-family: "Great";
     font-size: 2.9em;
   }
   section#acerca .padre .cont span {
     font-size: 1.1em;
-    font-family: "Sans";
   }
   section#contacto .padre {
     flex-direction: column;
@@ -512,6 +524,9 @@ RESPONSIVE WEB DESIGN
     width: 100%;
     text-align: center;
     margin-bottom: 5%;
+  }
+  section#contacto .padre .img h2 {
+    text-align: center;
   }
   section#contacto .padre .cont {
     width: 100%;
@@ -570,13 +585,13 @@ RESPONSIVE WEB DESIGN
     padding: 0.6%;
   }
   section#acerca .contenedor .padre .cont h2 {
-    font-size: 2.2em;
+    font-size: 2.7em;
   }
   section#acerca .contenedor .padre .cont img {
-    width: 40%;
+    width: 49%;
   }
   section#acerca .contenedor .padre .cont span {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   section#contacto .contenedor .padre .cont h2 {
     font-size: 2.15em;

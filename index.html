@@ -17,8 +17,8 @@
               </div>
               <div class="der">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#acerca" data-scroll>Acerca de nosotros</a></li>
+                <li><a href="#contacto" data-scroll>Contáctanos</a></li>
               </div>
             </ul>
           </nav>
@@ -27,8 +27,8 @@
               <h3>Menú</h3>
               <ul>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de nosotros</a></li>
-                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#acerca" data-scroll>Acerca de nosotros</a></li>
+                <li><a href="#contacto" data-scroll>Contáctanos</a></li>
               </ul>
             </div>
           </nav>
@@ -158,6 +158,17 @@
         </footer>
       <script src="js/jquery.min.js"></script>
       <script src="js/animations.js"></script>
+      <script src="js/smooth-scroll.min.js"></script>
+      <script>
+        smoothScroll.init({
+          selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+          selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+          speed: 2000, // Integer. How fast to complete the scroll in milliseconds
+          easing: 'easeInOutCubic', // Easing pattern to use
+          offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+          callback: function (anchor, toggle) { } // Function to run after scrolling
+        });
+      </script>
     </body>
 
   </html>

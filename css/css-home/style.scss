@@ -75,6 +75,7 @@ header {
   -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   width: 100%;
+    
   .fors {
     margin-left: -100%;
     position: fixed;
@@ -273,7 +274,7 @@ section#acerca {
   h2{
     color: white;
     text-align: center;
-    font-size: 4.7em;
+    font-size: 4.4em;
     padding: 2%;
     font-family: "Roboto";
     font-weight: 300;
@@ -285,7 +286,7 @@ section#acerca {
     text-align: center;
     color: white;
     img {
-      width: 55%;
+      width: 60%;
     }
     .cont {
       padding: 1%;
@@ -294,8 +295,9 @@ section#acerca {
         font-size: 2.9em;
       }
       span {
-        font-size: 1.9em;
+        font-size: 1.4em;
         font-family: "Sans";
+        font-weight: 300;
       }
     }
   }
@@ -413,7 +415,8 @@ RESPONSIVE WEB DESIGN
 
 @media screen and (max-width: 800px) {
   header {
-  
+    position: fixed;
+
     .der {
       display: none;
     }
@@ -438,8 +441,8 @@ RESPONSIVE WEB DESIGN
       }
     }
   }
-  main {
-    
+  main { 
+    height: 100vh;
     .cont {
       .e{
         #e1,#e2,#e3,#e4{
@@ -478,20 +481,25 @@ RESPONSIVE WEB DESIGN
     }
   }
   section#acerca {
+    height: 100%;
+    h2{
+      margin-top: 10%;
+      
+    }
     .padre {
       flex-direction: column;
+      margin-bottom: 10%;
       img {
         width: 45%;
       }
       .cont {
         padding: 2%;
         h2 {
-          font-family: "Great";
           font-size: 2.9em;
         }
         span {
           font-size: 1.1em;
-          font-family: "Sans";
+
         }
       }
     }
@@ -503,6 +511,9 @@ RESPONSIVE WEB DESIGN
         width: 100%;
         text-align: center;
         margin-bottom: 5%;
+        h2{
+          text-align: center;
+        }
       }
       .cont {
         width: 100%;
@@ -603,17 +614,18 @@ RESPONSIVE WEB DESIGN
 
   section#acerca{
     .contenedor{
+      
       .padre{
          padding: 0.6%;
         .cont{
           h2{
-            font-size: 2.2em;
+            font-size: 2.7em;
           }
           img{
-            width: 40%;
+            width:49%;
           }
           span{
-            font-size: 1em;
+            font-size: 1.2em;
           }
         }
       }
