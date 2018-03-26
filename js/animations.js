@@ -85,7 +85,7 @@ $(document).ready(function () {
             url: '../login/email.php',
             data: $('#formulario2').serialize(),
             success: function (data) {
-                $('#contacto .contenedor .padre .cont .alert').fadeIn(2000);
+                $('#contacto .contenedor .padre .cont .alert').fadeIn(500);
                 if (data == 'true') {
                     $('#contacto .contenedor .padre .cont .alert').css('background', '#62E246');
                     $('#contacto .contenedor .padre .cont .alert').html('¡El mensaje se ha ido a viajar a nuestro servidor! Gracias.');
@@ -95,7 +95,7 @@ $(document).ready(function () {
                         $('#mensaje').val("");
                         $('#contacto .contenedor .padre .cont .alert').css('display', 'none');
 
-                    }, 1500);
+                    }, 6500);
                 } else if (data == 'false') {
                     $('#contacto .contenedor .padre .cont .alert').css('background', 'red');
                     $('#contacto .contenedor .padre .cont .alert').html('Se ha encontrado un terrible error en el área 52 de nuestro código ¡Lo sentimos!');
