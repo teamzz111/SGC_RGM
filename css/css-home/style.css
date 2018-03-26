@@ -599,4 +599,26 @@ RESPONSIVE WEB DESIGN
     margin-bottom: 2%;
   }
 }
+
+@media screen and (max-width: 490px) {
+  main .cont .e #e1 .nav p#icons {
+    font-size: 3em;
+    width: 92%;
+    margin: auto;
+    margin-top: 5%;
+    word-wrap: break-word;
+  }
+  main .cont .e .contenedor h1 {
+    font-size: 1.52em;
+    word-wrap: break-word;
+    width: 98%;
+    margin: auto;
+  }
+  main .cont .e .contenedor h2 {
+    font-size: 1em;
+    word-wrap: break-word;
+    width: 92%;
+    margin: auto;
+  }
+}
 /*# sourceMappingURL=style.css.map */
