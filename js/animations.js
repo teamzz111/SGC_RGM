@@ -17,8 +17,8 @@ $(document).ready(function () {
                         clearTimeout(tiempo);      
                     },4000);
                 },4000);
-            },40000);
-        },40);
+            },4000);
+        },4000);
     }
     function better(element1, element2,element3,element4, color1, color2){
         $(element1).css("display","none");
