@@ -406,7 +406,7 @@ RESPONSIVE WEB DESIGN
 
 @media screen and (max-width: 800px) {
   header {
-    position: fixed;
+  
     .der {
       display: none;
     }
@@ -432,7 +432,27 @@ RESPONSIVE WEB DESIGN
     }
   }
   main {
+    
     .cont {
+      .e{
+        #e1,#e2,#e3,#e4{
+          .nav{
+            p{
+              .c1, .c2, .c3, .c4{
+                font-size: .7em;
+              }
+
+            }
+          }
+        }
+        #e1{
+          .nav{
+            p#icons{
+              font-size: 4.5em;
+            }
+          }
+        }
+      }
       h1 {
         margin-top: 10%;
         font-size: 2em;
@@ -490,11 +510,17 @@ RESPONSIVE WEB DESIGN
   header {
     height: 12vh;
   }
+  main{
+    height: 88vh;
+  }
 }
 
 @media screen and (max-height: 350px) {
   header {
     height: 14vh;
+  }
+  main{
+    height: 86vh;
   }
 }
 

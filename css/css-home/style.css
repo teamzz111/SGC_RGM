@@ -444,9 +444,6 @@ RESPONSIVE WEB DESIGN
 =================================
 */
 @media screen and (max-width: 800px) {
-  header {
-    position: fixed;
-  }
   header .der {
     display: none;
   }
@@ -461,6 +458,12 @@ RESPONSIVE WEB DESIGN
   }
   header .normal .izq .a2 {
     display: none;
+  }
+  main .cont .e #e1 .nav p .c1, main .cont .e #e1 .nav p .c2, main .cont .e #e1 .nav p .c3, main .cont .e #e1 .nav p .c4, main .cont .e #e2 .nav p .c1, main .cont .e #e2 .nav p .c2, main .cont .e #e2 .nav p .c3, main .cont .e #e2 .nav p .c4, main .cont .e #e3 .nav p .c1, main .cont .e #e3 .nav p .c2, main .cont .e #e3 .nav p .c3, main .cont .e #e3 .nav p .c4, main .cont .e #e4 .nav p .c1, main .cont .e #e4 .nav p .c2, main .cont .e #e4 .nav p .c3, main .cont .e #e4 .nav p .c4 {
+    font-size: .7em;
+  }
+  main .cont .e #e1 .nav p#icons {
+    font-size: 4.5em;
   }
   main .cont h1 {
     margin-top: 10%;
@@ -513,11 +516,17 @@ RESPONSIVE WEB DESIGN
   header {
     height: 12vh;
   }
+  main {
+    height: 88vh;
+  }
 }
 
 @media screen and (max-height: 350px) {
   header {
     height: 14vh;
+  }
+  main {
+    height: 86vh;
   }
 }
 
