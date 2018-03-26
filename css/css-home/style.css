@@ -184,12 +184,13 @@ MAIN
 =================================
 */
 main {
-  height: 55.5vh;
+  height: 90vh;
 }
 
 main .cont {
   width: 100%;
   height: 100%;
+  text-align: center;
   background-image: url("../../img/fp.jpg");
   background-size: cover;
   background-position: center;
@@ -201,10 +202,56 @@ main .cont {
   box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
 }
 
+main .cont .e {
+  height: 100%;
+  display: flex;
+}
+
+main .cont .e #e1, main .cont .e #e4, main .cont .e #e3 {
+  display: none;
+  transition: 1s linear;
+}
+
+main .cont .e #e1 .nav, main .cont .e #e4 .nav, main .cont .e #e3 .nav {
+  width: 100%;
+}
+
+main .cont .e #e1 .nav p, main .cont .e #e4 .nav p, main .cont .e #e3 .nav p {
+  font-family: "Awesome";
+  font-size: 2em;
+}
+
+main .cont .e #e1 p, main .cont .e #e4 p, main .cont .e #e3 p {
+  font-family: "Awesome";
+  text-align: center;
+  font-size: 3.3em;
+}
+
+main .cont .e #e2, main .cont .e #e1, main .cont .e #e3, main .cont .e #e4 {
+  transition: 1s linear;
+}
+
+main .cont .e #e2 .nav, main .cont .e #e1 .nav, main .cont .e #e3 .nav, main .cont .e #e4 .nav {
+  bottom: 0;
+  width: 100%;
+}
+
+main .cont .e #e2 .nav .c1, main .cont .e #e1 .nav .c1, main .cont .e #e3 .nav .c1, main .cont .e #e4 .nav .c1 {
+  color: black;
+}
+
+main .cont .e #e2 .nav p, main .cont .e #e1 .nav p, main .cont .e #e3 .nav p, main .cont .e #e4 .nav p {
+  font-family: "Awesome";
+  font-size: 2em;
+  margin-top: 10%;
+  word-spacing: 1em;
+  width: 100%;
+}
+
 main .cont h1 {
   font-family: "Sans";
   font-weight: 700;
-  font-size: 3em;
+  font-size: 3.5em;
   text-align: center;
 }
 

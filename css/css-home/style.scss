@@ -170,10 +170,11 @@ MAIN
 */
 
 main {
-  height: 55.5vh;
+  height: 90vh;
   .cont {
     width: 100%;
     height: 100%;
+    text-align: center;
     background-image: url('../../img/fp.jpg');
     background-size: cover;
     background-position: center;
@@ -183,10 +184,49 @@ main {
     -webkit-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
     box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
+    
+    .e{
+      height: 100%;
+      display: flex;
+      
+      #e1,#e4,#e3{
+        display: none;
+        transition: 1s linear;
+        .nav{
+          width: 100%;
+          p{
+            font-family: "Awesome";
+            font-size: 2em;
+          }
+        }
+        p{
+          font-family: "Awesome";
+          text-align: center;
+          font-size: 3.3em;
+        }
+      }
+      #e2,#e1,#e3,#e4{
+        transition: 1s linear;
+        .nav{
+          .c1{
+            color:black;
+          }
+          bottom: 0;
+          width: 100%;
+          p{
+            font-family: "Awesome";
+            font-size: 2em;
+            margin-top: 10%;
+            word-spacing: 1em;
+            width: 100%;
+          }
+        }
+      }
+    }
     h1 {
       font-family: "Sans";
       font-weight: 700;
-      font-size: 3em;
+      font-size: 3.5em;
       text-align: center;
       span {
         font-weight: 300;

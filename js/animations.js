@@ -1,8 +1,30 @@
 $(document).ready(function () {
 
     $lateral = 0;
-
-
+    $contenido = 1;
+    inici();
+    setInterval(inici, 12000);
+    function inici(){
+        $tiempo = setTimeout(function(){
+            better('#e2','#e1','#e1 .nav .c2','#e1 .nav .c1');
+            tiempo = setTimeout(function(){
+                better('#e1','#e3','#e3 .nav .c3','#e3 .nav .c1');
+                tiempo = setTimeout(function(){
+                    better('#e3','#e4','#e4 .nav .c4','#e4 .nav .c1');              
+                    tiempo = setTimeout(function(){
+                        better('#e4','#e2','#e4 .nav .c4','#e4 .nav .c1');               
+                        $('#e2').css("display","none");
+                    },4000);
+                },4000);
+            },4000);
+        },4000);
+    }
+    function better(element1, element2,element3,element4, color1, color2){
+        $(element1).css("display","none");
+        $(element2).css("display","block");
+        $(element3).css("color","black");
+        $(element4).css("color","white");
+    }
     $('#lat').click(function () {
 
         if ($lateral == 0) {
@@ -54,6 +76,7 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+  
     $('#formulario2').submit(function (e) {
         $.ajax({
             type: 'POST',
