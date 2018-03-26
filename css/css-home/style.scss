@@ -188,25 +188,20 @@ main {
     .e{
       height: 100%;
       display: flex;
-      
       #e1,#e4,#e3{
         display: none;
-        transition: 1s linear;
+      }
+      #e1{
         .nav{
-          width: 100%;
-          p{
+          p#icons{
             font-family: "Awesome";
-            font-size: 2em;
+            font-size: 5.5em;
+            word-spacing: 0.5em;
+            margin-top: 2%;
           }
-        }
-        p{
-          font-family: "Awesome";
-          text-align: center;
-          font-size: 3.3em;
         }
       }
       #e2,#e1,#e3,#e4{
-        transition: 1s linear;
         .nav{
           .c1{
             color:black;
@@ -215,7 +210,7 @@ main {
           width: 100%;
           p{
             font-family: "Awesome";
-            font-size: 2em;
+            font-size: 2.4em;
             margin-top: 10%;
             word-spacing: 1em;
             width: 100%;
