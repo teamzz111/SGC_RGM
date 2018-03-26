@@ -263,10 +263,17 @@ section#acerca {
   background: url('../../img/new.png');
   background-size: cover;
   background-position: center;
+  height: 100vh;
+  .contenedor{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   h2{
     color: white;
     text-align: center;
-    font-size: 3.7em;
+    font-size: 4.7em;
     padding: 2%;
     font-family: "Roboto";
     font-weight: 300;
@@ -287,7 +294,7 @@ section#acerca {
         font-size: 2.9em;
       }
       span {
-        font-size: 1.1em;
+        font-size: 1.9em;
         font-family: "Sans";
       }
     }
