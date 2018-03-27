@@ -2,10 +2,22 @@
 <main>
   <div class="lat">
     <img src="assets/img/sgc.png" alt="">
-    <a href="#"><button (click)="showDesk(1)"> <span></span> Inicio</button></a>
-    <a href="#"><button (click)="showDesk(2)"> <span></span> Cuenta</button></a>
-    <a href="#"><button (click)="showDesk(3)"> <span></span> Gestionar</button></a>
-    <a href="#"><button> <span></span> Cerrar sesión</button></a>
+    <a href="#">
+      <button (click)="showDesk(1)">
+        <span></span> Inicio</button>
+    </a>
+    <a href="#">
+      <button (click)="showDesk(2)">
+        <span></span> Cuenta</button>
+    </a>
+    <a href="#">
+      <button (click)="showDesk(3)">
+        <span></span> Gestionar</button>
+    </a>
+    <a href="#">
+      <button>
+        <span></span> Cerrar sesión</button>
+    </a>
 
 
   </div>
@@ -13,30 +25,32 @@
     <div class="buscador">
       <form action="/action_page.php" method="get">
         <input type="text" name="fname" placeholder="Busca cosas, menús, el mundo entero.">
-    </form>
+      </form>
     </div>
     <div class="user">
       <div class="img">
       </div>
       <div class="name">
         <div class="conte">
-        <h2>{{nombre}} <br><span>{{cargo}}</span></h2>
-        
+          <h2>{{nombre}}
+            <br>
+            <span>{{cargo}}</span>
+          </h2>
+
         </div>
       </div>
     </div>
     <div *ngIf="desk == 1" class="desk1">
       <h2>PRIMER ESCRITORIO ACTIVADO</h2>
-  
+
     </div>
-    <div *ngIf = "desk == 2" class="desk2">
+    <div *ngIf="this.desk == 2" class="desk2">
       <h2>SEGUNDO ESCRITORIO ACTIVADO</h2>
     </div>
-    <div *ngIf = "desk == 3" class="desk3">
+    <div *ngIf="desk == 3" class="desk3">
       <h2>TERCER ESCRITORIO ACTIVADO</h2>
     </div>
 
 
   </div>
 </main>
-

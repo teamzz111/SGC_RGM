@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('sgca App', () => {
+describe('gui App', () => {
   let page: AppPage;
 
   beforeEach(() => {
