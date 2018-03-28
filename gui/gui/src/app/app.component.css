@@ -78,7 +78,6 @@ main {
 }
 
 main .lat {
-  transition: 1.99s linear;
   width: 8%;
   background: #1f4daf;
   height: 100vh;
@@ -101,6 +100,15 @@ main .lat img {
   bottom: 0;
   position: fixed;
   overflow: hidden;
+}
+
+main .lat .info {
+  position: fixed;
+  bottom: -0.5em;
+  color: white;
+  font-family: "Roboto";
+  display: none;
+  left: 3em;
 }
 
 main .lat a button {
@@ -130,7 +138,6 @@ main .lat a button:hover {
 }
 
 main .der {
-  transition: 2s linear;
   width: 100%;
   margin-left: 3.2em;
 }

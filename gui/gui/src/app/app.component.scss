@@ -75,7 +75,7 @@ main {
   display: flex;
 
   .lat {
-     transition: 1.99s linear;
+  //   transition: 0.99s linear;
 
     width: 8%;
     background: #1f4daf;
@@ -96,6 +96,14 @@ main {
       bottom: 0;
       position: fixed;
       overflow: hidden;
+    }
+    .info{
+      position: fixed;
+      bottom: -0.5em;
+      color: white;
+      font-family: "Roboto";
+      display: none;
+      left: 3em;
     }
     a {
       button {
@@ -124,7 +132,7 @@ main {
     }
   }
   .der {
-    transition: 2s linear;
+  
     width: 100%;
     margin-left: 3.2em;
     .user {

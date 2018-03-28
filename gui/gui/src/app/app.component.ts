@@ -26,28 +26,29 @@ export class AppComponent {
 
   showDesk(number) {
     this.desk = number;
+    if(this.cmenu === 1) {
+      this.menu();
+    }
   }
 
   menu() {
     if (this.cmenu === 0) {
-      $('main .lat').css({'minWidth': '12em',
-      'maxWidth': '12.1em'
-      });
+      $('main .lat').animate({'minWidth': '12em','maxWidth': '12.1em'});
       $('main .lat a button i').fadeIn(1000);
-      $('main .lat a button').css({'marginTop': '0.5%', 'marginBottom': '0.5%'});
+      $('main .lat a button').animate({'marginTop': '0.5%', 'marginBottom': '0.5%'});
       $('main .lat a button i').css('fontStyle', 'normal');
       $('main .lat a button span').addClass('left');
-      $('main .der').css('marginLeft', '12em');
+      $('main .der').animate({'marginLeft': '12em'});
+      $('main .info').fadeIn(1000);
       this.cmenu = 1;
   } else {
-    $('main .lat').css({'minWidth': '3.1em',
-    'maxWidth': '3.2em'
-    });
-    $('main .lat a button i').fadeOut(700);
-    $('main .lat a button').css({'marginTop': '20%', 'marginBottom': '20%'});
-    $('main .lat a button span').removeClass('left');
-    $('main .der').css('marginLeft', '3.2em');
-      this.cmenu = 0;
+      $('main .lat').animate({'minWidth': '3.1em','maxWidth': '3.2em'});
+      $('main .lat a button i').fadeOut(3);
+      $('main .lat a button').animate({'marginTop': '20%', 'marginBottom': '20%'}, 10);
+      $('main .lat a button span').removeClass('left');
+      $('main .der').animate({'marginLeft': '3.2em'});
+      $('main .info').fadeOut(10);
+        this.cmenu = 0;
     }
   }
 }
