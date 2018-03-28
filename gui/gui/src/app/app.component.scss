@@ -68,59 +68,56 @@ body {
 main {
   display: flex;
   .lat {
-    width: 30%;
-    background: black;
+    width: 8%;
+    background: rgb(31, 77, 175);
     height: 100vh;
-    max-width: 250px;
-    min-width: 220px;
-    img {
-      width: 100%;
-      margin: auto;
-      padding: 2%;
-      margin-top: 15%;
-      margin-bottom: 7%;
+    text-align: center;
+    max-width: 62px;
+    min-width: 60px;
+    a#m1{
+      margin-top: 10%;
     }
-  }
-  a {
-    button {
-      width: 100%;
-      padding: 4%;
-      font-family: "Sans";
-      font-weight: 300;
-      font-size: 1.6em;
-      background: transparent;
-      color: white;
-      border-color: transparent;
-      span {
-        font-family: "Awesome";
-        float: left;
-      }
-      &:hover {
-        background: rgba(36, 35, 35, .9);
-        cursor: pointer;
+    img {
+      width: 10%;
+      margin: auto;
+      padding: 1%;
+      min-width: 50px;
+      max-width: 60px;
+      bottom: 0;
+      position: fixed;
+      overflow: hidden;
+    }
+    a {
+      button {
+        width: 100%;
+        background: transparent;
+        color: white;
+        border-color: transparent;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        padding: 10%;
+        span {
+          font-family: "Awesome";
+          font-size: 1.5em;
+        }
+        i {
+          display: none;
+        }
+        &:hover {
+          background: rgba(36, 35, 35, .9);
+          cursor: pointer;
+        }
       }
     }
   }
   .der {
     width: 100%;
-    .buscador {
-      width: 100%;
-      padding: 1%;
-      input[type="text"] {
-        width: 50%;
-        border-color: transparent;
-        border-bottom: 1px solid black;
-        padding: 0.5%;
-        font-family: "Sans";
-        font-weight: 300;
-        font-size: 1.3em;
-      }
-    }
+
     .user {
       position: relative;
       display: flex;
       flex-direction: column;
-      background-color: rgb(61, 61, 61);
+      background-color: rgb(0, 0, 0);
       width: 100%;
       height: 8em;
       .img {
@@ -152,19 +149,21 @@ main {
           text-transform: uppercase;
           h2 {
             font-weight: 300;
-            span{
+            span {
               font-size: 0.78em;
             }
           }
         }
       }
     }
-    .desk1, .desk2, .desk3 {
+    .desk1,
+    .desk2,
+    .desk3 {
       margin-top: 5em;
       max-height: 49.2em;
       height: 100%;
       padding: 2%;
-      h2{
+      h2 {
         color: white;
         text-align: center;
         font-size: 2em;
@@ -187,8 +186,7 @@ main {
 @media screen and (max-width: 1400px) {
   main {
     .lat {
-      max-width: 179px;
-      min-width: 170px;
+
       a {
         button {
           font-size: 1.2em;
@@ -219,11 +217,13 @@ main {
           }
         }
       }
-    .desk1, .desk2, .desk3 {
-      margin-top: 4.2em;
-      max-height: 859px;
-      height: 100%;
-    }
+      .desk1,
+      .desk2,
+      .desk3 {
+        margin-top: 4.2em;
+        max-height: 859px;
+        height: 100%;
+      }
     }
   }
 }
@@ -231,8 +231,7 @@ main {
 @media screen and (max-height: 800px) {
   main {
     .lat {
-      max-width: 179px;
-      min-width: 170px;
+
       a {
         button {
           font-size: 1.2em;

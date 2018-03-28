@@ -20,6 +20,7 @@ export class AppComponent {
     this.nombre = 'Andrés Felipe Largo Rodríguez';
     this.cargo = 'GERENTE GENERAL';
     this.desk = 0;
+
   }
 
   showDesk(number) {
