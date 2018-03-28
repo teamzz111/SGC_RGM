@@ -69,11 +69,16 @@ body {
   display: none;
 }
 
+.left {
+  float: left;
+}
+
 main {
   display: flex;
 }
 
 main .lat {
+  transition: 1.99s linear;
   width: 8%;
   background: #1f4daf;
   height: 100vh;
@@ -115,6 +120,8 @@ main .lat a button span {
 
 main .lat a button i {
   display: none;
+  font-weight: 300;
+  font-family: "Sans";
 }
 
 main .lat a button:hover {
@@ -123,6 +130,7 @@ main .lat a button:hover {
 }
 
 main .der {
+  transition: 2s linear;
   width: 100%;
   margin-left: 3.2em;
 }

@@ -67,9 +67,16 @@ body {
 .error{
   display: none;
 }
+
+.left{
+  float: left;
+}
 main {
   display: flex;
+
   .lat {
+     transition: 1.99s linear;
+
     width: 8%;
     background: #1f4daf;
     height: 100vh;
@@ -99,12 +106,15 @@ main {
         margin-top: 20%;
         margin-bottom: 20%;
         padding: 10%;
+
         span {
           font-family: "Awesome";
           font-size: 1.5em;
         }
         i {
           display: none;
+          font-weight: 300;
+          font-family: "Sans";
         }
         &:hover {
           background: rgba(36, 35, 35, .9);
@@ -114,6 +124,7 @@ main {
     }
   }
   .der {
+    transition: 2s linear;
     width: 100%;
     margin-left: 3.2em;
     .user {
