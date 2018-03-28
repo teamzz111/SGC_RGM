@@ -64,7 +64,9 @@ html {
 body {
   margin: 0;
 }
-
+.error{
+  display: none;
+}
 main {
   display: flex;
   .lat {
@@ -72,9 +74,10 @@ main {
     background: #1f4daf;
     height: 100vh;
     text-align: center;
-    max-width: 62px;
-    min-width: 60px;
-    a#m1{
+    max-width: 3.2em;
+    min-width: 3.1em;
+    position: fixed;
+    a#m1 {
       margin-top: 10%;
     }
     img {
@@ -112,6 +115,7 @@ main {
   }
   .der {
     width: 100%;
+    margin-left: 3.2em;
     .user {
       position: relative;
       flex-direction: column;
@@ -144,7 +148,7 @@ main {
           max-height: 100px;
           text-align: right;
           padding-right: 1%;
-                   color: white;
+          color: white;
           font-family: "Sans";
           text-transform: uppercase;
           h2 {
@@ -186,32 +190,36 @@ main {
 @media screen and (max-width: 1400px) {
   main {
     .lat {
-
+      //min-width: 49px;
+      //max-width: 51px;
+      img {
+        width: 5%;
+        min-width: 40px;
+        max-width: 50px;
+      }
       a {
         button {
+          span {
+            font-size: 1.1em;
+          }
           font-size: 1.2em;
         }
       }
     }
     .der {
-      .buscador {
-        padding: 0.5%;
-        input[type="text"] {
-          padding: 0.3%;
-          font-size: 1em;
-        }
-      }
       .user {
-        height: 6em;
+        max-height: 75px;
         .img {
           border-radius: 80em;
-          left: 4em;
-          bottom: -4em;
-          width: 8em;
-          height: 8em;
+          left: 3.2em;
+          bottom: -3.2em;
+          width: 6.4em;
+          height: 6.4em;
         }
         .name {
-          padding: 1%;
+          .conte {
+            max-height: 75px;
+          }
           h2 {
             font-size: 1.2em;
           }
@@ -231,7 +239,6 @@ main {
 @media screen and (max-height: 800px) {
   main {
     .lat {
-
       a {
         button {
           font-size: 1.2em;
@@ -256,6 +263,39 @@ main {
       }
       .desk3 {
         background: green;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  main {
+    display: none;
+  }
+  body {
+    background: black;
+  }
+  .error {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    .contenedor {
+      color: black;
+      text-align: center;
+      padding: 10%;
+      img{
+        width: 50%;
+      }
+      h2{
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 3em;
+      }
+      p{
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 1.28em;
       }
     }
   }
