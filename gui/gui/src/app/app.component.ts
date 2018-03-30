@@ -19,14 +19,18 @@ export class AppComponent {
   desk: number;
   cmenu: number;
   cargos: string[];
+  loggedin: number;
   listado;
+  list;
 
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.1(a)';
     this.desk = 1;
     this.cmenu = 0;
+    this.loggedin = 0;
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
+    this.verifySession();
     this.crudProducto
     .listar() // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
     .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
@@ -70,6 +74,15 @@ export class AppComponent {
   }
 
   closeSession() {
-    this.crudProducto.closeSession();
+    alert(this.crudProducto.closeSession());
+  }
+
+  verifySession() {
+    this.crudProducto.verify().map(response => response.json()).subscribe(data => {
+      if (data === 'false' || data === 'Nothing') {
+        $(window).location.href = 'http://google.com';
+      }
+    });
+
   }
 }
