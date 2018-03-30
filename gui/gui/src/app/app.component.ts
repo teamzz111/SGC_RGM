@@ -20,6 +20,7 @@ export class AppComponent {
   cmenu: number;
   cargos: string[];
   loggedin: number;
+  url: string;
   listado;
   list;
 
@@ -29,6 +30,7 @@ export class AppComponent {
     this.desk = 1;
     this.cmenu = 0;
     this.loggedin = 0;
+    this.url = 'http://192.168.0.25:81/SGC_RGM/login.html';
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.verifySession();
     this.crudProducto
@@ -74,13 +76,17 @@ export class AppComponent {
   }
 
   closeSession() {
-    alert(this.crudProducto.closeSession());
+    this.crudProducto.closeSession().map(response => response.json()).subscribe(data => {
+      if (data === 'true') {
+        location.href = 'index.html';
+      }
+    });
   }
 
   verifySession() {
     this.crudProducto.verify().map(response => response.json()).subscribe(data => {
       if (data === 'false' || data === 'Nothing') {
-        $(window).location.href = 'http://google.com';
+        location.href = this.url;
       }
     });
 
