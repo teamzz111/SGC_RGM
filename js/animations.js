@@ -42,7 +42,7 @@ $(document).ready(function () {
       
         $.ajax({
             type: 'POST',
-            url: 'login/login.php',
+            url: 'login/login.php?auth=1',
             data: $('#formulario').serialize(),
             success: function (data) {
                 $('main .cont .noti').fadeIn(2000);
@@ -62,6 +62,7 @@ $(document).ready(function () {
                         $('main .cont .noti').fadeOut(1000);
                     }, 1500);
                 } else {
+
                     $('main .cont .noti').css('background', 'red');
                     $('main .cont .noti').html('La cuenta ' + $('#user').val() + ' no existe.');
                     setTimeout(function () {

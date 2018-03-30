@@ -33,12 +33,11 @@
       <div class="img">
       </div>
       <div class="name">
-        <div class="conte">
-          <h2>{{nombre}}
-            <br>
-            <span>{{cargo}}</span>
+        <div class="conte" *ngFor="let item of listado">
+          <h2>{{item.nombre}} {{item.apellido}}
+              <br>
+            <span>{{cargos[item.cargo]}}</span>
           </h2>
-
         </div>
       </div>
     </div>
