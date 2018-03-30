@@ -39,7 +39,6 @@ $(document).ready(function () {
     });
 
     $('#formulario').submit(function (e) {
-      
         $.ajax({
             type: 'POST',
             url: 'login/login.php?auth=1',
@@ -52,7 +51,7 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('#user').val("");
                         $('#pass').val("");
-
+                        location.href = "gui/gui/dist/index.html";
                     }, 1500);
                 } else if (data == 'false') {
                     $('main .cont .noti').css('background', 'red');

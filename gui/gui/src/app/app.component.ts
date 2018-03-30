@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.1(a)';
-    this.desk = 0;
+    this.desk = 1;
     this.cmenu = 0;
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.crudProducto
@@ -67,5 +67,9 @@ export class AppComponent {
       $('main .info').fadeOut(10);
       this.cmenu = 0;
     }
+  }
+
+  closeSession() {
+    this.crudProducto.closeSession();
   }
 }
