@@ -1,0 +1,74 @@
+main {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+}
+
+main .contenedor {
+  width: 100%;
+}
+
+main .contenedor .padre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+main .contenedor .padre a {
+  padding: 1%;
+  text-decoration: none;
+}
+
+main .contenedor .padre a .color2 {
+  background: #2196F3;
+}
+
+main .contenedor .padre a .color2 p#name {
+  background: #1E88E5;
+}
+
+main .contenedor .padre a .color {
+  background: #EC407A;
+}
+
+main .contenedor .padre a .color p#name {
+  background: #E91E63;
+}
+
+main .contenedor .padre a .color3 {
+  background: #EF6C00;
+}
+
+main .contenedor .padre a .color3 p#name {
+  background: #E65100;
+}
+
+main .contenedor .padre a .boton1 {
+  font-family: "Awesome";
+  font-size: 5em;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+main .contenedor .padre a .boton1 p#icon {
+  margin: 0;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  font-size: 0.8em;
+}
+
+main .contenedor .padre a .boton1 p#icon img {
+  width: 12%;
+}
+
+main .contenedor .padre a .boton1 p#name {
+  margin: 0;
+  font-size: 0.19em;
+  padding: 2%;
+  padding-right: 1em;
+  padding-left: 1em;
+  font-family: "Roboto";
+}
+/*# sourceMappingURL=desktop3.component.css.map */

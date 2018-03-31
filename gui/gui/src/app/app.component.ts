@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { UserServiceService } from './user-service.service'; // Importamos nuestro servicio
 import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
@@ -11,8 +11,9 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title: string;
+  @Input() title: string;
   version: string;
   nombre: string;
   cargo: string;
@@ -27,7 +28,7 @@ export class AppComponent {
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.1(a)';
-    this.desk = 1;
+    this.desk = 3;
     this.cmenu = 0;
     this.loggedin = 0;
     this.url = 'http://192.168.0.25:81/SGC_RGM/login.html';

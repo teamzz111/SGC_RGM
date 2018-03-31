@@ -143,28 +143,22 @@ main .der {
 }
 
 main .der .desk1, main .der .desk2, main .der .desk3 {
-  margin-top: 5em;
   width: 100%;
 }
 
 main .der .user {
-  position: relative;
   flex-direction: column;
   background-color: black;
   width: 100%;
-  max-height: 100px;
 }
 
 main .der .user .img {
-  position: absolute;
   background-image: url("../assets/img/man.png");
   background-size: cover;
   background-position: center;
   border-radius: 100em;
-  left: 4em;
-  bottom: -5em;
-  width: 10em;
-  height: 10em;
+  width: 2em;
+  height: 2em;
 }
 
 main .der .user .img img {
@@ -174,31 +168,52 @@ main .der .user .img img {
 main .der .user .name {
   display: flex;
   width: 100%;
-  justify-content: right;
   height: 100%;
-  align-items: center;
 }
 
 main .der .user .name .conte {
   width: 100%;
   height: 100%;
-  max-height: 100px;
-  text-align: right;
-  padding-right: 1%;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  padding: 0.6%;
   color: white;
   font-family: "Sans";
-  text-transform: uppercase;
 }
 
-main .der .user .name .conte h2 {
+main .der .user .name .conte span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 300;
-}
-
-main .der .user .name .conte h2 span {
-  font-size: 0.78em;
+  text-transform: uppercase;
+  margin-right: 0.5em;
 }
 
 @media screen and (max-width: 1400px) {
+  main {
+    /*  .der {
+      /*.user {
+        max-height: 75px;
+        .img {
+          border-radius: 80em;
+          left: 3.2em;
+          bottom: -3.2em;
+          width: 6.4em;
+          height: 6.4em;
+        }
+        .name {
+          .conte {
+            max-height: 75px;
+          }
+          h2 {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }*/
+  }
   main .lat img {
     width: 5%;
     min-width: 40px;
@@ -209,22 +224,6 @@ main .der .user .name .conte h2 span {
   }
   main .lat a button span {
     font-size: 1.1em;
-  }
-  main .der .user {
-    max-height: 75px;
-  }
-  main .der .user .img {
-    border-radius: 80em;
-    left: 3.2em;
-    bottom: -3.2em;
-    width: 6.4em;
-    height: 6.4em;
-  }
-  main .der .user .name .conte {
-    max-height: 75px;
-  }
-  main .der .user .name h2 {
-    font-size: 1.2em;
   }
 }
 

@@ -30,14 +30,16 @@
   </div>
   <div class="der">
     <div class="user">
-      <div class="img">
-      </div>
+
       <div class="name">
         <div class="conte" *ngFor="let item of listado">
-          <h2>{{item.nombre}} {{item.apellido}}
-              <br>
-            <span>{{cargos[item.cargo]}}</span>
-          </h2>
+          <div class="img">
+          </div>
+          <span>{{item.nombre}} {{item.apellido}}
+            <br>
+
+            <!-- <span>{{cargos[item.cargo]}}</span> -->
+          </span>
         </div>
       </div>
     </div>

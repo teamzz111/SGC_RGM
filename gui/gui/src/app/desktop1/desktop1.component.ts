@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop1.component.css']
 })
 export class Desktop1Component implements OnInit {
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,65 @@
+
+
+main{
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  .contenedor{
+    width: 100%;
+    .padre{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      width: 100%;
+      a{
+        padding: 1%;
+        text-decoration: none;
+        .color2{
+          background: #2196F3;
+          p#name{
+            background: #1E88E5;
+          }
+        }
+        .color{
+          background: #EC407A;
+          p#name{
+            background: #E91E63;
+          }
+        }
+        .color3{
+          background: #EF6C00;
+
+          p#name{
+            background: #E65100;
+          }
+        }
+        .boton1{
+          font-family: "Awesome";
+          font-size: 5em;
+          color: white;
+          text-align: center;
+          width: 100%;
+
+          p#icon{
+            img{
+              width: 12%;
+            }
+            margin: 0;
+
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+            font-size: 0.8em;
+          }
+          p#name{
+            margin: 0;
+            font-size: 0.19em;
+            padding: 2%;
+            padding-right: 1em;
+            padding-left: 1em;
+            font-family: "Roboto";
+          }
+        }
+      }
+    }
+  }
+}
