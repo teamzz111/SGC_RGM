@@ -31,7 +31,7 @@ export class AppComponent {
     this.desk = 3;
     this.cmenu = 0;
     this.loggedin = 0;
-    this.url = 'http://192.168.0.12:81/SGC_RGM/login.html';
+    this.url = 'http://localhost/SGC_RGM/login.html';
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.verifySession();
     this.crudProducto

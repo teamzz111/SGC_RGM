@@ -61,7 +61,7 @@ $(document).ready(function () {
                         $('main .cont .noti').fadeOut(1000);
                     }, 1500);
                 } else {
-
+                    alert(data);
                     $('main .cont .noti').css('background', 'red');
                     $('main .cont .noti').html('La cuenta ' + $('#user').val() + ' no existe.');
                     setTimeout(function () {
