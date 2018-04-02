@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
   styleUrls: ['./desktop3.component.css']
 })
 export class Desktop3Component implements OnInit {
-
+  nombre: string;
   constructor(private crudProducto: UserServiceService) {
      /*  this.crudProducto
          .listar()
@@ -16,6 +16,7 @@ export class Desktop3Component implements OnInit {
          .subscribe(data => {
            alert('exito');
          });*/
+         this.nombre = 'Andrés Largo';
   }
 
   ngOnInit() {
