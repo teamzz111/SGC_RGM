@@ -75,8 +75,6 @@ main {
   display: flex;
 
   .lat {
-  //   transition: 0.99s linear;
-
     width: 8%;
     background: #1f4daf;
     height: 100vh;
@@ -132,25 +130,23 @@ main {
     }
   }
   .der {
-  
     width: 100%;
     margin-left: 3.2em;
+    .desk1,.desk2,.desk3{
+
+      width: 100%;
+    }
     .user {
-      position: relative;
       flex-direction: column;
       background-color: rgb(0, 0, 0);
       width: 100%;
-      max-height: 100px;
       .img {
-        position: absolute;
         background-image: url('../assets/img/man.png');
         background-size: cover;
         background-position: center;
         border-radius: 100em;
-        left: 4em;
-        bottom: -5em;
-        width: 10em;
-        height: 10em;
+        width: 2em;
+        height: 2em;
         img {
           width: 50%;
         }
@@ -158,50 +154,27 @@ main {
       .name {
         display: flex;
         width: 100%;
-        justify-content: right;
         height: 100%;
-        align-items: center;
+
         .conte {
           width: 100%;
           height: 100%;
-          max-height: 100px;
-          text-align: right;
-          padding-right: 1%;
+          display: flex;
+          flex-direction: row-reverse;
+          flex-wrap: nowrap;
+          padding: 0.6%;
           color: white;
           font-family: "Sans";
-          text-transform: uppercase;
-          h2 {
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-weight: 300;
-            span {
-              font-size: 0.78em;
-            }
+            text-transform: uppercase;
+            margin-right: 0.5em;
           }
         }
       }
-    }
-    .desk1,
-    .desk2,
-    .desk3 {
-      margin-top: 5em;
-      max-height: 49.2em;
-      height: 100%;
-      padding: 2%;
-      h2 {
-        color: white;
-        text-align: center;
-        font-size: 2em;
-        font-family: "Sans";
-        font-weight: 300;
-      }
-    }
-    .desk1 {
-      background: blue;
-    }
-    .desk2 {
-      background: black;
-    }
-    .desk3 {
-      background: green;
     }
   }
 }
@@ -225,8 +198,8 @@ main {
         }
       }
     }
-    .der {
-      .user {
+  /*  .der {
+      /*.user {
         max-height: 75px;
         .img {
           border-radius: 80em;
@@ -244,14 +217,7 @@ main {
           }
         }
       }
-      .desk1,
-      .desk2,
-      .desk3 {
-        margin-top: 4.2em;
-        max-height: 859px;
-        height: 100%;
-      }
-    }
+    }*/
   }
 }
 
@@ -264,26 +230,7 @@ main {
         }
       }
     }
-    .der {
-      .desk1,
-      .desk2,
-      .desk3 {
-        max-height: 445px;
-        height: 100%;
-        color: white;
-        padding: 2%;
-        text-align: center;
-      }
-      .desk1 {
-        background: blue;
-      }
-      .desk2 {
-        background: black;
-      }
-      .desk3 {
-        background: green;
-      }
-    }
+
   }
 }
 

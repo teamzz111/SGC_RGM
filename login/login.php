@@ -4,35 +4,37 @@
     session_start();
     $host = "localhost";
     $db = "bd";
-    $pass = ""
+    $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, $user, $pass, $db);
+    $con = new mysqli($host, "root", $pass, $db);
 
     if($con -> connect_error){
         die("Conexión errónea: " . $con->connect_error);
     }
+    if($_GET['auth'] == 1){
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+        $query = "SELECT contrasena, cargo FROM cuenta WHERE Empleado_cedula = '$user'";
+        $result = $con->query($query);
 
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
-
-   // $query = "SELECT cuenta.idCuenta, cuenta.contrasena, empleado.nombre, empleado.apellido, cuenta.cargo FROM Cuenta, empleado WHERE empleado.cedula = '$user' AND empleado.cedula = Cuenta.Empleado_cedula";
-    $query = "SELECT contrasena FROM cuenta WHERE Empleado_cedula = '$user'";
-
-    $result = $con->query($query);
-    //mysqli->close();
-    if($result->num_rows > 0){
-        $row = $result ->fetch_array(MYSQLI_ASSOC);
-        if (encrypt($pass, $key) == $row['contrasena']){
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $user;
-            echo "true";
+        if($result->num_rows > 0){
+            $row = $result ->fetch_array(MYSQLI_ASSOC);
+            if (encrypt($pass, $key) == $row['contrasena']){
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $user;
+                $_SESSION['job'] = $row['cargo'];
+                echo "true";
+            }
+            else{
+                echo "false";
+            }
         }
         else{
-            echo "false";
+            echo "0";
         }
     }
     else{
-        echo "0";
+        
     }
-
+   
 ?>
