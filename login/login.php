@@ -2,11 +2,11 @@
     include 'Security.php';
 
     session_start();
-    $host = "mysql.hostinger.co";
-    $db = "u462448961_bd";
-    $pass = "nicky246";
+    $host = "localhost";
+    $db = "bd";
+    $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, "u462448961_teamz", $pass, $db);
+    $con = new mysqli($host, "root", $pass, $db);
 
     if($con -> connect_error){
         die("Conexión errónea: " . $con->connect_error);
