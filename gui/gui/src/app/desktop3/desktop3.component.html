@@ -9,19 +9,19 @@
       <a href="">
         <div class="boton1 color2">
            <p id="icon"><img src="assets/img/group-1.png" alt=""></p>
-          <!--<p id="name">Estadísticas</p>-->
+          <p id="comuni">Ver usuarios</p>
         </div>
       </a>
       <a href="">
         <div class="boton1 color2">
           <p id="icon"><img src="assets/img/user-10.png" alt=""></p>
-        <!--  <p id="name">Configuración</p-->
+          <p id="comuni">Modificar usuario</p>
         </div>
       </a>
       <a href="">
         <div class="boton1 color2">
           <p id="icon"><img src="assets/img/user-2.png" alt=""></p>
-        <!--  <p id="name">Añadir</p>-->
+          <p id="comuni">Añadir usuario</p>
         </div>
       </a>
       <a href="">
@@ -29,17 +29,22 @@
           <p id="icon">
             <img src="assets/img/user-8.png" alt="">
           </p>
+          <p id="comuni">Bloquear usuario</p>
           <!--  <p id="name">Añadir</p>-->
         </div>
       </a>
       <a href="">
         <div class="boton1 color2">
           <p id="icon">
-            <img src="assets/img/user-12.png" alt="">
+            <img src="assets/img/user-17.png" alt="">
           </p>
+          <p id="comuni">Comunicarse con un usuario</p>
           <!--  <p id="name">Añadir</p>-->
         </div>
       </a>
     </div>
+  </div>
+  <div class="content" *ngIf="semidesk == 1">
+    <app-searchuser></app-searchuser>
   </div>
 </main>

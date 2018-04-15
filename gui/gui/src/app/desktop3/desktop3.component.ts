@@ -9,14 +9,10 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
 })
 export class Desktop3Component implements OnInit {
   nombre: string;
+  semidesk: number;
   constructor(private crudProducto: UserServiceService) {
-     /*  this.crudProducto
-         .listar()
-         .map(response => response.json())
-         .subscribe(data => {
-           alert('exito');
-         });*/
          this.nombre = 'Andrés Largo';
+         this.semidesk = 1;
   }
 
   ngOnInit() {

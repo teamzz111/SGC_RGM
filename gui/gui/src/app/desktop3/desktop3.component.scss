@@ -12,7 +12,7 @@ main{
     width: 100%;
     -webkit-box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px -1px 3px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1.2px 3px 0px rgba(0, 0, 0, 0.75);
 
     .quehay{
       width: 65%;
@@ -48,12 +48,28 @@ main{
           &:hover{
             background: black;
             transition: 1s linear;
+            p#comuni{
+              display: block;
+            }
           }
-
+          &:active{
+            background: black;
+          }
 
           p#name{
             background: #1E88E5;
           }
+          p#comuni{
+            position: absolute;
+            font-size: 0.25em;
+            margin-top: 3.45em;
+            font-family: Roboto;
+            color: black;
+            display: none;
+            transition: 1s linear;
+
+          }
+
         }
         .color{
           //background: #1098F7;
