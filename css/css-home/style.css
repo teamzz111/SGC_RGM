@@ -68,7 +68,7 @@ HEADER
 =================================
 */
 header {
-  height: 10vh;
+  position: fixed;
   background: black;
   -webkit-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
@@ -121,7 +121,7 @@ header .normal {
 }
 
 header .normal ul {
-  padding: 1%;
+  padding: 0.1%;
 }
 
 header .normal .izq {
@@ -144,7 +144,7 @@ header .normal .izq li a span {
 }
 
 header .normal .izq li a img {
-  max-width: 200px;
+  max-width: 110px;
 }
 
 header .normal .der {
@@ -184,7 +184,7 @@ MAIN
 =================================
 */
 main {
-  height: 90vh;
+  height: 100vh;
 }
 
 main .cont {
@@ -331,6 +331,7 @@ section#acerca .padre .cont span {
 }
 
 section#contacto {
+  padding-top: 10vh;
   background: url("../../img/circles-and-roundabouts.png");
 }
 

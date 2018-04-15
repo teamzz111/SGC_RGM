@@ -69,7 +69,7 @@ HEADER
 */
 
 header {
-  height: 10vh;
+  position: fixed;
   background: rgb(0, 0, 0);
   -webkit-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 2px 12px -4px rgba(0, 0, 0, 0.75);
@@ -113,7 +113,7 @@ header {
   .normal {
     height: 100%;
     ul {
-      padding: 1%;
+      padding: 0.1%;
     }
     .izq {
       width: 30%;
@@ -130,7 +130,7 @@ header {
           }
           font-family: "Awesome";
           img {
-            max-width: 200px;
+            max-width: 110px;
           }
         }
       }
@@ -171,7 +171,8 @@ MAIN
 */
 
 main {
-  height: 90vh;
+
+  height: 100vh;
   .cont {
     width: 100%;
     height: 100%;
@@ -261,6 +262,7 @@ main {
 }
 
 section#acerca {
+
   background: url('../../img/new.png');
   background-size: cover;
   background-position: center;
@@ -304,6 +306,7 @@ section#acerca {
 }
 
 section#contacto {
+    padding-top: 10vh;
   background: url('../../img/circles-and-roundabouts.png');
   h2 {
     text-align: center;
