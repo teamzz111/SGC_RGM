@@ -51,7 +51,7 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('#user').val("");
                         $('#pass').val("");
-                        location.href = "gui/gui/dist/index.html";
+                        location.href = "gui/index.html";
                     }, 1500);
                 } else if (data == 'false') {
                     $('main .cont .noti').css('background', 'red');

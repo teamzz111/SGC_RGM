@@ -25,15 +25,15 @@
 
 
     function show(){
-      $host = "localhost";
-      $db = "bd";
-      $pass = "";
-      $con = new mysqli($host, "root", $pass, $db);
+         $host = "mysql.hostinger.co";
+    $db = "u462448961_bd";
+    $pass = "nicky246";
+      $con = new mysqli($host, "u462448961_teamz", $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
         $userr = $_SESSION['username'];
-        $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM Cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = Cuenta.Empleado_cedula";
+        $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.Empleado_cedula";
 
         $rs = $con->query($query);
         $array = array();

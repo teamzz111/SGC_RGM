@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { UserServiceService } from './user-service.service'; // Importamos nuestro servicio
 import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
-
 declare var jquery: any;
 declare var $: any;
 
