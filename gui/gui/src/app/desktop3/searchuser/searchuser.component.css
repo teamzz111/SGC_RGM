@@ -1,0 +1,84 @@
+div#padre {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  margin-top: 1em;
+  padding: 1%;
+  border-radius: 1em;
+}
+
+div#padre h2 {
+  font-family: "Sans";
+  font-weight: 300;
+  text-align: center;
+  padding: 0.5%;
+  font-size: 2em;
+}
+
+div#padre input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 0.5%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  margin-bottom: 1%;
+}
+
+div#padre input[type="submit"] {
+  background: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 0.7%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 0.7%;
+  font-size: 1.1em;
+  font-family: "Roboto";
+  margin-bottom: 1em;
+}
+
+div#padre input[type="checkbox"] {
+  background: white;
+  border: 1px solid black;
+  width: 50px;
+}
+
+div#padre label {
+  font-size: 1.25em;
+  font-family: "Roboto";
+}
+
+div#padre table {
+  border: 1px solid black;
+  width: 90%;
+  margin: auto;
+  font-size: 1em;
+  font-family: "Roboto";
+  font-weight: 300;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 1em;
+}
+
+div#padre table tr, div#padre table th {
+  padding: 1%;
+  border-bottom: 1px solid black;
+}
+
+div#padre table th {
+  background: #0d0d5e;
+  color: white;
+}
+
+div#padre table th, div#padre table td {
+  border: 1px solid black;
+  padding: 1%;
+}
+
+div#padre #form {
+  text-align: center;
+}
+/*# sourceMappingURL=searchuser.component.css.map */
