@@ -25,18 +25,22 @@ div#padre {
     border-bottom: 1px solid black;
     margin-bottom: 1%;
   }
-  input[type="submit"]{
+  div#submit
+  {
     background: black;;
     color: white;
+    margin: auto;
     border: 1px solid black;
     border-radius: 1em;
     padding: 0.7%;
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 0.7%;
+    max-width: 200px;
     font-size: 1.1em;
     font-family: "Roboto";
     margin-bottom: 1em;
+    cursor: pointer;
   }
   input[type="checkbox"]{
     background: white;

@@ -30,15 +30,16 @@ export class AppComponent {
     this.desk = 3;
     this.cmenu = 0;
     this.loggedin = 0;
-    this.url = 'http://localhost/SGC_RGM/login.html';
+    this.url = 'http://localhost/sgc/login.html';
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.verifySession();
     this.crudProducto
-    .listar() // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
+    .listar(1) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
     .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
     });
+
   }
 
   showDesk(number) {
@@ -85,7 +86,7 @@ export class AppComponent {
 
   verifySession() {
     this.crudProducto.verify().map(response => response.json()).subscribe(data => {
-      if (data === 'false' || data === 'Nothing') {
+      if (data === 'Nothing') {
         location.href = this.url;
       }
     });

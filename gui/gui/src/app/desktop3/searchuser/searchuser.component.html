@@ -1,18 +1,21 @@
 
   <div id="padre">
     <h2>Buscar usuarios</h2>
-    <form action="" id = "form">
+    <form id = "form">
       <input type="text" name="user" id="nombreU" placeholder="Identificación"><br>
-      <input type="submit" text="Buscar" value = "Buscar"><br>
-      <input type="checkbox" name="" id="">
-      <label for="checkbox">Usuarios normales</label>
+      <input type="checkbox" name="usersn" id="">
+      <label for="checkbox">Usuarios demo</label>
       <input type="checkbox" name="empleados" id="">
-      <label for="checkbox">Empleados</label>
+      <label for="checkbox">Coordinador</label>
       <input type="checkbox" name="administradr" id="">
       <label for="checkbox">Administradores</label>
+      <input type="checkbox" name="lider" id="">
+      <label for="checkbox">Líder de proceso</label>
+      <br>
+      <div id = "submit"(click)="test($event)">Buscar</div>
     </form>
     <table>
-      <tr>
+      <tr *ngIf="datostabla == 1">
         <th>Cedula</th>
         <th>Nombre</th>
         <th>Apellido</th>
@@ -23,16 +26,16 @@
         <th>Seccional</th>
         <th>Sexo</th>
       </tr>
-      <tr>
-        <td>1012456 </td>
-        <td>Andres</td>
-        <td>argo</td>
-        <td>Email</td>
-        <td>Teléfono</td>
-        <td>Dirección</td>
-        <td>Número</td>
-        <td>Seccional</td>
-        <td>Sexo</td>
+      <tr *ngFor="let item of listado" >
+        <td>{{item.cedula}} </td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.telefono}}</td>
+        <td>{{item.direccion}}</td>
+        <td>{{item.numero}}</td>
+        <td>{{item.Seccional_idSeccional}}</td>
+        <td>{{item.sexo}}</td>
       </tr>
     </table>
   </div>
