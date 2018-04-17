@@ -72,6 +72,18 @@ export class SearchuserComponent  {
             }
           });
         }
+      } else {
+        this.crudProducto
+          .buscar(1, $('#nombreU').val()) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
+          .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+          .subscribe(data => {
+            if (data === 'error') {
+              alert('atención');
+            } else {
+              this.listado = data;
+              this.datostabla = 1;
+            }
+          });
       }
   }
 

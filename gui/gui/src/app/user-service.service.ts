@@ -15,7 +15,7 @@ export class UserServiceService {
           return this.http.get(
       'http://localhost/sgc/gui/php/test.php?srv=4');
     }
-    }
+  }
   closeSession() {
     return this.http.get('http://localhost/sgc/gui/php/test.php?srv=2');
   }
@@ -28,6 +28,8 @@ export class UserServiceService {
     if ( n === 0 ) {
       return this.http.get('http://localhost/sgc/gui/php/options.php?srv=5&opt1=' + string.substring(0 , 1) +
        '&opt2=' + string.substring(1 , 2) + '&opt3=' + string.substring(2 , 3) + '&opt4=' + string.substring(3 , 4) );
+    } else {
+      return this.http.get('http://localhost/sgc/gui/php/options.php?srv=5&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
     }
   }
 

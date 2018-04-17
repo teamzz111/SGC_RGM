@@ -43,12 +43,12 @@
             die("Conexión errónea: " . $con->connect_error);
         }
         $userr = $_SESSION['username'];
-        $query;
+        $query = '';
         if($tipo == 1){
-          $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.Empleado_cedula";
+          $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.empleado_cedula";
         }
         else if($tipo == 2) {
-          $query = "SELECT * FROM empleado LIMIT 20";            
+          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, cuenta.cargo, empleado.seccional_idSeccional, empleado.sexo FROM empleado, cuenta WHERE empleado.cedula = cuenta.empleado_cedula";
         }
 
         $rs = $con->query($query);
