@@ -7,15 +7,13 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
   templateUrl: './desktop3.component.html',
   styleUrls: ['./desktop3.component.css']
 })
-export class Desktop3Component implements OnInit {
+export class Desktop3Component  {
   nombre: string;
   semidesk: number;
   constructor(private crudProducto: UserServiceService) {
          this.nombre = 'Andrés Largo';
-         this.semidesk = 1;
+         this.semidesk = 0;
   }
 
-  ngOnInit() {
-  }
 
 }
