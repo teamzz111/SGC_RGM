@@ -22,7 +22,8 @@
             mysql_select_db($db,$con) or die("No se pudo conectar a la base de datos. ");
             mysql_query("INSERT INTO empleado(`cedula`, `nombre`, `apellido`, `email`, `telefono`, `direccion`, `numero`, `sexo`, `idSeccional`, `idCargos`) VALUES
             ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)");
-
+            
+            echo '<script language="javascript">alert("Empleaducho añadido");</script>'; 
         }
         else   
         {
