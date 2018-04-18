@@ -1,9 +1,8 @@
  <?php
     session_start();
-    $host = "localhost";
-    $db = "bd";
-    $pass = "";
-      $con = new mysqli($host, "root", $pass, $db);
+    include 'test.php';
+    $key = "92AE31B89FEEB2A3"; //llave
+    $con = new mysqli($host, "root", $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }

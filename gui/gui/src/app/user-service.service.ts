@@ -6,30 +6,33 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserServiceService {
   data;
-  constructor(private http: Http) {}
+  url: string;
+  constructor(private http: Http) {
+     this.url = 'localhost';
+  }
+
   listar(opt) {
     if ( opt === 1) {
     return this.http.get(
-      'http://localhost/sgc/gui/php/test.php?srv=1');
+      '../../php/test.php?srv=1');
     } else {
-          return this.http.get(
-      'http://localhost/sgc/gui/php/test.php?srv=4');
+          return this.http.get('../../php/test.php?srv=4');
     }
   }
   closeSession() {
-    return this.http.get('http://localhost/sgc/gui/php/test.php?srv=2');
+    return this.http.get('../../php/test.php?srv=2');
   }
 
   verify() {
-    return this.http.get('http://localhost/sgc/gui/php/test.php?srv=3');
+    return this.http.get('../../php/test.php?srv=3');
   }
 
   buscar(n, string) {
     if ( n === 0 ) {
-      return this.http.get('http://localhost/sgc/gui/php/options.php?srv=5&opt1=' + string.substring(0 , 1) +
+      return this.http.get('../../php/options.php?srv=5&opt1=' + string.substring(0 , 1) +
        '&opt2=' + string.substring(1 , 2) + '&opt3=' + string.substring(2 , 3) + '&opt4=' + string.substring(3 , 4) );
     } else {
-      return this.http.get('http://localhost/sgc/gui/php/options.php?srv=5&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
+      return this.http.get('../../php/options.php?srv=5&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
     }
   }
 
