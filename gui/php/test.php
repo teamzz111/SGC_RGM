@@ -1,20 +1,21 @@
 ﻿<?php
    session_start();
+   global $host, $db, $pass, $key;
    $host = "localhost";
    $db = "bd";
    $pass = "";
    $key = "92AE31B89FEEB2A3"; //llave
-   switch($_GET['srv']){
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');
      exit(0);
     }
     else if(!isset($_GET['srv']) && $_SESSION['job'] == 0){
-      show(1);
+      show(1, $host, $db, $pass, $key);
       exit(0);
     }
+    switch($_GET['srv']){
       case 1:{
-        show(1);
+        show(1, $host, $db, $pass, $key);
         break;
       }
 
@@ -30,14 +31,14 @@
         exit(0);
       }
       case 4: {
-        show(2);
+        show(2, $host, $db, $pass, $key);
       }
 
 
     }
 
 
-    function show($tipo){
+    function show($tipo, $host, $db,  $pass, $key){
         
         $con = new mysqli($host, "root", $pass, $db);
         if($con -> connect_error){

@@ -1,13 +1,12 @@
  <?php
     session_start();
     include 'test.php';
-    $key = "92AE31B89FEEB2A3"; //llave
     $con = new mysqli($host, "root", $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
             $rs;
-         $a = 0;
+         $a = 0; 
         if($_GET['opt1'] == 10){
             $asd = $_GET['cc'];
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, cuenta.cargo, empleado.seccional_idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
