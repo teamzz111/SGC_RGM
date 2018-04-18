@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cc4489ee-aac9-488b-8a5b-2bc3cdb2da45" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/php/options.php" beforeDir="false" afterPath="$PROJECT_DIR$/gui/php/options.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/php/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/gui/php/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gui/src/app/desktop3/insertuser/insertuser.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui/src/app/desktop3/insertuser/insertuser.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gui/src/app/user-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui/src/app/user-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/gui/php/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +25,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui/php/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="85" lean-forward="true" selection-start-line="8" selection-start-column="85" selection-end-line="8" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/php/options.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="12" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -37,8 +46,8 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/php/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="160" selection-start-line="52" selection-start-column="160" selection-end-line="52" selection-end-column="160" />
+            <state relative-caret-position="493">
+              <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -47,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/login/login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -63,6 +72,7 @@
         <option value="$PROJECT_DIR$/login/login.php" />
         <option value="$PROJECT_DIR$/gui/php/test.php" />
         <option value="$PROJECT_DIR$/gui/php/options.php" />
+        <option value="$PROJECT_DIR$/gui/php/register.php" />
       </list>
     </option>
   </component>
@@ -77,7 +87,7 @@
       <path value="" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="219" />
     <option name="y" value="28" />
     <option name="width" value="1400" />
@@ -157,25 +167,25 @@
       <workItem from="1522551633121" duration="184000" />
       <workItem from="1523937839403" duration="4768000" />
       <workItem from="1524031684875" duration="1052000" />
-      <workItem from="1524072400775" duration="599000" />
+      <workItem from="1524072400775" duration="5421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6603000" />
+    <option name="totallyTimeSpent" value="11425000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="219" y="28" width="1400" height="1000" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13945086" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.100520834" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32884398" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3284055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -285,6 +295,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/php/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login/email.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -292,24 +309,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui/php/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/php/test.php">
+    <entry file="file://$PROJECT_DIR$/gui/php/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="160" selection-start-line="52" selection-start-column="160" selection-end-line="52" selection-end-column="160" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/php/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="136">
+          <caret line="8" column="85" lean-forward="true" selection-start-line="8" selection-start-column="85" selection-end-line="8" selection-end-column="85" />
         </state>
       </provider>
     </entry>

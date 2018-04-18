@@ -10,7 +10,9 @@ export class UserServiceService {
   constructor(private http: Http) {
      this.url = 'localhost';
   }
-
+  registrar(opt) {
+    return this.http.get('../../php/register.php?opt=' + opt);
+  }
   listar(opt) {
     if ( opt === 1) {
     return this.http.get(
