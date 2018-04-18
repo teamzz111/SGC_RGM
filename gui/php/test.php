@@ -1,17 +1,21 @@
 ﻿<?php
    session_start();
-
+   global $host, $db, $pass, $key;
+   $host = "localhost";
+   $db = "bd";
+   $pass = "";
+   $key = "92AE31B89FEEB2A3"; //llave
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');
      exit(0);
     }
     else if(!isset($_GET['srv']) && $_SESSION['job'] == 0){
-      show(1);
+      show(1, $host, $db, $pass, $key);
       exit(0);
     }
     switch($_GET['srv']){
       case 1:{
-        show(1);
+        show(1, $host, $db, $pass, $key);
         break;
       }
 
@@ -27,28 +31,26 @@
         exit(0);
       }
       case 4: {
-        show(2);
+        show(2, $host, $db, $pass, $key);
       }
 
 
     }
 
 
-    function show($tipo){
-    $host = "localhost";
-    $db = "bd";
-    $pass = "";
-      $con = new mysqli($host, "root", $pass, $db);
+    function show($tipo, $host, $db,  $pass, $key){
+        
+        $con = new mysqli($host, "root", $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
         $userr = $_SESSION['username'];
         $query = '';
         if($tipo == 1){
-          $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.empleado_cedula";
+          $query = "SELECT cuenta.id, empleado.nombre, empleado.apellido, empleado.idCargos FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.empleado_cedula";
         }
         else if($tipo == 2) {
-          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, cuenta.cargo, empleado.seccional_idSeccional, empleado.sexo FROM empleado, cuenta WHERE empleado.cedula = cuenta.empleado_cedula";
+          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.idCargos, empleado.idSeccional, empleado.sexo FROM empleado, cuenta WHERE empleado.cedula = cuenta.empleado_cedula";
         }
 
         $rs = $con->query($query);
