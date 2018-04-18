@@ -47,10 +47,10 @@
         $userr = $_SESSION['username'];
         $query = '';
         if($tipo == 1){
-          $query = "SELECT cuenta.idCuenta, empleado.nombre, empleado.apellido, cuenta.cargo FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.empleado_cedula";
+          $query = "SELECT cuenta.id, empleado.nombre, empleado.apellido, empleado.idCargos FROM cuenta, empleado WHERE empleado.cedula = '$userr' AND empleado.cedula = cuenta.empleado_cedula";
         }
         else if($tipo == 2) {
-          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, cuenta.cargo, empleado.seccional_idSeccional, empleado.sexo FROM empleado, cuenta WHERE empleado.cedula = cuenta.empleado_cedula";
+          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.idCargos, empleado.idSeccional, empleado.sexo FROM empleado, cuenta WHERE empleado.cedula = cuenta.empleado_cedula";
         }
 
         $rs = $con->query($query);
