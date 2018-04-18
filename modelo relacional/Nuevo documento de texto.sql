@@ -85,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `bd`.`cuenta` (
   `idSeccional` INT NOT NULL,
   `contrasena` VARCHAR(45) NOT NULL,
   `empleado_cedula` BIGINT(50) NOT NULL,
+  `estado` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`empleado_cedula`),
   INDEX `fk_cuenta_empleado_idx` (`empleado_cedula` ASC),
   CONSTRAINT `fk_cuenta_empleado`
