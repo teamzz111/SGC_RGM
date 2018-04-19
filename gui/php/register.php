@@ -1,8 +1,5 @@
 <?php
    // include 'test.php';
-    if(isset($_GET['opt'])){
-
-    } else {
 
         if(isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion'])&& isset($_POST['numero'])/**/)
         {
@@ -13,27 +10,36 @@
             $Telefono = $_POST['telefono'];
             $Direccion = $_POST['direccion'];
             $Numero = $_POST['numero'];
-
-            $db = "bd";
+            echo $_POST['cedula'];
+            $db = "BDIOSPORFAVOR";
             $host = "localhost";
             $pw = "";
             $user = "root";
-            $con = mysql_connect($host,$user,$pw) or die("No se pudo conectar con la bd. ");
-            echo '<script language="javascript">alert("todo bien xd");</script>'; 
-            mysql_select_db($db,$con) or die("No se pudo conectar a la base de datos. ");
-            mysql_query("INSERT INTO empleado(`cedula`, `nombre`, `apellido`, `email`, `telefono`, `direccion`, `numero`, `sexo`, `idSeccional`, `idCargos`) VALUES
-            ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)");
-            
+            $con = new mysqli($host, "root", $pw, $db);
+            if($con -> connect_error){
+                die("Conexión errónea: " . $con->connect_error);
+            }
+        
+$query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)";  
+            $rs = $con->query($query);
+            echo $query;
+                   if($rs){
             echo '<script language="javascript">alert("Empleaducho añadido");</script>'; 
+                   }
+                   else
+                {
+                    echo $con->error;
+                    echo 'hola';
+                }
         }
         else   
         {
             echo "llene el campo gonorrea ome gonorrea";
         }
       
-    }
+    
 
 
     
-    }
+    
 ?>
