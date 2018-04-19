@@ -153,6 +153,7 @@ main .cont input[type="forgotten"]{
 	text-align: center;
 	outline: none;
 	font-weight: 300;
+	transition: 1.5s linear;
 }
 
 main .cont input[type="forgotten"]:hover {
