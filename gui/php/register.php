@@ -20,7 +20,7 @@
                 die("Conexión errónea: " . $con->connect_error);
             }
         
-$query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)";  
+$query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";  
             $rs = $con->query($query);
             echo $query;
                    if($rs){
