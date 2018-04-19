@@ -15,8 +15,8 @@
               <input type="radio" name="gender" value="female"> Female
               <input type="radio" name="gender" value="other"> Other
               <br>
-              <select *ngFor= "let item of listado" >
-                <option value={{item.nombre}}>{{item.nombre}} - {{item.nivel}}</option>
+              <select  >
+                <option *ngFor= "let item of listado" value="kieroiraksa">{{item.nombre}} - {{item.nivel}}</option>
 
               </select>
               <input type="submit" value="Registrar">

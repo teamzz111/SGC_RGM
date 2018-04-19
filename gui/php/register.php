@@ -1,5 +1,9 @@
 <?php
    // include 'test.php';
+    $db = "bd";
+    $host = "localhost";
+    $pw = "";
+    $user = "root";
     if(!isset($_GET['opt'])) {
         if (isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['numero'])/**/) {
             $Cedula = $_POST['cedula'];
@@ -10,36 +14,48 @@
             $Direccion = $_POST['direccion'];
             $Numero = $_POST['numero'];
             echo $_POST['cedula'];
-            $db = "bd";
-            $host = "localhost";
-            $pw = "";
-            $user = "root";
+
             $con = new mysqli($host, "root", $pw, $db);
             if ($con->connect_error) {
                 die("Conexión errónea: " . $con->connect_error);
             }
-<<<<<<< HEAD
-
-            $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)";
-=======
         
-$query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";  
->>>>>>> f3c6a074b0b6c9b4595dd4fec8633fcc4d7fc6b8
+            $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";
             $rs = $con->query($query);
             echo $query;
             if ($rs) {
-                echo '<script language="javascript">alert("Empleaducho añadido");</script>';
+                echo json_encode('true');
             } else {
-                echo $con->error;
-                echo 'hola';
+                echo json_encode('false');
             }
         } else {
-            echo "llene el campo gonorrea ome gonorrea";
+            echo json_encode('0');
         }
     }
     else{
         if($_GET['opt'] == 1){
-            
+            $query = "SELECT nombre, nivel FROM cargo";
+            $con = new mysqli($host, "root", $pw, $db);
+            $rs = $con->query($query);
+            $array = array();
+            $count = 0;
+            if ($rs) {
+                $array = array();
+                while ($fila = mysqli_fetch_assoc($rs)) {
+                    $count++;
+                    $array[] = array_map('utf8_encode', $fila);
+                }
+                if($count == 0 ) {
+                    echo json_encode('error');
+                    exit(0);
+                }
+                $res = json_encode($array, JSON_NUMERIC_CHECK);
+            }else{
+                $res = null;
+                echo mysqli_error($con);
+            }
+            mysqli_close($con);
+            echo $res;
         }
     }
 
