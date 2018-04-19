@@ -5,7 +5,8 @@
     $pw = "";
     $user = "root";
     if(!isset($_GET['opt'])) {
-        if (isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['numero'])/**/) {
+        if (isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['numero'])/**/) 
+        {
             $Cedula = $_POST['cedula'];
             $Nombre = $_POST['nombre'];
             $Apellido = $_POST['apellido'];
@@ -19,18 +20,26 @@
             if ($con->connect_error) {
                 die("Conexión errónea: " . $con->connect_error);
             }
-        
-            $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";
-            $rs = $con->query($query);
-            echo $query;
+    
+            if($Cedula>=1)
+            {
+                echo "eso ya existe ome";// Inserte aquí la acción a realizar en caso de que la cédula digitada ya esté registrada
+            }else
+            {
+                $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";
+                $rs = $con->query($query);
+                echo $query;
             if ($rs) {
                 echo json_encode('true');
             } else {
                 echo json_encode('false');
             }
-        } else {
+        } 
+
+        }else {
             echo json_encode('0');
         }
+            
     }
     else{
         if($_GET['opt'] == 1){
