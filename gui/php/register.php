@@ -19,26 +19,21 @@
             if ($con->connect_error) {
                 die("Conexión errónea: " . $con->connect_error);
             }
+            $query1="SELECT * FROM empleado WHERE cedula=".$Cedula;
+            $resultado = $con ->query($query1);        
     
-            if($Cedula>=1)
-            {
-                echo "eso ya existe ome";// Inserte aquí la acción a realizar en caso de que la cédula digitada ya esté registrada
-            }else
-            {
+            if ($resultado->num_rows>0) {echo "nel";}
+            else{
                 $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";
+                $query1= "INSERT INTO `cuenta` VALUES ('$Cedula','123456789')";
                 $rs = $con->query($query);
+                $result = $con->query($query1);
                 echo $query;
-            if ($rs) {
-                echo json_encode('true');
-            } else {
-                echo json_encode('false');
+                if ($rs) { echo json_encode('true');} 
+                else { echo json_encode('false'); }
             }
-        } 
-
-        }else {
-            echo json_encode('0');
         }
-            
+        else { echo json_encode('0'); }      
     }
     else{
         $query;
