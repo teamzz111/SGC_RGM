@@ -99,6 +99,42 @@ main .cont input[type="submit"] {
   font-weight: 300;
   font-size: 1.2em;
 }
+main .cont input[type="forgotten"]{	
+	font-family: "Sans";	
+	background: transparent;	
+	color: #74FF00;	
+	border: solid;	
+	border-color: transparent;	
+	text-align: center;	
+	cursor:pointer;	
+	outline: none;	
+}	
+main .cont input[type="forgotten"]:hover {	
+  background: transparent;	
+  color: white;	
+  border-color: transparent;	
+  cursor: pointer;	
+  outline: none;	
+}	
+
+main .cont input[type="forgotten"]{	
+	font-family: "Sans";	
+	background: transparent;	
+	color: #74FF00;	
+	border: solid;	
+	border-color: transparent;	
+	text-align: center;	
+	cursor:pointer;	
+	outline: none;	
+}	
+
+main .cont input[type="forgotten"]:hover {	
+  background: transparent;	
+  color: white;	
+  border-color: transparent;	
+  cursor: pointer;	
+  outline: none;	
+}	
 
 main .cont input[type="submit"]:hover {
   background: transparent;
@@ -106,22 +142,26 @@ main .cont input[type="submit"]:hover {
   border-color: white;
   cursor: pointer;
 }
+<<<<<<< HEAD
+
 main .cont input[type="forgotten"]{
+	cursor: pointer;
 	font-family: "Sans";
 	background: transparent;
 	color: #74FF00;
-	border: solid;
 	border-color: transparent;
 	text-align: center;
-	cursor:pointer;
 	outline: none;
+	font-weight: 300;
 }
+
 main .cont input[type="forgotten"]:hover {
   background: transparent;
   color: white;
   border-color: transparent;
   cursor: pointer;
   outline: none;
+  width: 100%;
 }
 
 /*# sourceMappingURL=loginstyle.css.map */

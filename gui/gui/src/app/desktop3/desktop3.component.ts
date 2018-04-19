@@ -12,7 +12,7 @@ export class Desktop3Component  {
   semidesk: number;
   constructor(private crudProducto: UserServiceService) {
          this.nombre = 'Andrés Largo';
-         this.semidesk = 0;
+         this.semidesk = 3;
   }
 
 

@@ -48,8 +48,8 @@
 }
 
 .papa .der input[type="radio"] {
-  margin-bottom: 3.5%;
-  margin-top: 1.5%;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .papa .der input[type="submit"] {
@@ -65,5 +65,14 @@
   border: 1px solid white;
   color: white;
   cursor: pointer;
+}
+
+.papa .der select {
+  font-size: 1em;
+  font-family: "Sans";
+  font-weight: 300;
+  padding: 1%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 /*# sourceMappingURL=insertuser.component.css.map */
