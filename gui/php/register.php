@@ -10,7 +10,7 @@
             $Direccion = $_POST['direccion'];
             $Numero = $_POST['numero'];
             echo $_POST['cedula'];
-            $db = "BDIOSPORFAVOR";
+            $db = "bd";
             $host = "localhost";
             $pw = "";
             $user = "root";
@@ -18,8 +18,13 @@
             if ($con->connect_error) {
                 die("Conexión errónea: " . $con->connect_error);
             }
+<<<<<<< HEAD
 
             $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)";
+=======
+        
+$query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";  
+>>>>>>> f3c6a074b0b6c9b4595dd4fec8633fcc4d7fc6b8
             $rs = $con->query($query);
             echo $query;
             if ($rs) {
