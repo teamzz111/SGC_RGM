@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc4489ee-aac9-488b-8a5b-2bc3cdb2da45" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/gui/gui/src/app/desktop3/insertuser/insertuser.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui/src/app/desktop3/insertuser/insertuser.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/gui/php/register.php" afterDir="false" />
-    </list>
+    <list default="true" id="cc4489ee-aac9-488b-8a5b-2bc3cdb2da45" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +23,8 @@
       <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui/php/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="267">
+              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -85,7 +82,7 @@
       <path value="" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -164,18 +161,18 @@
       <workItem from="1522551633121" duration="184000" />
       <workItem from="1523937839403" duration="4768000" />
       <workItem from="1524031684875" duration="1052000" />
-      <workItem from="1524072400775" duration="9179000" />
+      <workItem from="1524072400775" duration="9801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15183000" />
+    <option name="totallyTimeSpent" value="15805000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20146137" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100520834" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -322,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/php/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="267">
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
         </state>
       </provider>
     </entry>
