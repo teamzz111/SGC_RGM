@@ -1,17 +1,8 @@
-  
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-  </head>
-  <body>
+
       <div class="papa">
           <div class="der">
             <p>Registrar usuario</p>
-            <form method="POST" action="../../../../../php/register.php" id="formulario"> 
+            <form method="POST" action="../../../../../php/register.php" id="formulario">
               <input type="number" name="cedula" id="" placeholder="Cedula"  required>
               <input type="text" name="nombre" id="" placeholder="Nombres"  required>
               <input type="text" name="apellido" id="" placeholder="Apellidos" required>
@@ -26,7 +17,7 @@
               <br>
               <select *ngFor= "let item of listado" >
                 <option value={{item.nombre}}>{{item.nombre}} - {{item.nivel}}</option>
-        
+
               </select>
               <input type="submit" value="Registrar">
             </form>
@@ -34,41 +25,3 @@
           <div class="izq">
           </div>
         </div>
-        <script src="jquery.min.js">
-          alert("me estoy ejecutando maldita vida");
-           $('#formulario').submit(function (e) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'gui/php/register.php',
-                    data: $('#formulario').serialize(),
-                    success: function (data) {
-                        alert(data);
-                        if (data == 'true') {
-         
-                            setTimeout(function () {
-        
-                            }, 1500);
-                        } else if (data == 'false') {
-        
-                            setTimeout(function () {
-        
-                            }, 1500);
-                        } else {
-                            alert(data);
-        
-                            setTimeout(function () {
-          
-                            }, 2200);
-                        }
-                    },
-                    error: function (data) {
-                        $('main .cont .noti').css('background', 'red');
-                        $('main .cont .noti').html('¡Lo sentimos! Tus datos se han quedado en el limbo, reinicia la página e intenta de nuevo.');
-                        $('main .cont .noti').css('display', 'block');
-                    }
-                });
-                e.preventDefault();
-            });
-        </script>
-  </body>
-  </html>
