@@ -14,8 +14,7 @@
             $Telefono = $_POST['telefono'];
             $Direccion = $_POST['direccion'];
             $Numero = $_POST['numero'];
-            echo $_POST['cedula'];
-
+            
             $con = new mysqli($host, "root", $pw, $db);
             if ($con->connect_error) {
                 die("Conexión errónea: " . $con->connect_error);
@@ -42,30 +41,35 @@
             
     }
     else{
-        if($_GET['opt'] == 1){
+        $query;
+        if($_GET['opt'] == 1) {
             $query = "SELECT nombre, nivel FROM cargo";
-            $con = new mysqli($host, "root", $pw, $db);
-            $rs = $con->query($query);
-            $array = array();
-            $count = 0;
-            if ($rs) {
-                $array = array();
-                while ($fila = mysqli_fetch_assoc($rs)) {
-                    $count++;
-                    $array[] = array_map('utf8_encode', $fila);
-                }
-                if($count == 0 ) {
-                    echo json_encode('error');
-                    exit(0);
-                }
-                $res = json_encode($array, JSON_NUMERIC_CHECK);
-            }else{
-                $res = null;
-                echo mysqli_error($con);
-            }
-            mysqli_close($con);
-            echo $res;
         }
+        else{
+
+        }
+        $con = new mysqli($host, "root", $pw, $db);
+        $rs = $con->query($query);
+        $array = array();
+        $count = 0;
+        if ($rs) {
+            $array = array();
+            while ($fila = mysqli_fetch_assoc($rs)) {
+                $count++;
+                $array[] = array_map('utf8_encode', $fila);
+            }
+            if($count == 0 ) {
+                echo json_encode('error');
+                exit(0);
+            }
+            $res = json_encode($array, JSON_NUMERIC_CHECK);
+        }else{
+            $res = null;
+            echo mysqli_error($con);
+            }
+        mysqli_close($con);
+        echo $res;
+        
     }
 
     
