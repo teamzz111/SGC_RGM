@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../.././user-service.service'; // Importamos nuestro servicio
 import 'rxjs/add/operator/map';
+declare var jquery: any;
+declare var $: any;
 @Component({
   selector: 'app-insertuser',
   templateUrl: './insertuser.component.html',
@@ -23,6 +25,8 @@ export class InsertuserComponent {
     this.listado2 = data; // Asignamos nuestros datos mapeados a una variable
     });
    }
-
+   send() {
+    this.crudProducto.insertar($('form cedula').val());
+   }
 
 }

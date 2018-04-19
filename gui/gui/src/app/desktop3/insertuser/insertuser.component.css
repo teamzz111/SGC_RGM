@@ -20,14 +20,15 @@
 }
 
 .papa .izq {
+  display: flex;
+  align-content: center;
+  align-items: center;
   width: 50%;
-  background: url("../../../assets/img/about_us.jpg");
-  background-position: center;
   border-left: 1px solid rgba(139, 135, 135, 0.7);
-  background-size: cover;
 }
 
 .papa .der {
+  padding: 2%;
   width: 50%;
   text-align: center;
 }
@@ -74,5 +75,18 @@
   padding: 1%;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: #0ec20e;
+  margin-top: -100%;
 }
 /*# sourceMappingURL=insertuser.component.css.map */

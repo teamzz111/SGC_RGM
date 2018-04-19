@@ -5,6 +5,8 @@
     $pw = "";
     $user = "root";
     if(!isset($_GET['opt'])) {
+        echo $_POST['data'];
+        exit(0);
         if (isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['numero'])/**/) 
         {
             $Cedula = $_POST['cedula'];

@@ -17,20 +17,21 @@
     font-size: 2em;
   }
   .izq {
-    width: 50%;
-    background: url('../../../assets/img/about_us.jpg');
-    background-position: center;
-    border-left: 1px solid rgba(139, 135, 135, .7);
-    background-size: cover;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 50%; //background: url('../../../assets/img/about_us.jpg');
+    //background-size: cover;
+    //background-position: center;
+    border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
   }
   .der {
-
-
+    padding: 2%;
     width: 50%;
     text-align: center;
     input[type="text"],
     input[type="email"],
-    input[type="number"]{
+    input[type="number"] {
       width: 100%;
       max-width: 450px;
       margin-top: 1%;
@@ -42,11 +43,11 @@
       border: 1px solid transparent;
       border-bottom: 1px solid rgb(97, 97, 97);
     }
-    input[type = "radio"]{
+    input[type="radio"] {
       margin-bottom: 1em;
       margin-top: 1em;
     }
-    input[type = "submit"]{
+    input[type="submit"] {
       font-size: 1em;
       font-family: "Sans";
       font-weight: 300;
@@ -60,7 +61,7 @@
       color: white;
       cursor: pointer;
     }
-    select{
+    select {
       font-size: 1em;
       font-family: "Sans";
       font-weight: 300;
@@ -69,4 +70,17 @@
       margin-bottom: 1em;
     }
   }
+}
+
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: rgb(14, 194, 14);
+  margin-top: -100%;
 }

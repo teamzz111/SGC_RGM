@@ -1,8 +1,8 @@
 <div class="papa">
   <div class="der">
     <p>Registrar usuario</p>
-    <form method="POST" action="../../../../../php/register.php" id="formulario">
-      <input type="number" name="cedula" id="" placeholder="Cedula" required>
+    <form method="POST" action="../php/register.php" id="formulario" enctype='application/json'>
+      <input type="number" name="cedula" id="cedula" placeholder="Cedula" required>
       <input type="text" name="nombre" id="" placeholder="Nombres" required>
       <input type="text" name="apellido" id="" placeholder="Apellidos" required>
       <input type="email" name="correo" id="" placeholder="Correo electrónico" required>
@@ -20,9 +20,13 @@
       <select>
         <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.pais}} - {{item.ciudad}}</option>
       </select>
-      <input type="submit" value="Registrar">
+      <input type="submit" value="Registrar" (click)="send()">
     </form>
   </div>
+  <div class="notifi">
+    ¡Usuario insertado con éxito!
+  </div>
   <div class="izq">
+    <img src="../../../assets/img/about_us.jpg" alt="">
   </div>
 </div>
