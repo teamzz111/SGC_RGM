@@ -11,7 +11,7 @@
             $Direccion = $_POST['direccion'];
             $Numero = $_POST['numero'];
             echo $_POST['cedula'];
-            $db = "BDIOSPORFAVOR";
+            $db = "bd";
             $host = "localhost";
             $pw = "";
             $user = "root";
