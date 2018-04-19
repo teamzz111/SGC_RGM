@@ -19,26 +19,21 @@
             $pw = "";
             $user = "root";
             $con = mysql_connect($host,$user,$pw) or die("No se pudo conectar con la bd. ");
+            echo '<script language="javascript">alert("todo bien xd");</script>'; 
             mysql_select_db($db,$con) or die("No se pudo conectar a la base de datos. ");
-            $rs = $con->query("INSERT INTO empleado(`cedula`, `nombre`, `apellido`, `email`, `telefono`, `direccion`, `numero`, `sexo`, `idSeccional`, `idCargos`) VALUES
+            mysql_query("INSERT INTO empleado(`cedula`, `nombre`, `apellido`, `email`, `telefono`, `direccion`, `numero`, `sexo`, `idSeccional`, `idCargos`) VALUES
             ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,0)");
+            
             echo '<script language="javascript">alert("Empleaducho añadido");</script>'; 
-            if($rs){
-                echo json_encode('true');
-            }
-            else{
-                echo json_encode('false');
-            }
         }
         else   
         {
-            echo json_encode('error');
+            echo "llene el campo gonorrea ome gonorrea";
         }
+      
     }
 
-      
-    
 
-            
     
+    }
 ?>
