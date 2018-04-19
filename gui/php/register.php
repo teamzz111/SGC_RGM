@@ -46,7 +46,7 @@
             $query = "SELECT nombre, nivel FROM cargo";
         }
         else{
-
+            $query = "SELECT ciudad, pais FROM seccional";
         }
         $con = new mysqli($host, "root", $pw, $db);
         $rs = $con->query($query);

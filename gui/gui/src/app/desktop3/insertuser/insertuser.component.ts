@@ -8,12 +8,19 @@ import 'rxjs/add/operator/map';
 })
 export class InsertuserComponent {
   listado;
+  listado2;
   constructor(private crudProducto: UserServiceService) {
     this.crudProducto
     .registrar(1) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
     .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
+    });
+    this.crudProducto
+    .registrar(2) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
+    .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+    .subscribe(data => {
+    this.listado2 = data; // Asignamos nuestros datos mapeados a una variable
     });
    }
 
