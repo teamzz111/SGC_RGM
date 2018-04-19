@@ -115,7 +115,7 @@ main .cont input[type="forgotten"]:hover {
   border-color: transparent;	
   cursor: pointer;	
   outline: none;	
-}	
+}
 
 main .cont input[type="forgotten"]{	
 	font-family: "Sans";	
@@ -142,7 +142,6 @@ main .cont input[type="submit"]:hover {
   border-color: white;
   cursor: pointer;
 }
-<<<<<<< HEAD
 
 main .cont input[type="forgotten"]{
 	cursor: pointer;
@@ -164,5 +163,3 @@ main .cont input[type="forgotten"]:hover {
   outline: none;
   width: 100%;
 }
-
-/*# sourceMappingURL=loginstyle.css.map */
