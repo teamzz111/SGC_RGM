@@ -1,32 +1,33 @@
 <div class="papa">
   <div class="der">
     <p>Registrar usuario</p>
-    <form method="POST" action="../php/register.php" id="formulario" enctype='application/json'>
+    <form  id="formulario" method="POST">
       <input type="number" name="cedula" id="cedula" placeholder="Cedula" required>
-      <input type="text" name="nombre" id="" placeholder="Nombres" required>
-      <input type="text" name="apellido" id="" placeholder="Apellidos" required>
-      <input type="email" name="correo" id="" placeholder="Correo electrónico" required>
-      <input type="number" name="telefono" id="" placeholder="Teléfono" required>
-      <input type="text" name="direccion" id="" placeholder="Dirección" required>
-      <input type="number" name="numero" id="" placeholder="Número fijo" required>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
+      <input type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
+      <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
+      <input type="number" name="telefono" id="telefono" placeholder="Teléfono" required>
+      <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+      <input type="number" name="numero" id="number" placeholder="Número fijo" required>
       <br>
       <input type="radio" name="gender" value="male" checked> Male
       <input type="radio" name="gender" value="female"> Female
       <input type="radio" name="gender" value="other"> Other
       <br>
-      <select>
-        <option *ngFor="let item of listado" value="kieroiraksa">{{item.nombre}} - {{item.nivel}}</option>
+      <select id ='listado'>
+        <option *ngFor="let item of listado" value="kieroiraksa">{{item.nombre}}</option>
       </select>
-      <select>
-        <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.pais}} - {{item.ciudad}}</option>
+      <select id = 'listado2'>
+        <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.ciudad}}</option>
       </select>
-      <input type="submit" value="Registrar" (click)="send()">
+      <button (click)="send()">Vamos</button>
     </form>
   </div>
   <div class="notifi">
     ¡Usuario insertado con éxito!
   </div>
   <div class="izq">
-    <img src="../../../assets/img/about_us.jpg" alt="">
+    <img src="assets/img/about_us.jpg" alt="">
   </div>
 </div>
+
