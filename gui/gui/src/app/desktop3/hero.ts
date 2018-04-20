@@ -6,7 +6,7 @@ export class Hero {
     public telefono: number,
     public correo: string,
     public direccion: string,
-    public numero: string,
+    public numero: number,
     public genero: string,
     public cargo: string,
     public seccional: string

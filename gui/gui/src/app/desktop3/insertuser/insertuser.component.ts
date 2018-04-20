@@ -34,7 +34,24 @@ export class InsertuserComponent {
       this.crudProducto.insertar(this.hero)
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
-      alert('hey estos son los datos:' + data); // Asignamos nuestros datos mapeados a una variable
+        alert('datos:' + data);
+      if (data === 'true' || data === 'true2') {
+        $('.notifi').animate({marginTop: 0}, 1000, function() {
+          $(this).css('marginTop' , '100%');
+        });
+      } else if (data === 'false' || data === '0' || data === 'false2') {
+        $('.notifi').css({background: 'red'});
+        $('.notifi').text('Se encontró un error.');
+        $('.notifi').animate({marginTop: 0}, 1000, function() {
+          $(this).css('marginTop' , '100%');
+        });
+      } else if (data === 'nel') {
+        $('.notifi').css({background: 'red'});
+        $('.notifi').text('El usuario ya existe.');
+        $('.notifi').animate({marginTop: 0}, 1000, function() {
+          $(this).css('marginTop' , '100%');
+        });
+      }
     });
    }
 

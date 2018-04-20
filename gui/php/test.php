@@ -13,6 +13,10 @@
       show(1, $host, $db, $pass, $key);
       exit(0);
     }
+    else if(!isset($_GET['srv'])){
+ 
+    }
+    else{
     switch($_GET['srv']){
       case 1:{
         show(1, $host, $db, $pass, $key);
@@ -33,10 +37,12 @@
       case 4: {
         show(2, $host, $db, $pass, $key);
       }
-
+      case 6:{
+        
+      }
 
     }
-
+    }
 
     function show($tipo, $host, $db,  $pass, $key){
         
