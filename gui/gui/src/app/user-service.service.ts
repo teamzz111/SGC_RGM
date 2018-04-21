@@ -37,5 +37,8 @@ export class UserServiceService {
       return this.http.get('../../php/options.php?srv=5&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
     }
   }
-
+  insertar(data) {
+   // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res);
+    return this.http.post('../../php/register.php', JSON.stringify(data));
+  }
 }

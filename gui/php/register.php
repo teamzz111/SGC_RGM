@@ -1,71 +1,100 @@
 <?php
-   // include 'test.php';
-    $db = "bd";
-    $host = "localhost";
-    $pw = "";
-    $user = "root";
+
     if(!isset($_GET['opt'])) {
-        if (isset($_POST['cedula']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['numero'])/**/) 
-        {
-            $Cedula = $_POST['cedula'];
-            $Nombre = $_POST['nombre'];
-            $Apellido = $_POST['apellido'];
-            $Correo = $_POST['correo'];
-            $Telefono = $_POST['telefono'];
-            $Direccion = $_POST['direccion'];
-            $Numero = $_POST['numero'];
-            echo $_POST['cedula'];
+            include 'test.php';
+            $inputJSON = file_get_contents('php://input');
+            $input = json_decode($inputJSON, TRUE); 
+   
+            $Cedula = $input['cedula'];
+            $Nombre = $input['nombre'];
+     
+            $Apellido = $input['apellido'];
+        
+            $Correo = $input['correo'];
+            $Telefono = $input['telefono'];
+            $Direccion = $input['direccion'];
+            $Numero = $input['numero'];
+              
+            $Genero = $input['genero'];
 
-            $con = new mysqli($host, "root", $pw, $db);
+            $Cargo = $input['cargo'];
+            $Seccional = $input['seccional'];
+
+            $con = new mysqli($host, "root", $pass, $db);
             if ($con->connect_error) {
-                die("Conexión errónea: " . $con->connect_error);
+                echo json_encode('false'); 
             }
+            $query1="SELECT * FROM empleado WHERE cedula=".$Cedula;
+            $resultado = $con ->query($query1);        
     
-            if($Cedula>=1)
-            {
-                echo "eso ya existe ome";// Inserte aquí la acción a realizar en caso de que la cédula digitada ya esté registrada
-            }else
-            {
-                $query = "INSERT INTO `empleado` VALUES ('$Cedula', '$Nombre', '$Apellido', '$Correo', '$Telefono', '$Direccion', '$Numero', 'm', 1,1)";
+            if ($resultado->num_rows>0) {
+                echo json_encode('nel');
+            }
+            else{
+                $query = "SELECT nivel FROM cargo WHERE nombre = '$Cargo'";
+                $resultado = $con->query($query);
+                $row = $resultado->fetch_array(MYSQLI_ASSOC);
+                $Cargo = $row['nivel'];
+                
+                $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
+                $resultado3 = $con->query($query3);
+                $row3 = $resultado3->fetch_array(MYSQLI_ASSOC); 
+                $Seccional = $row3['idSeccional'];               
+                
+                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, 'm', $Seccional , $Cargo)";
                 $rs = $con->query($query);
-                echo $query;
-            if ($rs) {
-                echo json_encode('true');
-            } else {
-                echo json_encode('false');
-            }
-        } 
-
-        }else {
-            echo json_encode('0');
-        }
+                if ($rs) { 
+                    echo json_encode('true');
+                } 
+                else { 
+                    echo json_encode('false'); 
+                }
+                $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789')";
+                
             
-    }
-    else{
-        if($_GET['opt'] == 1){
-            $query = "SELECT nombre, nivel FROM cargo";
-            $con = new mysqli($host, "root", $pw, $db);
-            $rs = $con->query($query);
-            $array = array();
-            $count = 0;
-            if ($rs) {
-                $array = array();
-                while ($fila = mysqli_fetch_assoc($rs)) {
-                    $count++;
-                    $array[] = array_map('utf8_encode', $fila);
+                $result = $con->query($query1);
+            
+                if ($result) { 
+                    echo json_encode('true2');
+                } 
+                else { 
+                    echo json_encode('false2'); 
                 }
-                if($count == 0 ) {
-                    echo json_encode('error');
-                    exit(0);
-                }
-                $res = json_encode($array, JSON_NUMERIC_CHECK);
-            }else{
-                $res = null;
-                echo mysqli_error($con);
             }
-            mysqli_close($con);
-            echo $res;
         }
+   
+    
+    else{
+        include 'test.php';
+        $query;
+        if($_GET['opt'] == 1) {
+            $query = "SELECT nombre, nivel FROM cargo";
+        }
+        else{
+            $query = "SELECT ciudad, pais FROM seccional";
+        }
+        $con = new mysqli($host, "root", $pass, $db);
+        $rs = $con->query($query);
+        $array = array();
+        $count = 0;
+        if ($rs) {
+            $array = array();
+            while ($fila = mysqli_fetch_assoc($rs)) {
+                $count++;
+                $array[] = array_map('utf8_encode', $fila);
+            }
+            if($count == 0 ) {
+                echo json_encode('error');
+                exit(0);
+            }
+            $res = json_encode($array, JSON_NUMERIC_CHECK);
+        }else{
+            $res = null;
+            echo mysqli_error($con);
+            }
+        mysqli_close($con);
+        echo $res;
+        
     }
 
     
