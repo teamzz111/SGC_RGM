@@ -34,7 +34,6 @@ export class InsertuserComponent {
       this.crudProducto.insertar(this.hero)
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
-        alert('datos:' + data);
       if (data === 'true' || data === 'true2') {
         $('.notifi').animate({marginTop: 0}, 1000, function() {
           $(this).css('marginTop' , '100%');
