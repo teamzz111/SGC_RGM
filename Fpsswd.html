@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/css-login/loginstyle.css">
+</head>
+<body>
+    <main>
+        <div class="cont">
+            <h1>Reset password</h1>
+            <div class="noti">
+            </div>
+                <form method="POST" id="formulario" action="login/forgotpsswd.php">
+					<input type="text" name="user" placeholder="Cédula de ciudadanía" id="user" required>
+						<br>
+					<input type="text" name="email" placeholder="Email" id="email" required>
+						<br><br>
+                    <input type="submit" value="Reset Password">
+					<input type="submit" value="Back" readonly="readonly" onclick="location.href='login.html';">
+						<br>
+				</form>
+        </div>
+    </main>
+    
+    <script src="js/jquery.min.js">
+    </script>
+    <script src="js/animations.js"></script>
+
+</body>
+</html>
