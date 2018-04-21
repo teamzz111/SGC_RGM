@@ -9,6 +9,7 @@ import { Desktop2Component } from './desktop2/desktop2.component';
 import { Desktop3Component } from './desktop3/desktop3.component';
 import { SearchuserComponent } from './desktop3/searchuser/searchuser.component';
 import { InsertuserComponent } from './desktop3/insertuser/insertuser.component';
+import { UpdateuserComponent } from './desktop3/updateuser/updateuser.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { InsertuserComponent } from './desktop3/insertuser/insertuser.component'
     Desktop2Component,
     Desktop3Component,
     SearchuserComponent,
-    InsertuserComponent
+    InsertuserComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule, HttpModule
