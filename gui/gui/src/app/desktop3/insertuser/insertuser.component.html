@@ -20,7 +20,7 @@
       <select id = 'listado2'>
         <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.ciudad}}</option>
       </select>
-      <button (click)="send()">Vamos</button>
+      <button (click)="send(); $event.stopPropagation();">Vamos</button>
     </form>
   </div>
   <div class="notifi">
