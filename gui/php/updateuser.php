@@ -2,11 +2,12 @@
 
 if(isset($_GET['opt'])) {
     include 'test.php';
+    $con = new mysqli($host, "root", $pass, $db);
     $inputJSON = file_get_contents('php://input');
     $input = json_decode($inputJSON, TRUE);
     if($_GET['opt'] == 1)
     {
-        //llenar campos 
+        //llenar campos
         if(!isset($_GET['cc']))
         {
             echo json_encode('Nothing');
@@ -15,11 +16,13 @@ if(isset($_GET['opt'])) {
         {
             $query = "SELECT * FROM empleado WHERE cedula =".$_GET['cc'];
             $resultado = $con->query($query);
+           
             if ($resultado)
             {
                 if($resultado->num_rows > 0)
                 {
                     $array = array();
+                    $count=0;
                     while ($fila = mysqli_fetch_assoc($resultado)) {
                         $count++;
                         $array[] = array_map('utf8_encode', $fila);
@@ -28,15 +31,17 @@ if(isset($_GET['opt'])) {
                         echo json_encode('error');
                         exit(0);
                     }
-                    $res = json_encode($array, JSON_NUMERIC_CHECK);
-             
+                    $res = json_encode($array, JSON_NUMERIC_CHECK);// se supone que esto es slo que tengo que mandar no? V: , si pero no existe
+                    echo $res;
                 }
                 else
                 {
                     echo json_encode("nel");
                 }
             }
-           
+            else {
+                echo json_encode('existe');
+            }
         }
     }
     else if ($_GET['opt'] == 2)
@@ -82,8 +87,8 @@ if(isset($_GET['opt'])) {
                 if($Genero=='Hombre') {$Gen ='m';}
                 if($Genero=='Mujer') {$Gen ='f';}
                 if($Genero=='Otro') {$Gen ='o';}
-
-                $query = "UPDATE empleado SET nombre='$Nombre', apellido='$Apellido', email='$Correo', telefono=$Telefono, direccion='$Direccion', numero=$Numero,sexo='$Gen', idSeccional=$Seccional, cargo_idCargos=$Cargo WHERE cedula=$_GET['cc']";
+                $cece = $_GET['cc'];
+                $query = "UPDATE empleado SET nombre='$Nombre', apellido='$Apellido', email='$Correo', telefono=$Telefono, direccion='$Direccion', numero=$Numero,sexo='$Gen', idSeccional=$Seccional, cargo_idCargos=$Cargo WHERE cedula=$cece";
                 $rs = $con->query($query);
                 echo $rs;
                 if ($rs) {
