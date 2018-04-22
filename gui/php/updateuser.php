@@ -74,10 +74,6 @@ if(isset($_GET['opt'])) {
                 echo json_encode('nel');
             }
             else{
-                $query = "SELECT idCargos FROM cargo WHERE nombre = '$Cargo'";
-                $resultado = $con->query($query);
-                $row = $resultado->fetch_array(MYSQLI_ASSOC);
-                $Cargo = $row['idCargos'];
                 
                 $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
                 $resultado3 = $con->query($query3);
