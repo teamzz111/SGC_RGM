@@ -29,6 +29,7 @@ if(isset($_GET['opt'])) {
                         exit(0);
                     }
                     $res = json_encode($array, JSON_NUMERIC_CHECK);
+             
                 }
                 else
                 {

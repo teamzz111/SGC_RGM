@@ -57,7 +57,7 @@
           $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
         }
         else if($tipo == 2) {
-          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.idCargos, empleado.idSeccional, empleado.sexo FROM empleado";
+          $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo FROM empleado";
         }
 
         $rs = $con->query($query);
