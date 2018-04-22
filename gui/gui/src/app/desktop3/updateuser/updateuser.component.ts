@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./updateuser.component.css']
 })
 export class UpdateuserComponent implements OnInit {
-
-  constructor() { }
+  visible: boolean;
+  listado;
+  listado2;
+  constructor() {
+    this.visible = false;
+   }
 
   ngOnInit() {
   }
