@@ -38,7 +38,7 @@ export class UserServiceService {
     }
   }
   insertar(data) {
-   // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res);
+     // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res);
     return this.http.post('../../php/register.php', JSON.stringify(data));
   }
 
@@ -50,7 +50,6 @@ export class UserServiceService {
     if (n === 1) {
       return this.http.get('../../php/lockuser.php?opt=1&cc=' + data);
     } else {
-      return this.http.post();
     }
   }
 }

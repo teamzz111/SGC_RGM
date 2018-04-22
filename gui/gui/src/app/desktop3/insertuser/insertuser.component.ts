@@ -31,24 +31,24 @@ export class InsertuserComponent {
       this.hero = new Hero($('#cedula').val(), $('#nombre').val(), $('#apellido').val(), $('#telefono').val()
       , $('#correo').val(), $('#direccion').val(), $('#numero').val(), $('input:radio[name=gender]:checked').val(),
       $('#listado :selected').text(), $('#listado2 :selected').text());
-      this.crudProducto.insertar(this.hero)
+      alert(this.crudProducto.insertar(this.hero)
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
       if (data === 'true' || data === 'true2') {
-        $('.notifi').animate({marginTop: 0}, 1000, function() {
-          $(this).css('marginTop' , '100%');
+        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
+          $(this).css('marginTop' , '-10em');
         });
       } else if (data === 'false' || data === '0' || data === 'false2') {
         $('.notifi').css({background: 'red'});
         $('.notifi').text('Se encontró un error.');
-        $('.notifi').animate({marginTop: 0}, 1000, function() {
-          $(this).css('marginTop' , '100%');
+        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
+          $(this).css('marginTop' , '-10em');
         });
       } else if (data === 'nel') {
         $('.notifi').css({background: 'red'});
         $('.notifi').text('El usuario ya existe.');
-        $('.notifi').animate({marginTop: 0}, 1000, function() {
-          $(this).css('marginTop' , '100%');
+        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
+          $(this).css('marginTop' , '-10em');
         });
       }
     });

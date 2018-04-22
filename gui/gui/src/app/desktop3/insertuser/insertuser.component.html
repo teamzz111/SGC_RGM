@@ -1,7 +1,7 @@
 <div class="papa">
   <div class="der">
     <p>Registrar usuario</p>
-    <form  id="formulario" method="POST">
+
       <input type="number" name="cedula" id="cedula" placeholder="Cedula" required>
       <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
       <input type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
@@ -21,7 +21,7 @@
         <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.ciudad}}</option>
       </select>
       <button (click)="send(); $event.stopPropagation();">Vamos</button>
-    </form>
+
   </div>
   <div class="notifi">
     ¡Usuario insertado con éxito!

@@ -20,9 +20,9 @@
             $Cargo = $input['cargo'];
             $Seccional = $input['seccional'];
 
-            $con = new mysqli($host, "root", $pass, $db);
+            $con = new mysqli($host, $user, $pass, $db);
             if ($con->connect_error) {
-                echo json_encode('false'); 
+                echo json_encode('falseC'); 
             }
             $query1="SELECT * FROM empleado WHERE cedula=".$Cedula;
             $resultado = $con ->query($query1);        
@@ -47,18 +47,10 @@
 
                 $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
-                if ($rs) {
-                    echo json_encode('true');
-                } 
-                else { 
-                    echo json_encode('false'); 
-                }
-                $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789')";
-                
-            
+                $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789', 0)";
                 $result = $con->query($query1);
             
-                if ($result) { 
+                if ($result && $rs) { 
                     echo json_encode('true2');
                 } 
                 else { 

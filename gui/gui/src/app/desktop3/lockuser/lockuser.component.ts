@@ -27,7 +27,7 @@ export class LockuserComponent {
         $('.notifi').animate({marginTop: 0}, 1000, function() {
           $(this).css('marginTop' , '100%');
         });
-        } else if(data) {
+        } else if (data) {
 
         }
       });
