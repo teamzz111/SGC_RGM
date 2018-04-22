@@ -6,79 +6,35 @@
     $db = "bd";
     $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, "root", $pass, $db);
+	mysql_connect($host,"root",$pass)or die (mysql_error());
+	mysql_select_db($db)or die (mysql_error());
 
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-	$long=strlen($char);
+	$long=strlen($char)-1;
 	$j[0]=0;
 	for($i=0;$i<9;$i++){
 		$c=rand(0,$long);
-		$n=0;
 		$n=$char[$c];
 		$j[0].=$n;
 	}
-	echo $j[0];
+	$crp = $j[0];
 	$crip = encrypt($j[0],$key);
 
-	if($con -> connect_error){
-        die("Conexión errónea: " . $con->connect_error);
+	$user = $_POST['user'];
+	$email = $_POST['email'];
+	$query = mysql_query("SELECT email FROM empleado WHERE cedula ='$user'")or die (mysql_error());
+	while($r=mysql_fetch_array($query)){
+		if($r[0] == $email){
+			mysql_query("UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula='$user'")or die (mysql_error());
+			echo "<br>";
+			echo $crp." es la nueva clave de acceso.";
+			echo "<br>";
+			echo $crip." es su encriptacion.";
+		}
+		else{
+			echo "Usuario no encontrado.";
+		}
+		
 	}
-	if($_GET['auth'] == 1){
-        $user = $_POST['user'];
-        $email = $_POST['email'];
-        $query = "UPDATE 'cuenta' SET contrasena='$crip' WHERE empleado_cedula='$username'";
-		
-        $result = $con->query($query);
-
-        if($result){
-			<script language="javascript">
-			alert("true");
-			</script>
-            
-            }
-            else{
-				echo "false";
-				<script language="javascript">
-				alert("false");
-				</script>
-            }
-        }
-        else{
-            echo "0";
-        }
-    }
-    else{
-        
-    }
-
-
-
-
-
-	/*
-	otroooo
-	
-	$r = mysql_fetch_assoc($res);
-		$username = $r['user'];
-		$email = $r['email'];
-		
-		$usql = "UPDATE 'cuenta' SET contrasena='$crip' WHERE empleado_cedula='$username'";
-		$result = mysqli_query($connection, $usql);
-		if($result){
-			$mail = "Prueba de mensaje";
-			//Titulo
-			$titulo = "PRUEBA DE TITULO";
-			//cabecera
-			$headers = "MIME-Version: 1.0\r\n"; 
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-			//dirección del remitente 
-			$headers .= "From: Geeky Theory < jamorales516@icloud.com >\r\n";
-			//Enviamos el mensaje a jamorales516@icloud.com
-			$bool = mail("jamorales516@icloud.com",$titulo,$mail,$headers);
-			if($bool){
-				echo "Mensaje enviado";
-			}else{
-				echo "Mensaje no enviado";
-			}
-		}*/
+    
 ?>
