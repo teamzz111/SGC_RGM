@@ -53,7 +53,7 @@
                 else { 
                     echo json_encode('false'); 
                 }
-                $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789')";
+                $query1= "INSERT INTO `cuenta` VALUES ('123456789',$Cedula,'Activo')";
                 
             
                 $result = $con->query($query1);
