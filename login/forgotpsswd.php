@@ -6,8 +6,7 @@
     $db = "bd";
     $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
-	mysql_connect($host,"root",$pass)or die (mysql_error());
-	mysql_select_db($db)or die (mysql_error());
+    $con = new mysqli($host, "root", $pass, $db);
 
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 	$long=strlen($char)-1;
@@ -22,12 +21,14 @@
 
 	$user = $_POST['user'];
 	$email = $_POST['email'];
-	$query = mysql_query("SELECT email FROM empleado WHERE cedula ='$user'")or die (mysql_error());
-	while($r=mysql_fetch_array($query)){
-		if($r[0] == $email){
-			mysql_query("UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula='$user'")or die (mysql_error());
+	$query = $con->query("SELECT email FROM empleado WHERE cedula ='$user'");
+
+	while($r = $query -> fetch_array(MYSQLI_ASSOC)){
+		if($r['email'] == $email){
+			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE cedula=$user");
 			echo "<br>";
 			echo $crp." es la nueva clave de acceso.";
+			echo "UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula=$user";
 			echo "<br>";
 			echo $crip." es su encriptacion.";
 		}
