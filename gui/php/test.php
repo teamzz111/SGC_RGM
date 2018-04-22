@@ -1,16 +1,17 @@
 ﻿<?php
    session_start();
-   global $host, $db, $pass, $key;
+   global $host, $db, $pass, $key, $user;
    $host = "localhost";
    $db = "bd";
    $pass = "";
+   $user = "root";
    $key = "92AE31B89FEEB2A3"; //llave
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');
      exit(0);
     }
     else if(!isset($_GET['srv']) && $_SESSION['job'] == 0){
-      show(1, $host, $db, $pass, $key);
+      show(1, $host, $db, $pass, $user, $key);
       exit(0);
     }
     else if(!isset($_GET['srv'])){
@@ -19,7 +20,7 @@
     else{
     switch($_GET['srv']){
       case 1:{
-        show(1, $host, $db, $pass, $key);
+        show(1, $host, $db, $pass, $user, $key);
         break;
       }
 
@@ -35,7 +36,7 @@
         exit(0);
       }
       case 4: {
-        show(2, $host, $db, $pass, $key);
+        show(2, $host, $db, $pass, $user, $key);
       }
       case 6:{
         
@@ -44,9 +45,9 @@
     }
     }
 
-    function show($tipo, $host, $db,  $pass, $key){
+    function show($tipo, $host, $db,  $pass, $user, $key){
         
-        $con = new mysqli($host, "root", $pass, $db);
+        $con = new mysqli($host, $user, $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }

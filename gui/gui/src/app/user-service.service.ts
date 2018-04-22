@@ -45,4 +45,12 @@ export class UserServiceService {
   busca(data) {
     return this.http.get('../../php/updateuser.php?opt=1&cc=' + data);
   }
+
+  bloquear(n, data) {
+    if (n === 1) {
+      return this.http.get('../../php/lockuser.php?opt=1&cc=' + data);
+    } else {
+      return this.http.post();
+    }
+  }
 }
