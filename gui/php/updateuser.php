@@ -14,7 +14,7 @@ if(isset($_GET['opt'])) {
         }
         else
         {
-            $query = "SELECT e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre FROM empleado as e, cargo as c WHERE e.cargo_idCargos=c.idCargos and e.cedula =".$_GET['cc'];
+            $query = "SELECT e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre as cargo FROM empleado as e, cargo as c WHERE e.cargo_idCargos=c.idCargos and e.cedula =".$_GET['cc'];
             $resultado = $con->query($query);
            
             if ($resultado)
