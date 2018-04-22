@@ -4,7 +4,7 @@
     session_start();
     $host = "localhost";
     $db = "bd";
-    $pass = "nicky246";
+    $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
     $con = new mysqli($host, "root", $pass, $db);
 
