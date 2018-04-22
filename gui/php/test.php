@@ -3,7 +3,7 @@
    global $host, $db, $pass, $key;
    $host = "localhost";
    $db = "bd";
-   $pass = "nicky246";
+   $pass = "";
    $key = "92AE31B89FEEB2A3"; //llave
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');
