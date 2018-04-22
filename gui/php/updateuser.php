@@ -43,6 +43,56 @@ if(isset($_GET['opt'])) {
         
         //Modificar
         // BUSCA LA COSA $_GET['cc]
+            $Nombre = $input['nombre'];
+     
+            $Apellido = $input['apellido'];
+        
+            $Correo = $input['correo'];
+            $Telefono = $input['telefono'];
+            $Direccion = $input['direccion'];
+            $Numero = $input['numero'];
+              
+            $Genero = $input['genero'];
+
+            $Cargo = $input['cargo'];
+            $Seccional = $input['seccional'];
+
+            $con = new mysqli($host, $user, $pass, $db);
+            if ($con->connect_error) {
+                echo json_encode('falseC'); 
+            }
+            $query1="SELECT * FROM empleado WHERE cedula=".$Cedula;
+            $resultado = $con ->query($query1);        
+    
+            if ($resultado->num_rows>0) {
+                echo json_encode('nel');
+            }
+            else{
+                $query = "SELECT idCargos FROM cargo WHERE nombre = '$Cargo'";
+                $resultado = $con->query($query);
+                $row = $resultado->fetch_array(MYSQLI_ASSOC);
+                $Cargo = $row['idCargos'];
+                
+                $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
+                $resultado3 = $con->query($query3);
+                $row3 = $resultado3->fetch_array(MYSQLI_ASSOC); 
+                $Seccional = $row3['idSeccional']; 
+                $Gen ='m';
+                if($Genero=='Hombre') {$Gen ='m';}
+                if($Genero=='Mujer') {$Gen ='f';}
+                if($Genero=='Otro') {$Gen ='o';}
+
+                $query = "UPDATE empleado SET nombre='$Nombre', apellido='$Apellido', email='$Correo', telefono=$Telefono, direccion='$Direccion', numero=$Numero,sexo='$Gen', idSeccional=$Seccional, cargo_idCargos=$Cargo WHERE cedula=$_GET['cc']";
+                $rs = $con->query($query);
+                echo $rs;
+                if ($rs) {
+                    echo json_encode('true');
+                } 
+                else { 
+                    echo json_encode('false'); 
+                }
+            }
+
     }
 }
 

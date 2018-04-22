@@ -31,10 +31,10 @@
                 echo json_encode('nel');
             }
             else{
-                $query = "SELECT nivel FROM cargo WHERE nombre = '$Cargo'";
+                $query = "SELECT idCargos FROM cargo WHERE nombre = '$Cargo'";
                 $resultado = $con->query($query);
                 $row = $resultado->fetch_array(MYSQLI_ASSOC);
-                $Cargo = $row['nivel'];
+                $Cargo = $row['idCargos'];
                 
                 $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
                 $resultado3 = $con->query($query3);
@@ -47,9 +47,7 @@
 
                 $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
-<<<<<<< HEAD
-                $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789', 0)";
-=======
+                echo $rs;
                 if ($rs) {
                     echo json_encode('true');
                 } 
@@ -59,14 +57,15 @@
                 $query1= "INSERT INTO `cuenta` VALUES ('123456789',$Cedula,'Activo')";
                 
             
->>>>>>> c2ac2a97ef4c196fb61a6276e92b4ac751df8676
                 $result = $con->query($query1);
-            
+                
                 if ($result && $rs) { 
                     echo json_encode('true2');
                 } 
                 else { 
                     echo json_encode('false2'); 
+                    echo $con -> error;
+                    
                 }
             }   
         }

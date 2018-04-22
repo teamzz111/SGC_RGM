@@ -17,7 +17,7 @@
 
 --
 -- Table structure for table `cargo`
---
+
 
 DROP TABLE IF EXISTS `cargo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -63,9 +63,10 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES ('UbcFeuR35Wcuy+vusRINTg==',2),('UbcFeuR35Wcuy+vusRINTg==',11);
+INSERT INTO `cuenta` VALUES ('UbcFeuR35Wcuy+vusRINTg==','Activo',2),('UbcFeuR35Wcuy+vusRINTg==','Activo',11);
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
+select * from cuenta;
 
 --
 -- Table structure for table `documento`
