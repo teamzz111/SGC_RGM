@@ -10,6 +10,7 @@ import { Desktop3Component } from './desktop3/desktop3.component';
 import { SearchuserComponent } from './desktop3/searchuser/searchuser.component';
 import { InsertuserComponent } from './desktop3/insertuser/insertuser.component';
 import { UpdateuserComponent } from './desktop3/updateuser/updateuser.component';
+import { LockuserComponent } from './desktop3/lockuser/lockuser.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UpdateuserComponent } from './desktop3/updateuser/updateuser.component'
     Desktop3Component,
     SearchuserComponent,
     InsertuserComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    LockuserComponent
   ],
   imports: [
     BrowserModule, HttpModule
