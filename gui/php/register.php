@@ -39,9 +39,12 @@
                 $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
                 $resultado3 = $con->query($query3);
                 $row3 = $resultado3->fetch_array(MYSQLI_ASSOC); 
-                $Seccional = $row3['idSeccional'];               
-                
-                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, 'm', $Seccional , $Cargo)";
+                $Seccional = $row3['idSeccional']; 
+                if($Genero=='Hombre'){$Gen='m';}
+                if($Genero=='Mujer'){$Gen='f';}
+                if($Genero=='Otro'){$Gen='o';}
+
+                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, $Gen, $Seccional , $Cargo)";
                 $rs = $con->query($query);
                 if ($rs) { 
                     echo json_encode('true');
