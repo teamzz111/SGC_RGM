@@ -40,13 +40,14 @@
                 $resultado3 = $con->query($query3);
                 $row3 = $resultado3->fetch_array(MYSQLI_ASSOC); 
                 $Seccional = $row3['idSeccional']; 
-                if($Genero=='Hombre'){$Gen='m';}
-                if($Genero=='Mujer'){$Gen='f';}
-                if($Genero=='Otro'){$Gen='o';}
+                $Gen ='m';
+                if($Genero=='Hombre') {$Gen ='m';}
+                if($Genero=='Mujer') {$Gen ='f';}
+                if($Genero=='Otro') {$Gen ='o';}
 
-                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, $Gen, $Seccional , $Cargo)";
+                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
-                if ($rs) { 
+                if ($rs) {
                     echo json_encode('true');
                 } 
                 else { 
@@ -63,7 +64,7 @@
                 else { 
                     echo json_encode('false2'); 
                 }
-            }
+            }   
         }
    
     
