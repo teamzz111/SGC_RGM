@@ -4,8 +4,8 @@
       Buscar usuario
     </h2>
     <form>
-      <input type="number" name="cc" id="cc" placeholder="Cédula del usuario">
-      <div class="botton">
+      <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
+      <div class="botton" (click)="busca()">
         Buscar
       </div>
     </form>
@@ -45,4 +45,8 @@
       <img src="../../../assets/img/digital_transformation.png" alt="">
     </div>
   </div>
+
+</div>
+<div class="notifi">
+  ¡Usuario insertado con éxito!
 </div>

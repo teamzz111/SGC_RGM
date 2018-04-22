@@ -41,4 +41,8 @@ export class UserServiceService {
    // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res);
     return this.http.post('../../php/register.php', JSON.stringify(data));
   }
+
+  busca(data) {
+    return this.http.get('../../php/updateuser.php?opt=1&cc=' + data);
+  }
 }
