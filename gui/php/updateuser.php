@@ -14,7 +14,7 @@ if(isset($_GET['opt'])) {
         }
         else
         {
-            $query = "SELECT * FROM empleado WHERE cedula =".$_GET['cc'];
+            $query = "SELECT e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre FROM empleado as e, cargo as c WHERE e.cargo_idCargos=c.idCargos and e.cedula =".$_GET['cc'];
             $resultado = $con->query($query);
            
             if ($resultado)
@@ -74,6 +74,10 @@ if(isset($_GET['opt'])) {
                 echo json_encode('nel');
             }
             else{
+                $query = "SELECT idCargos FROM cargo WHERE nombre = '$Cargo'";
+                $resultado = $con->query($query);
+                $row = $resultado->fetch_array(MYSQLI_ASSOC);
+                $Cargo = $row['idCargos'];
                 
                 $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
                 $resultado3 = $con->query($query3);
