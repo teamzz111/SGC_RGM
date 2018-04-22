@@ -6,7 +6,8 @@
     $db = "bd";
     $pass = "";
     $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, "root", $pass, $db);
+	$con = new mysqli($host, "root", $pass, $db);
+	
 
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 	$long=strlen($char)-1;
@@ -25,12 +26,29 @@
 
 	while($r = $query -> fetch_array(MYSQLI_ASSOC)){
 		if($r['email'] == $email){
-			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE cedula=$user");
+			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula=$user");
+			/*
 			echo "<br>";
 			echo $crp." es la nueva clave de acceso.";
-			echo "UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula=$user";
 			echo "<br>";
 			echo $crip." es su encriptacion.";
+			*/ 
+			$titulo = "RECOVERY PASSWORD";
+			$headers = "MIME-Version: 1.0\r\n"; 
+			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+			$headers .= "From: 'Recovery' < 'andresf-largor@unilibre.edu.co' >\r\n";
+			$mail = "Esta es tu nueva contraseña: ".$crp.", por motivos de seguridad te recomendamos cambiarla.";
+			//Enviamos el mensaje a tu dirección de email 
+			$bool = mail($email,$titulo,$mail,$headers);
+			if($bool){
+				echo "true";
+			}else{
+				echo "false";
+			}
+
+
+
+
 		}
 		else{
 			echo "Usuario no encontrado.";
