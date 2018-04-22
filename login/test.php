@@ -2,7 +2,7 @@
    session_start();
     $host = "localhost";
     $db = "bd";
-    $pass = "";
+    $pass = "nicky246";
     $key = "92AE31B89FEEB2A3"; //llave
     if(!isset($_GET['option']) && $_SESSION['job'] != 0 || isset($_GET['option']) && $_SESSION['job'] != 0){
             echo 'Nothing.';
