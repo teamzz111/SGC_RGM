@@ -31,7 +31,7 @@ export class InsertuserComponent {
       this.hero = new Hero($('#cedula').val(), $('#nombre').val(), $('#apellido').val(), $('#telefono').val()
       , $('#correo').val(), $('#direccion').val(), $('#numero').val(), $('input:radio[name=gender]:checked').val(),
       $('#listado :selected').text(), $('#listado2 :selected').text());
-      alert(this.crudProducto.insertar(this.hero)
+      this.crudProducto.insertar(this.hero)
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
       if (data === 'true' || data === 'true2') {

@@ -38,7 +38,7 @@ export class UserServiceService {
     }
   }
   insertar(data) {
-     // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res);
+     this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res));
     return this.http.post('../../php/register.php', JSON.stringify(data));
   }
 

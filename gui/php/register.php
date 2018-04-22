@@ -47,7 +47,19 @@
 
                 $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
+<<<<<<< HEAD
                 $query1= "INSERT INTO `cuenta` VALUES ($Cedula,'123456789', 0)";
+=======
+                if ($rs) {
+                    echo json_encode('true');
+                } 
+                else { 
+                    echo json_encode('false'); 
+                }
+                $query1= "INSERT INTO `cuenta` VALUES ('123456789',$Cedula,'Activo')";
+                
+            
+>>>>>>> c2ac2a97ef4c196fb61a6276e92b4ac751df8676
                 $result = $con->query($query1);
             
                 if ($result && $rs) { 
