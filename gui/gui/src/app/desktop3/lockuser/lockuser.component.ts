@@ -30,12 +30,36 @@ export class LockuserComponent {
         });
         } else {
           this.user = data;
+
         }
       });
 
-    } else {
-      this.user = new User($('#cc').val(), 2);
-      this.crudProducto.bloquear(n, User);
+    } else if (n === 2) {
+      this.crudProducto.bloquear(n, $('#cc').val())
+      .map(response => response.json())
+      .subscribe(data => {
+        this.user = data;
+          if ( data === 'exito') {
+            $('.notifi').css({background: 'rgb(14, 194, 14);'});
+            $('.notifi').text('Usuario bloqueado');
+            $('.notifi').animate({marginTop: '3em'}, 1000, function() {
+              setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
+            });
+          }
+        });
+  } else {
+      this.crudProducto.bloquear(n, $('#cc').val())
+      .map(response => response.json())
+      .subscribe(data => {
+        this.user = data;
+          if ( data === 'exito') {
+            $('.notifi').css({background: 'rgb(14, 194, 14);'});
+            $('.notifi').text('Usuario desbloqueado');
+            $('.notifi').animate({marginTop: '3em'}, 1000, function() {
+              setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
+            });
+          }
+        });
     }
    }
-}
+  }

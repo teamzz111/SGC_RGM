@@ -2,9 +2,9 @@
    session_start();
    global $host, $db, $pass, $key, $user;
    $host = "localhost";
-   $db = "bd";
-   $pass = "";
-   $user = "root";
+   $db = "u462448961_bd";
+   $pass = "nicky246";
+   $user = "u462448961_teamz";
    $key = "92AE31B89FEEB2A3"; //llave
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');

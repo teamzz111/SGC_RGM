@@ -2,11 +2,11 @@
 	include 'Security.php';
 
     session_start();
-    $host = "localhost";
-    $db = "bd";
-    $pass = "";
-    $key = "92AE31B89FEEB2A3"; //llave
-	$con = new mysqli($host, "root", $pass, $db);
+   $host = "localhost";
+   $db = "u462448961_bd";
+   $pass = "nicky246";
+   $user = "u462448961_teamz";
+	$con = new mysqli($host, $user, $pass, $db);
 	
 
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -26,16 +26,22 @@
 
 	while($r = $query -> fetch_array(MYSQLI_ASSOC)){
 		if($r['email'] == $email){
-			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula=$user");
+			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE cedula=$user");
 			/*
 			echo $crp." es la nueva clave de acceso.";
 			echo "<br>";
 			echo $crip." es su encriptacion.";
 			*/ 
+			$headers = "MIME-Version: 1.0\r\n"; 
+			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+			$headers .= "From: '$user' < '$correo' >\r\n";
+			//Enviamos el mensaje a tu_dirección_email 
+			$bool = mail("support@sgc.andreslargo.com",$titulo,$mail,$headers);
+			
 			$titulo = "RECOVERY PASSWORD";
 			$headers = "MIME-Version: 1.0\r\n"; 
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-			$headers .= "From: 'Recovery' < 'andresf-largor@unilibre.edu.co' >\r\n";
+			$headers .= "From: 'Recovery' < 'support@sgc.andreslargo.com' >\r\n";
 			$mail = "include("email-recovery/email.html")".$crp;
 			//Enviamos el mensaje a tu dirección de email 
 			$bool = mail($email,$titulo,$mail,$headers);

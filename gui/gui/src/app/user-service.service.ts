@@ -52,7 +52,7 @@ export class UserServiceService {
     if (n === 1) {
       return this.http.get('../../php/lockuser.php?opt=1&cc=' + data);
     } else if (n === 2) {
-      return this.http.get('../..php/lockuser.php?opt=2&cc=' + data);
+      return this.http.get('../../php/lockuser.php?opt=2&cc=' + data);
     } else {
       return this.http.get('../../php/lockuser.php?opt=3&cc=' + data);
     }
