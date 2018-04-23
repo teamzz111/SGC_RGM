@@ -50,13 +50,15 @@
     }
 
     function show($tipo, $host, $db,  $pass, $user, $key){
-        
+        global $a;
+        $a = 0;
         $con = new mysqli($host, $user, $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
         $userr = $_SESSION['username'];
         $query = '';
+        
         if($tipo == 1){
           $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
           $rs = $con->query($query);
@@ -75,7 +77,7 @@
             $userr = $_SESSION['username'];
             $query;
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE (";
-
+            $a = 0;
             if ($_GET['opt1'] == 1) {
                 $query = $query . " empleado.cargo_idCargos = 4";
                 $a = 1;
