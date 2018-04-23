@@ -17,18 +17,10 @@ export class SearchuserComponent  {
   cadena2: string;
   datostabla;
   constructor(private crudProducto: UserServiceService) {
-       /* this.crudProducto
-          .listar(2) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
-          .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
-          .subscribe(data => {
-            this.listado = data; // Asignamos nuestros datos mapeados a una variable
-          });
-          this.cadena = '';
-
-*/
           this.datostabla = 0;
   }
   test(event: any) {
+    this.datostabla = 0;
     this.cadena = '';
     if ( $('input:checkbox[name=usersn]:checked').val() === 'on') {
         this.cadena += '1';
@@ -65,7 +57,11 @@ export class SearchuserComponent  {
           .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
           .subscribe(data => {
             if (data === 'error') {
-              alert('atención');
+        $('.notifi').css({background: 'red'});
+        $('.notifi').text('Usuario no existente');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
+        });
             } else {
               this.listado = data;
               this.datostabla = 1;
@@ -78,7 +74,11 @@ export class SearchuserComponent  {
           .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
           .subscribe(data => {
             if (data === 'error') {
-              alert('atención');
+       $('.notifi').css({background: 'red'});
+        $('.notifi').text('Usuario no existente');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
+        });
             } else {
               this.listado = data;
               this.datostabla = 1;

@@ -23,8 +23,8 @@ export class UpdateuserComponent {
       if (data === 'false') {
         $('.notifi').css({background: 'red'});
         $('.notifi').text('El usuario no existe');
-        $('.notifi').animate({marginTop: 0}, 1000, function() {
-          $(this).css('marginTop' , '100%');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       } else {
         this.listado = data;
@@ -73,9 +73,9 @@ export class UpdateuserComponent {
     .subscribe(data => {
       if (data === 'false') {
         $('.notifi').css({background: 'red'});
-        $('.notifi').text('El usuario no existe');
-        $('.notifi').animate({marginTop: 0}, 1000, function() {
-          $(this).css('marginTop' , '100%');
+        $('.notifi').text('No existe el usuario');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       } else {
         this.listado = data;
