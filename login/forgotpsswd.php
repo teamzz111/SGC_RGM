@@ -28,7 +28,6 @@
 		if($r['email'] == $email){
 			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE empleado_cedula=$user");
 			/*
-			echo "<br>";
 			echo $crp." es la nueva clave de acceso.";
 			echo "<br>";
 			echo $crip." es su encriptacion.";
