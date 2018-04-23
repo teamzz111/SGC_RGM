@@ -35,20 +35,22 @@ export class InsertuserComponent {
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
       if (data === 'true' || data === 'true2') {
-        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
-          $(this).css('marginTop' , '-10em');
+        $('.notifi').css({background: 'rgb(14,194,14)'});
+        $('.notifi').text('Se añadió el usuario');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       } else if (data === 'false' || data === '0' || data === 'false2') {
         $('.notifi').css({background: 'red'});
-        $('.notifi').text('Se encontró un error.');
-        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
-          $(this).css('marginTop' , '-10em');
+        $('.notifi').text('Se encontró un error');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       } else if (data === 'nel') {
         $('.notifi').css({background: 'red'});
-        $('.notifi').text('El usuario ya existe.');
-        $('.notifi').animate({marginTop: '1em'}, 5000, function() {
-          $(this).css('marginTop' , '-10em');
+        $('.notifi').text('Usuario existente');
+        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+          setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       }
     });

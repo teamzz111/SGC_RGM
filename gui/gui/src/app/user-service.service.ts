@@ -18,7 +18,7 @@ export class UserServiceService {
     return this.http.get(
       '../../php/test.php?srv=1');
     } else {
-          return this.http.get('../../php/test.php?srv=4');
+          return this.http.get('../../php/test.php?srv=4&opt1=10&opt2=0&opt3=0&opt4=0&cc=0');
     }
   }
   closeSession() {
@@ -31,14 +31,14 @@ export class UserServiceService {
 
   buscar(n, string) {
     if ( n === 0 ) {
-      return this.http.get('../../php/options.php?srv=5&opt1=' + string.substring(0 , 1) +
-       '&opt2=' + string.substring(1 , 2) + '&opt3=' + string.substring(2 , 3) + '&opt4=' + string.substring(3 , 4) );
-    } else {
-      return this.http.get('../../php/options.php?srv=5&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
+      return this.http.get('../../php/test.php?srv=7&opt1=' + string.substring(0 , 1) +
+       '&opt2=' + string.substring(1 , 2) + '&opt3=' + string.substring(2 , 3) + '&opt4=' + string.substring(3 , 4));
+      } else {
+      return this.http.get('../../php/test.php?srv=7&opt1=10&opt2=0&opt3=0&opt4=0&cc=' + string);
     }
   }
   insertar(data) {
-     this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res));
+    // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res));
     return this.http.post('../../php/register.php', JSON.stringify(data));
   }
 

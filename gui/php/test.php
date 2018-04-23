@@ -37,11 +37,15 @@
       }
       case 4: {
         show(2, $host, $db, $pass, $user, $key);
+          break;
       }
       case 6:{
         
       }
-
+      case 7: {
+        show(3, $host, $db, $pass, $user, $key);
+          break;
+      }
     }
     }
 
@@ -55,12 +59,73 @@
         $query = '';
         if($tipo == 1){
           $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
+          $rs = $con->query($query);
         }
         else if($tipo == 2) {
           $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo FROM empleado";
+          $rs = $con->query($query);
         }
+        else{
+            if($_GET['opt1'] == 10 && $tipo == 3){
+            $asd = $_GET['cc'];
+            $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
+            $a = 2;
+        }
+        else if($tipo == 3) {
+            $userr = $_SESSION['username'];
+            $query;
+            $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE (";
 
-        $rs = $con->query($query);
+            if ($_GET['opt1'] == 1) {
+                $query = $query . " empleado.cargo_idCargos = 4";
+                $a = 1;
+            }
+            if ($_GET['opt2'] == 1) {
+                if ($a == 0) {
+                    $query = $query . " empleado.cargo_idCargos = 2";
+                    $a = 1;
+                } else {
+                    $query = $query . " OR empleado.cargo_idCargos = 2";
+                }
+            }
+            if ($_GET['opt3'] == 1) {
+                if ($a == 0) {
+                    $query = $query . " empleado.cargo_idCargos = 1";
+                    $a = 1;
+                } else {
+                    $query = $query . " OR empleado.cargo_idCargos = 1";
+                }
+
+            }
+            if ($_GET['opt4'] == 1) {
+                if ($a == 0) {
+                    $query = $query ." empleado.cargo_idCargos = 3";
+                    $a = 1;
+                } else {
+                    $query = $query . " OR empleado.cargo_idCargos = 3";
+                }
+
+            }
+            if ($_GET['opt1'] == 0 && $_GET['opt2'] == 0 && $_GET['opt3'] == 0 && $_GET['opt4'] == 0) {
+                echo json_encode('errorn');
+                exit(0);
+            }
+        }
+            if($tipo == 3){
+            if ($a == 0) {
+                $rs = $con->query($query." cuenta.cedula = empleado.cedula)");
+            } else if($a == 1) {
+        
+                $rs = $con->query($query." ) AND cuenta.cedula = empleado.cedula");
+            
+            }
+            else{
+            $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
+            }
+            }
+        } 
+
+        
         $array = array();
         $count = 0;
         if ($rs) {
