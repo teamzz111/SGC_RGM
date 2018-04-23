@@ -18,9 +18,10 @@
             $Genero = $input['genero'];
 
             $Cargo = $input['cargo'];
-            $Seccional = $input['seccional'];
+            $Seccional = $input['seccional']; // esto estás segura de q está bn? o sea muestra el dato elqu
 
             $con = new mysqli($host, $user, $pass, $db);
+            $con->query("SET NAMES 'utf8'");
             if ($con->connect_error) {
                 echo json_encode('falseC'); 
             }
@@ -38,24 +39,18 @@
                 
                 $query3 = "SELECT idSeccional FROM seccional WHERE ciudad = '$Seccional'";
                 $resultado3 = $con->query($query3);
-                echo '                ------------ '.$query3;
                 $row3 = $resultado3->fetch_array(MYSQLI_ASSOC); 
-                $Seccional = $row3['idSeccional']; 
+                $Seccional1 = $row3['idSeccional']; 
+
+
                 $Gen ='m';
                 if($Genero=='Hombre') {$Gen ='m';}
                 if($Genero=='Mujer') {$Gen ='f';}
                 if($Genero=='Otro') {$Gen ='o';}
 
-                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
+                $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional1, $Cargo)";
                 $rs = $con->query($query);
-                echo 'xdddd     '.$query.'         aassadasd';
-                echo $rs;
-                if ($rs) {
-                    echo json_encode('true');
-                } 
-                else { 
-                    echo json_encode('false'); 
-                }
+
                 $query1= "INSERT INTO `cuenta` VALUES ('UbcFeuR35Wcuy+vusRINTg==','Activo',$Cedula)";
                 
             
@@ -66,10 +61,6 @@
                 } 
                 else { 
                     echo json_encode('false2'); 
-                    echo $con -> error;
-                    echo $query1;
-                    echo 'looool';
-                    echo $Cedula;
                 }
             }   
         }
@@ -101,7 +92,6 @@
             $res = json_encode($array, JSON_NUMERIC_CHECK);
         }else{
             $res = null;
-            echo mysqli_error($con);
             }
         mysqli_close($con);
         echo $res;
