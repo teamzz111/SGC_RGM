@@ -12,6 +12,7 @@ declare var $: any;
 export class LockuserComponent {
   active: boolean;
   user;
+  listado;
   constructor(private crudProducto: UserServiceService) {
     this.active = false;
    }
@@ -27,8 +28,8 @@ export class LockuserComponent {
         $('.notifi').animate({marginTop: '3em'}, 1000, function() {
           setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
-        } else if (data) {
-
+        } else {
+          this.user = data;
         }
       });
 

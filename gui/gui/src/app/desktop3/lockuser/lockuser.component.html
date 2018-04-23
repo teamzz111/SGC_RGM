@@ -3,18 +3,16 @@
     <h2>
       Buscar usuario
     </h2>
-    <form>
       <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
       <div class="botton" (click)="lock(1)">
         Buscar
       </div>
-    </form>
 
     <div class="info">
-      <div class="block" >
+      <div class="block" *ngIf="user == 'Activo'" (click)="lock(2)">
         Bloquear usuario
       </div>
-      <div class="allow">
+      <div class="allow" *ngIf="user == 'Desactivado'" (click)="lock(3)">
         Desbloquear usuario
       </div>
     </div>
