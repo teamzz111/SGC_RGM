@@ -20,11 +20,12 @@
 
   main {
       position: fixed   ;
-      border-color: black;
-      margin:80px 10% 0% 0%;
-      width: 100%;
+      margin:80px 10% 10% 10%;
+      padding: 10% 10% 10% 10%;
+      width: 80%;
       font: 1em sans-serif;
       text-align: center;
+      border: solid 1px black;
   }
 
   main .psswd{
