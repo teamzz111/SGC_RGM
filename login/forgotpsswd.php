@@ -37,7 +37,7 @@
 			$headers = "MIME-Version: 1.0\r\n"; 
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 			$headers .= "From: 'Recovery' < 'andresf-largor@unilibre.edu.co' >\r\n";
-			$mail = "include("email-recovery/email.html")";
+			$mail = "include("email-recovery/email.html")".$crp;
 			//Enviamos el mensaje a tu dirección de email 
 			$bool = mail($email,$titulo,$mail,$headers);
 			if($bool){
