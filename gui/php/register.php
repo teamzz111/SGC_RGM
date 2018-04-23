@@ -49,8 +49,12 @@
 
                 $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
+<<<<<<< HEAD
                 echo 'xdddd     '.$query.'         aassadasd';
                 echo $rs;
+=======
+              
+>>>>>>> 2e7366143e073fe86da167efa30400af94c11ef9
                 if ($rs) {
                     echo json_encode('true');
                 } 

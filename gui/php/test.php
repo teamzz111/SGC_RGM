@@ -123,6 +123,7 @@
             }
             else{
             $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
+         
             }
             }
         } 
