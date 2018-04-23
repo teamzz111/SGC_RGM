@@ -48,10 +48,9 @@
 
 
 
-
 		}
 		else{
-			echo "Usuario no encontrado.";
+			echo "false";
 		}
 		
 	}
