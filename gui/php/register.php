@@ -57,10 +57,12 @@
                 $result = $con->query($query1);
                 
                 if ($result && $rs) { 
+                    
                     echo json_encode('true2');
                 } 
                 else { 
                     echo json_encode('false2'); 
+                    echo $con->error;
                 }
             }   
         }
@@ -75,7 +77,7 @@
         else{
             $query = "SELECT ciudad, pais FROM seccional";
         }
-        $con = new mysqli($host, "root", $pass, $db);
+        $con = new mysqli($host, $user, $pass, $db);
         $rs = $con->query($query);
         $array = array();
         $count = 0;
@@ -92,6 +94,7 @@
             $res = json_encode($array, JSON_NUMERIC_CHECK);
         }else{
             $res = null;
+            echo $con->error;
             }
         mysqli_close($con);
         echo $res;

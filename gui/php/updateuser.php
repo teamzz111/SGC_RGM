@@ -2,7 +2,7 @@
 header("Content-Type: text/html;charset=utf-8"); 
 if(isset($_GET['opt'])) {
     include 'test.php';
-    $con = new mysqli($host, "root", $pass, $db);
+    $con = new mysqli($host, $user, $pass, $db);
     $con->query("SET NAMES 'utf8'");
     if($_GET['opt'] == 1)
     {
@@ -34,7 +34,7 @@ if(isset($_GET['opt'])) {
                 }
             }
             else {
-                echo json_encode('existe');
+                echo $con->error;
             }
         }
     }

@@ -30,7 +30,7 @@ export class AppComponent {
     this.desk = 3;
     this.cmenu = 0;
     this.loggedin = 0;
-    this.url = 'http://localhost/sgc/login.html';
+    this.url = 'http://andreslargo.com/sgc/login.html';
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.verifySession();
     this.crudProducto

@@ -7,7 +7,7 @@
    $pass = "nicky246";
    $user = "u462448961_teamz";
     $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, "root", $pass, $db);
+    $con = new mysqli($host, $user, $pass, $db);
 
     if($con -> connect_error){
         die("Conexión errónea: " . $con->connect_error);
