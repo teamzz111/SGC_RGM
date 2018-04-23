@@ -59,7 +59,7 @@ export class SearchuserComponent  {
             if (data === 'error') {
         $('.notifi').css({background: 'red'});
         $('.notifi').text('Usuario no existente');
-        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+        $('.notifi').animate({marginTop: '3em'}, 1000, function() {
           setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
             } else {
@@ -76,7 +76,7 @@ export class SearchuserComponent  {
             if (data === 'error') {
        $('.notifi').css({background: 'red'});
         $('.notifi').text('Usuario no existente');
-        $('.notifi').animate({marginTop: '2em'}, 1000, function() {
+        $('.notifi').animate({marginTop: '3em'}, 1000, function() {
           setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
             } else {

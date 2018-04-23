@@ -29,6 +29,20 @@
     padding: 2%;
     width: 50%;
     text-align: center;
+     button {
+       background: black;
+       color: white;
+       padding: 1.5%;
+       border: 1px solid white;
+       width: 100%;
+       max-width: 400px;
+       font-size: 1.1em;
+       border-radius: 10px;
+       font-weight: 300;
+       font-family: "Sans";
+       cursor: pointer;
+     }
+
     input[type="text"],
     input[type="email"],
     input[type="number"] {

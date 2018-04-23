@@ -77,6 +77,13 @@
   margin-top: 1.5em;
 }
 
+.papa .info .cargo, .papa .info .sec {
+  padding: .5%;
+  font-size: 1em;
+  font-family: "Sans";
+  font-weight: 300;
+}
+
 .papa .info input[type="text"],
 .papa .info input[type="email"],
 .papa .info input[type="number"] {
@@ -119,6 +126,17 @@
   padding: 1%;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.papa .info button {
+  background: black;
+  color: white;
+  padding: 1.5%;
+  border: 1px solid white;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1em;
+  border-radius: 10px;
 }
 
 .notifi {
