@@ -31,13 +31,124 @@
 			/*
 			echo $crp." es la nueva clave de acceso.";
 			echo "<br>";
-			echo $crip." es su encriptacion.";
+			echo $crip." es su encriptacion.\";
 			*/ 
 			$titulo = "RECOVERY PASSWORD";
 			$headers = "MIME-Version: 1.0\r\n"; 
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 			$headers .= "From: 'Recovery' < 'support@sgc.andreslargo.com' >\r\n";
-			$mail = include("email-recovery/email.html").$crp;
+			$mail = \"<html>
+			<head>
+			  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
+			  <style>
+				@charset \\"UTF-8\\";
+		  * {
+			box-sizing: border-box;
+			margin: 0;
+		  }
+		  
+		  @font-face {
+			  font-family: \"Sans\";
+			  src: url(\"../fuentes/Sans/OpenSans-Light.ttf\") format(\"truetype\");
+			  font-weight: 300;
+			  font-style: normal;
+			}
+		  
+			header {
+			  position: fixed;
+			  background: black;
+			  width: 80%;
+			  height: 70px;
+			  margin:0% 0% 10% 10%;
+			}
+		  
+			main {
+				position: fixed   ;
+				margin:80px 0% 10% 10%;
+				padding: 4% 4% 10% 10%;
+				width: 80%;
+				height: 73%;
+				font: 1em sans-serif;
+				text-align: center;
+				border: solid 1px black;
+			}
+		  
+			main .psswd{
+				color: black;
+				font: 2em \"Amaranth\";
+				padding: 10px;
+				border: solid 1px black;
+				text-align: center;
+			}
+		  
+			footer{
+			  position: absolute;
+			  color: white;
+			  background: black;
+			  width: 80%;
+			  height: 80px;
+			  right: 10%;
+			  bottom: 0;
+			  left: 10%;
+			  align-content: center;
+			  text-align: center;
+			  font: 1em \"Amaranth\";
+			}
+			  </style>
+			  </head>
+			  <body>
+				<header id=\"heaader\">
+				  <nav class=\"normal\">
+					<ul>
+					  <div class=\"izq\">
+						<li class=\"a2\">
+						  <a href=\"http://www.andreslargo.com/sgc\">
+							<img src=\"sgc.png\" alt=\"\">
+						  </a>
+						</li>
+					  </div>
+					</ul>
+				  </nav>
+				</header>
+				<main id=\"main\">
+				  <nav class=\"normal\">
+					<p>
+					  Reset your Password
+					</p>
+					<br>
+					<br>
+					<br>
+					<br>
+					<p>
+					  Hemos recibido una solicitud para reestablecer tu contraseña.
+					</p>
+					<br>
+					<br>
+					<p>
+					  Tu nueva contraseña es: 
+					</p>
+					<br>
+					<span class=\"psswd\">
+						$crp
+					</span>
+					<br>
+					<br>
+					<br>
+					<p>
+					  Te recomendamos cambiarla en el momento de ingresar al sistema.
+					</p>
+					<br>
+					<br>
+					<a href=\"http://www.andreslargo.com/sgc/login.html\">Iniciar Sesión</a>
+				  </nav>
+				</main>
+				<footer id=\"footer\">
+					<br> Todos los derechos reservados.
+					<br> <a href=\"http://www.andreslargo.com/sgc\">www.andreslargo.com/sgc</a>
+					<br> Copyright 2018
+				</footer>
+			  </body>
+		  </html>";
 			//Enviamos el mensaje a tu dirección de email 
 			$bool = mail($email,$titulo,$mail,$headers);
 			if($bool){

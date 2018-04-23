@@ -1,5 +1,4 @@
-<?php
-header("Content-Type: text/html;charset=utf-8"); 
+<?php 
 if(isset($_GET['opt'])) {
     include 'test.php';
     $con = new mysqli($host, $user, $pass, $db);
