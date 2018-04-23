@@ -35,3 +35,15 @@
       border: solid 1px black;
       text-align: center;
   }
+
+  footer{
+    position: fixed;
+    color: white;
+    background: black;
+    margin:1000px 10% 10% 10%;
+    width: 80%;
+    height: 80px;
+    align-content: center;
+    text-align: center;
+    font: 1em "Amaranth";
+  }
