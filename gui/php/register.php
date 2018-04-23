@@ -47,7 +47,7 @@
 
                 $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional , $Cargo)";
                 $rs = $con->query($query);
-                echo $rs;
+              
                 if ($rs) {
                     echo json_encode('true');
                 } 
