@@ -27,7 +27,7 @@
 
 	while($r = $query -> fetch_array(MYSQLI_ASSOC)){
 		if($r['email'] == $email){
-			$con->query("UPDATE cuenta SET contrasena='$crip' WHERE cedula=$user");
+			$con->query("UPDATE cuenta SET contrasena='$crip', estado='Espera' WHERE cedula=$user");
 			/*
 			echo $crp." es la nueva clave de acceso.";
 			echo "<br>";
@@ -37,11 +37,10 @@
 			$headers = "MIME-Version: 1.0\r\n"; 
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 			$headers .= "From: 'Recovery' < 'support@sgc.andreslargo.com' >\r\n";
-			$mail = \"<html>
+			$mail = "<html>
 			<head>
 			  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
 			  <style>
-				@charset \\"UTF-8\\";
 		  * {
 			box-sizing: border-box;
 			margin: 0;
@@ -103,7 +102,7 @@
 					  <div class=\"izq\">
 						<li class=\"a2\">
 						  <a href=\"http://www.andreslargo.com/sgc\">
-							<img src=\"sgc.png\" alt=\"\">
+							<img src=\"../email-recovery/sgc.png\" alt=\"\">
 						  </a>
 						</li>
 					  </div>
@@ -113,7 +112,7 @@
 				<main id=\"main\">
 				  <nav class=\"normal\">
 					<p>
-					  Reset your Password
+					  Recupera tu contraseña
 					</p>
 					<br>
 					<br>

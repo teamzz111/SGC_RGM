@@ -78,6 +78,47 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+
+    $('#forgot').submit(function (e) {
+        $.ajax({
+            type: 'POST',
+            url: 'login/forgotpsswd.php',
+            data: $('#forgot').serialize(),
+            success: function (data) {
+                $('main .cont .noti').fadeIn(2000);
+                if (data == 'true') {
+                    $('main .cont .noti').css('background', '#62E246');
+                    $('main .cont .noti').html('Actualización exitosa...');
+                    setTimeout(function () {
+                        $('#user').val("");
+                        $('#email').val("");
+                        location.href = "index.html";
+                    }, 1500);
+                } else if (data == 'false') {
+                    $('main .cont .noti').css('background', 'red');
+                    $('main .cont .noti').html('Intente de nuevo.');
+                    setTimeout(function () {
+                        $('#email').val("");
+                        $('main .cont .noti').fadeOut(1000);
+                    }, 1500);
+                } else {
+             
+                    $('main .cont .noti').css('background', 'red');
+                    $('main .cont .noti').html('La cuenta ' + $('#user').val() + ' no existe.');
+                    setTimeout(function () {
+                        $('#email').val("");
+                        $('main .cont .noti').fadeOut(1000);
+                    }, 2200);
+                }
+            },
+            error: function (data) {
+                $('main .cont .noti').css('background', 'red');
+                $('main .cont .noti').html('¡Lo sentimos! Tus datos se han quedado en el limbo, reinicia la página e intenta de nuevo.');
+                $('main .cont .noti').css('display', 'block');
+            }
+        });
+        e.preventDefault();
+    });
   
     $('#formulario2').submit(function (e) {
         $.ajax({
