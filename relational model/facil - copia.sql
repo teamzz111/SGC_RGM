@@ -34,9 +34,9 @@ CREATE TABLE `cargo` (
 -- Dumping data for table `cargo`
 --
 
+
 LOCK TABLES `cargo` WRITE;
 /*!40000 ALTER TABLE `cargo` DISABLE KEYS */;
-INSERT INTO `cargo` VALUES (1,'Administrador',1),(2,'Administrador',1),(3,'Administrador',1);
 /*!40000 ALTER TABLE `cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,6 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES ('UbcFeuR35Wcuy+vusRINTg==','Activo',2),('UbcFeuR35Wcuy+vusRINTg==','Activo',11);
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 select * from cuenta;
@@ -127,7 +126,6 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES (1,'asd','asd','asd@gmail.com','123','asd1','11','m',1,1),(2,'asd','asd','asd@gmail.com','123','asd1','11','m',1,1),(11,'asd','asd','asd@gmail.com','123','asd1','11','m',1,1),(31,'asd','Santana','asd@gmami.com','26','cll 8','43','m',2,1),(78,'Lord','Petrosky','Petrosky@gmail.com','555','cll 8','15447','m',2,1);
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +263,6 @@ CREATE TABLE `seccional` (
 
 LOCK TABLES `seccional` WRITE;
 /*!40000 ALTER TABLE `seccional` DISABLE KEYS */;
-INSERT INTO `seccional` VALUES (1,'Bogotá','Colombia','Bogotá','lol','mi mami','1'),(2,'Cali','Colombia','Bogotá','Cll 68R','mi mami','1');
 /*!40000 ALTER TABLE `seccional` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
