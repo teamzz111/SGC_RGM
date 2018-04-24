@@ -88,11 +88,10 @@ $(document).ready(function () {
                 $('main .cont .noti').fadeIn(2000);
                 if (data == 'true') {
                     $('main .cont .noti').css('background', '#62E246');
-                    $('main .cont .noti').html('Actualización exitosa...');
+                    $('main .cont .noti').text('Actualización exitosa...');
                     setTimeout(function () {
                         $('#user').val("");
                         $('#email').val("");
-                        location.href = "index.html";
                     }, 1500);
                 } else if (data == 'false') {
                     $('main .cont .noti').css('background', 'red');
@@ -135,7 +134,6 @@ $(document).ready(function () {
                         $('#correo').val("");
                         $('#mensaje').val("");
                         $('#contacto .contenedor .padre .cont .alert').css('display', 'none');
-
                     }, 6500);
                 } else if (data == 'false') {
                     $('#contacto .contenedor .padre .cont .alert').css('background', 'red');

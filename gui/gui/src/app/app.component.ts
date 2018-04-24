@@ -87,7 +87,7 @@ export class AppComponent {
   verifySession() {
     this.crudProducto.verify().map(response => response.json()).subscribe(data => {
       if (data === 'Nothing') {
-        location.href = this.url;
+        location.href = 'index.html';
       }
     });
 
