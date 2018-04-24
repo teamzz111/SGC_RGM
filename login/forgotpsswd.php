@@ -1,14 +1,8 @@
 <?php
-    include 'Security.php';
+  include 'Security.php';
+  include 'Conexion.php';
 
-    session_start();
-   $host = "localhost";
-   $db = "u462448961_bd";
-   $pass = "nicky246";
-   $user = "u462448961_teamz";
-    $key = "92AE31B89FEEB2A3"; //llave
-    $con = new mysqli($host, $user, $pass, $db);
-
+  $con = new mysqli($host, $user, $pass, $db);
 
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 	$long=strlen($char)-1;
@@ -32,10 +26,10 @@
 			echo $crp." es la nueva clave de acceso.";
 			echo "<br>";
 			echo $crip." es su encriptacion.\";
-			*/ 
+			*/
 			$titulo = "RECOVERY PASSWORD";
-			$headers = "MIME-Version: 1.0\r\n"; 
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+			$headers = "MIME-Version: 1.0\r\n";
+			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 			$headers .= "From: 'Recovery' < 'support@sgc.andreslargo.com' >\r\n";
 			$mail = "<html>
 			<head>
@@ -45,14 +39,14 @@
 			box-sizing: border-box;
 			margin: 0;
 		  }
-		  
+
 		  @font-face {
 			  font-family: \"Sans\";
 			  src: url(\"../fuentes/Sans/OpenSans-Light.ttf\") format(\"truetype\");
 			  font-weight: 300;
 			  font-style: normal;
 			}
-		  
+
 			header {
 			  position: fixed;
 			  background: black;
@@ -60,7 +54,7 @@
 			  height: 70px;
 			  margin:0% 0% 10% 10%;
 			}
-		  
+
 			main {
 				position: fixed   ;
 				margin:80px 0% 10% 10%;
@@ -71,7 +65,7 @@
 				text-align: center;
 				border: solid 1px black;
 			}
-		  
+
 			main .psswd{
 				color: black;
 				font: 2em \"Amaranth\";
@@ -79,7 +73,7 @@
 				border: solid 1px black;
 				text-align: center;
 			}
-		  
+
 			footer{
 			  position: absolute;
 			  color: white;
@@ -124,7 +118,7 @@
 					<br>
 					<br>
 					<p>
-					  Tu nueva contraseña es: 
+					  Tu nueva contraseña es:
 					</p>
 					<br>
 					<span class=\"psswd\">
@@ -148,7 +142,7 @@
 				</footer>
 			  </body>
 		  </html>";
-			//Enviamos el mensaje a tu dirección de email 
+			//Enviamos el mensaje a tu dirección de email
 			$bool = mail($email,$titulo,$mail,$headers);
 			if($bool){
 				echo "true";
@@ -162,7 +156,7 @@
 		else{
 			echo "false";
 		}
-		
+
 	}
-    
+
 ?>

@@ -11,10 +11,10 @@ $(document).ready(function () {
             tiempo = setTimeout(function(){
                 better('#e1,#e2,#e4','#e3','#e3 .nav .c3','#e3 .nav .c1');
                 tiempo = setTimeout(function(){
-                    better('#e3,#e2,#e1','#e4','#e4 .nav .c4','#e4 .nav .c1');              
+                    better('#e3,#e2,#e1','#e4','#e4 .nav .c4','#e4 .nav .c1');
                     tiempo = setTimeout(function(){
-                        better('#e4,#e3,#e1','#e2','#e4 .nav .c4','#e4 .nav .c1'); 
-                        clearTimeout(tiempo);      
+                        better('#e4,#e3,#e1','#e2','#e4 .nav .c4','#e4 .nav .c1');
+                        clearTimeout(tiempo);
                     },4000);
                 },4000);
             },4000);
@@ -61,7 +61,6 @@ $(document).ready(function () {
                         $('main .cont .noti').fadeOut(1000);
                     }, 1500);
                 } else {
-             
                     $('main .cont .noti').css('background', 'red');
                     $('main .cont .noti').html('La cuenta ' + $('#user').val() + ' no existe.');
                     setTimeout(function () {
@@ -101,7 +100,7 @@ $(document).ready(function () {
                         $('main .cont .noti').fadeOut(1000);
                     }, 1500);
                 } else {
-             
+
                     $('main .cont .noti').css('background', 'red');
                     $('main .cont .noti').html('La cuenta ' + $('#user').val() + ' no existe.');
                     setTimeout(function () {
@@ -118,7 +117,7 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
-  
+
     $('#formulario2').submit(function (e) {
         $.ajax({
             type: 'POST',
@@ -149,5 +148,3 @@ $(document).ready(function () {
         e.preventDefault();
     });
 });
-
-

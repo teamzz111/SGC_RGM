@@ -7,30 +7,32 @@
     </div>
     <a href="#" id="m1">
       <button (click)="menu()">
-        <span></span> <i>Menú</i> </button>
+        <span></span> <i>Menú</i>
+      </button>
     </a>
     <a href="#">
       <button (click)="showDesk(1)">
-        <span></span> <i>Iniciar</i></button>
+        <span></span> <i>Iniciar</i>
+      </button>
     </a>
     <a href="#">
       <button (click)="showDesk(3)">
-        <span></span> <i>Cuenta</i></button>
+        <span></span> <i>Cuenta</i>
+      </button>
     </a>
     <a href="#">
       <button (click)="showDesk(2)">
-        +<span></span> <i>Gestionar</i></button>
+        +<span></span> <i>Gestionar</i>
+      </button>
     </a>
     <a href="#">
       <button (click)="closeSession()">
-        <span></span> <i>Cerrar sesión</i> </button>
+        <span></span> <i>Cerrar sesión</i>
+      </button>
     </a>
-
-
   </div>
   <div class="der">
     <div class="user">
-
       <div class="name">
         <div class="conte" *ngFor="let item of listado">
           <div class="img">
@@ -50,10 +52,9 @@
     <div *ngIf="desk == 3" class="desk3">
       <app-desktop3></app-desktop3>
     </div>
-
-
   </div>
 </main>
+
 <div class="error">
   <div class="contenedor">
     <h2>Lo sentimos</h2>
@@ -61,4 +62,3 @@
     <p>No está permitido el uso del aplicativo en dispositivos con pantalla pequeña.</p>
   </div>
 </div>
-

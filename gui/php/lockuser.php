@@ -1,5 +1,7 @@
 <?php
-    include 'test.php';
+
+    include 'Conexion.php';
+
     $con = new mysqli($host, $user, $pass, $db);
     global $query;
     $query = "";

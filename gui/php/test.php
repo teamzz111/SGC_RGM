@@ -1,11 +1,8 @@
 ﻿<?php
+    include 'Conexion.php';
+
    session_start();
-   global $host, $db, $pass, $key, $user;
-   $host = "localhost";
-   $db = "u462448961_bd";
-   $pass = "nicky246";
-   $user = "u462448961_teamz";
-   $key = "92AE31B89FEEB2A3"; //llave
+
    if(!isset($_SESSION['job']) || !isset($_SESSION['username']) || !isset($_SESSION['loggedin']) ){
      echo json_encode('Nothing');
      exit(0);
@@ -15,7 +12,7 @@
       exit(0);
     }
     else if(!isset($_GET['srv'])){
- 
+
     }
     else{
     switch($_GET['srv']){
@@ -40,7 +37,7 @@
           break;
       }
       case 6:{
-        
+
       }
       case 7: {
         show(3, $host, $db, $pass, $user, $key);
@@ -58,7 +55,7 @@
         }
         $userr = $_SESSION['username'];
         $query = '';
-        
+
         if($tipo == 1){
           $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
           $rs = $con->query($query);
@@ -117,18 +114,18 @@
             if ($a == 0) {
                 $rs = $con->query($query." cuenta.cedula = empleado.cedula)");
             } else if($a == 1) {
-        
+
                 $rs = $con->query($query." ) AND cuenta.cedula = empleado.cedula");
-            
+
             }
             else{
             $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
-         
-            }
-            }
-        } 
 
-        
+            }
+            }
+        }
+
+
         $array = array();
         $count = 0;
         if ($rs) {
