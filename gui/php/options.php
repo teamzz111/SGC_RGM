@@ -1,11 +1,13 @@
  <?php
-    include 'test.php';
+
+    include 'Conexion.php';
+    
     $con = new mysqli($host, $user, $pass, $db);
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
             $rs;
-         $a = 0; 
+         $a = 0;
         if($_GET['opt1'] == 10){
             $asd = $_GET['cc'];
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
@@ -54,9 +56,9 @@
             if ($a == 0) {
                 $rs = $con->query($query." cuenta.cedula = empleado.cedula)");
             } else if($a == 1) {
-        
+
                 $rs = $con->query($query." ) AND cuenta.cedula = empleado.cedula");
-            
+
             }
             else{
             $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
@@ -76,11 +78,11 @@
             }
             $res = json_encode($array, JSON_NUMERIC_CHECK);
         }else{
-        
+
             echo mysqli_error('mal');
         }
         mysqli_close($con);
         echo trim(json_encode(trim(json_decode(trim($res)))));
 
-    
+
 ?>

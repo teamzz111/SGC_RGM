@@ -1,12 +1,9 @@
 <?php
     include 'Security.php';
+    include 'Conexion.php';
 
     session_start();
-   $host = "localhost";
-   $db = "u462448961_bd";
-   $pass = "nicky246";
-   $user = "u462448961_teamz";
-    $key = "92AE31B89FEEB2A3"; //llave
+
     $con = new mysqli($host, $user, $pass, $db);
 
     if($con -> connect_error){
@@ -36,7 +33,7 @@
         }
     }
     else{
-        
+
     }
-   
+
 ?>
