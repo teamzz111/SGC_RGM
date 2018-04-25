@@ -1,9 +1,16 @@
 <?php
-  include 'Security.php';
-  include 'Conexion.php';
+    include 'Security.php';
+    include 'Conexion.php';
 
-  $con = new mysqli($host, $user, $pass, $db);
 
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+
+	require '../PHPMailer/Exception.php';
+	require '../PHPMailer/PHPMailer.php';
+	require '../PHPMailer/SMTP.php';
+
+    $con = new mysqli($host, $user, $pass, $db);
 	$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 	$long=strlen($char)-1;
 	$j[0]=0;
@@ -17,140 +24,74 @@
 
 	$user = $_POST['user'];
 	$email = $_POST['email'];
-	$query = $con->query("SELECT email FROM empleado WHERE cedula ='$user'");
+	$query = $con->query("SELECT email, nombre FROM empleado WHERE cedula ='$user'");
 
 	while($r = $query -> fetch_array(MYSQLI_ASSOC)){
 		if($r['email'] == $email){
 			$con->query("UPDATE cuenta SET contrasena='$crip', estado='Espera' WHERE cedula=$user");
-			/*
-			echo $crp." es la nueva clave de acceso.";
-			echo "<br>";
-			echo $crip." es su encriptacion.\";
-			*/
-			$titulo = "RECOVERY PASSWORD";
-			$headers = "MIME-Version: 1.0\r\n";
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-			$headers .= "From: 'Recovery' < 'support@sgc.andreslargo.com' >\r\n";
-			$mail = "<html>
-			<head>
-			  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
-			  <style>
-		  * {
-			box-sizing: border-box;
-			margin: 0;
-		  }
+			$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+			$nombre = $r['nombre'];
+			try {
+				//Server settings
+				$mail->SMTPDebug = 2;                                 // Enable verbose debug output
+				$mail->isSMTP();                                      // Set mailer to use SMTP
+				$mail->Host = '	mx1.hostinger.co';  				  // Specify main and backup SMTP servers
+				$mail->SMTPAuth = true;                               // Enable SMTP authentication
+				$mail->Username = 'support@sgc.andreslargo.com';                 // SMTP username
+				$mail->Password = 'nicky246';                           // SMTP password
+				$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = 587;                                    // TCP port to connect to
+				$mail->CharSet = 'UTF-8';
+				//Recipients
+				$mail->setFrom('support@sgc.andreslargo.com', 'Sistema SGC');
+				//$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
+				$mail->addAddress($email);               // Name is optional
+				//$mail->addReplyTo('info@example.com', 'Information');
+				//$mail->addCC('cc@example.com');
+				//	$mail->addBCC('bcc@example.com');
+				//	$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+				///	$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+				$mail->AddEmbeddedImage('../img/sgc.png', 'logo_2u');
+				//Content
+				$mail->isHTML(true);                                  // Set email format to HTML
+				$mail->Subject = '¿OLVIDASTE TU CONTRASEÑA?';
+								$mail->Body = " 
 
-		  @font-face {
-			  font-family: \"Sans\";
-			  src: url(\"../fuentes/Sans/OpenSans-Light.ttf\") format(\"truetype\");
-			  font-weight: 300;
-			  font-style: normal;
+<html>
+
+<body style= \"background: #000; color: #fff; padding: 19px; text-align: center;\">
+    <header style =\"font-family:\'Sans Serif\';\">
+        <img style = \"max-width: 250px;\" src='cid:logo_2u' />
+        <h1 style= \" color: #ffffff; font-size:22px;\">
+            <strong style= \"color: #ffffff;\">¡Enhorabuena!</strong> $nombre <br><br>
+        Has sido registrado exitosamente en nuestro sistema.</h1>
+    </header>
+
+    <main style= \"color: #fff; font-size: 22px;\">
+        <h3 style= \"color: #fff; font-size: 22px;\">
+            Al iniciar sesión te pediremos que cambies tu contraseña por seguridad.
+            <br>
+            Tu contraseña es:
+			 </h3>
+            <br>
+            <div style= \"width: 100%; max-width: 320px; margin: auto; border-radius: 5px; padding: 10px; background: #04FF00; color: #fff\">
+                <b style = \"font-size: 22px;\">$crp</b>
+            </div>
+    </main>
+    <br><br>
+    <a style = \"font-size: 22px; background: black; color: white; border: 1px solid white; border-radius: 5px; padding: 10px; text-decoration: none; padding-right: 16px; padding-left: 16px; \" href = \"http://www.andreslargo.com/sgc/login.html\"> Inicia sesión </a>
+	
+    <p style = \"font-size: 22px; color: #fff;\">Cordialmente, SGC.</p>
+</body>
+
+</html>";
+				$mail->AltBody = '¿Olvidaste tu contraeña?';
+
+				$mail->send();
+				//echo 'true';
+			} catch (Exception $e) {
+				echo 'false';
 			}
-
-			header {
-			  position: fixed;
-			  background: black;
-			  width: 80%;
-			  height: 70px;
-			  margin:0% 0% 10% 10%;
-			}
-
-			main {
-				position: fixed   ;
-				margin:80px 0% 10% 10%;
-				padding: 4% 4% 10% 10%;
-				width: 80%;
-				height: 73%;
-				font: 1em sans-serif;
-				text-align: center;
-				border: solid 1px black;
-			}
-
-			main .psswd{
-				color: black;
-				font: 2em \"Amaranth\";
-				padding: 10px;
-				border: solid 1px black;
-				text-align: center;
-			}
-
-			footer{
-			  position: absolute;
-			  color: white;
-			  background: black;
-			  width: 80%;
-			  height: 80px;
-			  right: 10%;
-			  bottom: 0;
-			  left: 10%;
-			  align-content: center;
-			  text-align: center;
-			  font: 1em \"Amaranth\";
-			}
-			  </style>
-			  </head>
-			  <body>
-				<header id=\"heaader\">
-				  <nav class=\"normal\">
-					<ul>
-					  <div class=\"izq\">
-						<li class=\"a2\">
-						  <a href=\"http://www.andreslargo.com/sgc\">
-							<img src=\"../email-recovery/sgc.png\" alt=\"\">
-						  </a>
-						</li>
-					  </div>
-					</ul>
-				  </nav>
-				</header>
-				<main id=\"main\">
-				  <nav class=\"normal\">
-					<p>
-					  Recupera tu contraseña
-					</p>
-					<br>
-					<br>
-					<br>
-					<br>
-					<p>
-					  Hemos recibido una solicitud para reestablecer tu contraseña.
-					</p>
-					<br>
-					<br>
-					<p>
-					  Tu nueva contraseña es:
-					</p>
-					<br>
-					<span class=\"psswd\">
-						$crp
-					</span>
-					<br>
-					<br>
-					<br>
-					<p>
-					  Te recomendamos cambiarla en el momento de ingresar al sistema.
-					</p>
-					<br>
-					<br>
-					<a href=\"http://www.andreslargo.com/sgc/login.html\">Iniciar Sesión</a>
-				  </nav>
-				</main>
-				<footer id=\"footer\">
-					<br> Todos los derechos reservados.
-					<br> <a href=\"http://www.andreslargo.com/sgc\">www.andreslargo.com/sgc</a>
-					<br> Copyright 2018
-				</footer>
-			  </body>
-		  </html>";
-			//Enviamos el mensaje a tu dirección de email
-			$bool = mail($email,$titulo,$mail,$headers);
-			if($bool){
-				echo "true";
-			}else{
-				echo "false";
-			}
-
-
 
 		}
 		else{

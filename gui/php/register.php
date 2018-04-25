@@ -1,6 +1,13 @@
 <?php
 
 include 'Conexion.php';
+include '../../Login/Security.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../PHPMailer/Exception.php';
+require '../../PHPMailer/PHPMailer.php';
+require '../../PHPMailer/SMTP.php';
 
 if(!isset($_GET['opt'])) {
         $inputJSON = file_get_contents('php://input');
@@ -19,7 +26,7 @@ if(!isset($_GET['opt'])) {
         $Genero = $input['genero'];
 
         $Cargo = $input['cargo'];
-        $Seccional = $input['seccional']; // esto estás segura de q está bn? o sea muestra el dato elqu
+        $Seccional = $input['seccional']; 
 
         $con = new mysqli($host, $user, $pass, $db);
         $con->query("SET NAMES 'utf8'");
@@ -51,20 +58,81 @@ if(!isset($_GET['opt'])) {
 
             $query = "INSERT INTO `empleado` VALUES ($Cedula, '$Nombre', '$Apellido', '$Correo', $Telefono, '$Direccion', $Numero, '$Gen', $Seccional1, $Cargo)";
             $rs = $con->query($query);
+            $char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+            $long=strlen($char)-1;
+            $j[0]=0;
+            for($i=0;$i<9;$i++){
+                $c=rand(0,$long);
+                $n=$char[$c];
+                $j[0].=$n;
+            }
+            $crp = $j[0];
+            $crip = encrypt($j[0],$key);
+        
+			$mail = new PHPMailer(true);                              
+			try {
+				$mail->SMTPDebug = 0;                               
+				$mail->isSMTP();                                 
+				$mail->Host = '	mx1.hostinger.co';  			
+				$mail->SMTPAuth = true;                              
+				$mail->Username = 'support@sgc.andreslargo.com';             
+				$mail->Password = 'nicky246';
+				$mail->SMTPSecure = 'tls';                          
+				$mail->Port = 587;        
+				$mail->CharSet = 'UTF-8';
+				$mail->setFrom('support@sgc.andreslargo.com', 'Sistema SGC');
+				$mail->addAddress($Correo);
+				$mail->AddEmbeddedImage('../../img/sgc.png', 'logo_2u');
+				$mail->isHTML(true);                           
+				$mail->Subject = 'Registro exitoso';
+                $mail->Body = " 
 
-            $query1= "INSERT INTO `cuenta` VALUES ('UbcFeuR35Wcuy+vusRINTg==','Activo',$Cedula)";
+                <html>
+
+                <body style= \"background: #000; color: #fff; padding: 19px; text-align: center;\">
+                    <header style =\"font-family:\'Sans Serif\';\">
+                        <img style = \"max-width: 250px;\" src='cid:logo_2u' />
+                        <h1 style= \" color: #ffffff; font-size:22px;\">
+                            <strong style= \"color: #ffffff;\">¡Enhorabuena</strong> $Nombre $Apellido!<br><br>
+                        Con el documento $Cedula has sido registrado exitosamente en nuestro sistema.</h1>
+                    </header>
+
+                    <main style= \"color: #fff; font-size: 22px;\">
+                        <h3 style= \"color: #fff; font-size: 22px;\">
+                            Al iniciar sesión te pediremos que cambies tu contraseña por seguridad.
+                            <br>
+                            Tu contraseña es:
+                             </h3>
+                            <br>
+                            <div style= \"width: 100%; max-width: 320px; margin: auto; border-radius: 5px; padding: 10px; background: #04FF00; color: #fff\">
+                                <b style = \"font-size: 22px;\">$crp</b>
+                            </div>
+                    </main>
+                    <br><br>
+                    <a style = \"font-size: 22px; background: black; color: white; border: 1px solid white; border-radius: 5px; padding: 10px; text-decoration: none; padding-right: 16px; padding-left: 16px; \" href = \"http://www.andreslargo.com/sgc/login.html\"> Inicia sesión </a>
+
+                    <p style = \"font-size: 22px; color: #fff;\">Cordialmente, SGC.</p>
+                </body>
+
+                </html>";
+				$mail->AltBody = "¡Bienvenido $Nombre! a SGC";
+
+				$mail->send();
 
 
-            $result = $con->query($query1);
+                $query1= "INSERT INTO `cuenta` VALUES ('$crip','Activo',$Cedula)";
+                
+                $result = $con->query($query1);
 
-            if ($result && $rs) {
-
+                if ($result && $rs) {
                 echo json_encode('true2');
-            }
-            else {
-                echo json_encode('false2');
-                echo $con->error;
-            }
+                }
+                else {
+            
+                }
+            } catch (Exception $e) {
+				echo json_encode('false');
+			}
         }
     }
 
