@@ -64,7 +64,7 @@
         <img style = \"max-width: 250px;\" src='cid:logo_2u' />
         <h1 style= \" color: #ffffff; font-size:22px;\">
             <strong style= \"color: #ffffff;\">¡Enhorabuena!</strong> $nombre <br><br>
-        Has sido registrado exitosamente en nuestro sistema.</h1>
+        Hemos recibido tu solicitud para cambiar de contraseña.</h1>
     </header>
 
     <main style= \"color: #fff; font-size: 22px;\">
