@@ -27,7 +27,7 @@ export class AppComponent {
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.1(a)';
-    this.desk = 3;
+    this.desk = 4;
     this.cmenu = 0;
     this.loggedin = 0;
     this.url = 'http://andreslargo.com/sgc/login.html';

@@ -11,6 +11,7 @@ import { SearchuserComponent } from './desktop3/searchuser/searchuser.component'
 import { InsertuserComponent } from './desktop3/insertuser/insertuser.component';
 import { UpdateuserComponent } from './desktop3/updateuser/updateuser.component';
 import { LockuserComponent } from './desktop3/lockuser/lockuser.component';
+import { Desktop4Component } from './desktop4/desktop4.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LockuserComponent } from './desktop3/lockuser/lockuser.component';
     SearchuserComponent,
     InsertuserComponent,
     UpdateuserComponent,
-    LockuserComponent
+    LockuserComponent,
+    Desktop4Component
   ],
   imports: [
     BrowserModule, HttpModule

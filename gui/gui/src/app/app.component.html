@@ -22,7 +22,12 @@
     </a>
     <a href="#">
       <button (click)="showDesk(2)">
-        +<span></span> <i>Gestionar</i>
+        <span></span> <i>Gestionar</i>
+      </button>
+    </a>
+    <a href="#">
+      <button (click)="showDesk(4)">
+        <span></span> <i>Administrar seccionales y cargos</i>
       </button>
     </a>
     <a href="#">
@@ -51,6 +56,9 @@
     </div>
     <div *ngIf="desk == 3" class="desk3">
       <app-desktop3></app-desktop3>
+    </div>
+    <div *ngIf="desk == 4" class="desk3">
+      <app-desktop4></app-desktop4>
     </div>
   </div>
 </main>
