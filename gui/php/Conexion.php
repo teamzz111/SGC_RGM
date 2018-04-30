@@ -1,7 +1,7 @@
 <?php
 
   global $host, $db, $pass, $key, $user;
-  $host = "localhost";
+  $host = "sql139.main-hosting.eu";
   $db = "u462448961_bd";
   $pass = "nicky246";
   $user = "u462448961_teamz";
