@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop4.component.css']
 })
 export class Desktop4Component implements OnInit {
-
-  constructor() { }
+  semidesk;
+  constructor() {
+    this.semidesk = 1;
+   }
 
   ngOnInit() {
   }

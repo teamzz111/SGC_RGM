@@ -39,7 +39,11 @@
       a {
         text-decoration: none;
         .color2 {
+          border: 1px solid transparent;
           background: #1f4daf;
+          &:focus{
+            background: black;
+          }
           &:hover {
             background: black;
             transition: 1s linear;

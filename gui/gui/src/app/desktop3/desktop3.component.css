@@ -45,7 +45,12 @@ main .contenedor .padre a {
 }
 
 main .contenedor .padre a .color2 {
+  border: 1px solid transparent;
   background: #1f4daf;
+}
+
+main .contenedor .padre a .color2:focus {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 main .contenedor .padre a .color2:hover {

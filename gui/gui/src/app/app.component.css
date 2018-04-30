@@ -118,7 +118,7 @@ main .lat a button {
   border-color: transparent;
   margin-top: 20%;
   margin-bottom: 20%;
-  padding: 10%;
+  padding: 16%;
 }
 
 main .lat a button span {
@@ -135,6 +135,10 @@ main .lat a button i {
 main .lat a button:hover {
   background: rgba(36, 35, 35, 0.9);
   cursor: pointer;
+}
+
+main .lat a button:focus {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 main .der {

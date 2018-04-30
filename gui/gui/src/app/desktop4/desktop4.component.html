@@ -6,20 +6,26 @@
   </div>
   <div class="padre">
     <a (click)="semidesk = 1">
-      <div class="boton1 color2">
+      <button class="boton1 color2">
         <p id="icon">
           <img src="assets/img/build.png" alt="">
         </p>
         <p id="comuni">Ver usuarios</p>
-      </div>
+      </button>
     </a>
     <a (click)="semidesk = 2">
-      <div class="boton1 color2">
+      <button class="boton1 color2">
         <p id="icon">
           <img src="assets/img/users.png" alt="">
         </p>
         <p id="comuni">Ver usuarios</p>
-      </div>
+      </button>
     </a>
   </div>
 </div>
+  <div class="content" *ngIf="semidesk == 2">
+    <app-insertjob></app-insertjob>
+  </div>
+  <div class="content" *ngIf="semidesk == 1">
+    <app-insertseccional></app-insertseccional>
+  </div>

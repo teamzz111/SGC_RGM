@@ -46,7 +46,12 @@
 }
 
 .contenedor .padre a .color2 {
+  border: 1px solid transparent;
   background: #1f4daf;
+}
+
+.contenedor .padre a .color2:focus {
+  background: black;
 }
 
 .contenedor .padre a .color2:hover {

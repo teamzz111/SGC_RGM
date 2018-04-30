@@ -30,7 +30,6 @@ export class AppComponent {
     this.desk = 4;
     this.cmenu = 0;
     this.loggedin = 0;
-    this.url = 'http://andreslargo.com/sgc/login.html';
     this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
     this.verifySession();
     this.crudProducto
@@ -42,8 +41,10 @@ export class AppComponent {
 
   }
 
-  showDesk(number) {
+  showDesk(number, object) {
     this.desk = number;
+    $('\'' + object + '\'').css('background', 'black');
+    console.log(object);
     if (this.cmenu === 1) {
       this.menu();
     }
