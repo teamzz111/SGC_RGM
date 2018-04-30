@@ -67,7 +67,7 @@
         Hemos recibido tu solicitud para cambiar de contraseña.</h1>
     </header>
 
-    <main style= \"color: #fff; font-size: 22px;\">
+    <main style= \"color: ##FBF2EF; font-size: 22px; border: 1px;\">
         <h3 style= \"color: #fff; font-size: 22px;\">
             Al iniciar sesión te pediremos que cambies tu contraseña por seguridad.
             <br>
