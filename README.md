@@ -1,10 +1,8 @@
 
 
-# Sistema SGC
-
 ![](http://andreslargo.com/sgc/img/sgc2.png)
 
-Automatizando procesos de gestión de calidad haremos un mundo más rápido.
+###Automatizando procesos de gestión de calidad haremos un mundo más rápido.
 
 
 
