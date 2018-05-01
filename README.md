@@ -1,5 +1,6 @@
+<center>
 ![](http://andreslargo.com/sgc/img/sgc2.png)
-
+</center>
 ## Automatizando procesos de gestión de calidad haremos un mundo más rápido.
 
 # Iniciando 
@@ -24,6 +25,8 @@ Para iniciar con el desarollo del proyecto inicialmente se necesita
 Una vez realizado podremos visualizar el framework compilado así:
 
 ![](http://andreslargo.com/sgc/img/asd.png)
+
+
 ## Visual Part (FRONT-END)
 
 In our project we are going to use:
