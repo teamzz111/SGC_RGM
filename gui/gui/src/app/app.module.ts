@@ -14,6 +14,7 @@ import { LockuserComponent } from './desktop3/lockuser/lockuser.component';
 import { Desktop4Component } from './desktop4/desktop4.component';
 import { InsertseccionalComponent } from './desktop4/insertseccional/insertseccional.component';
 import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
+import { UserConfigComponent } from './desktop3/user-config/user-config.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
     LockuserComponent,
     Desktop4Component,
     InsertseccionalComponent,
-    InsertjobComponent
+    InsertjobComponent,
+    UserConfigComponent
   ],
   imports: [
     BrowserModule, HttpModule
