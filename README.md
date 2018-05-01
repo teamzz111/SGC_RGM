@@ -1,6 +1,6 @@
-<center>
-![](http://andreslargo.com/sgc/img/sgc2.png)
-</center>
+<p align="center">
+<img src ="http://andreslargo.com/sgc/img/sgc2.png" />
+</p>
 ## Automatizando procesos de gestión de calidad haremos un mundo más rápido.
 
 # Iniciando 
@@ -27,14 +27,18 @@ Una vez realizado podremos visualizar el framework compilado así:
 ![](http://andreslargo.com/sgc/img/asd.png)
 
 
-## Visual Part (FRONT-END)
+# Construido con 
+## Parte Visual (FRONT-END)
+Para la parte visual se usarán las tecnologías más recientes, HTRML para maquetar el sitio, CSS para darle estilos, Javascript para hacerlo dinámico y finalmente AngularJS para el aplicativo WEB.
+<div style="display: flex">
+  <img width = "100px" src ="http://andreslargo.com/sgc/img/HTML_Logo.png" />
+  <img width = "100px" src ="http://andreslargo.com/sgc/img/css3_logo.png" />
+  <img width = "100px" src ="http://andreslargo.com/sgc/img/Javascript-shield.png" />
+  <img width = "100px" src ="http://andreslargo.com/sgc/img/angular.png" />
 
-In our project we are going to use:
+</div>
 
-1. HTML5 - Structure
-2. CSS3 - Stylesheet
-3. JavaScript (JQUERY) - Animations.
-4. AngularJS - Framework MVC.
+
 
 # Server-Side (BACK-END)
 
