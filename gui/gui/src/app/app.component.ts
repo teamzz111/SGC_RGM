@@ -42,12 +42,12 @@ export class AppComponent {
   }
 
   showDesk(number, object) {
-    this.desk = number;
-    $('\'' + object + '\'').css('background', 'black');
-    console.log(object);
     if (this.cmenu === 1) {
       this.menu();
     }
+    this.desk = number;
+    $('\'' + object + '\'').css('background', 'black');
+    console.log(object);
   }
 
   menu() {

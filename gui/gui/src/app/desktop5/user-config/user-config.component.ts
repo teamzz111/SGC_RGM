@@ -12,6 +12,7 @@ export class UserConfigComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
+  editar(){
+    
+  }
 }
