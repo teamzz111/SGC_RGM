@@ -163,9 +163,8 @@ main .der .user .img {
   border-radius: 100em;
   width: 2em;
   height: 2em;
-  margin-left: 9.5em;
   margin-top: 1em;
-  position: relative;
+  padding-left: 2em;
 }
 
 main .der .user .img img {
@@ -188,6 +187,7 @@ main .der .user .name .conte {
   color: white;
   font-family: "Sans";
   background: transparent;
+  padding-right: 2em;
 }
 
 main .der .user .name .conte a button {
@@ -206,7 +206,6 @@ main .der .user .name .conte a button span {
   align-items: center;
   font-weight: 300;
   text-transform: uppercase;
-  margin-right: 2.5em;
   background-color: transparent;
   position: relative;
 }
