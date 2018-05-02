@@ -1,7 +1,7 @@
 <p align="center">
 <img src ="http://andreslargo.com/sgc/img/sgc2.png" />
 </p>
-## Automatizando procesos de gestión de calidad haremos un mundo más rápido.
+Automatizando procesos de gestión de calidad haremos un mundo más rápido.
 
 # Iniciando 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento para tu máquina local con el 
@@ -29,29 +29,31 @@ Una vez realizado podremos visualizar el framework compilado así:
 
 # Construido con 
 ## Parte Visual (FRONT-END)
-Para la parte visual se usarán las tecnologías más recientes, HTRML para maquetar el sitio, CSS para darle estilos, Javascript para hacerlo dinámico y finalmente AngularJS para el aplicativo WEB.
+Para la parte visual se usarán las tecnologías más recientes, HTML para maquetar el sitio, CSS para darle estilos, Javascript para hacerlo dinámico y finalmente AngularJS para el aplicativo WEB.
+
 <div style="display: flex">
   <img width = "100px" src ="http://andreslargo.com/sgc/img/HTML_Logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/css3_logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/Javascript-shield.png" />
-  <img width = "300px" src ="http://andreslargo.com/sgc/img/angular.png" />
-
+  <img width = "95px" src ="http://andreslargo.com/sgc/img/angular.png" />
 </div>
 
-
-
-# Server-Side (BACK-END)
-
-In our project we are going to use:
-
-1. PHP7 - Logic part.
-2. MySQL - Relational Database.
-3. MongoDB - NoSQL. (Maybe)
-
-Communication
-1. AJAX - Asynchronous JavaScript.
-2. JSON - JavaScript Object Notation.
-
-
-# LICENSE
+## Lado del servidor (BACK-END)
+Para la parte del servidor se usará la versión más reciente de PHP que es la 7, MySQL - MariaDB para el guardado de datos y finalmenete 
+<div style="display: flex">
+  <img width = "100px" src ="http://andreslargo.com/sgc/img/PHP-MySQL.png" />
+</div>
+# Autores
+**Andrés Largo** - *Trabajo inicial* - [AndrésLargo](https://github.com/teamzz111)
+See also the list of [contributors](https://github.com/teamzz111/SGC_RGM/contributors) who participated in this project.
+# Licencia
 MIT
+
+Copyright (c) 2018 Andrés Largo, Erika Infante, Jorge Morales.
+
+Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia
+de este software y los archivos de documentación asociados (el "Software"), para tratar
+en el Software sin restricciones, incluidos, entre otros, los derechos
+para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y / o vender
+copias del software, y para permitir a las personas a quienes se refiere el software
+amueblado para hacerlo
