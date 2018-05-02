@@ -30,21 +30,19 @@
         <span></span> <i>Administrar seccionales y cargos</i>
       </button>
     </a>
-    <a href="#">
-      <button (click)="showDesk(5)">
-        <span></span> <i>Mi perfil</i>
-      </button>
-    </a>
   </div>
   <div class="der">
     <div class="user">
       <div class="name">
         <div class="conte" *ngFor="let item of listado">
-          <div class="img">
-          </div>
-          <span>{{item.nombre}} {{item.apellido}}
-            <br>
-          </span>
+          <a href="#">
+              <button (click)="showDesk(5)">    
+              <div class="img">
+              </div>
+                  <span>{{item.nombre}} {{item.apellido}}</span>
+                <br>
+              </button>
+            </a>
         </div>
       </div>
     </div>
