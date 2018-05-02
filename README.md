@@ -35,7 +35,7 @@ Para la parte visual se usarán las tecnologías más recientes, HTML para maque
   <img width = "100px" src ="http://andreslargo.com/sgc/img/HTML_Logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/css3_logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/Javascript-shield.png" />
-  <img width = "95px" src ="http://andreslargo.com/sgc/img/angular.png" />
+  <img width = "155px" src ="http://andreslargo.com/sgc/img/angular.png" />
 </div>
 
 ## Lado del servidor (BACK-END)
@@ -43,9 +43,10 @@ Para la parte del servidor se usará la versión más reciente de PHP que es la 
 <div style="display: flex">
   <img width = "100px" src ="http://andreslargo.com/sgc/img/PHP-MySQL.png" />
 </div>
+
 # Autores
 **Andrés Largo** - *Trabajo inicial* - [AndrésLargo](https://github.com/teamzz111)
-See also the list of [contributors](https://github.com/teamzz111/SGC_RGM/contributors) who participated in this project.
+También puedes mirar los demás autores [contributors](https://github.com/teamzz111/SGC_RGM/contributors) que han participado en el proyecto.
 # Licencia
 MIT
 
