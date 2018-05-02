@@ -34,7 +34,7 @@ Para la parte visual se usarán las tecnologías más recientes, HTRML para maqu
   <img width = "100px" src ="http://andreslargo.com/sgc/img/HTML_Logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/css3_logo.png" />
   <img width = "100px" src ="http://andreslargo.com/sgc/img/Javascript-shield.png" />
-  <img width = "100px" src ="http://andreslargo.com/sgc/img/angular.png" />
+  <img width = "300px" src ="http://andreslargo.com/sgc/img/angular.png" />
 
 </div>
 
