@@ -33,7 +33,7 @@
   }
   
   main .contenedor .padre {
-    width: 12%;
+    width: 11%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
