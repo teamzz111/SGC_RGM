@@ -26,11 +26,10 @@ export class AppComponent {
 
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
-    this.version = '0.1(a)';
+    this.version = '0.7(b)';
     this.desk = 4;
     this.cmenu = 0;
-    this.loggedin = 0;
-    this.cargos = ['Desarollador', 'Administrador', 'Coordinador', 'Líder de proceso', 'Usuario demo'];
+
     this.verifySession();
     this.crudProducto
     .listar(1) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
@@ -46,8 +45,6 @@ export class AppComponent {
       this.menu();
     }
     this.desk = number;
-    $('\'' + object + '\'').css('background', 'black');
-    console.log(object);
   }
 
   menu() {
