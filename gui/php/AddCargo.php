@@ -5,8 +5,6 @@ include 'Conexion.php';
 if(!isset($_GET['opt'])) {
         $inputJSON = file_get_contents('php://input');
         $input = json_decode($inputJSON, TRUE);
-
-        $Id = 0;
         $Nombre = $input['nombre'];
         $Nivel = $input['nivel'];
 
@@ -22,14 +20,13 @@ if(!isset($_GET['opt'])) {
         if ($resultado->num_rows>0) {
             echo json_encode('nel');//significa que el cargo ya existe 
         }
-
         else{
         $lvl =4;
         if($Nivel=='Nivel 1') {$lvl =1;}
         if($Nivel=='Nivel 2') {$lvl =2;}
         if($Nivel=='Nivel 3') {$lvl =3;}
         if($Nivel=='Nivel 4') {$lvl =4;}
-            $query = "INSERT INTO cargo VALUES ($Id, $Nombre, $lvl)";
+            $query = "INSERT INTO cargo VALUES (0, $Nombre, $lvl)";
             $rs = $con->query($query);
             if ($rs) {
                 echo json_encode('true');
@@ -39,5 +36,5 @@ if(!isset($_GET['opt'])) {
                 }
             }
         }
-    }
+    
 ?>
