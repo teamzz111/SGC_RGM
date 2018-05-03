@@ -11,7 +11,7 @@
   }
   
   main .contenedor .quehay {
-    width: 80%;
+    width: 92%;
     background: white;
   }
   
@@ -33,7 +33,7 @@
   }
   
   main .contenedor .padre {
-    width: 35%;
+    width: 12%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -103,7 +103,6 @@
   
   main .contenedor .padre a .boton1 {
     display: flex;
-    justify-items: center;
     align-items: center;
     font-family: "Awesome";
     font-size: 3.8em;
@@ -118,7 +117,7 @@
   }
   
   main .contenedor .padre a .boton1 p#icon img {
-    width: 22%;
+    width: 100%;
     min-width: 37px;
   }
   
