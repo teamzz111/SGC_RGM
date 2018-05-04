@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
   }
-  
+
   main .contenedor {
     display: flex;
     width: 100%;
@@ -9,12 +9,12 @@
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1.2px 3px 0px rgba(0, 0, 0, 0.75);
   }
-  
+
   main .contenedor .quehay {
     width: 92%;
     background: white;
   }
-  
+
   main .contenedor .quehay h1 {
     display: flex;
     justify-content: left;
@@ -31,46 +31,45 @@
     font-size: 1.5em;
     text-transform: uppercase;
   }
-  
+
   main .contenedor .padre {
-    width: 11%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
   }
-  
+
   main .contenedor .padre a {
     text-decoration: none;
   }
-  
+
   main .contenedor .padre a .color2 {
     border: 1px solid transparent;
     background: #1f4daf;
   }
-  
+
   main .contenedor .padre a .color2:focus {
     background: rgba(0, 0, 0, 0.9);
   }
-  
+
   main .contenedor .padre a .color2:hover {
     background: black;
     transition: 1s linear;
     cursor: pointer;
   }
-  
+
   main .contenedor .padre a .color2:hover p#comuni {
     display: block;
   }
-  
+
   main .contenedor .padre a .color2:active {
     background: black;
   }
-  
+
   main .contenedor .padre a .color2 p#name {
     background: #1E88E5;
   }
-  
+
   main .contenedor .padre a .color2 p#comuni {
     position: absolute;
     font-size: 0.25em;
@@ -80,47 +79,51 @@
     display: none;
     transition: 1s linear;
   }
-  
+
   main .contenedor .padre a .color {
     background: #FF0022;
   }
-  
+
   main .contenedor .padre a .color p#name {
     background: #651FFF;
   }
-  
+
   main .contenedor .padre a .color3 p#name {
     background: #E65100;
   }
-  
+
   main .contenedor .padre a .color4 {
     background: #1DE9B6;
   }
-  
+
   main .contenedor .padre a .color5 {
     background: #EC9A29;
   }
-  
+
   main .contenedor .padre a .boton1 {
     display: flex;
     align-items: center;
     font-family: "Awesome";
-    font-size: 3.8em;
+    font-size: 3.3em;
     color: white;
     text-align: center;
     width: 100%;
     height: 100%;
   }
-  
+
   main .contenedor .padre a .boton1 p#icon {
     margin: 0;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
   }
-  
+
   main .contenedor .padre a .boton1 p#icon img {
     width: 100%;
     min-width: 37px;
   }
-  
+
   main .contenedor .padre a .boton1 p#name {
     margin: 0;
     font-size: 0.3em;

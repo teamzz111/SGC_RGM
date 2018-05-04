@@ -118,7 +118,7 @@ main .lat a button {
   border-color: transparent;
   margin-top: 20%;
   margin-bottom: 20%;
-  padding: 10%;
+  padding: 16%;
 }
 
 main .lat a button span {
@@ -146,25 +146,26 @@ main .der {
   margin-left: 3.2em;
 }
 
-main .der .desk1, main .der .desk2, main .der .desk3 {
+main .der .desk1,
+main .der .desk2,
+main .der .desk3 {
   width: 100%;
 }
 
 main .der .user {
+  display: flex;
   flex-direction: column;
   background-color: black;
   width: 100%;
 }
 
-main .der .user button .img {
+main .der .user .img {
   background-image: url("../assets/img/man.png");
   background-size: cover;
   background-position: center;
   border-radius: 100em;
   width: 2em;
   height: 2em;
-  margin-top: 1em;
-  padding-left: 2em;
 }
 
 main .der .user .img img {
@@ -183,32 +184,29 @@ main .der .user .name .conte {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
-  padding: 0.6%;
-  color: white;
-  font-family: "Sans";
-  background: transparent;
-  padding-right: 2em;
 }
 
-main .der .user .name .conte a button {
-  width: 100%;
-  background: transparent;
-  color: white;
-  border-color: transparent;
-  margin-top: 0,3%;
-  margin-bottom: 0,3%;
-  padding: 0,1%;
-}
-
-
-main .der .user .name .conte a button span {
+main .der .user .name .conte button {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  border: 1px solid black;
+  color: white;
+  font-family: "Sans";
+  background: black;
+  cursor: pointer;
+  transition: 1s linear;
+}
+
+main .der .user .name .conte button:hover {
+  background: #1f4daf;
+}
+
+main .der .user .name .conte button span {
   font-weight: 300;
   text-transform: uppercase;
-  background-color: transparent;
-  position: relative;
+  margin-right: 0.5em;
+  margin-top: 0.35em;
 }
 
 @media screen and (max-width: 1400px) {

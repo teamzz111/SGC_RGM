@@ -1,9 +1,6 @@
 # Código de conducta
 ### Nuestros estándares
 
-Ejemplos de comportamiento que contribuye a crear un ambiente positivo
-incluir:
-
 * Uso de un lenguaje acogedor e inclusivo
 * Ser respetuoso de los diferentes puntos de vista y experiencias
 * Aceptando con gracia la crítica constructiva
@@ -57,5 +54,5 @@ miembros del liderazgo del proyecto.
 
 ### Atribución
 
-Este Código de conducta está adaptado de [Contributor Covenant] [página de inicio], versión 1.4,
-disponible en [http://contributor-covenant.org/version/1/4][version]
+Este Código de conducta está adaptado de la ersión 1.4,
+disponible en [http://contributor-covenant.org/version/1/4]
