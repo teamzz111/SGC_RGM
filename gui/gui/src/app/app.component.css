@@ -156,7 +156,7 @@ main .der .user {
   width: 100%;
 }
 
-main .der .user .img {
+main .der .user button .img {
   background-image: url("../assets/img/man.png");
   background-size: cover;
   background-position: center;
@@ -199,6 +199,7 @@ main .der .user .name .conte a button {
   margin-bottom: 0,3%;
   padding: 0,1%;
 }
+
 
 main .der .user .name .conte a button span {
   display: flex;
