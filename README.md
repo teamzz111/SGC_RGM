@@ -19,8 +19,9 @@ Para iniciar con el desarollo del proyecto inicialmente se necesita
 ```
 1. cd al_directorio_del_proyecto
 2. En consola npm install
-3. cd directorio_gui
-4. En consola ng build --watch para ver desde el servidor local.
+3. Instalamos angular mediante npm install -g @angular/cli
+4. cd directorio_gui
+5. En consola ng build --watch para ver desde el servidor local.
 ```
 Una vez realizado podremos visualizar el framework compilado así:
 
