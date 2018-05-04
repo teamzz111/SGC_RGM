@@ -64,16 +64,17 @@ html {
 body {
   margin: 0;
 }
-.error{
+
+.error {
   display: none;
 }
 
-.left{
+.left {
   float: left;
 }
+
 main {
   display: flex;
-
   .lat {
     width: 8%;
     background: #1f4daf;
@@ -95,7 +96,7 @@ main {
       position: fixed;
       overflow: hidden;
     }
-    .info{
+    .info {
       position: fixed;
       bottom: -0.5em;
       color: white;
@@ -112,7 +113,6 @@ main {
         margin-top: 20%;
         margin-bottom: 20%;
         padding: 16%;
-
         span {
           font-family: "Awesome";
           font-size: 1.5em;
@@ -135,11 +135,13 @@ main {
   .der {
     width: 100%;
     margin-left: 3.2em;
-    .desk1,.desk2,.desk3{
-
+    .desk1,
+    .desk2,
+    .desk3 {
       width: 100%;
     }
     .user {
+      display: flex;
       flex-direction: column;
       background-color: rgb(0, 0, 0);
       width: 100%;
@@ -158,23 +160,32 @@ main {
         display: flex;
         width: 100%;
         height: 100%;
-
         .conte {
           width: 100%;
           height: 100%;
           display: flex;
           flex-direction: row-reverse;
           flex-wrap: nowrap;
-          padding: 0.6%;
-          color: white;
-          font-family: "Sans";
-          span {
+          button {
             display: flex;
             justify-content: center;
-            align-items: center;
-            font-weight: 300;
-            text-transform: uppercase;
-            margin-right: 0.5em;
+            align-content: center;
+            border: 1px solid black;
+            color: white;
+            font-family: "Sans";
+            background: black;
+            cursor: pointer;
+            transition: 1s linear;
+            &:hover{
+              background: #1f4daf;
+
+            }
+            span {
+              font-weight: 300;
+              text-transform: uppercase;
+              margin-right: 0.5em;
+              margin-top: 0.35em;
+            }
           }
         }
       }
@@ -201,7 +212,7 @@ main {
         }
       }
     }
-  /*  .der {
+    /*  .der {
       /*.user {
         max-height: 75px;
         .img {
@@ -233,7 +244,6 @@ main {
         }
       }
     }
-
   }
 }
 
@@ -253,15 +263,15 @@ main {
       color: black;
       text-align: center;
       padding: 10%;
-      img{
+      img {
         width: 50%;
       }
-      h2{
+      h2 {
         font-family: "Sans";
         font-weight: 300;
         font-size: 3em;
       }
-      p{
+      p {
         font-family: "Sans";
         font-weight: 300;
         font-size: 1.28em;
