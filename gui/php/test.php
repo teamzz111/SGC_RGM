@@ -59,7 +59,7 @@
         
         $con->query("SET NAMES 'utf8'");
         if($tipo == 1){
-          $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
+          $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos, cargo.nivel FROM empleado, cargo WHERE empleado.cedula = $userr AND empleado.cargo_idCargos = cargo.idCargos";
           $rs = $con->query($query);
         }
         else if($tipo == 2) {

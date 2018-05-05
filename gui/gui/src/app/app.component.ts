@@ -15,7 +15,7 @@ export class AppComponent {
   @Input() title: string;
   version: string;
   nombre: string;
-  cargo: string;
+  cargo: number;
   desk: number;
   cmenu: number;
   cargos: string[];
@@ -37,6 +37,7 @@ export class AppComponent {
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
     });
+
 
   }
 
