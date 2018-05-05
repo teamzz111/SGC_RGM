@@ -80,7 +80,6 @@ if(isset($_GET['opt'])) {
             }
             else {
                 echo json_encode('false');
-                echo $con->error;
                 }
             }
 

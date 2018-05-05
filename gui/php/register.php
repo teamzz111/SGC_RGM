@@ -1,13 +1,13 @@
 <?php
 
 include 'Conexion.php';
-include '../../Login/Security.php';
+include 'Security.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../PHPMailer/Exception.php';
-require '../../PHPMailer/PHPMailer.php';
-require '../../PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
 if(!isset($_GET['opt'])) {
         $inputJSON = file_get_contents('php://input');
@@ -69,8 +69,9 @@ if(!isset($_GET['opt'])) {
             $crp = $j[0];
             $crip = encrypt($j[0],$key);
         
-			$mail = new PHPMailer(true);                              
+			                          
 			try {
+                $mail = new PHPMailer(true);    
 				$mail->SMTPDebug = 0;                               
 				$mail->isSMTP();                                 
 				$mail->Host = '	mx1.hostinger.co';  			
@@ -126,9 +127,6 @@ if(!isset($_GET['opt'])) {
 
                 if ($result && $rs) {
                 echo json_encode('true2');
-                }
-                else {
-            
                 }
             } catch (Exception $e) {
 				echo json_encode('false');

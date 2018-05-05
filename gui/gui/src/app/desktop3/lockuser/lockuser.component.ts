@@ -24,7 +24,7 @@ export class LockuserComponent {
       .subscribe(data => {
         if (data === 'no' || data === 'nel') {
         $('.notifi').css({background: 'red'});
-        $('.notifi').text('Usuario existente');
+        $('.notifi').text('El usuario no existe');
         $('.notifi').animate({marginTop: '3em'}, 1000, function() {
           setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
