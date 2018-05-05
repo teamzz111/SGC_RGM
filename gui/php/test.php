@@ -50,12 +50,14 @@
         global $a;
         $a = 0;
         $con = new mysqli($host, $user, $pass, $db);
+        header('Content-Type: text/html; charset=UTF-8');
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);
         }
         $userr = $_SESSION['username'];
         $query = '';
-
+        
+        $con->query("SET NAMES 'utf8'");
         if($tipo == 1){
           $query = "SELECT empleado.nombre, empleado.apellido, empleado.cargo_idCargos FROM empleado WHERE empleado.cedula = $userr";
           $rs = $con->query($query);
@@ -120,9 +122,8 @@
             }
             else{
             $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
-
             }
-            }
+        }
         }
 
 
@@ -132,13 +133,13 @@
             $array = array();
             while ($fila = mysqli_fetch_assoc($rs)) {
                 $count++;
-                $array[] = array_map('utf8_encode', $fila);
+                $array[] = array_map('html_entity_decode', $fila);
             }
             if($count == 0 ) {
               echo json_encode('error');
               exit(0);
             }
-            $res = json_encode($array, JSON_NUMERIC_CHECK);
+            $res = json_encode($array, JSON_UNESCAPED_UNICODE);
         }else{
             $res = null;
             echo mysqli_error($con);
