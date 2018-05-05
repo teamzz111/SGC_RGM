@@ -46,7 +46,7 @@ Para la parte del servidor se usará la versión más reciente de PHP que es la 
 </div>
 
 # Autores
-**Andrés Largo** - *Trabajo inicial* - [Andrés Largo](https://github.com/teamzz111)
+**Andrés Largo, Erika Infante & Jorge Morales** - *Trabajo inicial* - [Andrés Largo](https://github.com/teamzz111)
 También puedes mirar los demás [autores](https://github.com/teamzz111/SGC_RGM/contributors) que han participado en el proyecto.
 # Licencia
 MIT
