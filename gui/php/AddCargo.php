@@ -6,7 +6,7 @@ if(!isset($_GET['opt'])) {
         $inputJSON = file_get_contents('php://input');
         $input = json_decode($inputJSON, TRUE);
         $Nombre = $input['nombre'];
-        $Nivel = $input['nivel'];
+        $Nivel = $input['permiso'];
 
         $con = new mysqli($host, $user, $pass, $db);
         $con->query("SET NAMES 'utf8'");
@@ -14,8 +14,9 @@ if(!isset($_GET['opt'])) {
             echo json_encode('falseC');
         }
 
-        $query1="SELECT * FROM cargo WHERE nombre=".$Nombre;
-        $resultado = $con ->query($query1);
+        $query1="SELECT * FROM cargo WHERE nombre = '$Nombre'";
+        
+        $resultado = $con->query($query1);
 
         if ($resultado->num_rows>0) {
             echo json_encode('nel');//significa que el cargo ya existe 
@@ -26,7 +27,7 @@ if(!isset($_GET['opt'])) {
         if($Nivel=='Nivel 2') {$lvl =2;}
         if($Nivel=='Nivel 3') {$lvl =3;}
         if($Nivel=='Nivel 4') {$lvl =4;}
-            $query = "INSERT INTO cargo VALUES (0, $Nombre, $lvl)";
+            $query = "INSERT INTO cargo VALUES (0, '$Nombre', $lvl)";
             $rs = $con->query($query);
             if ($rs) {
                 echo json_encode('true');

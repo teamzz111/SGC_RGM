@@ -57,4 +57,7 @@ export class UserServiceService {
       return this.http.get('../../php/lockuser.php?opt=3&cc=' + data);
     }
   }
+  insertarjob(data) {
+    return this.http.post('../../php/AddCargo.php', JSON.stringify(data));
+  }
 }

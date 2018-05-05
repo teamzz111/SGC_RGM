@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Desktop4Component implements OnInit {
   semidesk;
   constructor() {
-    this.semidesk = 1;
+    this.semidesk = 2;
    }
 
   ngOnInit() {

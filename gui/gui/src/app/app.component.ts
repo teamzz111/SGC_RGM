@@ -27,7 +27,7 @@ export class AppComponent {
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.7(b)';
-    this.desk = 3;
+    this.desk = 4;
     this.cmenu = 0;
 
     this.verifySession();
@@ -84,7 +84,7 @@ export class AppComponent {
 
   verifySession() {
     this.crudProducto.verify().map(response => response.json()).subscribe(data => {
-      if (data === 'Nothing') {
+      if (data === 'Nothing' || data === 'error') {
         location.href = '../../../index.html';
       }
     });

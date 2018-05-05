@@ -1,4 +1,4 @@
-.center {
+.center{
   width: 100%;
   text-align: center;
   background: white;
@@ -6,9 +6,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 1%;
+  h1{
+    font-family: "Roboto";
+  }
 }
-
-.center h1 {
-  font-family: "Roboto";
-}
-/*# sourceMappingURL=desktop1.component.css.map */

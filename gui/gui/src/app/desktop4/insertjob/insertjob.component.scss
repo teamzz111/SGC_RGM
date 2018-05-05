@@ -20,9 +20,9 @@
     display: flex;
     align-content: center;
     align-items: center;
-    width: 50%; 
+    width: 50%;
     border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
-    img{
+    img {
       width: 100%;
     }
   }
@@ -41,10 +41,13 @@
       border-radius: 10px;
       font-weight: 300;
       font-family: "Sans";
-      cursor: pointer;
+      transition: 1s linear;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+      }
     }
-    input[type="text"]
-    {
+    input[type="text"] {
       width: 100%;
       max-width: 450px;
       margin-top: 1%;
@@ -97,4 +100,3 @@
   background: rgb(14, 194, 14);
   margin-top: -10em;
 }
-

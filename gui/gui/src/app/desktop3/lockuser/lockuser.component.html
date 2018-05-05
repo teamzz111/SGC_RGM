@@ -10,7 +10,7 @@
       </div>
 
     <div class="info">
-      <div class="block" *ngIf="user == 'Activo'" (click)="lock(2)">
+      <div class="block" *ngIf="user == 'Activo' || user == 'Espera'" (click)="lock(2)">
         Bloquear usuario
       </div>
       <div class="allow" *ngIf="user == 'Desactivado'" (click)="lock(3)">

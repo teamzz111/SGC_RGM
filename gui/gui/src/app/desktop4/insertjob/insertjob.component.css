@@ -48,7 +48,12 @@
   border-radius: 10px;
   font-weight: 300;
   font-family: "Sans";
+  transition: 1s linear;
+}
+
+.papa .der button:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .papa .der input[type="text"] {

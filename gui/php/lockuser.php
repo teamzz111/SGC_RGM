@@ -15,6 +15,7 @@
             }
             else{
                 echo json_encode('no');
+                exit(0);
             }
         }
         else{
