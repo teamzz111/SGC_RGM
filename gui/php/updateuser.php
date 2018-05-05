@@ -24,7 +24,7 @@ if(isset($_GET['opt'])) {
                     $array = array();
                     while ($fila = mysqli_fetch_assoc($resultado)) {
 
-                        $array[] = array_map('utf8_encode', $fila);
+                        $array[] = array_map('html_entity_decode', $fila);
                     }
                     $res = json_encode($array, JSON_NUMERIC_CHECK);// se supone que esto es slo que tengo que mandar no? V: , si pero no existe
                     echo $res;

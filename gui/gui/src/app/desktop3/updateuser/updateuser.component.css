@@ -39,6 +39,12 @@
   margin: auto;
   margin-top: 10px;
   color: white;
+  transition: 1s linear;
+}
+
+.papa .izq .botton:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .papa .izq input[type="number"] {

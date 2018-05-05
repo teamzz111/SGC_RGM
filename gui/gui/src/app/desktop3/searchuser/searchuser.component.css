@@ -40,7 +40,12 @@ div#padre div#submit {
   font-size: 1.1em;
   font-family: "Roboto";
   margin-bottom: 1em;
+  transition: 1s linear;
+}
+
+div#padre div#submit:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 div#padre input[type="checkbox"] {
@@ -66,7 +71,8 @@ div#padre table {
   margin-top: 1em;
 }
 
-div#padre table tr, div#padre table th {
+div#padre table tr,
+div#padre table th {
   padding: 1%;
   border-bottom: 1px solid black;
 }
@@ -76,7 +82,8 @@ div#padre table th {
   color: white;
 }
 
-div#padre table th, div#padre table td {
+div#padre table th,
+div#padre table td {
   border: 1px solid black;
   padding: 1%;
 }

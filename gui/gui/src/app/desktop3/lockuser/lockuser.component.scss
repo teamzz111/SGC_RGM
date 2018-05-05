@@ -53,6 +53,12 @@
       font-size: 1em;
       font-family: "Sans";
       font-weight: 300;
+      transition: 1s linear;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
     }
     .info {
       margin-top: 1.5em;
