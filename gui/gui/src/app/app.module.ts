@@ -1,4 +1,3 @@
-
 import { UserServiceService } from './user-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,8 +14,9 @@ import { LockuserComponent } from './desktop3/lockuser/lockuser.component';
 import { Desktop4Component } from './desktop4/desktop4.component';
 import { InsertseccionalComponent } from './desktop4/insertseccional/insertseccional.component';
 import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
+import { UserConfigComponent } from './desktop3/user-config/user-config.component';
 import { Desktop5Component } from './desktop5/desktop5.component';
-import { UserConfigComponent } from './desktop5/user-config/user-config.component';
+
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { UserConfigComponent } from './desktop5/user-config/user-config.componen
     Desktop4Component,
     InsertseccionalComponent,
     InsertjobComponent,
-    Desktop5Component,
-    UserConfigComponent
+    UserConfigComponent,
+    Desktop5Component
   ],
   imports: [
     BrowserModule, HttpModule
