@@ -16,6 +16,7 @@ import { InsertseccionalComponent } from './desktop4/insertseccional/insertsecci
 import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
 import { UserConfigComponent } from './desktop3/user-config/user-config.component';
 import { Desktop5Component } from './desktop5/desktop5.component';
+import { UserconfigComponent } from './desktop5/userconfig/userconfig.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { Desktop5Component } from './desktop5/desktop5.component';
     InsertseccionalComponent,
     InsertjobComponent,
     UserConfigComponent,
-    Desktop5Component
+    Desktop5Component,
+    UserconfigComponent
   ],
   imports: [
     BrowserModule, HttpModule
