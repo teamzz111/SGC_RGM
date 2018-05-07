@@ -1,0 +1,99 @@
+.papa {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  border-radius: 2%;
+  margin-top: 1em;
+  display: flex;
+  padding: 2%;
+  p {
+    font-family: "Sans";
+    font-weight: 300;
+    font-size: 2em;
+  }
+  .izq {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+    border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
+    img {
+      width: 100%;
+    }
+  }
+  .der {
+    padding: 2%;
+    width: 50%;
+    text-align: center;
+    button {
+      background: black;
+      color: white;
+      padding: 1.5%;
+      border: 1px solid white;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      font-weight: 300;
+      font-family: "Sans";
+      transition: 1s linear;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    input[type="text"] {
+      width: 100%;
+      max-width: 450px;
+      margin-top: 1%;
+      margin-bottom: 1.5%;
+      padding: 1%;
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      border: 1px solid transparent;
+      border-bottom: 1px solid rgb(97, 97, 97);
+    }
+    input[type="radio"] {
+      margin-bottom: 1em;
+      margin-top: 1em;
+    }
+    input[type="submit"] {
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      background: black;
+      padding: 2%;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 450px;
+      color: black;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+    select {
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      padding: 1%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: rgb(14, 194, 14);
+  margin-top: -10em;
+}
+
