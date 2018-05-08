@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
 })
 export class UserconfigComponent {
   semidesk: number;
-  
+
   constructor(private crudProducto: UserServiceService) {
     this.semidesk = 2;
   }
