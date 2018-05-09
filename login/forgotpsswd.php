@@ -34,18 +34,31 @@
 			try {
 				//Server settings
 				$mail->SMTPDebug = 2;                                 // Enable verbose debug output
-				$mail->isSMTP();                                      // Set mailer to use SMTP
-				$mail->Host = '	mx1.hostinger.co';  				  // Specify main and backup SMTP servers
+				$mail->isSMTP();                                      // Set mailer to use SMTP// Specify main and backup SMTP servers
 				$mail->SMTPAuth = true;                               // Enable SMTP authentication
-				$mail->Username = 'support@sgc.andreslargo.com';                 // SMTP username
-				$mail->Password = 'nicky246';                           // SMTP password
-				$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-				$mail->Port = 587;                                    // TCP port to connect to
+				$mail->Username = 'contactsgc246@gmail.com';                 // SMTP username
+				$mail->Password = 'sgc246##';                           // SMTP password
+				//Set the hostname of the mail server
+				$mail->Host = 'smtp.gmail.com';
+				//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+				$mail->Port = 587;
+				//Set the encryption system to use - ssl (deprecated) or tls
+				$mail->SMTPOptions = array(
+					'ssl' => array(
+						'verify_peer' => false,
+						'verify_peer_name' => false,
+						'allow_self_signed' => true
+					)
+				);
+				//Whether to use SMTP authentication
+				$mail->SMTPAuth = true;                             // TCP port to connect to
 				$mail->CharSet = 'UTF-8';
 				//Recipients
-				$mail->setFrom('support@sgc.andreslargo.com', 'Sistema SGC');
+				$mail->setFrom('felipeflogxd@gmail.com', 'Sistema SGC');
 				//$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
+			
 				$mail->addAddress($email);               // Name is optional
+				
 				//$mail->addReplyTo('info@example.com', 'Information');
 				//$mail->addCC('cc@example.com');
 				//	$mail->addBCC('bcc@example.com');
