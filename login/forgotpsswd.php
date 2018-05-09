@@ -90,7 +90,7 @@
 				$mail->send();
 				//echo 'true';
 			} catch (Exception $e) {
-				echo 'false';
+				echo $e;
 			}
 
 		}
