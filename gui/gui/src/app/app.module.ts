@@ -17,6 +17,7 @@ import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
 import { UserConfigComponent } from './desktop3/user-config/user-config.component';
 import { Desktop5Component } from './desktop5/desktop5.component';
 import { UserconfigComponent } from './desktop5/userconfig/userconfig.component';
+import { InsertpollComponent } from './desktop3/insertpoll/insertpoll.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserconfigComponent } from './desktop5/userconfig/userconfig.component'
     InsertjobComponent,
     UserConfigComponent,
     Desktop5Component,
-    UserconfigComponent
+    UserconfigComponent,
+    InsertpollComponent
   ],
   imports: [
     BrowserModule, HttpModule

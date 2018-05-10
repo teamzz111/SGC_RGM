@@ -1,0 +1,22 @@
+<div class="papa">
+  <div class="der">
+    <p>Registrar encuesta</p>
+
+      <input type="number" name="cedula" id="cedula" placeholder="Nombre de la encuesta" required>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
+      <input type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
+      <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
+      <input type="number" name="telefono" id="telefono" placeholder="Teléfono" required>
+       <br>
+
+      <button (click)="send(); $event.stopPropagation();">Vamos</button>
+
+  </div>
+  <div class="notifi">
+    ¡Usuario insertado con éxito!
+  </div>
+  <div class="izq">
+    <img src="assets/img/encuesta.png" alt="">
+  </div>
+</div>
+
