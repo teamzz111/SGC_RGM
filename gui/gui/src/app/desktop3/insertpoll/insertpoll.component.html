@@ -1,16 +1,33 @@
 <div class="papa">
   <div class="der">
+    <div class="inicio" *ngIf="next == 0">
     <p>Registrar encuesta</p>
 
       <input type="text" name="nombre" id="nombre" placeholder="Nombre de la encuesta" required>
-      <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
-      <SELECT NAME="tipo" size="1"> 
+       <SELECT NAME="tipo" size="1">
         <OPTION VALUE="O1">Procesos</OPTION>
         <OPTION VALUE="O2">Documentos</OPTION>
-        <OPTION VALUE="O3">Algo</OPTION>
-        <OPTION VALUE="O4">Algo</OPTION> 
         </SELECT>
-      <button (click)="send(); $event.stopPropagation();">Vamos</button>
+        <button (click) = 'next = 1' >Nueva pregunta</button>
+        </div>
+        <div class="espacio" *ngIf='next == 1'>
+          <p>Ingrese el tipo de respuesta</p>
+          <select name="tipoencuesta" id="tipo">
+            <option value="tp1">Abierta</option>
+            <option value="tp2">Selección múltiple con única respuesta</option>
+            <option value="tp3">Selección múltiple</option>
+          </select>
+          <button (click) = "next = 2" >Continuar</button>
+        </div>
+        <div class="espacio2" *ngIf = 'next == 2'>
+          <p>Ingrese la pregunta</p>
+          <input type="text" name="Pregunta" id="Pregunta" placeholder="Ingrese la pregunta">
+          <button (click)="prueab(); next = 3; ">Registrar pregunta</button>
+        </div>
+        <div class="espacio3">
+
+        </div>
+        <button *ngIf="next == 4" style= "background: #1f4daf" (click)="$event.stopPropagation();">Registrar encuesta</button>
 
   </div>
   <div class="notifi">
