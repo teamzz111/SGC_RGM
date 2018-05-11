@@ -24,7 +24,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Tipo` (
   `Id` INT NOT NULL,
-  `Identificador` VARCHAR(10) NOT NULL COMMENT 'Es para ordenar el id de las encuestas, serán un par de letras que el usuario NO INSERTARÁ',
+
   `Nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`Id`))
 ENGINE = InnoDB;
