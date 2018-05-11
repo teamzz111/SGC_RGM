@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js",
+    "build": "electron-packager . SGC"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.0",
+    "electron-prebuilt": "^0.25.2"
+  },
+  "devDependencies": {
+    "electron-packager": "^3.4.0"
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>SGC APP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/css-home/style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="normal">
+      <ul>
+        <div class="izq">
+          <li class="a1">
+            <a href="#" id="lat">
+              <span>SISTEMA SGC</span>
+            </a>
+          </li>
+          <li class="a2">
+            <a href="#">
+              <img src="img/sgc.png" alt="">
+            </a>
+          </li>
+        </div>
+        <div class="der">
+          <li>
+            <a href="#" data-scroll>Inicio</a>
+          </li>
+          <li>
+            <a href="#acerca" data-scroll>Acerca de nosotros</a>
+          </li>
+          <li>
+            <a href="#contacto" data-scroll>Contáctanos</a>
+          </li>
+          <li>
+            <a href="login.html">Iniciar sesión</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+    <nav class="fors">
+      <div class="barra">
+        <h3>Menú</h3>
+        <ul>
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#acerca" data-scroll>Acerca de nosotros</a>
+          </li>
+          <li>
+            <a href="#contacto" data-scroll>Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="cont">
+      <div class="e">
+        <div class="contenedor" id="e2">
+          <h1>Automatización
+            <span> SGC</span>
+          </h1>
+          <h2>Optimizando procesos de calidad hacemos un mundo más veloz.</h2>
+          <div class="inciarS">
+            <a href="login.html">
+              <div id="button">
+                Iniciar sesión
+              </div>
+            </a>
+          </div>
+          <div class="nav">
+            <p>
+              <span class="c1"></span>
+              <span class="c2"></span>
+              <span class="c3"></span>
+              <span class="c4"></span>
+            </p>
+          </div>
+        </div>
+        <div class="contenedor" id="e1">
+          <h1>#SomosMultiplataforma</h1>
+          <h2>"Un servicio que funcione en cualquier plataforma es realmente magnífico."</h2>
+          <div class="nav">
+            <p id="icons">   </p>
+          </div>
+          <div class="nav">
+            <p>
+              <span class="c1"></span>
+              <span class="c2"></span>
+              <span class="c3"></span>
+              <span class="c4"></span>
+            </p>
+          </div>
+        </div>
+        <div class="contenedor" id="e3">
+          <h1>Caminemos hacia el futuro</h1>
+          <br>
+          <h2>Apoyamos la masificación de las TICs.</h2>
+
+          <div class="nav">
+            <p>
+              <span class="c1"></span>
+              <span class="c2"></span>
+              <span class="c3"></span>
+              <span class="c4"></span>
+            </p>
+          </div>
+        </div>
+        <div class="contenedor" id="e4">
+          <h1>Soporte calificado
+            <span> SGC</span>
+          </h1>
+          <h2>Con los estándares más recientes realizamos un excelente servicio.</h2>
+          <div class="inciarS">
+            <a href="login.html">
+              <div id="button">
+                Iniciar sesión
+              </div>
+            </a>
+          </div>
+          <div class="nav">
+            <p>
+              <span class="c1"></span>
+              <span class="c2"></span>
+              <span class="c3"></span>
+              <span class="c4"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <section id="acerca">
+    <div class="contenedor">
+      <h2>Nuestra empresa</h2>
+      <div class="padre">
+
+        <div class="cont">
+
+          <h2>Responsabilidad</h2>
+          <br>
+          <img src="img/031-businesswoman.png" alt="">
+          <br>
+          <br>
+          <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus esse tenetur consectetur a quo veniam,
+            pariatur.</span>
+        </div>
+        <div class="cont">
+          <h2>Planeación</h2>
+          <br>
+          <img src="img/007-presentation.png" alt="">
+          <br>
+          <br>
+          <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus esse tenetur consectetur a quo veniam,
+            pariatur.</span>
+        </div>
+        <div class="cont">
+          <h2>Eficiencia</h2>
+          <br>
+          <img src="img/005-brain-process.png" alt="">
+          <br>
+          <br>
+          <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus esse tenetur consectetur a quo veniam,
+            pariatur.</span>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="contenedor">
+      <div class="padre">
+        <div class="img">
+          <h2>Contacto</h2>
+          <h4>Comparte tus ideas, opiniones al respecto.
+            <br> ¡Hagamos una mejor empresa!</h4>
+          <img src="img/contacto.png" alt="">
+        </div>
+        <div class="cont">
+          <h2>Tú hablas, nosotros te escuchamos.</h2>
+          <form action="login/email.php" method="POST" id="formulario2" required>
+            <input id="nombre" type="text" name="fname" placeholder="Ingresa tu nombre" required>
+            <input id="correo" type="email" name="lname" placeholder="Correo electrónico" required>
+            <textarea id="mensaje" name="textarea" placeholder="Ingresa tu mensaje" rows="4" cols="40" required></textarea>
+            <br>
+            <div class="alert">
+              ¡Mensaje enviado, gracias!
+            </div>
+            <input type="submit" value="Enviar">
+          </form>
+        </div>
+      </div>
+    </div>
+    <h2>¿Dónde nos encontramos?</h2>
+  </section>
+  <footer>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.598093213448!2d-74.10246668469205!3d4.66552499661101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ba026506e25%3A0xeff0276a33e249f8!2sUniversidad+Libre+sede+el+Bosque!5e0!3m2!1ses-419!2sco!4v1521430094601"
+      height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="creditos">
+      Página web diseñada por Andrés Largo, Erika Infante & Jorge Morales.
+      <br> Algunos iconos fueron hechos por monkik de www.flaticon.com
+      <br> Todos los derechos reservados.
+      <br> Copyright 2018
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/smooth-scroll.min.js"></script>
+  <script>
+    smoothScroll.init({
+      selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+      selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+      speed: 2000, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCubic', // Easing pattern to use
+      offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+      callback: function (anchor, toggle) {} // Function to run after scrolling
+    });
+  </script>
+</body>
+
+</html>
+
+<!--Icon made by monkik from www.flaticon.com-->
