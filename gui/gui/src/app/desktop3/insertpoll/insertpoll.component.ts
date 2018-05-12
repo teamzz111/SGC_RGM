@@ -9,9 +9,17 @@ declare var $: any;
 export class InsertpollComponent {
   next: number;
   tipo: number;
+  respuesta: number;
+  listo: boolean;
   constructor() {
     this.next = 0;
+    this.respuesta = 1;
+    this.listo = false;
   }
   prueab() {
-  this.tipo = $('#tipo').prop('selectedIndex');  }
+    this.tipo = $('#tipo').prop('selectedIndex');
+    if (this.tipo === 1) {
+      this.next = 2;
+    }
+  }
 }

@@ -1,35 +1,68 @@
 <div class="papa">
   <div class="der">
     <div class="inicio" *ngIf="next == 0">
-    <p>Registrar encuesta</p>
+      <p>Registrar encuesta</p>
 
       <input type="text" name="nombre" id="nombre" placeholder="Nombre de la encuesta" required>
-       <SELECT NAME="tipo" size="1">
+      <SELECT NAME="tipo" size="1">
         <OPTION VALUE="O1">Procesos</OPTION>
         <OPTION VALUE="O2">Documentos</OPTION>
-        </SELECT>
-        <button (click) = 'next = 1' >Nueva pregunta</button>
-        </div>
-        <div class="espacio" *ngIf='next == 1'>
-          <p>Ingrese el tipo de respuesta</p>
-          <select name="tipoencuesta" id="tipo">
-            <option value="tp1">Abierta</option>
-            <option value="tp2">Selección múltiple con única respuesta</option>
-            <option value="tp3">Selección múltiple</option>
-          </select>
-          <button (click) = "next = 2" >Continuar</button>
-        </div>
-        <div class="espacio2" *ngIf = 'next == 2'>
-          <p>Ingrese la pregunta</p>
-          <input type="text" name="Pregunta" id="Pregunta" placeholder="Ingrese la pregunta">
-          <button (click)="prueab(); next = 3; ">Registrar pregunta</button>
-        </div>
-        <div class="espacio3">
+      </SELECT>
+      <button (click)='next = 1'>Nueva pregunta</button>
+    </div>
 
-        </div>
-        <button *ngIf="next == 4" style= "background: #1f4daf" (click)="$event.stopPropagation();">Registrar encuesta</button>
+    <div class="espacio" *ngIf='next == 1'>
+      <p>Ingrese el tipo de respuesta</p>
+      <select name="tipoencuesta" id="tipo">
+        <option value="tp1">Abierta</option>
+        <option value="tp2">Selección múltiple con única respuesta</option>
+        <option value="tp3">Selección múltiple</option>
+      </select>
+      <button (click)="next = 2">Continuar</button>
+    </div>
 
+    <div class="espacio2" *ngIf='next == 2'>
+      <p>Ingrese la pregunta</p>
+      <input type="text" name="Pregunta" id="Pregunta" placeholder="Ingrese la pregunta">
+      <button (click)="prueab()">Registrar pregunta</button>
+    </div>
+    <div class="tipo" *ngIf="tipo == 0">
+
+    </div>
+    <div class="tipo" *ngIf="tipo == 2 || tipo == 1">
+      <div class="espacio3" *ngIf="next == 3">
+        <p>Ingrese la respuesta {{respuesta}} de 5</p>
+        <input type="text" name="respuesta1" id="respuesta1">
+        <button (click)="next = 4">Guardar respuesta</button>
+      </div>
+
+      <div class="espacio4" *ngIf="next == 4">
+        <p>Ingrese la respuesta {{respuesta}} de 5</p>
+        <input type="text" name="respuesta2" id="respuesta2">
+        <button (click)="next = 5; respuesta = respuesta + 1">Guardar respuesta</button>
+      </div>
+
+      <div class="espacio5" *ngIf="next == 5">
+        <p>Ingrese la respuesta {{respuesta}} de 5</p>
+        <input type="text" name="respuesta3" id="respuesta3">
+        <button (click)="next = 6; respuesta = respuesta + 1">Guardar respuesta</button>
+      </div>
+
+      <div class="espacio6" *ngIf="next == 6">
+        <p>Ingrese la respuesta {{respuesta}} de 5</p>
+        <input type="text" name="respuesta4" id="respuesta4">
+        <button (click)="next = 7; respuesta = respuesta + 1">Guardar respuesta</button>
+      </div>
+
+      <div class="espacio3" *ngIf="next == 7">
+        <p>Ingrese la respuesta {{respuesta}} de 5</p>
+        <input type="text" name="respuesta5" id="respuesta5">
+        <button (click)="next = 8; respuesta = respuesta + 1">Guardar respuesta</button>
+      </div>
+    </div>
+    <button *ngIf="next == 4" style="background: #1f4daf" (click)="$event.stopPropagation();">Registrar encuesta</button>
   </div>
+
   <div class="notifi">
     ¡Encuesta insertada con éxito!
   </div>
@@ -37,4 +70,3 @@
     <img src="assets/img/encuesta.png" alt="">
   </div>
 </div>
-
