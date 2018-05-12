@@ -33,7 +33,7 @@
       <div class="espacio3" *ngIf="next == 3">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
         <input type="text" name="respuesta1" id="respuesta1">
-        <button (click)="next = 4; listo = true;">Guardar respuesta</button>
+        <button (click)="next = 4; listo = true; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
 
       <div class="espacio4" *ngIf="next == 4">

@@ -39,9 +39,9 @@ export class InsertpollComponent {
   pregunta() {
     if (this.tipo === 0) {
       this.next = 1;
-      this.numero++;
     } else {
       this.next = 3;
     }
+    this.numero++;
   }
 }
