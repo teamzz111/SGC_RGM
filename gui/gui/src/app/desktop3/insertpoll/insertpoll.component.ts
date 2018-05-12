@@ -11,15 +11,23 @@ export class InsertpollComponent {
   tipo: number;
   respuesta: number;
   listo: boolean;
+  numero: number;
   constructor() {
     this.next = 0;
     this.respuesta = 1;
     this.listo = false;
+    this.numero = 1;
   }
-  prueab() {
+
+  obtenerTipo() {
     this.tipo = $('#tipo').prop('selectedIndex');
-    if (this.tipo === 1) {
-      this.next = 2;
+  }
+  pregunta() {
+    if (this.tipo === 0) {
+      this.next = 1;
+      this.numero++;
+    } else {
+      this.next = 3;
     }
   }
 }
