@@ -1,6 +1,7 @@
 <?php
-    session_start();
     $inputJSON = file_get_contents('php://input');
-    $input= json_decode( $inputJSON );
-    echo $input[0][0];
+    $result = json_decode($inputJSON, true);
+    //echo $result['nombre'];
+    //echo $result['tipo']; ahí tienes los dos datos.
+
 ?>

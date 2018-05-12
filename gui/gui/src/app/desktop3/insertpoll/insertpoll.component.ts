@@ -1,3 +1,4 @@
+import { Encuesta } from './encuesta';
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
@@ -14,7 +15,7 @@ export class InsertpollComponent {
   respuesta: number;
   listo: boolean;
   numero: number;
-  names: string[];
+  name;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
     this.respuesta = 1;
@@ -23,8 +24,12 @@ export class InsertpollComponent {
   }
 
   guardarEncuesta() {
-    this.names = new Array($('#nombre').val(), $('#encuesta').val());
-    alert(this.crudProducto.guardarEncuesta(JSON.stringify(this.names)));
+    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val());
+    // tslint:disable-next-line:max-line-length
+    this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+      .subscribe(data => {
+        alert(data);
+      });
   }
 
 
