@@ -59,4 +59,8 @@ export class UserServiceService {
   insertarjob(data) {
     return this.http.post('../php/AddCargo.php', JSON.stringify(data));
   }
+
+  guardarEncuesta(data) {
+    return this.http.post('../php/AddPoll.php', data);
+  }
 }
