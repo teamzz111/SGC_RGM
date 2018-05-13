@@ -4,6 +4,7 @@ declare var jquery: any;
 declare var $: any;
 import { UserServiceService } from '../.././user-service.service'; // Importamos nuestro servicio
 import { Pregunta } from './pregunta';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-insertpoll',
   templateUrl: './insertpoll.component.html',
@@ -63,7 +64,19 @@ export class InsertpollComponent {
         break;
       }
       case 6: {
-        this.pregunuta.nrespuesta(this.respuesta);
+        this.pregunuta.setnrespuesta(this.respuesta);
+        alert(JSON.stringify(this.pregunuta));
+        this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
+        map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+        .subscribe(data2 => {
+          alert(data2);
+         });
+        this.pregunuta.clean();
+        this.next = 1;
+        this.listo = false;
+        this.respuesta = 1;
+        this.numero = 1;
+        break;
       }
     }
   }
@@ -72,6 +85,12 @@ export class InsertpollComponent {
   }
   pregunta() {
     if (this.tipo === 0) {
+      this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
+        map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+        .subscribe(data2 => {
+          alert(data2);
+      });
+      this.pregunuta.clean();
       this.next = 1;
     } else {
       this.next = 3;

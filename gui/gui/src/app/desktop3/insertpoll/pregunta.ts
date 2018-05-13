@@ -9,7 +9,16 @@ export class Pregunta {
   public nrespuesta: string;
   constructor() {
   }
-
+  clean() {
+    this.tpregunta = null;
+    this.pregunta = null;
+    this.r1 = null;
+    this.r2 = null;
+    this.r3 = null;
+    this.r4 = null;
+    this.r5 = null;
+    this.nrespuesta = null;
+  }
   setTPregunta(data) {
     this.tpregunta = data;
   }
