@@ -64,6 +64,10 @@ export class InsertpollComponent {
         break;
       }
       case 6: {
+        if ($('#respuesta').val() === '') {
+          alert('faltó una xdxd');
+          this.respuesta--;
+        }
         this.pregunuta.setnrespuesta(this.respuesta);
         alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
@@ -71,6 +75,7 @@ export class InsertpollComponent {
         .subscribe(data2 => {
           alert(data2);
          });
+
         this.pregunuta.clean();
         this.next = 1;
         this.listo = false;
@@ -85,6 +90,7 @@ export class InsertpollComponent {
   }
   pregunta() {
     if (this.tipo === 0) {
+      this.pregunuta.setnrespuesta(0);
       this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {

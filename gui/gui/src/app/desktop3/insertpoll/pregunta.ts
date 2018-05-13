@@ -6,7 +6,7 @@ export class Pregunta {
   public r3: string;
   public r4: string;
   public r5: string;
-  public nrespuesta: string;
+  public nrespuesta: number;
   constructor() {
   }
   clean() {
