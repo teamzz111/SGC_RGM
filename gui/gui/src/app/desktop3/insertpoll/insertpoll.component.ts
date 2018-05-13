@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
 import { UserServiceService } from '../.././user-service.service'; // Importamos nuestro servicio
-
+import { Pregunta } from './pregunta';
 @Component({
   selector: 'app-insertpoll',
   templateUrl: './insertpoll.component.html',
@@ -16,11 +16,13 @@ export class InsertpollComponent {
   listo: boolean;
   numero: number;
   name;
+  pregunuta;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
     this.respuesta = 1;
     this.listo = false;
     this.numero = 1;
+    this.pregunuta = new Pregunta();
   }
 
   guardarEncuesta() {
@@ -32,7 +34,23 @@ export class InsertpollComponent {
       });
   }
 
-
+  guardarTPregunta() {
+    this.pregunuta.setTPregunta($('#tipo').val());
+  }
+  guardarPregunta() {
+    this.pregunuta.setPregunta($('#Pregunta').val());
+  }
+  guardarRespuesta(data) {
+    switch (data) {
+      case 1: {
+        this.pregunuta.setR1($('#respuesta').val());
+        break;
+      }
+      case 2: {
+        this.pregunuta.setR2($('#respuesta').val());
+      }
+    }
+  }
   obtenerTipo() {
     this.tipo = $('#tipo').prop('selectedIndex');
   }

@@ -18,13 +18,13 @@
         <option value="tp2">Selección múltiple con única respuesta</option>
         <option value="tp3">Selección múltiple</option>
       </select>
-      <button (click)="obtenerTipo(); next = 2; ">Continuar</button>
+      <button (click)="obtenerTipo(); guardarTPregunta(); next = 2; ">Continuar</button>
     </div>
 
     <div class="espacio2" *ngIf='next == 2'>
       <p>Ingrese la pregunta</p>
       <input type="text" name="Pregunta" id="Pregunta" placeholder="Ingrese la pregunta">
-      <button (click)="pregunta();">Registrar pregunta</button>
+      <button (click)="guardarPregunta(); pregunta();">Registrar pregunta</button>
     </div>
     <div class="tipo" *ngIf="tipo == 0">
 
@@ -32,35 +32,35 @@
     <div class="tipo" *ngIf="tipo == 2 || tipo == 1">
       <div class="espacio3" *ngIf="next == 3">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
-        <input type="text" name="respuesta1" id="respuesta1">
-        <button (click)="next = 4; listo = true; respuesta = respuesta + 1">Guardar respuesta</button>
+        <input type="text" name="respuesta" id="respuesta">
+        <button (click)="guardarRespuesta(); next = 4; listo = true; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
 
       <div class="espacio4" *ngIf="next == 4">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
-        <input type="text" name="respuesta2" id="respuesta2">
+        <input type="text" name="respuesta" id="respuesta">
         <button (click)="next = 5; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
 
       <div class="espacio5" *ngIf="next == 5">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
-        <input type="text" name="respuesta3" id="respuesta3">
+        <input type="text" name="respuesta" id="respuesta">
         <button (click)="next = 6; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
 
       <div class="espacio6" *ngIf="next == 6">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
-        <input type="text" name="respuesta4" id="respuesta4">
+        <input type="text" name="respuesta" id="respuesta">
         <button (click)="next = 7; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
 
       <div class="espacio3" *ngIf="next == 7">
         <p>Ingrese la respuesta {{respuesta}} de 5</p>
-        <input type="text" name="respuesta5" id="respuesta5">
+        <input type="text" name="respuesta" id="respuesta">
         <button (click)="next = 8; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
     </div>
-    <button *ngIf="listo" style="background: #1f4daf" (click)="$event.stopPropagation();">Registrar pregunta</button>
+    <button *ngIf="listo" style="background: #1f4daf" (click)="guardarRespuesta()">Registrar pregunta</button>
   </div>
 
   <div class="notifi">
