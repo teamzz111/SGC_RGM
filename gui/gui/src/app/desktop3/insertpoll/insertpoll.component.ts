@@ -48,6 +48,22 @@ export class InsertpollComponent {
       }
       case 2: {
         this.pregunuta.setR2($('#respuesta').val());
+        break;
+      }
+      case 3: {
+        this.pregunuta.setR3($('#respuesta').val());
+        break;
+      }
+      case 4: {
+        this.pregunuta.setR4($('#respuesta').val());
+        break;
+      }
+      case 5: {
+        this.pregunuta.setR5($('#respuesta').val());
+        break;
+      }
+      case 6: {
+        this.pregunuta.nrespuesta(this.respuesta);
       }
     }
   }

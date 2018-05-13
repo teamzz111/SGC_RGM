@@ -14,21 +14,24 @@ export class Pregunta {
     this.tpregunta = data;
   }
   setPregunta(data) {
-    this.tpregunta = data;
+    this.pregunta = data;
   }
   setR1(data) {
-    this.tpregunta = data;
+    this.r1 = data;
   }
   setR2(data) {
-    this.tpregunta = data;
+    this.r2 = data;
   }
   setR3(data) {
-    this.tpregunta = data;
+    this.r3 = data;
   }
   setR4(data) {
-    this.tpregunta = data;
+    this.r4 = data;
   }
   setR5(data) {
-    this.tpregunta = data;
+    this.r5 = data;
+  }
+  setnrespuesta(data) {
+    this.nrespuesta = data;
   }
 }
