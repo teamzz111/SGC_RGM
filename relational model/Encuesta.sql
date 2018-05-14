@@ -14,15 +14,11 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE DATABASE poll;
-USE poll;
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Tipo`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Tipo` (
+CREATE TABLE IF NOT EXISTS `Tipo` (
   `Id` INT NOT NULL,
 
   `Nombre` VARCHAR(45) NOT NULL,
@@ -33,7 +29,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Encuesta`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Encuesta` (
+CREATE TABLE IF NOT EXISTS `Encuesta` (
   `idEncuesta` VARCHAR(10) NOT NULL,
   `Nombre` VARCHAR(10) NOT NULL,
   `Tipo_Id` INT NOT NULL,
@@ -41,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Encuesta` (
   INDEX `fk_Encuesta_Tipo1_idx` (`Tipo_Id` ASC),
   CONSTRAINT `fk_Encuesta_Tipo1`
     FOREIGN KEY (`Tipo_Id`)
-    REFERENCES `mydb`.`Tipo` (`Id`)
+    REFERENCES `Tipo` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -50,7 +46,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Pregunta`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Pregunta` (
+CREATE TABLE IF NOT EXISTS `Pregunta` (
   `idPregunta` VARCHAR(10) NOT NULL,
   `TipoPregunta` VARCHAR(45) NOT NULL COMMENT 'Aqui se dirá si es abierta, opción múltiple, calificación, etc.',
   `Pregunta` VARCHAR(200) NOT NULL,
@@ -65,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Pregunta` (
   INDEX `fk_Pregunta_Encuesta_idx` (`Encuesta_idEncuesta` ASC),
   CONSTRAINT `fk_Pregunta_Encuesta`
     FOREIGN KEY (`Encuesta_idEncuesta`)
-    REFERENCES `mydb`.`Encuesta` (`idEncuesta`)
+    REFERENCES `Encuesta` (`idEncuesta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -74,7 +70,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Respuesta`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Respuesta` (
+CREATE TABLE IF NOT EXISTS `Respuesta` (
   `idRespuesta` VARCHAR(10) NOT NULL,
   `Respuesta` VARCHAR(45) NULL,
   `Encuesta_idEncuesta` VARCHAR(10) NOT NULL,
@@ -84,12 +80,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Respuesta` (
   INDEX `fk_Respuesta_Pregunta1_idx` (`Pregunta_idPregunta` ASC),
   CONSTRAINT `fk_Respuesta_Encuesta1`
     FOREIGN KEY (`Encuesta_idEncuesta`)
-    REFERENCES `mydb`.`Encuesta` (`idEncuesta`)
+    REFERENCES `Encuesta` (`idEncuesta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Respuesta_Pregunta1`
     FOREIGN KEY (`Pregunta_idPregunta`)
-    REFERENCES `mydb`.`Pregunta` (`idPregunta`)
+    REFERENCES `Pregunta` (`idPregunta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
