@@ -112,4 +112,18 @@
   background: #0ec20e;
   margin-top: -10em;
 }
+
+@media screen and (max-width: 800px) {
+  .papa .izq {
+    display: none;
+  }
+  .papa .der {
+    width: 100%;
+  }
+  .papa .der input[type="text"],
+  .papa .der input[type="email"],
+  .papa .der input[type="number"] {
+    min-width: 0px;
+  }
+}
 /*# sourceMappingURL=insertpoll.component.css.map */

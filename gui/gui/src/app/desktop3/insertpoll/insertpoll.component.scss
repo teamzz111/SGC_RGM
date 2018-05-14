@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 
 .papa {
@@ -23,7 +22,7 @@
     align-items: center;
     width: 50%;
     border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
-    img{
+    img {
       width: 100%;
     }
   }
@@ -102,4 +101,20 @@
   font-weight: 300;
   background: rgb(14, 194, 14);
   margin-top: -10em;
+}
+
+@media screen and (max-width: 800px) {
+  .papa {
+    .izq {
+      display: none;
+    }
+    .der {
+      width: 100%;
+      input[type="text"],
+      input[type="email"],
+      input[type="number"] {
+        min-width: 0px;
+      }
+    }
+  }
 }

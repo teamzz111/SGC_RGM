@@ -89,18 +89,6 @@ main .contenedor .padre a .color p#name {
   background: #651FFF;
 }
 
-main .contenedor .padre a .color3 p#name {
-  background: #E65100;
-}
-
-main .contenedor .padre a .color4 {
-  background: #1DE9B6;
-}
-
-main .contenedor .padre a .color5 {
-  background: #EC9A29;
-}
-
 main .contenedor .padre a .boton1 {
   display: flex;
   justify-items: center;
@@ -130,5 +118,14 @@ main .contenedor .padre a .boton1 p#name {
   padding-left: 0.3em;
   font-family: "Sans";
   font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+  main .contenedor .quehay {
+    display: none;
+  }
+  main .contenedor .padre {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=desktop3.component.css.map */

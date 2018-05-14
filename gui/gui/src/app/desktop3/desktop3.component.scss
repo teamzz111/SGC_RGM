@@ -3,8 +3,6 @@
 }
 
 main {
-  //padding-right: 0.6em;
-  //  padding-left: 0.6em;
   .contenedor {
     display: flex;
     width: 100%;
@@ -75,17 +73,7 @@ main {
             background: #651FFF;
           }
         }
-        .color3 {
-          p#name {
-            background: #E65100;
-          }
-        }
-        .color4 {
-          background: #1DE9B6;
-        }
-        .color5 {
-          background: #EC9A29;
-        }
+
         .boton1 {
           display: flex;
           justify-items: center;
@@ -113,6 +101,21 @@ main {
             font-weight: 300;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main{
+    .contenedor{
+      .quehay{
+
+          display: none;
+
+      }
+      .padre{
+        width: 100%;
       }
     }
   }
