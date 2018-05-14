@@ -28,7 +28,6 @@ $(document).ready(function () {
     }
 
     $('#lat').click(function () {
-
         if ($lateral == 0) {
             $('.fors').css("marginLeft", "0");
             $lateral = 1;
