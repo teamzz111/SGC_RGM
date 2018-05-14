@@ -12,7 +12,7 @@
     if($_GET['auth'] == 1){
         $user = $_POST['user'];
         $pass = $_POST['pass'];
-        $query = "SELECT cuenta.contrasena, empleado.cargo_idCargos FROM cuenta, empleado WHERE cuenta.cedula = $user AND empleado.cedula = ".$user;
+        $query = "SELECT cuenta.contrasena, empleado.cargo_idCargos, cargo.nivel FROM cuenta, empleado, cargo WHERE cuenta.cedula = $user AND empleado.cedula = $user AND empleado.cargo_idCargos = cargo.idCargos";
 
         $result = $con->query($query);
 
@@ -21,7 +21,7 @@
             if (encrypt($pass, $key) == $row['contrasena']){
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $user;
-                $_SESSION['job'] = $row['cargo_idCargos'];
+                $_SESSION['job'] = $row['nivel'];
                 echo "true";
             }
             else{
