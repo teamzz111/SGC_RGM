@@ -18,7 +18,6 @@ export class AppComponent {
   cargo: number;
   desk: number;
   cmenu: number;
-  cargos: string[];
   loggedin: number;
   url: string;
   listado;
@@ -35,7 +34,12 @@ export class AppComponent {
     .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
-    });
+   });
+    this.crudProducto.obtenerPermisos()// Llamamos a la funcion <strong>listar</strong> de nuestro servicio
+      .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
+      .subscribe(data => {
+        alert(data); // Asignamos nuestros datos mapeados a una variable
+      });
   }
 
   showDesk(number, object) {

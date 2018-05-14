@@ -9,6 +9,9 @@ export class UserServiceService {
   url: string;
   constructor(private http: Http) {
   }
+  obtenerPermisos() {
+    return this.http.get('../php/test.php?srv=8');
+  }
   registrar(opt) {
     return this.http.get('../php/register.php?opt=' + opt);
   }

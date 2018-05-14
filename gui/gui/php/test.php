@@ -15,35 +15,37 @@
 
     }
     else{
-    switch($_GET['srv']){
-      case 1:{
-        show(1, $host, $db, $pass, $user, $key);
-        break;
-      }
-
-      case 2: {
-        session_unset();
-        session_destroy();
-        echo json_encode('true');
-        break;
-      }
-
-      case 3: {
-        echo json_encode('true');
-        exit(0);
-      }
-      case 4: {
-        show(2, $host, $db, $pass, $user, $key);
-          break;
-      }
-      case 6:{
-
-      }
-      case 7: {
-        show(3, $host, $db, $pass, $user, $key);
-          break;
-      }
-    }
+        switch($_GET['srv']){
+            case 1:{
+                show(1, $host, $db, $pass, $user, $key);
+                break;
+            }
+            case 2: {
+                session_unset();
+                session_destroy();
+                echo json_encode('true');
+                break;
+            }
+            case 3: {
+                echo json_encode('true');
+                exit(0);
+            }
+            case 4: {
+                show(2, $host, $db, $pass, $user, $key);
+                break;
+            }
+            case 6:{
+                break;
+            }
+            case 7: {
+                show(3, $host, $db, $pass, $user, $key);
+                break;
+            }
+            case 8: {
+                show(4, $host, $db, $pass, $user, $key);
+                break;
+            }
+        }
     }
 
     function show($tipo, $host, $db,  $pass, $user, $key){
@@ -67,7 +69,7 @@
           $rs = $con->query($query);
         }
         else{
-            if($_GET['opt1'] == 10 && $tipo == 3){
+            if($_GET['svr'] == 10 && $tipo == 3){
             $asd = $_GET['cc'];
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
             $a = 2;
@@ -112,28 +114,27 @@
                 exit(0);
             }
         }
-            if($tipo == 3){
+        else if ($tipo == 4){
+            echo json_encode($_SESSION['job']);
+            exit(0);
+        }
+        else if($tipo == 3){
             if ($a == 0) {
                 $rs = $con->query($query." cuenta.cedula = empleado.cedula)");
             } else if($a == 1) {
-
                 $rs = $con->query($query." ) AND cuenta.cedula = empleado.cedula");
-
-            }
-            else{
-            $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
+            } else{
+                $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
             }
         }
-        }
-
-
+    }
+    $array = array();
+    $count = 0;
+    if ($rs) {
         $array = array();
-        $count = 0;
-        if ($rs) {
-            $array = array();
-            while ($fila = mysqli_fetch_assoc($rs)) {
-                $count++;
-                $array[] = array_map('html_entity_decode', $fila);
+        while ($fila = mysqli_fetch_assoc($rs)) {
+            $count++;
+            $array[] = array_map('html_entity_decode', $fila);
             }
             if($count == 0 ) {
               echo json_encode('error');
