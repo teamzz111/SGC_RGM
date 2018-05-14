@@ -29,13 +29,13 @@
                     $n=$char[$c];
                     $j[0].=$n;
                 }
-                $idEncuesta = $j[0];
+                $crp = $j[0];
                 $query1="SELECT * FROM Encuesta WHERE idEncuesta = '$crp'";
                 $resultado = $con->query($query1);}
 
             while ($resultado->num_rows>0); 
 
-                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo)";//luego sigo, tengo sueño xd
+                $query = "INSERT INTO Encuesta VALUES ('$crp','$Nombre',$Tipo)";//luego sigo, tengo sueño xd
                 $rs = $con->query($query);
                 if ($rs) {
                     echo json_encode('true');
