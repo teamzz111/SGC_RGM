@@ -48,6 +48,7 @@ $(document).ready(function () {
                 if (data == 'true') {
                     $('main .cont .noti').css('background', '#62E246');
                     $('main .cont .noti').html('<p>Autenticación exitosa...</p>');
+                    $('main .cont h1').css('marginBottom', '0.5%');
                     setTimeout(function () {
                         $('#user').val("");
                         $('#pass').val("");

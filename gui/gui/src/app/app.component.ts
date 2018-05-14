@@ -29,7 +29,6 @@ export class AppComponent {
     this.version = '0.7(b)';
     this.desk = 3;
     this.cmenu = 0;
-
     this.verifySession();
     this.crudProducto
     .listar(1) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
@@ -37,8 +36,6 @@ export class AppComponent {
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
     });
-
-
   }
 
   showDesk(number, object) {
