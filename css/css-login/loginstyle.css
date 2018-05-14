@@ -153,4 +153,21 @@ main .cont input[type="submit"]:hover {
   border-color: white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 931px) {
+  main .cont {
+    margin-top: 0;
+    padding: 5.5%;
+  }
+  main .cont h1 {
+    font-size: 2.5em;
+  }
+  main .cont .der {
+    width: 100%;
+  }
+  main .cont .izq {
+    width: 100%;
+    display: none;
+  }
+}
 /*# sourceMappingURL=loginstyle.css.map */

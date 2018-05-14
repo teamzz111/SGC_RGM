@@ -141,3 +141,22 @@ main {
         }
     }
 }
+
+@media screen and (max-width: 931px){
+    main{
+        .cont{
+            h1{
+                font-size: 2.5em;
+            }
+            margin-top: 0;
+            padding:5.5%;
+            .der{
+                width: 100%;
+            }
+            .izq{
+                width: 100%;
+                display: none;
+            }
+        }
+    }
+}
