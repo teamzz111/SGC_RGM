@@ -3,30 +3,30 @@
   <div class="lat">
     <img src="assets/img/small.png" alt="">
     <div class="info">
-      <p>SGC v0.1(a)</p>
+      <p>{{title}} {{version}}</p>
     </div>
-    <a  href="#" id="m1">
-      <button (click)="menu()">
+    <a (click)="menu()" id="m1">
+      <button>
         <span></span> <i>Menú</i>
       </button>
     </a>
-    <a href="#">
-      <button (click)="showDesk(1)">
+    <a (click)="showDesk(1)">
+      <button>
         <span></span> <i>Inicio</i>
       </button>
     </a>
-    <a href="#">
-      <button (click)="showDesk(3)">
+    <a (click)="showDesk(3)">
+      <button>
         <span></span> <i>Gestión de usuarios</i>
       </button>
     </a>
-    <a href="#">
-      <button (click)="showDesk(2)">
+    <a (click)="showDesk(2)">
+      <button>
         <span></span> <i>Gestión de procesos</i>
       </button>
     </a>
-    <a href="#">
-      <button (click)="showDesk(4)">
+    <a (click)="showDesk(4)">
+      <button>
         <span></span> <i>Administrar seccionales y cargos</i>
       </button>
     </a>
@@ -35,8 +35,8 @@
     <div class="user">
       <div class="name">
         <div class="conte" *ngFor="let item of listado">
-          <a href="#">
-              <button  (click)="showDesk(5)">
+          <a (click)="showDesk(5)">
+              <button >
                 <span>{{item.nombre}} {{item.apellido}}</span>
                 <div class="img"></div>
               </button>
