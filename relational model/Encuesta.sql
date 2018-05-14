@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `Encuesta` (
   `Nombre` VARCHAR(10) NOT NULL,
   `Tipo_Id` INT NOT NULL,
   `Fecha` DATE NOT NULL;
+  `FechaCierre` DATE NOT NULL;  
   PRIMARY KEY (`idEncuesta`),
   INDEX `fk_Encuesta_Tipo1_idx` (`Tipo_Id` ASC),
   CONSTRAINT `fk_Encuesta_Tipo1`
