@@ -51,6 +51,7 @@ main {
             flex-direction: column;
             align-content: center;
             justify-content: center;
+            justify-items: center;
         }
         .izq {
             width: 50%;
@@ -60,6 +61,7 @@ main {
             border-left: 1px solid black;
         }
         display: flex;
+        justify-items: center;
         background: white;
         max-width: 1200px;
         width: 99%;
@@ -86,20 +88,23 @@ main {
             font-size: 1.2em;
             padding: 1%;
             background: rgb(27, 233, 27);
-            max-width: 500px;
-            margin: auto;
-            margin-bottom: 0.5%;
+            max-width: 350px;
             border-radius: 10px;
             color: white;
             transition: 1s linear;
             font-family: "Sans";
             display: none;
+            margin: 1% auto;
+            p {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
         }
         h1 {
             font-family: "Sans";
             font-weight: 300;
             font-size: 3em;
-            margin-bottom: 5%;
+            margin-bottom: 1.5%;
             color: black;
         }
         input[type="text"],
@@ -113,8 +118,7 @@ main {
             margin-bottom: 1.5%;
             border: 1px solid transparent;
             border-bottom: 1px solid black;
-            &:active{
-            
+            &:active {
                 border-bottom: rgb(19, 79, 207);
             }
         }
@@ -142,18 +146,18 @@ main {
     }
 }
 
-@media screen and (max-width: 931px){
-    main{
-        .cont{
-            h1{
+@media screen and (max-width: 931px) {
+    main {
+        .cont {
+            h1 {
                 font-size: 2.5em;
             }
             margin-top: 0;
             padding:5.5%;
-            .der{
+            .der {
                 width: 100%;
             }
-            .izq{
+            .izq {
                 width: 100%;
                 display: none;
             }

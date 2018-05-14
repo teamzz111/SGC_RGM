@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    $lateral = 0;
-    $contenido = 1;
+    var lateral = 0;
+    var contenido = 1;
     inici();
 
     setInterval(inici, 12000);
     function inici(){
-        $tiempo = setTimeout(function(){
+         var tiempo = setTimeout(function(){
             better('#e2,#e3,#e4','#e1','#e1 .nav .c2','#e1 .nav .c1');
             tiempo = setTimeout(function(){
                 better('#e1,#e2,#e4','#e3','#e3 .nav .c3','#e3 .nav .c1');
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 $('main .cont .noti').fadeIn(2000);
                 if (data == 'true') {
                     $('main .cont .noti').css('background', '#62E246');
-                    $('main .cont .noti').html('Autenticación exitosa...');
+                    $('main .cont .noti').html('<p>Autenticación exitosa...</p>');
                     setTimeout(function () {
                         $('#user').val("");
                         $('#pass').val("");
