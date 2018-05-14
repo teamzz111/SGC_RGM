@@ -65,7 +65,6 @@ export class InsertpollComponent {
       }
       case 6: {
         if ($('#respuesta').val() === '') {
-          alert('faltó una xdxd');
           this.respuesta--;
         }
         this.pregunuta.setnrespuesta(this.respuesta);
