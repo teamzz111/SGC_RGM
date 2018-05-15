@@ -121,4 +121,13 @@
   font-family: "Sans";
   font-weight: 300;
 }
+
+@media screen and (max-width: 800px) {
+  .contenedor .quehay {
+    display: none;
+  }
+  .contenedor .padre {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=desktop4.component.css.map */

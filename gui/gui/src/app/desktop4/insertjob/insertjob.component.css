@@ -110,4 +110,16 @@
   background: #0ec20e;
   margin-top: -10em;
 }
+
+@media screen and (max-width: 800px) {
+  .papa .izq {
+    display: none;
+  }
+  .papa .der {
+    width: 100%;
+  }
+  .papa .der p {
+    font-size: 1.4em;
+  }
+}
 /*# sourceMappingURL=insertjob.component.css.map */

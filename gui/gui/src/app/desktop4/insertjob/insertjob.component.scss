@@ -100,3 +100,17 @@
   background: rgb(14, 194, 14);
   margin-top: -10em;
 }
+@media screen and (max-width: 800px) {
+  .papa {
+    .izq {
+      display: none;
+    }
+    .der {
+      width: 100%;
+      p {
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+

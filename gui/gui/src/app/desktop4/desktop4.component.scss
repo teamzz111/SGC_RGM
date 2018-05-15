@@ -2,7 +2,6 @@
     box-sizing: border-box;
   }
 
-
   .contenedor {
     display: flex;
     width: 100%;
@@ -41,7 +40,7 @@
         .color2 {
           border: 1px solid transparent;
           background: #1f4daf;
-          &:focus{
+          &:focus {
             background: black;
           }
           &:hover {
@@ -102,6 +101,17 @@
             font-weight: 300;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .contenedor {
+      .quehay{
+        display: none;
+      }
+      .padre{
+width: 100%;
       }
     }
   }
