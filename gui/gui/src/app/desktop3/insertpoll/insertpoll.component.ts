@@ -24,6 +24,7 @@ export class InsertpollComponent {
     this.listo = false;
     this.numero = 1;
     this.pregunuta = new Pregunta();
+    this.pregunuta.clean();
   }
 
   guardarEncuesta() {
