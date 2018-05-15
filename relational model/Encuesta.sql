@@ -50,19 +50,17 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Pregunta` (
   `idPregunta` VARCHAR(10) NOT NULL,
-  `TipoPregunta` VARCHAR(45) NOT NULL COMMENT 'Aqui se dirá si es abierta, opción múltiple, calificación, etc.',
   `Pregunta` VARCHAR(200) NOT NULL,
   `Respuesta1` VARCHAR(45) NOT NULL,
   `Respuesta2` VARCHAR(45) NULL,
   `Respuesta3` VARCHAR(45) NULL,
   `Respuesta4` VARCHAR(45) NULL,
   `Respuesta5` VARCHAR(45) NULL,
-  `NoRespuesta` INT NOT NULL COMMENT 'Dirá cuántas opciones de respuesta habrán',
-  `Encuesta_idEncuesta` VARCHAR(10) NOT NULL,
+  `idEncuesta` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idPregunta`),
-  INDEX `fk_Pregunta_Encuesta_idx` (`Encuesta_idEncuesta` ASC),
+  INDEX `fk_Pregunta_Encuesta_idx` (`idEncuesta` ASC),
   CONSTRAINT `fk_Pregunta_Encuesta`
-    FOREIGN KEY (`Encuesta_idEncuesta`)
+    FOREIGN KEY (`idEncuesta`)
     REFERENCES `Encuesta` (`idEncuesta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
