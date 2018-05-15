@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .papa {
   width: 100%;
   max-width: 1200px;
@@ -103,7 +106,7 @@
       background: black;
       padding: 2%;
       border-radius: 5px;
-      width: 100%;
+      width: 95%;
       max-width: 450px;
       color: black;
       border: 1px solid white;
@@ -143,3 +146,16 @@
   margin-top: -100%;
 }
 
+@media screen and (max-width: 800px) {
+  .papa {
+    .der {
+      display: none;
+    }
+    .izq {
+      width: 100%;
+      h2{
+        font-size: 1.4em;
+      }
+    }
+  }
+}
