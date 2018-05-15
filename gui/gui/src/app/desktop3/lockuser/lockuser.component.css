@@ -109,4 +109,16 @@
   background: #0ec20e;
   margin-top: -100%;
 }
+
+@media screen and (max-width: 800px) {
+  .papa .der {
+    display: none;
+  }
+  .papa .izq {
+    width: 100%;
+  }
+  .papa .izq h2 {
+    font-size: 1.4em;
+  }
+}
 /*# sourceMappingURL=lockuser.component.css.map */

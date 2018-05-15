@@ -1,13 +1,13 @@
 <div class="papa">
   <div class="izq">
     <h2>
-      Para bloquear un usuario <br>
-      Ingresa su cédula
+      Para bloquear un usuario
+      <br> Ingresa su cédula
     </h2>
-      <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
-      <div class="botton" (click)="lock(1)">
-        Buscar
-      </div>
+    <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
+    <div class="botton" (click)="lock(1)">
+      Buscar
+    </div>
 
     <div class="info">
       <div class="block" *ngIf="user == 'Activo' || user == 'Espera'" (click)="lock(2)">
@@ -21,7 +21,6 @@
 
   <div class="der">
     <div class="img">
-
       <img src="assets/img/lock.png" alt="">
     </div>
   </div>
