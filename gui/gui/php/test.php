@@ -69,7 +69,7 @@
           $rs = $con->query($query);
         }
         else{
-            if($_GET['svr'] == 10 && $tipo == 3){
+            if($_GET['srv'] == 10 && $tipo == 3){
             $asd = $_GET['cc'];
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
             $a = 2;
