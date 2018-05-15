@@ -51,6 +51,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Pregunta` (
   `idPregunta` VARCHAR(10) NOT NULL,
   `Pregunta` VARCHAR(200) NOT NULL,
+  `Numero` INT(2) NOT NULL, 
   `Respuesta1` VARCHAR(45) NOT NULL,
   `Respuesta2` VARCHAR(45) NULL,
   `Respuesta3` VARCHAR(45) NULL,
