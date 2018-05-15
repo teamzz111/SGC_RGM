@@ -15,7 +15,7 @@
         <span></span> <i>Inicio</i>
       </button>
     </a>
-    <a (click)="showDesk(3)">
+    <a (click)="showDesk(3)" *ngIf="cargo <= 2">
       <button>
         <span></span> <i>Gestión de usuarios</i>
       </button>

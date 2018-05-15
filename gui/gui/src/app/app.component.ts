@@ -38,8 +38,9 @@ export class AppComponent {
     this.crudProducto.obtenerPermisos()// Llamamos a la funcion <strong>listar</strong> de nuestro servicio
       .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
-        alert(data); // Asignamos nuestros datos mapeados a una variable
+        this.cargo = data; // Asignamos nuestros datos mapeados a una variable
       });
+
   }
 
   showDesk(number, object) {
