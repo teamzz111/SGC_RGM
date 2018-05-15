@@ -6,22 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css/css-login/loginstyle.css">
 </head>
+
 <body>
     <main>
         <div class="cont">
-            <h1>Recupera tu contraseña</h1>
-            <div class="noti">
+            <div class="der">
+                <h1>Recupera tu contraseña</h1>
+                <br>
+                <div class="noti">
+                </div>
+                <form method="POST" id="forgot" action="login/forgotpsswd.php">
+                    <input type="text" name="user" placeholder="Cédula de ciudadanía" id="user" required>
+                    <br>
+                    <input type="text" name="email" placeholder="Email" id="email" required>
+                    <br>
+                    
+                    <input type="submit" value="Reset Password">
+            
+                    <input type="submit" value="Back" readonly="readonly" onclick="location.href='login.html';">
+                    <br>
+                </form>
             </div>
-            <form method="POST" id="forgot" action="login/forgotpsswd.php">
-                <input type="text" name="user" placeholder="Cédula de ciudadanía" id="user" required>
-                <br>
-                <input type="text" name="email" placeholder="Email" id="email" required>
-                <br>
-                <br>
-                <input type="submit" value="Reset Password">
-                <input type="submit" value="Back" readonly="readonly" onclick="location.href='login.html';">
-                <br>
-            </form>
+<div class="izq">
+    <img src="img/illustration.png" alt="">
+</div>
         </div>
     </main>
 
