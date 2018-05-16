@@ -135,25 +135,20 @@ if(!isset($_GET['opt'])) {
             $query="";
             if ($con->connect_error) {
                 echo json_encode('false');
+                exit;
             }
-            if ($R2=='null')
-            {
+            if ($R2=='null') {
                 $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,Null,Null,Null,Null)";
             }
-            else if ($R3=='null')
-            {
+            else if ($R3=='null') {
                 $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,Null,Null,Null)";
             }
-            else if ($R4=='null')
-            {
+            else if ($R4=='null') {
                 $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,Null,Null)";
             }
-            if ($R5=='null')
-            {
+            if ($R5=='null') {
                 $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,$R4,Null)";
-            }
-            else
-            {
+            } else {
                 $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,$R4,$R5)";
             }
                 $rs = $con->query($query);
