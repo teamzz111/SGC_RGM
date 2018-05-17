@@ -1,6 +1,6 @@
 <?php
 
-  global $host, $db, $pass, $key, $user;
+  global $host, $db, $pass, $key, $user, $db2, $pass2, $user2;
   $host = "sql139.main-hosting.eu";
   //$host = "localhost";
   $db = "u462448961_bd";
