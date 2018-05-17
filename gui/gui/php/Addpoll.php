@@ -110,8 +110,9 @@ require 'Conexion.php';
             else { //es una pregunta con múltiple opción
              
 
-                echo $_SESSION['Encuesta']; // ahí queda
-            $idPregunta="Esto es malo";
+                $con = new mysqli($host, $user2, $pass2, $db2);
+                $con->query("SET NAMES 'utf8'");
+                $idPregunta="Esto es malo";
             do{
                 $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
                 $long=strlen($char)-1;
@@ -125,7 +126,7 @@ require 'Conexion.php';
                 $query1="SELECT * FROM Pregunta WHERE idPregunta = '$idPregunta'";
                 $resultado = $con->query($query1);}
 
-            while ($resultado->num_rows>0 || $idPregunta='Esto es malo'); 
+            while ($resultado->num_rows>0 || $idPregunta=='Esto es malo'); 
             
 
             $input = json_decode($inputJSON, TRUE);
@@ -136,7 +137,9 @@ require 'Conexion.php';
             $R3= $input['r3'];
             $R4= $input['r4'];
             $R5= $input['r5'];
+            $IdEn=$_SESSION['Encuesta'];
             $Num= $_SESSION['NumPregunta'];
+            
     
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
@@ -145,21 +148,20 @@ require 'Conexion.php';
                 echo json_encode('false');
                 exit;
             }
-            if ($R2=='null') {
-                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,Null,Null,Null,Null,'$IdEn')";
+            if ($R2=='nulll') {
+                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta','$R1',Null,Null,Null,Null,'$IdEn')";
             }
-            else if ($R3=='null') {
-                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,Null,Null,Null,'$IdEn')";
+            else if ($R3=='nulll') {
+                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta','$R1','$R2',Null,Null,Null,'$IdEn')";
             }
-            else if ($R4=='null') {
-                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,Null,Null,'$IdEn')";
+            else if ($R4=='nulll') {
+                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta','$R1','$R2','$R3',Null,Null,'$IdEn')";
             }
-            if ($R5=='null') {
-                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,$R4,Null,'$IdEn')";
-            } else {
-                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',$R1,$R2,$R3,$R4,$R5,'$IdEn')";
-            }
-                echo $query;
+            else if ($R5=='nulll') {
+                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta','$R1','$R2','$R3','$R4',Null,'$IdEn')";
+            } else 
+                $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta','$R1','$R2','$R3','$R4','$R5','$IdEn')";
+            
                 $rs = $con->query($query);
                 $_SESSION['NumPregunta'] = $_SESSION['NumPregunta']+1;
                 if ($rs) {

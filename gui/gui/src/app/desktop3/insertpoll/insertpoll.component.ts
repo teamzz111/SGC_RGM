@@ -87,17 +87,17 @@ export class InsertpollComponent {
           this.respuesta--;
         }
         this.pregunuta.setnrespuesta(this.respuesta);
-   
+       // alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {
-          if (data === 'true' || data === 'true2') {
+          if (data2 === 'true' || data2 === 'true2') {
             $('.notifi').css({ background: 'rgb(14,194,14)' });
-            $('.notifi').text('Se añadió la encuesta');
+            $('.notifi').text('Se añadió la pregunta');
             $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
-          } else if (data === 'false' || data === '0' || data === 'false2') {
+          } else if (data2 === 'false' || data2 === '0' || data2 === 'false2') {
             $('.notifi').css({ background: 'red' });
             $('.notifi').text('Se encontró un error');
             $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
