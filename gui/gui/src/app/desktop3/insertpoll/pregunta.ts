@@ -10,14 +10,14 @@ export class Pregunta {
   constructor() {
   }
   clean() {
-    this.tpregunta = null;
-    this.pregunta = null;
-    this.r1 = null;
-    this.r2 = null;
-    this.r3 = null;
-    this.r4 = null;
-    this.r5 = null;
-    this.nrespuesta = null;
+    this.tpregunta = 'nulll';
+    this.pregunta = 'nulll';
+    this.r1 = 'nulll';
+    this.r2 = 'nulll';
+    this.r3 = 'nulll';
+    this.r4 = 'nulll';
+    this.r5 = 'nulll';
+    this.nrespuesta = 'nulll';
   }
   setTPregunta(data) {
     this.tpregunta = data;

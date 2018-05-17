@@ -29,7 +29,7 @@ if(!isset($_GET['opt'])) {
         $Seccional = $input['seccional']; 
 
         $con = new mysqli($host, $user, $pass, $db);
-        $con->query("SET NAMES 'utf8'");
+        $con->query("SET NAMES 'utf8'")
         if ($con->connect_error) {
             echo json_encode('falseC');
         }
