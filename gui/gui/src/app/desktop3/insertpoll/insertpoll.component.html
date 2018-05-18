@@ -63,7 +63,8 @@
         <button (click)="guardarRespuesta(5); next = 8; respuesta = respuesta + 1">Guardar respuesta</button>
       </div>
     </div>
-    <button *ngIf="listo" style="background: #1f4daf" (click)="guardarRespuesta(6)">Registrar pregunta</button>
+    <button *ngIf="listo" style="background: #1f4daf" (click)="guardarRespuesta(6); preparado = true;">Registrar pregunta</button>
+    <button style="background: greenyellow" *ngIf="preparado">Registrar encuesta</button>
   </div>
 
   <div class="notifi">

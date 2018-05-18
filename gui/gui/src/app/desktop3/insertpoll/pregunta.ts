@@ -17,7 +17,7 @@ export class Pregunta {
     this.r3 = 'nulll';
     this.r4 = 'nulll';
     this.r5 = 'nulll';
-    this.nrespuesta = 'nulll';
+    this.nrespuesta = 0;
   }
   setTPregunta(data) {
     this.tpregunta = data;

@@ -17,6 +17,7 @@ export class InsertpollComponent {
   listo: boolean;
   numero: number;
   name;
+  preparado: boolean;
   pregunuta;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
@@ -25,32 +26,33 @@ export class InsertpollComponent {
     this.numero = 1;
     this.pregunuta = new Pregunta();
     this.pregunuta.clean();
+    this.preparado = false;
   }
 
   guardarEncuesta() {
-    this.name = new Encuesta($('#nombre').val(),$('#encuesta').val());
+    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val());
     // tslint:disable-next-line:max-line-length
     this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
-        if (data === 'true' || data === 'true2') {
-          $('.notifi').css({ background: 'rgb(14,194,14)' });
-          $('.notifi').text('Se añadió la encuesta');
-          $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-            setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-          });
-        } else if (data === 'false' || data === '0' || data === 'false2') {
-          $('.notifi').css({ background: 'red' });
-          $('.notifi').text('Se encontró un error');
-          $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-            setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-          });
-        } else {
-          $('.notifi').css({ background: 'red' });
-          $('.notifi').text('Problema inesperado');
-          $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-            setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-          });
-        }
+          if (data === 'true' || data === 'true2') {
+            $('.notifi').css({ background: 'rgb(14,194,14)' });
+            $('.notifi').text('Se añadió la encuesta');
+            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+            });
+          } else if (data === 'false' || data === '0' || data === 'false2') {
+            $('.notifi').css({ background: 'red' });
+            $('.notifi').text('Se encontró un error');
+            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+            });
+          } else {
+            $('.notifi').css({ background: 'red' });
+            $('.notifi').text('Error inesperado');
+            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+            });
+          }
       });
   }
 
@@ -87,7 +89,6 @@ export class InsertpollComponent {
           this.respuesta--;
         }
         this.pregunuta.setnrespuesta(this.respuesta);
-       // alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {
@@ -105,13 +106,13 @@ export class InsertpollComponent {
             });
           } else {
             $('.notifi').css({ background: 'red' });
-            $('.notifi').text('Problema inesperado');
+            $('.notifi').text('Error inesperado');
             $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
           }
          });
-
+        this.preparado = true;
         this.pregunuta.clean();
         this.next = 1;
         this.listo = false;
@@ -142,9 +143,9 @@ export class InsertpollComponent {
             $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
-          } else  {
+          } else {
             $('.notifi').css({ background: 'red' });
-            $('.notifi').text('Error inesperado');
+            $('.notifi').text('Pregunta existente');
             $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
