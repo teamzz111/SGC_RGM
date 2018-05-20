@@ -18,6 +18,10 @@
     background-color: white;
 }
 
+#smyh{
+    border: none;
+}
+
 h1{
     display: flex;
     justify-content: left;
@@ -81,7 +85,6 @@ h1{
     float: right;
     width: 80%;
     text-align: left;
-    margin-top: 0%;
     vertical-align: middle;
 }
 
