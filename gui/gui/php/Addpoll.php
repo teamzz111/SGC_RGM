@@ -39,7 +39,8 @@
             while ($resultado->num_rows > 0  || $idEncuesta =='Esto es malo'); 
            
                 $hoy = getdate();
-                $feh = $hoy['year']."-".$['month']."-".$['mday'];
+                $feh = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+                //echo $date;
                 $_SESSION['Encuesta'] = $idEncuesta;
                 $_SESSION['NumPregunta'] = 1;
                 $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo, '$feh','$date')";
