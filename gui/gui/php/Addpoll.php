@@ -1,6 +1,5 @@
 <?php
-
-require 'Conexion.php';
+    require 'Conexion.php';
     session_start();
     if(isset($_GET['opt'])){
         $inputJSON = file_get_contents('php://input');
@@ -58,9 +57,11 @@ require 'Conexion.php';
         { //se registra pregunta
              
              if($result['nrespuesta'] == 0){ // es una respuesta abierta 
-                
-                //echo json_encode($result['pregunta']);
+
+                $inputJSON = file_get_contents('php://input');
+                $result = json_decode($inputJSON, true);
                 $con = new mysqli($host, $user2, $pass2, $db2);
+                 $con->query("SET NAMES 'utf8'");
                  $idPregunta="Esto es malo";
                  do {
                      $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -78,12 +79,10 @@ require 'Conexion.php';
      
                  while ($resultado->num_rows>0 || $idPregunta=='Esto es malo'); 
                  
-     
-                 $input = json_decode($inputJSON, TRUE);
-                 $Pregunta = $input['pregunta'];
-                 $Tipo= $input['tpregunta'];
+                 $Pregunta = $result['pregunta'];
+                 //$Tipo= $result['tpregunta'];
                 // $Numero = $input['numero'];
-                 $R1= $input['r1'];
+                 $R1= $result['r1'];
                  $Num= $_SESSION['NumPregunta'];
                  $IdEn =  $_SESSION['Encuesta'];
          
@@ -95,10 +94,10 @@ require 'Conexion.php';
                  }
                  
                  
-                     $query = "INSERT INTO Pregunta VALUES ('$idPregunta','$Tipo',$Num,'$Pregunta',null,null,null,null,null,'$IdEn')";
+                     $query = "INSERT INTO Pregunta VALUES ('$idPregunta','tp1',$Num,'$Pregunta',null,null,null,null,null,'$IdEn')";
                  
                      $rs = $con->query($query);
-                     echo $query;
+                 
                      $_SESSION['NumPregunta']=$_SESSION['NumPregunta']+1;
                      if ($rs) {
                          echo json_encode('true');
