@@ -13,7 +13,7 @@
         <p>Ingrese la fecha límite</p>
 
         <div class="form-row show-inputbtns">
-          <input type="date" data-date-inline-picker="false" data-date-popover='{
+          <input id = "date" type="date" data-date-inline-picker="false" data-date-popover='{
             "inline": true
           }' />
         </div>
@@ -22,7 +22,7 @@
         </div>
       </form>
       <br>
-      <button (click)='guardarEncuesta(); next = 1;'>Nueva pregunta</button>
+      <button (click)='guardarEncuesta();'>Nueva pregunta</button>
     </div>
 
     <div class="espacio" *ngIf='next == 1'>

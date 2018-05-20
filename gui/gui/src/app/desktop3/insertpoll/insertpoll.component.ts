@@ -19,6 +19,8 @@ export class InsertpollComponent {
   name;
   preparado: boolean;
   pregunuta;
+  splitted;
+  fecha;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
     this.respuesta = 1;
@@ -30,7 +32,10 @@ export class InsertpollComponent {
   }
 
   guardarEncuesta() {
-    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val());
+    if ($('#date').val() !== '' && $('#encuesta').val() !== '') {
+    this.splitted = $('#date').val().split('-', 3);
+    this.fecha = this.splitted[2] + '-' + this.splitted[1] + '-' + this.splitted[0].substring(2, 4);
+    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha);
     // tslint:disable-next-line:max-line-length
     this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {
@@ -53,7 +58,15 @@ export class InsertpollComponent {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
           }
+        this.next = 1;
       });
+    } else {
+      $('.notifi').css({ background: 'red' });
+      $('.notifi').text('Debe registrar la fecha y el nombre');
+      $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+        setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+      });
+    }
   }
 
   guardarTPregunta() {
