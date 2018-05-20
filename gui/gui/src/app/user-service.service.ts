@@ -40,8 +40,7 @@ export class UserServiceService {
     }
   }
   insertar(data) {
-    // this.http.post('../../php/register.php', JSON.stringify(data)).subscribe(res => console.log(res));
-    return this.http.post('../php/register.php', JSON.stringify(data));
+     return this.http.post('../php/register.php', JSON.stringify(data));
   }
 
   busca(data) {
@@ -67,7 +66,7 @@ export class UserServiceService {
     return this.http.post('../php/AddPoll.php?opt=1', data);
   }
 
-  guardarPregunta(data){
+  guardarPregunta(data) {
     return this.http.post('../php/AddPoll.php?opt=2', data);
   }
 }
