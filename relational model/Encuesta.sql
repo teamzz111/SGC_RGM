@@ -74,6 +74,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Respuesta` (
   `idRespuesta` VARCHAR(10) NOT NULL,
   `Respuesta` VARCHAR(45) NULL,
+  `Respuesta2` VARCHAR(45) NULL,
+  `Respuesta3` VARCHAR(45) NULL,
+  `Respuesta4` VARCHAR(45) NULL,
+  `Respuesta5` VARCHAR(45) NULL,
   `Encuesta_idEncuesta` VARCHAR(10) NOT NULL,
   `Pregunta_idPregunta` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idRespuesta`),

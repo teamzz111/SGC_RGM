@@ -43,7 +43,7 @@ export class AppComponent {
 
   }
 
-  showDesk(number, object) {
+  showDesk(number) {
     if (this.cmenu === 1) {
       this.menu();
     }
