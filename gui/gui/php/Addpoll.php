@@ -11,7 +11,7 @@
             $input = json_decode($inputJSON, TRUE);
             $Nombre = $input['nombre'];
             $Tipo = $input['tipo'];
-            
+            $date = $input['fecha'];
             $query = "SELECT Id FROM Tipo WHERE Nombre = '$Tipo'";
             $resultado = $con->query($query);
             $row = $resultado->fetch_array(MYSQLI_ASSOC);
@@ -38,10 +38,11 @@
 
             while ($resultado->num_rows > 0  || $idEncuesta =='Esto es malo'); 
            
-           
+                $hoy = getdate();
+                $feh = $hoy['year']."-".$['month']."-".$['mday'];
                 $_SESSION['Encuesta'] = $idEncuesta;
                 $_SESSION['NumPregunta'] = 1;
-                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo, '10/05/18','10/04/14')";//luego sigo, tengo sueño xd
+                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo, '$feh','$date')";
                 
                 $rs = $con->query($query);
                 if ($rs) {
