@@ -124,7 +124,6 @@ export class InsertpollComponent {
         }
         this.pregunuta.setnrespuesta(this.respuesta);
         this.pregunuta.setTPregunta(this.tipo2);
-        alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {
@@ -152,7 +151,7 @@ export class InsertpollComponent {
         this.pregunuta.clean();
         this.next = 1;
         this.listo = false;
-        this.respuesta = 1;
+        this.respuesta++;
         this.numero = 1;
         break;
       }
@@ -206,5 +205,10 @@ export class InsertpollComponent {
     this.listo = false;
     this.respuesta = 1;
     this.numero = 1;
+    $('.notifi').css({ background: 'rgb(14,194,14)' });
+    $('.notifi').text('Encuesta añadida con éxito');
+    $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+      setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+    });
   }
 }
