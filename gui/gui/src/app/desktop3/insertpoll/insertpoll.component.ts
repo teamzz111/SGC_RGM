@@ -1,3 +1,4 @@
+import { User } from './../../../../../../app/rand/out/sgc-win32-x64/resources/app/src/gui/src/app/desktop3/user';
 import { Encuesta } from './encuesta';
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
@@ -23,6 +24,10 @@ export class InsertpollComponent {
   fecha;
   tipo2;
   cadena;
+  admin;
+  coordinador;
+  liderdeproceso;
+  usuariodemo;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
     this.respuesta = 1;
@@ -31,68 +36,67 @@ export class InsertpollComponent {
     this.pregunuta = new Pregunta();
     this.pregunuta.clean();
     this.preparado = false;
+
   }
 
   guardarEncuesta() {
     if ($('#date').val() !== '' && $('#encuesta').val() !== '') {
-      this.cadena = '';
-      if ($('input:checkbox[name=administrador]').prop('checked')) {
-        this.cadena += '1';
+      this.splitted = $('#date').val().split('-', 3);
+      this.fecha = this.splitted[0] + '-' + this.splitted[1] + '-' + this.splitted[2];
+      if ($('input:checkbox[name=administrador]').prop('checked')){
+        this.admin = 'true';
       } else {
-        this.cadena += '0';
+        this.admin = 'false';
       }
       if ($('input:checkbox[name=coordinador]').prop('checked')) {
-        this.cadena += '1';
+        this.coordinador = 'true';
       } else {
-        this.cadena += '0';
+        this.coordinador = 'false';
       }
-      if ($('input:checkbox[name=lider]').prop('checked')) {
-        this.cadena += '1';
+      if ($('input:checkbox[name=liderdeproceso]').prop('checked')) {
+        this.liderdeproceso = 'true';
       } else {
-        this.cadena += '0';
+        this.liderdeproceso = 'false';
       }
-      if ($('input:checkbox[name=usersn]').prop('checked')) {
-        this.cadena += '1';
+      if ($('input:checkbox[name=usuariodemo]').prop('checked')) {
+        this.usuariodemo = 'true';
       } else {
-        this.cadena += '0';
+        this.usuariodemo = 'false';
       }
-    alert(this.cadena);
-    this.splitted = $('#date').val().split('-', 3);
-    this.fecha = this.splitted[0] + '-' + this.splitted[1] + '-' + this.splitted[2];
-    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha,
-      $('input:checkbox[name=administrador]').prop('checked'), $('input:checkbox[name=coordinador]').prop('checked'),
-      $('input:checkbox[name=liderproceso]').prop('checked'), $('input:checkbox[name=usuariodemo]').prop('checked'));
-    // tslint:disable-next-line:max-line-length
-    this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
-      .subscribe(data => {
-          if (data === 'true' || data === 'true2') {
-            $('.notifi').css({ background: 'rgb(14,194,14)' });
-            $('.notifi').text('Se añadió la encuesta');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-            });
-          } else if (data === 'false' || data === '0' || data === 'false2') {
-            $('.notifi').css({ background: 'red' });
-            $('.notifi').text('Se encontró un error');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-            });
-          } else {
-            $('.notifi').css({ background: 'red' });
-            $('.notifi').text('Error inesperado');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-              setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-            });
-          }
-        this.next = 1;
-      });
-    } else {
-      $('.notifi').css({ background: 'red' });
-      $('.notifi').text('Debe registrar la fecha y el nombre');
-      $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-        setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
-      });
-    }
+
+      this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha,
+      this.admin, this.coordinador, this.liderdeproceso, this.usuariodemo);
+        alert(JSON.stringify(this.name));
+      this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json())
+       .subscribe(data => {
+            if (data === 'true' || data === 'true2') {
+              $('.notifi').css({ background: 'rgb(14,194,14)' });
+              $('.notifi').text('Se añadió la encuesta');
+              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              });
+            } else if (data === 'false' || data === '0' || data === 'false2') {
+              $('.notifi').css({ background: 'red' });
+              $('.notifi').text('Se encontró un error');
+              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              });
+            } else {
+              $('.notifi').css({ background: 'red' });
+              $('.notifi').text('Error inesperado');
+              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              });
+            }
+          this.next = 1;
+        });
+      } else {
+        $('.notifi').css({ background: 'red' });
+        $('.notifi').text('Debe registrar la fecha y el nombre');
+        $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+          setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+        });
+      }
   }
 
   guardarTPregunta() {
