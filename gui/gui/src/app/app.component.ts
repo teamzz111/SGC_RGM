@@ -26,7 +26,7 @@ export class AppComponent {
   constructor(private crudProducto: UserServiceService) {
     this.title = 'SGC';
     this.version = '0.7(b)';
-    this.desk = 5;
+    this.desk = 3;
     this.cmenu = 0;
     this.verifySession();
     this.crudProducto

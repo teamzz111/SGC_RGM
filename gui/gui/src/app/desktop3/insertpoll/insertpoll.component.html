@@ -8,27 +8,28 @@
         <OPTION VALUE="Procesos">Procesos</OPTION>
         <OPTION VALUE="Documentos">Documentos</OPTION>
       </SELECT>
-      <input type="text" name="user" id="nombreU" placeholder="Identificación">
       <br>
-      <input type="checkbox" name="administradr" id="">
-      <label for="checkbox">Administradores</label>
-      <input type="checkbox" name="coordinador" id="">
-      <label for="checkbox">Coordinador</label>
-      <input type="checkbox" name="lider" id="">
-      <label for="checkbox">Líder de proceso</label>
-      <input type="checkbox" name="usersn" id="">
-      <label for="checkbox">Usuarios demo</label>
+      <div class="caja">
+        <input type="checkbox" name="administrador">
+        <label for="checkbox">Administradores</label>
+        <input type="checkbox" name="coordinador">
+        <label for="checkbox">Coordinador</label>
+        <input type="checkbox" name="lider">
+        <label for="checkbox">Líder de proceso</label>
+        <input type="checkbox" name="usersn">
+        <label for="checkbox">Usuarios demo</label>
+      </div>
 
 
       <form action="#" class="ws-validate">
         <p>Ingrese la fecha límite</p>
         <div class="form-row show-inputbtns">
-          <input id = "date" type="date" data-date-inline-picker="false" data-date-popover='{
+          <input id="date" type="date" data-date-inline-picker="false" data-date-popover='{
             "inline": true
           }' />
         </div>
         <div class="form-row">
-         <!-- <input type="submit" />-->
+          <!-- <input type="submit" />-->
         </div>
       </form>
       <br>
@@ -85,7 +86,7 @@
       </div>
     </div>
     <button *ngIf="listo" style="background: #1f4daf" (click)="guardarRespuesta(6); preparado = true;">Registrar pregunta</button>
-    <button style="background: rgb(10, 209, 10)" *ngIf="preparado" (click) = "aceptar()">Registrar encuesta</button>
+    <button style="background: rgb(10, 209, 10)" *ngIf="preparado" (click)="aceptar()">Registrar encuesta</button>
   </div>
 
   <div class="notifi">
@@ -98,29 +99,30 @@
 
 <script>
   webshim.setOptions('forms-ext', {
-      replaceUI: 'auto',
-      types: 'date',
-      date: {
-        startView: 2,
-        inlinePicker: true,
-        classes: 'hide-inputbtns'
-      }
-    });
-    webshim.setOptions('forms', {
-      lazyCustomMessages: true
-    });
-    //start polyfilling
-    webshim.polyfill('forms forms-ext');
+    replaceUI: 'auto',
+    types: 'date',
+    date: {
+      startView: 2,
+      inlinePicker: true,
+      classes: 'hide-inputbtns'
+    }
+  });
+  webshim.setOptions('forms', {
+    lazyCustomMessages: true
+  });
+  //start polyfilling
+  webshim.polyfill('forms forms-ext');
 
-    //only last example using format display
-    $(function () {
-      $('.format-date').each(function () {
-        var $display = $('.date-display', this);
-        $(this).on('change', function (e) {
-          //webshim.format will automatically format date to according to webshim.activeLang or the browsers locale
-          var localizedDate = webshim.format.date($.prop(e.target, 'value'));
-          $display.html(localizedDate);
-        });
+  //only last example using format display
+  $(function () {
+    $('.format-date').each(function () {
+      var $display = $('.date-display', this);
+      $(this).on('change', function (e) {
+        //webshim.format will automatically format date to according to webshim.activeLang or the browsers locale
+        var localizedDate = webshim.format.date($.prop(e.target, 'value'));
+        $display.html(localizedDate);
       });
     });
+  });
+
 </script>

@@ -3,6 +3,10 @@ export class Encuesta {
     public nombre: string,
     public tipo: string,
     public fecha: string,
-    public cargo: string
-  ) {}
+    public administrador: string,
+    public coordinador: string,
+    public liderdeproceso: string,
+    public usuariodemo: string
+  ) {
+  }
 }
