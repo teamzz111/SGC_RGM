@@ -36,7 +36,7 @@ require 'Conexion.php';
             $result = json_decode($inputJSON, true);
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
-            $Id = $input['id'];
+            $Id = $input['id']; 
             $input = json_decode($inputJSON, TRUE);
             $query="";
             if ($con->connect_error) 
@@ -44,80 +44,101 @@ require 'Conexion.php';
                 echo json_encode('false');
                 exit;
             }
-            $query = "SELECT count(Respuesta) from Respuesta";
-            $result = $con->query($query);
-            $row = $result ->fetch_array(MYSQLI_ASSOC);
-            $v1 = $row['count(Respuesta)'];
-
-            $query = "SELECT count(Respuesta2) from Respuesta";
-            $result = $con->query($query);
-            $row = $result ->fetch_array(MYSQLI_ASSOC);
-            $v1 = $v1+$row['count(Respuesta2)'];
-
-            $query = "SELECT count(Respuesta3) from Respuesta";
-            $result = $con->query($query);
-            $row = $result ->fetch_array(MYSQLI_ASSOC);
-            $v1 = $v1+$row['count(Respuesta3)'];
-
-            $query = "SELECT count(Respuesta4) from Respuesta";
-            $result = $con->query($query);
-            $row = $result ->fetch_array(MYSQLI_ASSOC);
-            $v1 = $v1+$row['count(Respuesta4)'];
-
-            $query = "SELECT count(Respuesta5) from Respuesta";
-            $result = $con->query($query);
-            $row = $result ->fetch_array(MYSQLI_ASSOC);
-            $v1 = $v1+$row['count(Respuesta5)'];
             
             $query = "SELECT count(*) FROM Encuesta WHERE idEncuesta= '$Id'" ;
             $result = $con->query($query);
             $row = $result ->fetch_array(MYSQLI_ASSOC);
             $NumPreguntas = $row['count(*)'];
 
-            $contador1=0;
-            $contador2=0;
-            $contador3=0;
-            $contador4=0;
-            $contador5=0;
+            $contador=0;
+            $Pregunta;
+
+            $array = array();
 
             for($i=1; $i<=$NumPreguntas; $i++)
             {
-                $query = "SELECT count(Respuesta1) FROM Pregunta WHERE Numero= $i";
+                $query "SELECT Pregunta FROM Pregunta WHERE Numero = $i"
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
-                $contador1 = $contador1+$row['count(Respuesta1)'];
+                $Pregunta = $row['Pregunta'];
 
-                $query = "SELECT count(Respuesta2) FROM Pregunta WHERE Numero= $i";
+                array_push($array, $Pregunta);
+
+                $query = "SELECT count(Respuesta1), Respuesta1 FROM Pregunta WHERE Numero= $i";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
-                $contador2 = $contador2+$row['count(Respuesta2)'];
+                $contador = $row['count(Respuesta1)'];
+                if($contador>0)
+                {
+                    $query = "SELECT count(Respuesta) FROM Respuesta WHERE Num= $i";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $contador+$row['count(Respuesta1)'];
 
-                $query = "SELECT count(Respuesta3) FROM Pregunta WHERE Numero= $i";
+                    array_push($array, $row['Respuesta1']);
+                    array_push($array, $contador);
+                }
+
+                $query = "SELECT count(Respuesta2), Respuesta2 FROM Pregunta WHERE Numero= $i";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
-                $contador3 = $contador3+$row['count(Respuesta3)'];
+                $contador = $row['count(Respuesta2)'];
+                if($contador>0)
+                {
+                    $query = "SELECT count(Respuesta2) FROM Respuesta WHERE Num= $i";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $contador+$row['count(Respuesta2)'];
 
-                $query = "SELECT count(Respuesta4) FROM Pregunta WHERE Numero= $i";
+                    array_push($array, $row['Respuesta2']);
+                    array_push($array, $contador);
+                }
+
+                $query = "SELECT count(Respuesta3), Respuesta3 FROM Pregunta WHERE Numero= $i";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
-                $contador4 = $contador4+$row['count(Respuesta4)'];
+                $contador = $row['count(Respuesta3)'];
+                if($contador>0)
+                {
+                    $query = "SELECT count(Respuesta3) FROM Respuesta WHERE Num= $i";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $contador+$row['count(Respuesta3)'];
 
-                $query = "SELECT count(Respuesta5) FROM Pregunta WHERE Numero= $i";
+                    array_push($array, $row['Respuesta3']);
+                    array_push($array, $contador);
+                }
+
+                $query = "SELECT count(Respuesta4), Respuesta4 FROM Pregunta WHERE Numero= $i";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
-                $contador5 = $contador5+$row['count(Respuesta5)'];
+                $contador = $row['count(Respuesta4)'];
+                if($contador>0)
+                {
+                    $query = "SELECT count(Respuesta4) FROM Respuesta WHERE Num= $i";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $contador+$row['count(Respuesta4)'];
 
+                    array_push($array, $row['Respuesta4']);
+                    array_push($array, $contador);
+                }
 
+                $query = "SELECT count(Respuesta5), Respuesta5 FROM Pregunta WHERE Numero= $i";
+                $result = $con->query($query);
+                $row = $result ->fetch_array(MYSQLI_ASSOC);
+                $contador = $row['count(Respuesta5)'];
+                if($contador>0)
+                {
+                    $query = "SELECT count(Respuesta5) FROM Respuesta WHERE Num= $i";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $contador+$row['count(Respuesta5)'];
+
+                    array_push($array, $row['Respuesta5']);
+                    array_push($array, $contador);
+                }
             }
-
-
-
-            //ira woman vas a hacer un for con el número de registros que tenga la encuesta con el id
-            //tal cosa y en ese for a sumar todas las respuestas que tienen las preguntas, con ese 
-            //número hacer un for para ver la cantidad de respuestas que escogieron esas preguntas
-            //osea la cantidad de Respuesta.Respuesta que hay de esas Pregunta.Respuesta    
-            //finalmente imprimir, la pregunta, las posiblidades de respuesta y la cantidad de cada una
-            
             if ($result) {echo json_encode('true');}
             else {echo json_encode('false');}
         }
