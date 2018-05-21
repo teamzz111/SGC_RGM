@@ -26,6 +26,30 @@ export class UserconfigComponent {
   constructor(private crudProducto: UserServiceService) {
     this.crudProducto.busca($('-20').val()).map(response => response.json())
 
+    this.visible = true;
+
+          for (const item of data) {
+          $('#cedula').val(item.cedula);
+          $('#nombre').val(item.nombre);
+          $('#apellido').val(item.apellido);
+          $('#correo').val(item.email);
+          $('#telefono').val(item.telefono);
+          $('#direccion').val(item.direccion);
+          $('#numero').val(item.numero);
+          if (item.genero === 'm') {
+            $('input:radio[name="gender"]')
+              .filter('[value = "male"]')
+              .prop('checked', true);
+          } else if (item.genero === 'f') {
+            $('input:radio[name="gender"]')
+              .filter('[value = "female"]')
+              .prop('checked', true);
+          } else {
+            $('input:radio[name="gender"]')
+              .filter('[value = "other"]')
+              .prop('checked', true);
+          }
+        }
   }
 
   busca2() {
