@@ -36,7 +36,7 @@ export class InsertpollComponent {
     if ($('#date').val() !== '' && $('#encuesta').val() !== '') {
     this.splitted = $('#date').val().split('-', 3);
     this.fecha = this.splitted[0] + '-' + this.splitted[1] + '-' + this.splitted[2];
-    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha);
+      this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha, $('#cargo').val());
     // tslint:disable-next-line:max-line-length
     this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {

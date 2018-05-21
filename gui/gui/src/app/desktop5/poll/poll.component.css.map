@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACC,MAAM,EAAE,CAAC;CACV",
+    "sources": [
+        "poll.component.scss"
+    ],
+    "names": [],
+    "file": "poll.component.css"
+}
