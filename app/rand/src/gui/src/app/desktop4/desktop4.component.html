@@ -1,0 +1,31 @@
+<div class="contenedor">
+  <div class="quehay">
+    <h1>
+      Bienvenido a la gestión de seccionales y cargos
+    </h1>
+  </div>
+  <div class="padre">
+    <a (click)="semidesk = 1">
+      <button class="boton1 color2">
+        <p id="icon">
+          <img src="assets/img/build.png" alt="">
+        </p>
+        <p id="comuni">Añadir Seccional</p>
+      </button>
+    </a>
+    <a (click)="semidesk = 2">
+      <button class="boton1 color2">
+        <p id="icon">
+          <img src="assets/img/users.png" alt="">
+        </p>
+        <p id="comuni">Ver usuarios</p>
+      </button>
+    </a>
+  </div>
+</div>
+  <div class="content" *ngIf="semidesk == 2">
+    <app-insertjob></app-insertjob>
+  </div>
+  <div class="content" *ngIf="semidesk == 1">
+    <app-insertseccional></app-insertseccional>
+  </div>

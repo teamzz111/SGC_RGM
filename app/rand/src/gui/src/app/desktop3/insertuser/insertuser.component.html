@@ -1,0 +1,33 @@
+<div class="papa">
+  <div class="der">
+    <p>Registrar usuario</p>
+
+      <input type="number" name="cedula" id="cedula" placeholder="Cedula" required>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombres" required>
+      <input type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
+      <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
+      <input type="number" name="telefono" id="telefono" placeholder="Teléfono" required>
+      <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+      <input type="number" name="numero" id="numero" placeholder="Número fijo" required>
+      <br>
+      <input type="radio" name="gender" value="Hombre" checked> Male
+      <input type="radio" name="gender" value="Mujer"> Female
+      <input type="radio" name="gender" value="Otro"> Other
+      <br>
+      <select id ='listado'>
+        <option *ngFor="let item of listado" value="kieroiraksa">{{item.nombre}}</option>
+      </select>
+      <select id = 'listado2'>
+        <option *ngFor="let item of listado2" value="kieroiraksa2">{{item.ciudad}}</option>
+      </select>
+      <button (click)="send(); $event.stopPropagation();">Vamos</button>
+
+  </div>
+  <div class="notifi">
+    ¡Usuario insertado con éxito!
+  </div>
+  <div class="izq">
+    <img src="assets/img/about_us.jpg" alt="">
+  </div>
+</div>
+
