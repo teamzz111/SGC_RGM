@@ -22,6 +22,7 @@ export class InsertpollComponent {
   splitted;
   fecha;
   tipo2;
+  cadena;
   constructor(private crudProducto: UserServiceService) {
     this.next = 0;
     this.respuesta = 1;
@@ -34,9 +35,33 @@ export class InsertpollComponent {
 
   guardarEncuesta() {
     if ($('#date').val() !== '' && $('#encuesta').val() !== '') {
+      this.cadena = '';
+      if ($('input:checkbox[name=administrador]').prop('checked')) {
+        this.cadena += '1';
+      } else {
+        this.cadena += '0';
+      }
+      if ($('input:checkbox[name=coordinador]').prop('checked')) {
+        this.cadena += '1';
+      } else {
+        this.cadena += '0';
+      }
+      if ($('input:checkbox[name=lider]').prop('checked')) {
+        this.cadena += '1';
+      } else {
+        this.cadena += '0';
+      }
+      if ($('input:checkbox[name=usersn]').prop('checked')) {
+        this.cadena += '1';
+      } else {
+        this.cadena += '0';
+      }
+    alert(this.cadena);
     this.splitted = $('#date').val().split('-', 3);
     this.fecha = this.splitted[0] + '-' + this.splitted[1] + '-' + this.splitted[2];
-      this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha, $('#cargo').val());
+    this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha,
+      $('input:checkbox[name=administrador]').prop('checked'), $('input:checkbox[name=coordinador]').prop('checked'),
+      $('input:checkbox[name=liderproceso]').prop('checked'), $('input:checkbox[name=usuariodemo]').prop('checked'));
     // tslint:disable-next-line:max-line-length
     this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
       .subscribe(data => {

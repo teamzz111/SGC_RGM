@@ -3,8 +3,8 @@
 }
 
 .papa {
-  width: 100%;
-  max-width: 1200px;
+  width: 92%;
+//max-width: 1200px;
   margin: auto;
   background: white;
   border-radius: 2%;
@@ -27,9 +27,21 @@
     }
   }
   .der {
+
     padding: 2%;
     width: 50%;
     text-align: center;
+    .caja{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+      input{
+        margin: 1.2em;
+        font-family: 'Sans';
+      }
+    }
     button {
       background: black;
       color: white;
@@ -93,7 +105,7 @@
 .notifi {
   position: absolute;
   right: .5em;
-  top: 5em;
+  top: 2em;
   padding: 1.5%;
   color: white;
   border-radius: 5px;
@@ -174,10 +186,14 @@ label {
 }
 
 .form-row input {
-  width: 220px;
-  padding: 3px 1px;
+  width: 100%;
+  max-width: 450px;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: 'Sans';
   border: 1px solid #ccc;
   box-shadow: none;
+  color: rgb(161, 161, 161);
 }
 
 .form-row input[type="checkbox"] {
