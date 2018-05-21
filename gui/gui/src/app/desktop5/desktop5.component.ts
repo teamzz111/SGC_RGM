@@ -18,14 +18,6 @@ export class Desktop5Component {
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
     });*/
-    this.semidesk = 2;
-  }
-
-  closeSession() {
-    this.crudProducto.closeSession().map(response => response.json()).subscribe(data => {
-      if (data === 'true') {
-        location.href = '../../../index.html';
-      }
-    });
+    this.semidesk = 1;
   }
 }

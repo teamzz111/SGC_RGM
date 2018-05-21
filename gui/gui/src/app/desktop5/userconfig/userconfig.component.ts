@@ -24,7 +24,8 @@ export class UserconfigComponent {
   check: boolean;
   check2: boolean;
   constructor(private crudProducto: UserServiceService) {
-    this.semidesk = 2;
+    this.crudProducto.busca($('-20').val()).map(response => response.json())
+
   }
 
   busca2() {

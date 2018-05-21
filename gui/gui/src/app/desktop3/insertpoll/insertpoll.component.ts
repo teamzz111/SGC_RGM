@@ -43,7 +43,7 @@ export class InsertpollComponent {
     if ($('#date').val() !== '' && $('#encuesta').val() !== '') {
       this.splitted = $('#date').val().split('-', 3);
       this.fecha = this.splitted[0] + '-' + this.splitted[1] + '-' + this.splitted[2];
-      if ($('input:checkbox[name=administrador]').prop('checked')){
+      if ($('input:checkbox[name=administrador]').prop('checked')) {
         this.admin = 'true';
       } else {
         this.admin = 'false';

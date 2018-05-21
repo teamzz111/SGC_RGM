@@ -11,10 +11,15 @@ if(isset($_GET['opt'])) {
         if(!isset($_GET['cc']))
         {
             echo json_encode('Nothing');
-        }
-        else
-        {
-            $query = "SELECT e.cedula, e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre as cargo, s.ciudad as seccional FROM empleado as e, cargo as c, seccional as s WHERE e.cargo_idCargos=c.idCargos AND s.idSeccional = e.idSeccional and e.cedula =".$_GET['cc'];
+        } else {
+            if ($_GET['cc'] == -20){
+                $query = "SELECT e.cedula, e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre as cargo, s.ciudad as seccional FROM empleado as e, cargo as c, seccional as s WHERE e.cargo_idCargos=c.idCargos AND s.idSeccional = e.idSeccional and e.cedula =".$_SESSION['username'];
+                echo $query;
+            
+            }
+            else {
+                $query = "SELECT e.cedula, e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre as cargo, s.ciudad as  seccional FROM empleado as e, cargo as c, seccional as s WHERE e.cargo_idCargos=c.idCargos AND s.idSeccional = e.idSeccional and e.cedula =".$_GET['cc'];
+            }
             $resultado = $con->query($query);
 
             if ($resultado)
