@@ -12,10 +12,12 @@
             $Nombre = $input['nombre'];
             $Tipo = $input['tipo'];
             $date = $input['fecha'];
+            $Cargo = $input['cargo'];
             $query = "SELECT Id FROM Tipo WHERE Nombre = '$Tipo'";
             $resultado = $con->query($query);
             $row = $resultado->fetch_array(MYSQLI_ASSOC);
             $Tipo = $row['Id'];
+            
     
             if ($con->connect_error) {
                 echo json_encode('false');
@@ -43,7 +45,7 @@
                 //echo $date;
                 $_SESSION['Encuesta'] = $idEncuesta;
                 $_SESSION['NumPregunta'] = 1;
-                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo, '$feh','$date')";
+                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo,$Cargo,'$feh','$date')";
                 
                 $rs = $con->query($query);
                 if ($rs) {
