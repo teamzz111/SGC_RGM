@@ -11,8 +11,8 @@ if(isset($_GET['opt'] == 1) {
     $Fecha= $input['fecha'];
 
     //añadir que si el usuario tiene el cargo que la encuesta tiene entonces se le muestre la encuesta
-    //si no pos nel xdd 
-    
+    //si no pos nel xdd  $_SESSION['job'] es la variable que dice el cargo que tiene el usuario actual
+
     $query = "SELECT *  FROM Encuesta WHERE Fecha='$Fecha'";
             $resultado = $con->query($query);
 
