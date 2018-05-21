@@ -11,7 +11,7 @@ declare var $: any;
 })
 export class InsertseccionalComponent implements OnInit {
   job;
-  constructor(private crudProducto: UserServiceService) { }
+  constructor(private crudProducto: UserServiceService) {}
   send() {
     this.job = new Seccional($('#nombre').val());
     this.crudProducto.insertarjob(this.job)
@@ -40,5 +40,4 @@ export class InsertseccionalComponent implements OnInit {
   }
   ngOnInit() {
   }
-
 }

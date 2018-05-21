@@ -18,6 +18,7 @@ import { UserConfigComponent } from './desktop3/user-config/user-config.componen
 import { Desktop5Component } from './desktop5/desktop5.component';
 import { UserconfigComponent } from './desktop5/userconfig/userconfig.component';
 import { InsertpollComponent } from './desktop3/insertpoll/insertpoll.component';
+import { PollComponent } from './desktop5/poll/poll.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { InsertpollComponent } from './desktop3/insertpoll/insertpoll.component'
     UserConfigComponent,
     Desktop5Component,
     UserconfigComponent,
-    InsertpollComponent
+    InsertpollComponent,
+    PollComponent
   ],
   imports: [
     BrowserModule, HttpModule
