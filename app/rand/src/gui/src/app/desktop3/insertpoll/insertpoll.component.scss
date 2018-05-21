@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+.papa {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  border-radius: 2%;
+  margin-top: 1em;
+  display: flex;
+  padding: 2%;
+  p {
+    font-family: "Sans";
+    font-weight: 300;
+    font-size: 2em;
+  }
+  .izq {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+    border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
+    img {
+      width: 100%;
+    }
+  }
+  .der {
+    padding: 2%;
+    width: 50%;
+    text-align: center;
+    button {
+      background: black;
+      color: white;
+      padding: 1.5%;
+      border: 1px solid white;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      font-weight: 300;
+      font-family: "Sans";
+      transition: 1s linear;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      max-width: 450px;
+      margin-top: 1%;
+      margin-bottom: 1.5%;
+      padding: 1%;
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      border: 1px solid transparent;
+      border-bottom: 1px solid rgb(97, 97, 97);
+    }
+    input[type="radio"] {
+      margin-bottom: 1em;
+      margin-top: 1em;
+    }
+    input[type="submit"] {
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      background: black;
+      padding: 2%;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 450px;
+      color: black;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+    select {
+      font-size: 1em;
+      font-family: "Sans";
+      font-weight: 300;
+      padding: 1%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: rgb(14, 194, 14);
+  margin-top: -10em;
+}
+
+@media screen and (max-width: 800px) {
+  .papa {
+    .izq {
+      display: none;
+    }
+    .der {
+      width: 100%;
+      input[type="text"],
+      input[type="email"],
+      input[type="number"] {
+        min-width: 0px;
+      }
+    }
+  }
+}
+.hide-replaced.ws-inputreplace {
+  display: none !important;
+}
+
+.input-picker .picker-list td>button.othermonth {
+  color: #888888;
+  background: #fff;
+}
+
+.ws-inline-picker.ws-size-2,
+.ws-inline-picker.ws-size-4 {
+  width: 49.6154em;
+}
+
+.ws-size-4 .ws-index-0,
+.ws-size-4 .ws-index-1 {
+  border-bottom: 0.07692em solid #eee;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+}
+
+.picker-list.ws-index-2,
+.picker-list.ws-index-3 {
+  margin-top: 3.5em;
+}
+
+div.ws-invalid input {
+  border-color: #c88;
+}
+
+.ws-invalid label {
+  color: #933;
+}
+
+div.ws-success input {
+  border-color: #8c8;
+}
+
+form {
+  margin: 10px auto;
+  width: 100%;
+  //border: 1px solid #000;
+  padding: 10px;
+}
+
+.form-row {
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+label {
+  display: block;
+  margin: 3px 0;
+}
+
+.form-row input {
+  width: 220px;
+  padding: 3px 1px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
+.form-row input[type="checkbox"] {
+  width: 15px;
+}
+
+.date-display {
+  display: inline-block;
+  min-width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  min-height: 1em;
+}
+
+.show-inputbtns .input-buttons {
+  display: inline-block;
+}

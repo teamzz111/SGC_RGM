@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Awesome";
+  src: url("../assets/fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../assets/fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../assets/fuentes/Sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../assets/fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../assets/fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Josefin";
+  src: url("../assets/fuentes/Josefin/Dosis-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Great";
+  src: url("../assets/fuentes/GreaVibes/GreatVibes-Regular.ttf?#iefix") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fuentes/Roboto.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Awesome";
+  src: url("../assets/fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+}
+
+.error {
+  display: none;
+}
+
+.left {
+  float: left;
+}
+
+main {
+  display: flex;
+  .lat {
+    width: 8%;
+    background: #1f4daf;
+    height: 100vh;
+    text-align: center;
+    max-width: 3.2em;
+    min-width: 3.1em;
+    position: fixed;
+    a#m1 {
+      margin-top: 10%;
+    }
+    img {
+      width: 10%;
+      margin: auto;
+      padding: 1%;
+      min-width: 50px;
+      max-width: 60px;
+      bottom: 0;
+      position: fixed;
+      overflow: hidden;
+    }
+    .info {
+      position: fixed;
+      bottom: -0.5em;
+      color: white;
+      font-family: "Roboto";
+      display: none;
+      left: 3em;
+    }
+    a {
+      button {
+        width: 100%;
+        background: transparent;
+        color: white;
+        border-color: transparent;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        padding: 16%;
+        span {
+          font-family: "Awesome";
+          font-size: 1.5em;
+        }
+        i {
+          display: none;
+          font-weight: 300;
+          font-family: "Sans";
+        }
+        &:hover {
+          background: rgba(36, 35, 35, .9);
+          cursor: pointer;
+        }
+        &:focus {
+          background: rgba(0, 0, 0, .9);
+        }
+      }
+    }
+  }
+  .der {
+    width: 100%;
+    margin-left: 3.2em;
+    .desk1,
+    .desk2,
+    .desk3 {
+      width: 100%;
+    }
+    .user {
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(0, 0, 0);
+      width: 100%;
+      .img {
+        background-image: url('../assets/img/man.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 100em;
+        width: 2em;
+        height: 2em;
+        img {
+          width: 50%;
+        }
+      }
+      .name {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        .conte {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row-reverse;
+          flex-wrap: nowrap;
+          button {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            border: 1px solid black;
+            color: white;
+            font-family: "Sans";
+            background: black;
+            cursor: pointer;
+            transition: 1s linear;
+            &:hover {
+              background: #1f4daf;
+            }
+            span {
+              font-weight: 300;
+              text-transform: uppercase;
+              margin-right: 0.5em;
+              margin-top: 0.35em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    .lat {
+      //min-width: 49px;
+      //max-width: 51px;
+      img {
+        width: 5%;
+        min-width: 40px;
+        max-width: 50px;
+      }
+      a {
+        button {
+          span {
+            font-size: 1.1em;
+          }
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 800px) {
+  main {
+    .lat {
+      a {
+        button {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  body {
+    background: black;
+  }
+/*.error {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    .contenedor {
+      color: black;
+      text-align: center;
+      padding: 10%;
+      img {
+        width: 50%;
+      }
+      h2 {
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 3em;
+      }
+      p {
+        font-family: "Sans";
+        font-weight: 300;
+        font-size: 1.28em;
+      }
+    }
+  }*/
+}

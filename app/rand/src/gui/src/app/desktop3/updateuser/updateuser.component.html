@@ -1,0 +1,60 @@
+<div class="papa">
+  <div class="izq">
+    <h2>
+      Para modificar un usuario
+      <br> Ingrese su cédula
+    </h2>
+    <form>
+      <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
+      <div class="botton" (click)="busca()">
+        Buscar
+      </div>
+    </form>
+
+    <div class="info" *ngIf="this.visible == true">
+      <h2>
+        Modificar usuario
+      </h2>
+
+        <input type="number" name="cedula" id="cedula" placeholder="Cedula" disabled>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombres" >
+        <input type="text" name="apellido" id="apellido" placeholder="Apellidos" >
+        <input type="email" name="correo" id="correo" placeholder="Correo electrónico" >
+        <input type="number" name="telefono" id="telefono" placeholder="Teléfono" >
+        <input type="text" name="direccion" id="direccion" placeholder="Dirección" >
+        <input type="number" name="numero" id="numero" placeholder="Número fijo" >
+        <br>
+        <input type="radio" name="gender" value="Hombre" checked> Hombre
+        <input type="radio" name="gender" value="Mujer"> Mujer
+        <input type="radio" name="gender" value="Otro"> Otro
+        <br>
+        <div class="cargo">
+          {{cargo}}
+        </div>
+        <div class="sec">
+          {{seccional}}
+        </div>
+        <!--
+        <select id='listado' name = "seccional"  >
+          <option *ngFor="let item of listado2" value={{item.nombre}}>{{item.nombre}}</option>
+        </select>
+        <select id='listado2'>
+          <option *ngFor="let item of listado3" value="kieroiraksa2">{{item.ciudad}}</option>
+        </select> -->
+        <br>
+        <button (click)="updatea()">Actualizar </button>
+
+    </div>
+  </div>
+
+  <div class="der">
+    <div class="img">
+
+      <img src="assets/img/digital_transformation.png" alt="">
+    </div>
+  </div>
+
+</div>
+<div class="notifi">
+  ¡Usuario insertado con éxito!
+</div>

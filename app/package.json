@@ -2,7 +2,7 @@
   "name": "sgc",
   "version": "1.0.0",
   "description": "Testing",
-  "main": "Y",
+  "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "build": "electron-packager . SGC",

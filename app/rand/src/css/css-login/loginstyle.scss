@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("../fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("../fuentes/Sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("../fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("../fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+main {
+    height: 100vh;
+    background: url('../../img/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .cont {
+        -webkit-box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
+        .der {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+        }
+        .izq {
+            width: 50%;
+            img {
+                width: 100%;
+            }
+            border-left: 1px solid black;
+        }
+        display: flex;
+        justify-items: center;
+        background: white;
+        max-width: 1200px;
+        width: 99%;
+        padding: 1.5%;
+        border-radius: 1%;
+        input[type="forgotten"] {
+            font-family: "Sans";
+            background: transparent;
+            color: rgb(0, 0, 0);
+            border: solid;
+            border-color: transparent;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+        }
+        input[type="forgotten"]:hover {
+            background: transparent;
+            color: rgb(38, 53, 187);
+            border-color: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+        .noti {
+            font-size: 1.2em;
+            padding: 1%;
+            background: rgb(27, 233, 27);
+            max-width: 350px;
+            border-radius: 10px;
+            color: white;
+            transition: 1s linear;
+            font-family: "Sans";
+            display: none;
+            margin: 1% auto;
+            p {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+        }
+        h1 {
+            font-family: "Sans";
+            font-weight: 300;
+            font-size: 3em;
+            margin-bottom: 1em;
+            color: black;
+        }
+        input[type="text"],
+        input[type="password"] {
+            max-width: 350px;
+            width: 95%;
+            padding: 1%;
+            font-size: 1.2em;
+            font-family: "Sans";
+            font-style: italic;
+            margin-bottom: 1.5%;
+            border: 1px solid transparent;
+            border-bottom: 1px solid black;
+            &:active {
+                border-bottom: rgb(19, 79, 207);
+            }
+        }
+        input[type="submit"] {
+            background: transparent;
+            padding: 1.5%;
+            max-width: 200px;
+            width: 99%;
+            background: black;
+            color: white;
+            font-size: 1.25em;
+            border: 1px solid black;
+            border-radius: 5px;
+            transition: 1s linear;
+            font-family: "Sans";
+            font-weight: 300;
+            font-size: 1.2em;
+            &:hover {
+                background: transparent;
+                color: black;
+                border-color: black;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 931px) {
+    main {
+        .cont {
+            h1 {
+                font-size: 2.5em;
+            }
+            margin-top: 0;
+            padding:5.5%;
+            .der {
+                width: 100%;
+            }
+            .izq {
+                width: 100%;
+                display: none;
+            }
+        }
+    }
+}
