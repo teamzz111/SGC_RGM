@@ -1,4 +1,4 @@
-import { User } from './../../../../../../app/rand/out/sgc-win32-x64/resources/app/src/gui/src/app/desktop3/user';
+//import { User } from './desktop3/user';
 import { Encuesta } from './encuesta';
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;

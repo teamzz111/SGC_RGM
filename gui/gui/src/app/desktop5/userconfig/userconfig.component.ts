@@ -30,7 +30,6 @@ export class UserconfigComponent {
    busca() {
     this.crudProducto.busca2().map(response => response.json())
     .subscribe(data => {
-      alert(data);
       if (data === 'nel') {
        $('.notifi').css({background: 'red'});
         $('.notifi').text('El usuario no existe');
@@ -59,7 +58,7 @@ export class UserconfigComponent {
             });
             this.visible = true;
           for (const item of data) {
-          $('#cedula').val(item.cedula);
+          $('#cedula').text(item.cedula);
           $('#nombre').val(item.nombre);
           $('#apellido').val(item.apellido);
           $('#correo').val(item.email);

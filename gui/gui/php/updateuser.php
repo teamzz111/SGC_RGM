@@ -1,7 +1,7 @@
 <?php
 
 include 'Conexion.php';
-
+session_start();
 if(isset($_GET['opt'])) {
     $con = new mysqli($host, $user, $pass, $db);
     $con->query("SET NAMES 'utf8'");
@@ -12,9 +12,10 @@ if(isset($_GET['opt'])) {
         {
             echo json_encode('Nothing');
         } else {
+            //echo $_GET['cc'];
             if ($_GET['cc'] == -20){
                 $query = "SELECT e.cedula, e.nombre, e.apellido, e.email, e.telefono, e.direccion, e.numero, e.sexo, e.idSeccional, c.nombre as cargo, s.ciudad as seccional FROM empleado as e, cargo as c, seccional as s WHERE e.cargo_idCargos=c.idCargos AND s.idSeccional = e.idSeccional and e.cedula =".$_SESSION['username'];
-                echo $query;
+                
             
             }
             else {

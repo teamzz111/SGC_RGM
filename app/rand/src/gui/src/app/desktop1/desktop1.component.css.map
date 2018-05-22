@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,CAAA;EACL,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,EAAE;CAIZ;;AAXD,AAQE,OARK,CAQL,EAAE,CAAA;EACA,WAAW,EAAE,QAAQ;CACtB",
-    "sources": [
-        "desktop1.component.scss"
-    ],
-    "names": [],
-    "file": "desktop1.component.css"
-}

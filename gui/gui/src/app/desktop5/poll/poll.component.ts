@@ -1,4 +1,4 @@
-import { UserServiceService } from './../../../../../../app/rand/src/gui/src/app/user-service.service';
+
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
 })
 export class PollComponent implements OnInit {
 
-  constructor(private crudProducto: UserServiceService) { }
+  constructor() { }
 
   ngOnInit() {
   }

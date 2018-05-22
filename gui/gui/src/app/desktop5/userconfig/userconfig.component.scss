@@ -1,30 +1,38 @@
-* {
-  box-sizing: border-box;
-}
-
 .papa {
   width: 100%;
   max-width: 1200px;
   background: white;
   margin: auto;
   border-radius: 10px;
-  padding: 2%;
+  //padding: 2%;
   margin-top: 1em;
   display: flex;
   font-family: "Sans";
   font-weight: 300;
+  justify-content: center;
+  align-content: center;
   transition: 1s linear;
 }
 
 .papa .izq {
-  text-align: center;
-  width: 50%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .papa .izq h2 {
   font-family: "Sans";
   font-weight: 300;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  #cedula{
+    float: right;
+  }
 }
 
 .papa .izq .botton {
@@ -71,6 +79,7 @@
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
+  display: flex;
 }
 
 .papa .der {
@@ -79,12 +88,15 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
   border-left: 1px solid #5a5a5a;
 }
 
 .papa .info {
   margin-top: 1.5em;
+  p{
+    padding: 0.5em;
+  }
 }
 
 .papa .info .cargo, .papa .info .sec {
@@ -121,7 +133,7 @@
   background: black;
   padding: 2%;
   border-radius: 5px;
-  width: 95%;
+  width: 100%;
   max-width: 450px;
   color: black;
   border: 1px solid white;
@@ -161,16 +173,3 @@
   background: #0ec20e;
   margin-top: -100%;
 }
-
-@media screen and (max-width: 800px) {
-  .papa .der {
-    display: none;
-  }
-  .papa .izq {
-    width: 100%;
-  }
-  .papa .izq h2 {
-    font-size: 1.4em;
-  }
-}
-/*# sourceMappingURL=updateuser.component.css.map */

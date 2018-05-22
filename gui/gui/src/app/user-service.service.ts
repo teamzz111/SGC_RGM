@@ -46,8 +46,8 @@ export class UserServiceService {
   busca(data) {
     return this.http.get('../php/updateuser.php?opt=1&cc=' + data);
   }
-  busca2(data) {
-    return this.http.get('../php/updateuser.php?opt=2&cc=' + data);
+  busca2() {
+    return this.http.get('../php/updateuser.php?opt=1&cc=-20');
   }
   actualiza(data) {
     return this.http.post('../php/updateuser.php?opt=2', JSON.stringify(data));
