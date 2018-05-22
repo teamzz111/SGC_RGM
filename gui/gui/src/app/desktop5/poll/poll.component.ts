@@ -1,4 +1,4 @@
-
+import { UserServiceService } from '../.././user-service.service';
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
@@ -9,11 +9,8 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
   templateUrl: './poll.component.html',
   styleUrls: ['./poll.component.css']
 })
-export class PollComponent implements OnInit {
+export class PollComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private crudProducto: UserServiceService) { }
 
 }

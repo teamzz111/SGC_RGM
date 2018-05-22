@@ -6,10 +6,10 @@
       </h1>
     </div>
     <div class="padre">
-        <a  (click)="semidesk = 1">
+        <a  (click)="semidesk = 2">
             <button class="boton1 color2">
                 <p id="icon"></p>
-              <p id="comuni">Editar Datos</p>
+              <p id="comuni">Encuestas</p>
             </button>
           </a>
       <a  (click)="semidesk = 1">
@@ -33,5 +33,6 @@
   <div class="content" *ngIf = "this.semidesk == 2">
     <app-poll></app-poll>
   </div>
+
 </main>
 
