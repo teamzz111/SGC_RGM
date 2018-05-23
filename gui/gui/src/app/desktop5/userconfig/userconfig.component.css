@@ -18,7 +18,7 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
 }
 
@@ -29,10 +29,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-}
-
-.papa .izq h2 #cedula {
-  float: right;
 }
 
 .papa .izq .botton {
@@ -85,7 +81,7 @@
 .papa .der {
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   align-items: center;
   width: 100%;
@@ -94,6 +90,8 @@
 
 .papa .info {
   margin-top: 1.5em;
+  padding: 1em;
+  text-align: center;
 }
 
 .papa .info p {
@@ -111,9 +109,11 @@
 .papa .info input[type="email"],
 .papa .info input[type="number"] {
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   margin-top: 1%;
   margin-bottom: 1.5%;
+  margin-right: 1%;
+  margin-left: 1%;
   padding: 1%;
   font-size: 1em;
   font-family: "Sans";

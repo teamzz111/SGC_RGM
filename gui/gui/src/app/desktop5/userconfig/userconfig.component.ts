@@ -23,6 +23,7 @@ export class UserconfigComponent {
   seccional: string;
   check: boolean;
   check2: boolean;
+  cedula;
   constructor(private crudProducto: UserServiceService) {
     this.busca();
     this.visible = true;
@@ -43,22 +44,10 @@ export class UserconfigComponent {
           setTimeout(function() { $('.notifi').animate({marginTop: '-10em'}, 1000); } , 5000);
         });
       } else {
-        this.listado = data;
-          this.crudProducto
-            .registrar(1) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
-            .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
-            .subscribe(data2 => {
-              this.listado2 = data2; // Asignamos nuestros datos mapeados a una variable
-            });
-          this.crudProducto
-            .registrar(2) // Llamamos a la funcion <strong>listar</strong> de nuestro servicio
-            .map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
-            .subscribe(data3 => {
-              this.listado3 = data3; // Asignamos nuestros datos mapeados a una variable
-            });
-            this.visible = true;
+          this.visible = true;
           for (const item of data) {
-          $('#cedula').text(item.cedula);
+         // $('#cedula').text(item.cedula);
+         this.cedula = item.cedula;
           $('#nombre').val(item.nombre);
           $('#apellido').val(item.apellido);
           $('#correo').val(item.email);
@@ -83,7 +72,7 @@ export class UserconfigComponent {
     });
    }
    updatea() {
-    this.hero = new Hero($('#cedula').val(), $('#nombre').val(), $('#apellido').val(), $('#telefono').val()
+    this.hero = new Hero(this.cedula, $('#nombre').val(), $('#apellido').val(), $('#telefono').val()
     , $('#correo').val(), $('#direccion').val(), $('#numero').val(), $('input:radio[name=gender]:checked').val(),
     $('#listado :selected').text(), $('#listado2 :selected').text());
     this.crudProducto.actualiza(this.hero).map(response => response.json())
