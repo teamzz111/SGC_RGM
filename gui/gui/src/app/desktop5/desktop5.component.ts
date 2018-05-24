@@ -18,6 +18,6 @@ export class Desktop5Component {
     .subscribe(data => {
     this.listado = data; // Asignamos nuestros datos mapeados a una variable
     });*/
-    this.semidesk = 1;
+    this.semidesk = 2;
   }
 }

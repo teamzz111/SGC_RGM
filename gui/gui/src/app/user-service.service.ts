@@ -72,4 +72,8 @@ export class UserServiceService {
   guardarPregunta(data) {
     return this.http.post('../php/AddPoll.php?opt=2', data);
   }
+
+  encuestas() {
+    return this.http.get('../php/ReceiveAnswers.php?opt=1');
+  }
 }

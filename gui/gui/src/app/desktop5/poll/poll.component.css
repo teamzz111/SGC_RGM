@@ -1,4 +1,48 @@
 * {
   margin: 0;
 }
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.main h1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  text-align: center;
+}
+
+.main table {
+  border: 1px solid black;
+  width: 90%;
+  margin: auto;
+  font-size: 1em;
+  font-family: "Roboto";
+  font-weight: 300;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.main table tr,
+.main table th {
+  padding: 1%;
+  border-bottom: 1px solid black;
+}
+
+.main table th {
+  background: #0d0d5e;
+  color: white;
+}
+
+.main table th,
+.main table td {
+  border: 1px solid black;
+  padding: 1%;
+}
 /*# sourceMappingURL=poll.component.css.map */

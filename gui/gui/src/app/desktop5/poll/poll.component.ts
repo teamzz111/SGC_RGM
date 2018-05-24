@@ -10,7 +10,13 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
   styleUrls: ['./poll.component.css']
 })
 export class PollComponent {
-
-  constructor(private crudProducto: UserServiceService) { }
-
+  listado;
+  datostabla;
+  constructor(private crudProducto: UserServiceService) {
+    this.crudProducto.encuestas().map(response => response.json())
+    .subscribe(data => {
+          this.listado = data;
+          this.datostabla = true;
+        });
+      }
 }

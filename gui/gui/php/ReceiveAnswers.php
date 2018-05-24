@@ -1,15 +1,16 @@
 <?php
-
-require 'Conexion.php';
+    require 'Conexion.php';
     session_start();
     if(isset($_GET['opt'])){
-        f($_GET['opt'] == 1){
+        if($_GET['opt'] == 1){
             $inputJSON = file_get_contents('php://input');
             $result = json_decode($inputJSON, true);
-            $con = new mysqli($host, $user, $pass, $db);
+            $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
-            
-            $query = "SELECT *  FROM Encuesta WHERE idEncuesta=";
+            global $res;
+            $hoy = getdate();
+            $feh = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+            $query = "SELECT * FROM Encuesta WHERE FechaCierre <= DATE '$feh'";
             $resultado = $con->query($query);
             if ($resultado)
             {
@@ -57,7 +58,7 @@ require 'Conexion.php';
 
             for($i=1; $i<=$NumPreguntas; $i++)
             {
-                $query "SELECT Pregunta FROM Pregunta WHERE Numero = $i"
+                $query = "SELECT Pregunta FROM Pregunta WHERE Numero = '$i'";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
                 $Pregunta = $row['Pregunta'];

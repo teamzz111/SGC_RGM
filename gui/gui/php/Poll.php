@@ -4,7 +4,7 @@ session_start();
 if($_GET['opt'] == 1) {
     $inputJSON = file_get_contents('php://input');
     $result = json_decode($inputJSON, true);
-    $con = new mysqli($host, $user, $pass, $db);
+    $con = new mysqli($host2, $user2, $pass2, $db2);
     $con->query("SET NAMES 'utf8'");
     $Fecha= $input['fecha'];
     $Administrador = $input['administrador'];
@@ -12,7 +12,7 @@ if($_GET['opt'] == 1) {
     $Lider = $input['liderdeproceso'];
     $Usuario = $input['usuario'];
 
-    if (($_SESSION['job']==1 && $Administrador== 'true'||($_SESSION['job']==2 && $Coordinador== 'true')||
+    if (($_SESSION['job'] == 1 && $Administrador == 'true'||($_SESSION['job']==2 && $Coordinador== 'true')||
     ($_SESSION['job']==3 && $Lider== 'true')||($_SESSION['job']==4 && $Usuario== 'true')))
     {
         $query = "SELECT *  FROM Encuesta WHERE Fecha = '$Fecha' ";
