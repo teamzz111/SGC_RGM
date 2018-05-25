@@ -11,7 +11,7 @@
             $hoy = getdate();
             $feh = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
             $query = "SELECT * FROM Encuesta WHERE FechaCierre <= DATE '$feh'";
-            echo $query;
+       
             $resultado = $con->query($query);
             if ($resultado)
             {
