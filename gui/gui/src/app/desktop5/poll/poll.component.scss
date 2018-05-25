@@ -1,15 +1,16 @@
-*{
+* {
   margin: 0;
+  box-sizing: border-box;
 }
 
-.main{
+.main {
   width: 100%;
   max-width: 1200px;
   margin: auto;
   background: white;
   margin-top: 1em;
   padding: 1em;
-  h1{
+  h1 {
     font-family: 'Roboto';
     font-size: 2.5em;
     text-align: center;
@@ -25,38 +26,34 @@
     border-collapse: collapse;
     text-align: center;
     margin-top: 1em;
-    tr td  .realizar{
+    tr td .realizar {
       background: transparent;
       border: 1px solid rgb(63, 231, 63);
-
       border-radius: 5px;
       padding: 0.8em;
       color: white;
       transition: 0.5s linear;
       background: rgb(63, 231, 63);
-      &:hover{
-        background: white;
-        color: black;
-        cursor: pointer;
-      }
-
-    }
-   tr td .denegar {
-     background: transparent;
-     border: 1px solid red;
-     border-radius: 5px;
-     padding: 0.8em;
-     color: white;
-     background: red;
-     transition: 1s linear;
       &:hover {
         background: white;
         color: black;
         cursor: pointer;
       }
-
     }
-
+    tr td .denegar {
+      background: transparent;
+      border: 1px solid red;
+      border-radius: 5px;
+      padding: 0.8em;
+      color: white;
+      background: red;
+      transition: 1s linear;
+      &:hover {
+        background: white;
+        color: black;
+        cursor: pointer;
+      }
+    }
     tr,
     th {
       padding: 1%;
@@ -72,43 +69,52 @@
       padding: 1%; //      background: rgb(38, 104, 204);
     }
   }
-
 }
 
-.padre{
-
-  h1{
+.padre {
+  h1 {
     font-family: 'Roboto';
     font-family: 3em;
     margin-bottom: 2em;
   }
-  div.pregunta{
+  div.pregunta {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     background: white;
     padding: 0.5em;
     text-align: center;
-    .individual{
-      h3{
+    .individual {
+      .pregunta {
+        text-align: left;
+      }
+      h3 {
         font-size: 2em;
         font-family: 'Roboto';
+        margin-bottom: 1.2em;
       }
-      p{
+      p {
         font-size: 1.2em;
         font-family: 'Roboto';
       }
-      form{
+      form {
         margin: auto;
-        max-width: 300px;
+        max-width: 650px;
         display: flex;
-
         font-size: 1.2em;
         font-family: 'Roboto';
-        justify-content: center;
-        justify-items: center;
-        align-content: center;
         flex-wrap: wrap;
+        .pregunta {
+          input[type="checkbox"] {
+            font-family: 'Roboto';
+          }
+        }
+        textarea {
+          width: 100%;
+          max-width: 450px;
+          font-family: 'Roboto';
+          font-size: 1em;
+        }
       }
     }
   }

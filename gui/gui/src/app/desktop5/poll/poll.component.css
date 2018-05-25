@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 .main {
@@ -94,9 +95,14 @@
   text-align: center;
 }
 
+.padre div.pregunta .individual .pregunta {
+  text-align: left;
+}
+
 .padre div.pregunta .individual h3 {
   font-size: 2em;
   font-family: 'Roboto';
+  margin-bottom: 1.2em;
 }
 
 .padre div.pregunta .individual p {
@@ -106,13 +112,21 @@
 
 .padre div.pregunta .individual form {
   margin: auto;
-  max-width: 300px;
+  max-width: 650px;
   display: flex;
   font-size: 1.2em;
   font-family: 'Roboto';
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
   flex-wrap: wrap;
+}
+
+.padre div.pregunta .individual form .pregunta input[type="checkbox"] {
+  font-family: 'Roboto';
+}
+
+.padre div.pregunta .individual form textarea {
+  width: 100%;
+  max-width: 450px;
+  font-family: 'Roboto';
+  font-size: 1em;
 }
 /*# sourceMappingURL=poll.component.css.map */
