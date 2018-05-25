@@ -4,7 +4,7 @@ session_start();
 if($_GET['opt'] == 1) {
     $inputJSON = file_get_contents('php://input');
     $result = json_decode($inputJSON, true);
-    $con = new mysqli($host2, $user2, $pass2, $db2);
+    $con = new mysqli($host, $user2, $pass2, $db2);
     $con->query("SET NAMES 'utf8'");
     $Fecha= $input['fecha'];
     $Administrador = $input['administrador'];
@@ -45,12 +45,13 @@ if($_GET['opt'] == 1) {
         $inputJSON = file_get_contents('php://input');
         $result = json_decode($inputJSON, true);
         
-        $con = new mysqli($host, $user, $pass, $db);
+        $con = new mysqli($host, $user2, $pass2, $db2);
         $con->query("SET NAMES 'utf8'");
-        $Id= $input['id'];
-        
+        $Id= $result['id'];
+        global $res;
         $query = "SELECT Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
         $resultado = $con->query($query);
+    echo  $con->error;
         if ($resultado)
         {
             if($resultado->num_rows >0)

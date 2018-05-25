@@ -24,6 +24,38 @@
     border-collapse: collapse;
     text-align: center;
     margin-top: 1em;
+    tr td  .realizar{
+      background: transparent;
+      border: 1px solid rgb(63, 231, 63);
+
+      border-radius: 5px;
+      padding: 0.8em;
+      color: white;
+      transition: 0.5s linear;
+      background: rgb(63, 231, 63);
+      &:hover{
+        background: white;
+        color: black;
+        cursor: pointer;
+      }
+
+    }
+   tr td .denegar {
+     background: transparent;
+     border: 1px solid red;
+     border-radius: 5px;
+     padding: 0.8em;
+     color: white;
+     background: red;
+     transition: 1s linear;
+      &:hover {
+        background: white;
+        color: black;
+        cursor: pointer;
+      }
+
+    }
+
     tr,
     th {
       padding: 1%;

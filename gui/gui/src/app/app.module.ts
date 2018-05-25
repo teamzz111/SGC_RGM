@@ -2,7 +2,7 @@ import { UserServiceService } from './user-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { Desktop1Component } from './desktop1/desktop1.component';
 import { Desktop2Component } from './desktop2/desktop2.component';
@@ -40,11 +40,8 @@ import { PollComponent } from './desktop5/poll/poll.component';
     InsertpollComponent,
     PollComponent
   ],
-  imports: [
-    BrowserModule, HttpModule
-  ],
+  imports: [BrowserModule, HttpModule, FormsModule],
   providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {}

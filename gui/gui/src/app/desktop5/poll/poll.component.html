@@ -1,16 +1,20 @@
 <div class="main">
   <h1>Encuestas pendientes por responder</h1>
-    <table *ngIf="datostabla == 1">
+    <br>
+    <br>
+  <table *ngIf="datostabla == 1">
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Fecha</th>
         <th>Fecha máxima</th>
+        <th>Acción</th>
       </tr>
-      <tr *ngFor="let item of listado">
+      <tr *ngFor="let item of listado; let i = index">
         <td>{{item.idEncuesta}} </td>
         <td>{{item.Nombre}}</td>
-        <td>{{item.Fecha}}</td>
+       <!-- <td>{{item.Fecha}}</td> -->
         <td>{{item.FechaCierre}}</td>
-        </tr>
+        <td><button (click)="show(i)" class = "realizar" >REALIZAR</button> <button class = "denegar">IGNORAR</button></td>
+
+      </tr>
     </table>

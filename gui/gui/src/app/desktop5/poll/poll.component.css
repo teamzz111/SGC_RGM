@@ -29,6 +29,38 @@
   margin-top: 1em;
 }
 
+.main table tr td .realizar {
+  background: transparent;
+  border: 1px solid #3fe73f;
+  border-radius: 5px;
+  padding: 0.8em;
+  color: white;
+  transition: 0.5s linear;
+  background: #3fe73f;
+}
+
+.main table tr td .realizar:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.main table tr td .denegar {
+  background: transparent;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 0.8em;
+  color: white;
+  background: red;
+  transition: 1s linear;
+}
+
+.main table tr td .denegar:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
 .main table tr,
 .main table th {
   padding: 1%;

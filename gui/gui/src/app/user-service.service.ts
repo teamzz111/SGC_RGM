@@ -76,4 +76,7 @@ export class UserServiceService {
   encuestas() {
     return this.http.get('../php/ReceiveAnswers.php?opt=1');
   }
+  traerEncuesta(data) {
+    return this.http.post('../php/Poll.php?opt=2', data);
+  }
 }
