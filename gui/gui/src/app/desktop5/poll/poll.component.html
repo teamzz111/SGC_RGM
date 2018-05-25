@@ -1,20 +1,65 @@
 <div class="main">
+  <br>
+  <br>
   <h1>Encuestas pendientes por responder</h1>
-    <br>
-    <br>
   <table *ngIf="datostabla == 1">
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Fecha máxima</th>
-        <th>Acción</th>
-      </tr>
-      <tr *ngFor="let item of listado; let i = index">
-        <td>{{item.idEncuesta}} </td>
-        <td>{{item.Nombre}}</td>
-       <!-- <td>{{item.Fecha}}</td> -->
-        <td>{{item.FechaCierre}}</td>
-        <td><button (click)="show(i)" class = "realizar" >REALIZAR</button> <button class = "denegar">IGNORAR</button></td>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Fecha máxima</th>
+      <th>Acción</th>
+    </tr>
+    <tr *ngFor="let item of listado; let i = index">
+      <td>{{item.idEncuesta}} </td>
+      <td>{{item.Nombre}}</td>
+      <!-- <td>{{item.Fecha}}</td> -->
+      <td>{{item.FechaCierre}}</td>
+      <td>
+        <button (click)="show(i)" class="realizar">REALIZAR</button>
+        <button class="denegar">IGNORAR</button>
+      </td>
 
-      </tr>
-    </table>
+    </tr>
+  </table>
+</div>
+<div class="padre" *ngIf="encuesta">
+  <div class="pregunta" *ngFor="let item of listado; let i = index">
+    <div class="individual">
+      <h3>Pregunta # {{i+1}}: {{item.Pregunta}}</h3>
+      <div class="if" *ngIf="item.TipoPregunta == 'tp2'">
+        <form>
+          <div class="pregunta">
+            <input *ngIf="item.Respuesta1 != ''" type="checkbox" name="{{item.Respuesta1}}" value="{{item.Respuesta1}}">
+            <label for="{{item.Respuesta1}}">Hola</label>
+          </div>
+          <div class="pregunta">
+            <input *ngIf="item.Respuesta2 != ''" type="checkbox" name="{{item.Respuesta2}}" value="{{item.Respuesta2}}"> {{item.Respuesta2}}
+
+          </div>
+          <div class="pregunta">
+            <input *ngIf="item.Respuesta3 != ''" type="checkbox" name="{{item.Respuesta3}}" value="{{item.Respuesta3}}"> {{item.Respuesta3}}
+
+          </div>
+          <div class="pregunta">
+            <input *ngIf="item.Respuesta4 != ''" type="checkbox" name="{{item.Respuesta4}}" value="{{item.Respuesta4}}"> {{item.Respuesta4}}
+
+          </div>
+          <div class="pregunta">
+            <input *ngIf="item.Respuesta5 != ''" type="checkbox" name="{{item.Respuesta5}}" value="{{item.Respuesta5}}"> {{item.Respuesta5}}
+
+          </div>
+      <br>
+          <br>
+        </form>
+
+      </div>
+      <p>{{item.Respuesta1}}</p>
+      <p>{{item.Respuesta2}}</p>
+      <p>{{item.Respuesta3}}</p>
+      <p>{{item.Respuesta4}}</p>
+      <p>{{item.Respuesta5}}</p>
+    </div>
+
+  </div>
+
+</div>

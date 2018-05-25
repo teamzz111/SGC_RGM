@@ -49,7 +49,7 @@ if($_GET['opt'] == 1) {
         $con->query("SET NAMES 'utf8'");
         $Id= $result['id'];
         global $res;
-        $query = "SELECT Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
+        $query = "SELECT Pregunta, Numero, Respuesta1, TipoPregunta, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
         $resultado = $con->query($query);
     echo  $con->error;
         if ($resultado)

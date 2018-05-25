@@ -13,8 +13,9 @@
 
 .main h1 {
   font-family: 'Roboto';
-  font-weight: 300;
+  font-size: 2.5em;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .main table {
@@ -76,5 +77,42 @@
 .main table td {
   border: 1px solid black;
   padding: 1%;
+}
+
+.padre h1 {
+  font-family: 'Roboto';
+  font-family: 3em;
+  margin-bottom: 2em;
+}
+
+.padre div.pregunta {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.padre div.pregunta .individual h3 {
+  font-size: 2em;
+  font-family: 'Roboto';
+}
+
+.padre div.pregunta .individual p {
+  font-size: 1.2em;
+  font-family: 'Roboto';
+}
+
+.padre div.pregunta .individual form {
+  margin: auto;
+  max-width: 300px;
+  display: flex;
+  font-size: 1.2em;
+  font-family: 'Roboto';
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 /*# sourceMappingURL=poll.component.css.map */

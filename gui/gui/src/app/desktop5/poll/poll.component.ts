@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
 export class PollComponent {
   listado;
   datostabla;
-  encuesta;
+  encuesta = false;
   id = [];
   objeto;
   constructor(private crudProducto: UserServiceService) {
@@ -34,6 +34,7 @@ export class PollComponent {
         this.listado = data;
         this.datostabla = false;
         this.encuesta = true;
+        $('.main h1').text('Encuesta');
       });
   }
 }
