@@ -47,9 +47,10 @@
                 //echo $date;
                 $_SESSION['Encuesta'] = $idEncuesta;
                 $_SESSION['NumPregunta'] = 1;
-                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo,'$Cargo',$Cargo2','$Cargo3','$Cargo4','$feh','$date')";
-                
+                $query = "INSERT INTO Encuesta VALUES ('$idEncuesta','$Nombre',$Tipo,'$Cargo','$Cargo2','$Cargo3','$Cargo4','$feh','$date')";
+       //         echo $query;
                 $rs = $con->query($query);
+       
                 if ($rs) {
                     echo json_encode('true');
                     }

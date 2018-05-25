@@ -62,6 +62,37 @@
           <br>
         </form>
       </div>
+      <div class="if" *ngIf="item.TipoPregunta == 'tp3'">
+        <form>
+          <div class="pregunta">
+            <h3>{{i+1}}. {{item.Pregunta}}</h3>
+            <div class="pregunta">
+              <input *ngIf="item.Respuesta1 != ''" type="checkbox" name="{{item.Respuesta1}}" value="{{item.Respuesta1}}">
+              <label for="{{item.Respuesta1}}">Hola</label>
+            </div>
+            <div class="pregunta">
+              <input *ngIf="item.Respuesta2 != ''" type="checkbox" name="{{item.Respuesta2}}" value="{{item.Respuesta2}}"> {{item.Respuesta2}}
+
+            </div>
+            <div class="pregunta">
+              <input *ngIf="item.Respuesta3 != ''" type="checkbox" name="{{item.Respuesta3}}" value="{{item.Respuesta3}}"> {{item.Respuesta3}}
+
+            </div>
+            <div class="pregunta">
+              <input *ngIf="item.Respuesta4 != ''" type="checkbox" name="{{item.Respuesta4}}" value="{{item.Respuesta4}}"> {{item.Respuesta4}}
+
+            </div>
+            <div class="pregunta">
+              <input *ngIf="item.Respuesta5 != ''" type="checkbox" name="{{item.Respuesta5}}" value="{{item.Respuesta5}}"> {{item.Respuesta5}}
+
+            </div>
+
+          </div>
+          <br>
+          <br>
+        </form>
+      </div>
+
     </div>
 
   </div>
