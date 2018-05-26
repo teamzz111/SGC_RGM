@@ -14,7 +14,7 @@
     font-family: 'Roboto';
     font-size: 2.5em;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
   table {
     border: 1px solid black;
@@ -89,7 +89,6 @@
         text-align: left;
       }
       h3 {
-        font-size: 2em;
         font-family: 'Roboto';
         margin-bottom: 1.2em;
       }
@@ -100,6 +99,8 @@
       form {
         margin: auto;
         max-width: 650px;
+        padding: 1em;
+        background: grey;
         display: flex;
         font-size: 1.2em;
         font-family: 'Roboto';
