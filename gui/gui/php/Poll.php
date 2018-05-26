@@ -6,16 +6,19 @@ if($_GET['opt'] == 1) {
     $result = json_decode($inputJSON, true);
     $con = new mysqli($host, $user2, $pass2, $db2);
     $con->query("SET NAMES 'utf8'");
-    $Fecha= $input['fecha'];
-    $Administrador = $input['administrador'];
-    $Coordinador =$input['coordinador'];
-    $Lider = $input['liderdeproceso'];
-    $Usuario = $input['usuario'];
 
-    if (($_SESSION['job'] == 1 && $Administrador == 'true'||($_SESSION['job']==2 && $Coordinador== 'true')||
-    ($_SESSION['job']==3 && $Lider== 'true')||($_SESSION['job']==4 && $Usuario== 'true')))
-    {
-        $query = "SELECT *  FROM Encuesta WHERE Fecha = '$Fecha' ";
+    $hoy = getdate();
+    $feh = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+
+    if ($_SESSION['job']==1)
+    $query = "SELECT *  FROM Encuesta WHERE FechaCierre > '$feh' AND Cargo = 'true' ";
+    else if ($_SESSION['job']==2)
+    $query = "SELECT *  FROM Encuesta WHERE FechaCierre > '$feh' AND Cargo2 = 'true' ";
+    else if ($_SESSION['job']==3)
+    $query = "SELECT *  FROM Encuesta WHERE FechaCierre > '$feh' AND Cargo3 = 'true' ";
+    else if ($_SESSION['job']==4)
+    $query = "SELECT *  FROM Encuesta WHERE FechaCierre > '$feh' AND Cargo4 = 'true' ";
+
         $resultado = $con->query($query); 
 
         if ($resultado)
@@ -35,23 +38,22 @@ if($_GET['opt'] == 1) {
                 echo json_encode("nel");
             }
             
-        }
-        mysqli_close($con);
+            }
+            mysqli_close($con);
         echo $res;
-    }
+    
 }
     else if ($_GET['opt'] == 2)
     {
         $inputJSON = file_get_contents('php://input');
         $result = json_decode($inputJSON, true);
         
-        $con = new mysqli($host, $user2, $pass2, $db2);
+        $con = new mysqli($host, $user, $pass, $db);
         $con->query("SET NAMES 'utf8'");
-        $Id= $result['id'];
-        global $res;
-        $query = "SELECT Pregunta, Numero, Respuesta1, TipoPregunta, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
+        $Id= $input['id'];
+        
+        $query = "SELECT Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
         $resultado = $con->query($query);
-    echo  $con->error;
         if ($resultado)
         {
             if($resultado->num_rows >0)
