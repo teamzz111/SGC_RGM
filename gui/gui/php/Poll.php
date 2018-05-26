@@ -48,11 +48,11 @@ if($_GET['opt'] == 1) {
         $inputJSON = file_get_contents('php://input');
         $result = json_decode($inputJSON, true);
         
-        $con = new mysqli($host, $user, $pass, $db);
+        $con = new mysqli($host, $user2, $pass2, $db2);
         $con->query("SET NAMES 'utf8'");
-        $Id= $input['id'];
-        
-        $query = "SELECT Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
+        $Id= $result['id'];
+        global $res;
+        $query = "SELECT Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5  FROM Pregunta     WHERE idEncuesta='$Id'";
         $resultado = $con->query($query);
         if ($resultado)
         {

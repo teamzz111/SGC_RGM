@@ -53,12 +53,12 @@ export class InsertpollComponent {
       } else {
         this.coordinador = 'false';
       }
-      if ($('input:checkbox[name=liderdeproceso]').prop('checked')) {
+      if ($('input:checkbox[name=lider]').prop('checked')) {
         this.liderdeproceso = 'true';
       } else {
         this.liderdeproceso = 'false';
       }
-      if ($('input:checkbox[name=usuariodemo]').prop('checked')) {
+      if ($('input:checkbox[name=usersn]').prop('checked')) {
         this.usuariodemo = 'true';
       } else {
         this.usuariodemo = 'false';
@@ -66,7 +66,7 @@ export class InsertpollComponent {
 
       this.name = new Encuesta($('#nombre').val(), $('#encuesta').val(), this.fecha,
       this.admin, this.coordinador, this.liderdeproceso, this.usuariodemo);
-        alert(JSON.stringify(this.name));
+       // alert(JSON.stringify(this.name));
       this.crudProducto.guardarEncuesta(JSON.stringify(this.name)).map(response => response.json())
        .subscribe(data => {
             if (data === 'true' || data === 'true2') {
@@ -109,7 +109,7 @@ export class InsertpollComponent {
   }
   guardarPregunta() {
     if ($('#tipo').val() !== '') {
-      this.pregunuta.setTPregunta($('#tipo').val());
+      this.pregunuta.setPregunta($('#Pregunta').val());
     } else {
       this.error('Campos incompletos');
     }
@@ -153,6 +153,7 @@ export class InsertpollComponent {
         }
         this.pregunuta.setnrespuesta(this.respuesta);
         this.pregunuta.setTPregunta(this.tipo2);
+        alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {
@@ -218,6 +219,7 @@ export class InsertpollComponent {
             }
         });
         this.pregunuta.clean();
+        this.respuesta = 0;
         this.next = 1;
       } else {
         this.next = 3;

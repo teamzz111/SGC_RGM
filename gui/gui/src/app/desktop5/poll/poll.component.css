@@ -113,7 +113,8 @@
   margin: auto;
   max-width: 650px;
   padding: 1em;
-  background: grey;
+  border: 1px solid black;
+  border-radius: 5px;
   display: flex;
   font-size: 1.2em;
   font-family: 'Roboto';

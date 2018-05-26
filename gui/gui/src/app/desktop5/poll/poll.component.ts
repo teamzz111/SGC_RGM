@@ -2,8 +2,8 @@ import { Pregunta } from './../pregunta';
 import { UserServiceService } from '../.././user-service.service';
 import { Component, OnInit } from '@angular/core';
 declare var jquery: any;
-import { FormsModule } from '@angular/forms';
 declare var $: any;
+import { FormsModule } from '@angular/forms';
 import 'rxjs/add/operator/map'; // Libreria para mapear los resultados a JSON
 
 @Component({
