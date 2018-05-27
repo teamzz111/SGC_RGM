@@ -16,7 +16,11 @@ export class PollComponent {
   datostabla;
   encuesta = false;
   id = [];
+  respuesta = [];
+  numero = [];
+
   objeto;
+  index: number;
   constructor(private crudProducto: UserServiceService) {
     this.crudProducto.encuestas().map(response => response.json())
     .subscribe(data => {
@@ -26,6 +30,8 @@ export class PollComponent {
             this.id.push(item.idEncuesta);
           }
         });
+        this.index = 0;
+
   }
   show(a) {
     this.objeto = new Pregunta(this.id[a]);
@@ -34,7 +40,29 @@ export class PollComponent {
         this.listado = data;
         this.datostabla = false;
         this.encuesta = true;
+
         $('.main h1').text('Encuesta');
+        for (const p of data) {
+              this.index++;
+              this.respuesta.push(p.idPregunta);
+              this.numero.push(p.TipoPregunta);
+        }
+       /* for (let i = 0; i < this.respuesta.length; i++) {
+          alert(this.respuesta[i] + '   ' + this.numero[i]);
+        }*/
       });
+  }
+  enviarRespuesta() {
+    for (let i = 0; i < this.respuesta.length; i++) {
+      if (this.numero[i] === 'tp3') {
+         alert('RADIO: ' + $('input:radio[name=' + this.respuesta[i] + ']:checked').val());
+      } else if (this.numero[i] === 'tp1') {
+        alert('ABIERTA: ' + $('#' + this.respuesta[i]).val());
+      } else {
+        for (let a = 1; a < 6; a++) {
+         alert(a + 'CHECKBOX: ' + $('.tp2 .' + this.respuesta[0] + ' input:checkbox[name=' + a + ']').prop('checked'));
+        }
+      }
+    }
   }
 }

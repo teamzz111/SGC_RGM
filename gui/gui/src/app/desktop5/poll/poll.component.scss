@@ -72,6 +72,22 @@
 }
 
 .padre {
+  background: white;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  input[type='submit']{
+    padding: 0.5em;
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+    background: rgb(0, 255, 0);
+    border: 1px solid white;
+    color: white;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1.4em;
+  }
   h1 {
     font-family: 'Roboto';
     font-family: 3em;
@@ -81,7 +97,6 @@
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    background: white;
     padding: 0.5em;
     text-align: center;
     .individual {

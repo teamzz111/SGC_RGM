@@ -55,18 +55,17 @@ require 'Conexion.php';
             }
             else if ($R5=='nulll') {
                 $query = "INSERT INTO Respuesta VALUES ('$idRespuesta','$R1','$R2','$R3','$R4',Null,$Num,'$Id')";
-            } else 
+            } else {
                 $query = "INSERT INTO Respuesta VALUES ('$idRespuesta','$R1','$R2','$R3','$R4','$R5',$Num,'$Id')";
-            
-                $rs = $con->query($query);
-                $_SESSION['NumRespuesta'] = $_SESSION['NumRespuesta']+1;
-                if ($rs) {
-                    echo json_encode('true');
-                    }
-                    else {
-                        echo json_encode('false');
-                    }
-   
+            }
+            $rs = $con->query($query);
+            $_SESSION['NumRespuesta'] = $_SESSION['NumRespuesta']+1;
+            if ($rs) {
+                echo json_encode('true');
+            } else {
+                echo json_encode('false');
+            }
+        
         
     }
 ?>
