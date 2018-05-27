@@ -33,14 +33,21 @@ export class PollComponent {
   constructor(private crudProducto: UserServiceService) {
     this.crudProducto.encuestas().map(response => response.json())
     .subscribe(data => {
-          this.listado = data;
-          this.datostabla = true;
-          for (const item of data) {
-            this.id.push(item.idEncuesta);
-          }
-        });
-        this.index = 0;
-        this.process = false;
+
+      if (data === 'cero') {
+        $('.main table').fadeOut();
+        $('.main img').fadeIn();
+      } else {
+        $('.main table').fadeIn();
+        this.listado = data;
+        this.datostabla = true;
+      for (const item of data) {
+        this.id.push(item.idEncuesta);
+      }
+    }
+    });
+    this.index = 0;
+    this.process = false;
 
   }
   clean() {

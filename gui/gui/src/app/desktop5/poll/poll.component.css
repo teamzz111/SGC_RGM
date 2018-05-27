@@ -9,10 +9,17 @@
   margin: auto;
   background: white;
   margin-top: 1em;
+  text-align: center;
   padding: 1em;
 }
 
-.main h1 {
+.main img {
+  display: none;
+  margin: auto;
+  width: 35%;
+}
+
+.main h1, .main h3 {
   font-family: 'Roboto';
   font-size: 2.5em;
   text-align: center;
@@ -20,6 +27,7 @@
 }
 
 .main table {
+  display: none;
   border: 1px solid black;
   width: 90%;
   margin: auto;

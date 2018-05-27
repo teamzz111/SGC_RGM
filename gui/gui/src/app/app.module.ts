@@ -19,6 +19,7 @@ import { Desktop5Component } from './desktop5/desktop5.component';
 import { UserconfigComponent } from './desktop5/userconfig/userconfig.component';
 import { InsertpollComponent } from './desktop4/insertpoll/insertpoll.component';
 import { PollComponent } from './desktop5/poll/poll.component';
+import { SendmessageComponent } from './desktop3/sendmessage/sendmessage.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PollComponent } from './desktop5/poll/poll.component';
     Desktop5Component,
     UserconfigComponent,
     InsertpollComponent,
-    PollComponent
+    PollComponent,
+    SendmessageComponent
   ],
   imports: [BrowserModule, HttpModule, FormsModule],
   providers: [UserServiceService],

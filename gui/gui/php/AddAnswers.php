@@ -47,12 +47,17 @@ require 'Conexion.php';
      
             $_SESSION['NumRespuesta'] = $_SESSION['NumRespuesta']+1;
             if ($rs) {
-                echo json_encode('true');
                 if($var == 'true'){
                     $_SESSION['NumRespuesta'] = 1;
                     $user = $_SESSION['username'];
                     $query = "INSERT INTO Realizado VALUES ('$user', '$Id')";
                     $rs = $con->query($query);
+                    if(!$rs){
+                        echo json_encode($con->error);
+                    }
+                    else {
+                        echo json_encode('true');
+                    }
                 }
             } else {
                 echo json_encode('false');

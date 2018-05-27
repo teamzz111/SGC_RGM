@@ -19,35 +19,41 @@ if($_GET['opt'] == 1) {
     else if ($_SESSION['job']==4)
     $query = "SELECT *  FROM Encuesta WHERE FechaCierre > '$feh' AND Cargo4 = 'true' ";
 
-        $resultado = $con->query($query); 
+    $resultado = $con->query($query); 
 
-        if ($resultado)
+    if ($resultado)
+    {
+        if($resultado->num_rows > 0)
         {
-            if($resultado->num_rows > 0)
-            {
-                $array = array();
-                while ($fila = mysqli_fetch_assoc($resultado)) {
-                    $encuesta = $fila['idEncuesta'];
-                    $user = $_SESSION['username'];
-                    $query = "SELECT * FROM Realizado WHERE IdEmpleado = '$user' AND IdEncuesta = '$encuesta'";
-                    $nresultado = $con->query($query);
-                    if($nresultado->num_rows == 0){
-                         $array[] = array_map('html_entity_decode', $fila);
-                    }
+            $array = array();
+            global $contador;
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                $encuesta = $fila['idEncuesta'];
+                $user = $_SESSION['username'];
+                $query = "SELECT * FROM Realizado WHERE IdEmpleado = '$user' AND IdEncuesta = '$encuesta'";
+                $nresultado = $con->query($query);
+                if($nresultado->num_rows == 0){
+                     $contador++;
+                     $array[] = array_map('html_entity_decode', $fila);
                 }
-                $res = json_encode($array, JSON_UNESCAPED_UNICODE); 
             }
-            else
-            {
-                $res=null;
-                echo json_encode("nel");
+            if($contador == 0){
+                echo json_encode('cero');
+                exit;
             }
-            
+            $res = json_encode($array, JSON_UNESCAPED_UNICODE); 
         }
-        mysqli_close($con);
-        echo $res;
-    
+        else
+        {
+            $res=null;
+            echo json_encode("nel");
+        }
+        
     }
+    mysqli_close($con);
+    
+    echo $res;
+}
     else if ($_GET['opt'] == 2)
     {
         $inputJSON = file_get_contents('php://input');
