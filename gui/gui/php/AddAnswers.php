@@ -41,8 +41,7 @@ require 'Conexion.php';
                 echo json_encode('false');
                 exit;
             }
-
-                $query = "INSERT INTO Respuesta VALUES ('$idRespuesta','$R1','$R2','$R3','$R4','$R5',$Num,'$Id')";
+            $query = "INSERT INTO Respuesta VALUES ('$idRespuesta','$R1','$R2','$R3','$R4','$R5',$Num,'$Id')";
             
             $rs = $con->query($query);
      
@@ -51,6 +50,9 @@ require 'Conexion.php';
                 echo json_encode('true');
                 if($var == 'true'){
                     $_SESSION['NumRespuesta'] = 1;
+                    $user = $_SESSION['username'];
+                    $query = "INSERT INTO Realizado VALUES ('$user', '$Id')";
+                    $rs = $con->query($query);
                 }
             } else {
                 echo json_encode('false');
