@@ -79,4 +79,8 @@ export class UserServiceService {
   traerEncuesta(data) {
     return this.http.post('../php/Poll.php?opt=2', data);
   }
+
+  guardarPreguntas(data){
+    return this.http.post('../php/AddAnswers.php?opt=1', data);
+  }
 }

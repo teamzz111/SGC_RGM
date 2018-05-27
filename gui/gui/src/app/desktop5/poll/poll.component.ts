@@ -91,39 +91,58 @@ export class PollComponent {
           this.r5 = 'nulll';
         }
       } else {
-         if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=1]').prop('checked') === 'undefined' || 
-        $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=1]').prop('checked') === 'false'  ) {
+         if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=1]').prop('checked') === undefined || 
+        $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=1]').prop('checked') === false  ) {
           this.r1 = 'nulll';
          } else {
            this.r1 = $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked');
          }
-        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked') === 'undefined' ||
-          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked') === 'false') {
+        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked') === undefined ||
+          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked') === false) {
           this.r2 = 'nulll';
         } else {
           this.r2 = $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=2]').prop('checked');
         }
-        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=3]').prop('checked') === 'undefined' ||
-          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=3]').prop('checked') === 'false') {
+        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=3]').prop('checked') === undefined ||
+          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=3]').prop('checked') === false) {
           this.r3 = 'nulll';
         } else {
           this.r3 = $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=3]').prop('checked');
         }
-        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=4]').prop('checked') === 'undefined' ||
-          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=4]').prop('checked') === 'false') {
+        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=4]').prop('checked') === undefined ||
+          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=4]').prop('checked') === false) {
           this.r4 = 'nulll';
         } else {
           this.r4 = $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=4]').prop('checked');
         }
-        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=5]').prop('checked') === 'undefined' ||
-          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=5]').prop('checked') === 'false') {
+        if ($('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=5]').prop('checked') === undefined ||
+          $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=5]').prop('checked') === false) {
           this.r5 = 'nulll';
         } else {
           this.r5 = $('.tp2 .' + this.respuesta[i] + ' input:checkbox[name=5]').prop('checked');
         }
       }
       const asd = new Respuesta(this.respuesta[i], this.r1, this.r2, this.r3, this.r4, this.r5 );
-      alert(JSON.stringify(asd));
+      this.crudProducto.actualiza(JSON.stringify(this.objeto)).map(response => response.json())
+        .subscribe(data => {
+          if (data === 'false') {
+            $('.notifi').css({ background: 'red' });
+            $('.notifi').text('Ocurrió una tragedia');
+            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+              setTimeout(function () {
+                $('.notifi').animate({ marginTop: '-10em' }, 1000);
+              }, 5000);
+            });
+          } else if (data === 'true') {
+            $('.notifi').css({ background: 'rgb(14, 194, 14)' });
+            $('.notifi').text('Pregunta exitosa');
+            $('.notifi').animate({ marginTop: '3em' }, 1000, function () {
+              setTimeout(function () {
+                $('.notifi').animate({ marginTop: '-10em' }, 1000);
+              }, 5000);
+            });
+          }
+        });
     }
   }
   error(data) {
