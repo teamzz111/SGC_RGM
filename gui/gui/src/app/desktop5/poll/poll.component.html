@@ -2,7 +2,7 @@
   <br>
   <br>
   <h1>Encuestas pendientes por responder</h1>
-  <table *ngIf="datostabla == 1">
+  <table *ngIf="datostabla">
     <tr>
       <th>ID</th>
       <th>Nombre</th>
@@ -98,4 +98,7 @@
   </div>
   <input type="submit" value="Enviar" (click) = "enviarRespuesta()">
 
+</div>
+<div class="notifi">
+  ¡Usuario insertado con éxito!
 </div>

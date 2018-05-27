@@ -52,7 +52,7 @@ if($_GET['opt'] == 1) {
         $con->query("SET NAMES 'utf8'");
         $Id= $result['id'];
         global $res;
-        $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero  FROM Pregunta     WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
+        $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero, idEncuesta  FROM Pregunta     WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
         $resultado = $con->query($query);
         if ($resultado)
         {

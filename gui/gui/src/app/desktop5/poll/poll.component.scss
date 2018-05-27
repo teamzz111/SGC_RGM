@@ -136,3 +136,16 @@
     }
   }
 }
+
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: #0ec20e;
+  margin-top: -100%;
+}
