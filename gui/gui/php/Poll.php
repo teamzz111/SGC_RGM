@@ -27,8 +27,13 @@ if($_GET['opt'] == 1) {
             {
                 $array = array();
                 while ($fila = mysqli_fetch_assoc($resultado)) {
-
-                    $array[] = array_map('html_entity_decode', $fila);
+                    $encuesta = $fila['idEncuesta'];
+                    $user = $_SESSION['username'];
+                    $query = "SELECT * FROM Realizado WHERE IdEmpleado = '$user' AND IdEncuesta = '$encuesta'";
+                    $nresultado = $con->query($query);
+                    if($nresultado->num_rows == 0){
+                         $array[] = array_map('html_entity_decode', $fila);
+                    }
                 }
                 $res = json_encode($array, JSON_UNESCAPED_UNICODE); 
             }
@@ -38,11 +43,11 @@ if($_GET['opt'] == 1) {
                 echo json_encode("nel");
             }
             
-            }
-            mysqli_close($con);
+        }
+        mysqli_close($con);
         echo $res;
     
-}
+    }
     else if ($_GET['opt'] == 2)
     {
         $inputJSON = file_get_contents('php://input');
@@ -52,7 +57,7 @@ if($_GET['opt'] == 1) {
         $con->query("SET NAMES 'utf8'");
         $Id= $result['id'];
         global $res;
-        $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero  FROM Pregunta     WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
+        $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero  FROM Pregunta   WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
         $resultado = $con->query($query);
         if ($resultado)
         {
@@ -62,17 +67,15 @@ if($_GET['opt'] == 1) {
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     $array[] = array_map('html_entity_decode', $fila);
                 }
+            }
                 $res = json_encode($array, JSON_UNESCAPED_UNICODE);
-            }
-            else
-            {
-                $res=null;
-                echo json_encode("nel");
-            }
+        } else {
+            $res=null;
+            echo json_encode("nel");
         }
-        mysqli_close($con);
-        echo $res;
-    }
+    mysqli_close($con);
+    echo $res;
+}
 
 
 ?>

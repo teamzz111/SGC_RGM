@@ -4,7 +4,8 @@ export class Respuesta {
         public r2,
         public r3,
         public r4,
-        public r5) {
+        public r5,
+        public conf) {
     }
 
 }

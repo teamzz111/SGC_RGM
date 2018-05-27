@@ -153,7 +153,6 @@ export class InsertpollComponent {
         }
         this.pregunuta.setnrespuesta(this.respuesta);
         this.pregunuta.setTPregunta(this.tipo2);
-        alert(JSON.stringify(this.pregunuta));
         this.crudProducto.guardarPregunta(JSON.stringify(this.pregunuta)).
         map(response => response.json()) // Mapeamos los datos devueltos por nuestro archivo php
         .subscribe(data2 => {
@@ -219,7 +218,7 @@ export class InsertpollComponent {
             }
         });
         this.pregunuta.clean();
-        this.respuesta = 0;
+        this.respuesta = 1;
         this.next = 1;
       } else {
         this.next = 3;

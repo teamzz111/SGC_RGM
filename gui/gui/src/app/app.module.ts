@@ -17,7 +17,7 @@ import { InsertjobComponent } from './desktop4/insertjob/insertjob.component';
 import { UserConfigComponent } from './desktop3/user-config/user-config.component';
 import { Desktop5Component } from './desktop5/desktop5.component';
 import { UserconfigComponent } from './desktop5/userconfig/userconfig.component';
-import { InsertpollComponent } from './desktop3/insertpoll/insertpoll.component';
+import { InsertpollComponent } from './desktop4/insertpoll/insertpoll.component';
 import { PollComponent } from './desktop5/poll/poll.component';
 
 
