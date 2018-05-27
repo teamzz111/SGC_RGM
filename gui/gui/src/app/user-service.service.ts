@@ -83,4 +83,7 @@ export class UserServiceService {
   guardarPreguntas(data) {
     return this.http.post('../php/AddAnswers.php?opt=1', data);
   }
+  omitirEncuesta(data) {
+    return this.http.post('../php/ReceiveAnswers.php?opt=3', data);
+  }
 }

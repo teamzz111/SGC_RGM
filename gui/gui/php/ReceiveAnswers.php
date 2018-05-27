@@ -143,6 +143,22 @@
             }
             if ($result) {echo json_encode('true');}
             else {echo json_encode('false');}
+        } 
+        else if ($_GET['opt'] == 3){
+            $inputJSON = file_get_contents('php://input');
+            $result = json_decode($inputJSON, true);
+            $encuesta = $result['id'];
+            $con = new mysqli($host, $user2, $pass2, $db2);
+            $con->query("SET NAMES 'utf8'");
+            $user = $_SESSION['username'];
+            $query = "INSERT INTO Realizado VALUES ('$user', '$Id')";
+            $rs = $con->query($query);
+            if($rs){
+                echo json_encode('true');
+            }
+            else {
+                echo json_encode('false');
+            }
         }
     }
 ?>

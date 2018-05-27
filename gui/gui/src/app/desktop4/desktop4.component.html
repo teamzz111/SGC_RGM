@@ -1,7 +1,7 @@
 <div class="contenedor">
   <div class="quehay">
     <h1>
-      Bienvenido a la gestión de seccionales y cargos
+      Bienvenido a la gestión de seccionales y encuestas
     </h1>
   </div>
   <div class="padre">
@@ -21,6 +21,14 @@
         <p id="comuni">Ver usuarios</p>
       </button>
     </a>
+    <a (click)="semidesk = 3">
+      <button class="boton1 color2">
+        <p id="icon">
+          <img src="assets/img/elections.png" alt="">
+        </p>
+        <p id="comuni">Ver usuarios</p>
+      </button>
+    </a>
   </div>
 </div>
   <div class="content" *ngIf="semidesk == 2">
@@ -29,3 +37,6 @@
   <div class="content" *ngIf="semidesk == 1">
     <app-insertseccional></app-insertseccional>
   </div>
+<div class="content" *ngIf="semidesk == 3">
+  <app-insertpoll></app-insertpoll>
+</div>

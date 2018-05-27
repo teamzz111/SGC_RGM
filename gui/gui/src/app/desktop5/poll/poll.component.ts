@@ -51,6 +51,39 @@ export class PollComponent {
     this.r5 = 'false';
     this.last = 'false';
    }
+  hide(a) {
+    const pre = new Pregunta(this.id[a]);
+    this.crudProducto.omitirEncuesta(JSON.stringify(pre)).map(response => response.json())
+      .subscribe(data => {
+        if (data === 'false') {
+          $('.notifi').css({ background: 'red' });
+          $('.notifi').text('Ocurrió una tragedia');
+          $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+            setTimeout(function () {
+              $('.notifi').animate({ marginTop: '-10em' }, 1000);
+            }, 5000);
+          });
+        } else if (data === 'true' && this.last) {
+          $('.notifi').css({ background: 'rgb(14, 194, 14)' });
+          $('.notifi').text('¡Gracias por tus respuestas!');
+          this.encuesta = false;
+          this.crudProducto.encuestas().map(response => response.json())
+            .subscribe(data2 => {
+              this.listado = data2;
+              this.process = false;
+              this.datostabla = true;
+              for (const item of data2) {
+                this.id.push(item.idEncuesta);
+              }
+            });
+          $('.notifi').animate({ marginTop: '3em' }, 1000, function () {
+            setTimeout(function () {
+              $('.notifi').animate({ marginTop: '-10em' }, 1000);
+            }, 5000);
+          });
+        }
+      });
+   }
   show(a) {
     this.objeto = new Pregunta(this.id[a]);
     this.temporal = this.id[a];
