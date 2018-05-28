@@ -28,6 +28,7 @@ export class UserconfigComponent {
     this.busca();
     this.visible = true;
   }
+
    busca() {
     this.crudProducto.busca2().map(response => response.json())
     .subscribe(data => {

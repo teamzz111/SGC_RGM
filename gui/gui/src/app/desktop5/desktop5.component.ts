@@ -20,4 +20,11 @@ export class Desktop5Component {
     });*/
     this.semidesk = 2;
   }
+  closeSession() {
+    this.crudProducto.closeSession().map(response => response.json()).subscribe(data => {
+      if (data === 'true') {
+        location.href = '../../../index.html';
+      }
+    });
+  }
 }
