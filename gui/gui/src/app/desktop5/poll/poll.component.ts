@@ -33,12 +33,12 @@ export class PollComponent {
   constructor(private crudProducto: UserServiceService) {
     this.crudProducto.encuestas().map(response => response.json())
     .subscribe(data => {
-
       if (data === 'cero') {
         $('.main table').fadeOut();
         $('.main img').fadeIn();
       } else {
         $('.main table').fadeIn();
+        $('.main h3').fadeOut();
         this.listado = data;
         this.datostabla = true;
       for (const item of data) {
