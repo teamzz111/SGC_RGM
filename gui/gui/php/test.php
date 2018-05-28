@@ -68,8 +68,7 @@
           $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo FROM empleado";
           $rs = $con->query($query);
         }
-        else{
-            if($_GET['srv'] == 10 && $tipo == 3){
+        else if(isset($_GET['cc']) && $tipo == 3){
             $asd = $_GET['cc'];
             $query = "SELECT empleado.cedula, empleado.nombre, empleado.apellido, empleado.email, empleado.telefono, empleado.direccion, empleado.numero, empleado.cargo_idCargos, empleado.idSeccional, empleado.sexo  FROM empleado, cuenta WHERE empleado.cedula = ".$asd;
             $a = 2;
@@ -118,7 +117,7 @@
             echo json_encode($_SESSION['job']);
             exit(0);
         }
-        else if($tipo == 3){
+        if($tipo == 3){
             if ($a == 0) {
                 $rs = $con->query($query." cuenta.cedula = empleado.cedula)");
             } else if($a == 1) {
@@ -127,7 +126,7 @@
                 $rs = $con->query($query . " AND cuenta.cedula = empleado.cedula");
             }
         }
-    }
+    
     $array = array();
     $count = 0;
     if ($rs) {
