@@ -72,20 +72,20 @@ export class InsertpollComponent {
             if (data === 'true' || data === 'true2') {
               $('.notifi').css({ background: 'rgb(14,194,14)' });
               $('.notifi').text('Se añadió la encuesta');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             } else if (data === 'false' || data === '0' || data === 'false2') {
               $('.notifi').css({ background: 'red' });
               $('.notifi').text('Se encontró un error');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             } else {
               $('.notifi').css({ background: 'red' });
               $('.notifi').text('Error inesperado');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             }
           this.next = 1;
@@ -159,19 +159,19 @@ export class InsertpollComponent {
           if (data2 === 'true' || data2 === 'true2') {
             $('.notifi').css({ background: 'rgb(14,194,14)' });
             $('.notifi').text('Se añadió la pregunta');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+            $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
           } else if (data2 === 'false' || data2 === '0' || data2 === 'false2') {
             $('.notifi').css({ background: 'red' });
             $('.notifi').text('Se encontró un error');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+            $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
           } else {
             $('.notifi').css({ background: 'red' });
             $('.notifi').text('Error inesperado');
-            $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
+            $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
               setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
             });
           }
@@ -180,8 +180,8 @@ export class InsertpollComponent {
         this.pregunuta.clean();
         this.next = 1;
         this.listo = false;
-        this.respuesta++;
-        this.numero = 1;
+        this.respuesta = 1;
+        this.numero++;
         break;
       }
     }
@@ -200,25 +200,25 @@ export class InsertpollComponent {
             if (data2 === 'true' || data2 === 'true2') {
               $('.notifi').css({ background: 'rgb(14,194,14)' });
               $('.notifi').text('Se añadió la pregunta de la encuesta');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             } else if (data2 === 'false' || data2 === '0' || data2 === 'false2') {
               $('.notifi').css({ background: 'red' });
               $('.notifi').text('Se encontró un error');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             } else {
               $('.notifi').css({ background: 'red' });
               $('.notifi').text('Pregunta existente');
-              $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-                setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+              $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+                setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
               });
             }
         });
         this.pregunuta.clean();
-        this.respuesta = 1;
+        this.respuesta++;
         this.next = 1;
       } else {
         this.next = 3;
@@ -237,8 +237,8 @@ export class InsertpollComponent {
     this.numero = 1;
     $('.notifi').css({ background: 'rgb(14,194,14)' });
     $('.notifi').text('Encuesta añadida con éxito');
-    $('.notifi').animate({ marginTop: '2em' }, 1000, function () {
-      setTimeout(function () { $('.notifi').animate({ marginTop: '-10em' }, 1000); }, 5000);
+    $('.notifi').animate({ marginTop: '4em' }, 1000, function () {
+      setTimeout(function () { $('.notifi').animate({ marginTop: '-100%' }, 1000); }, 5000);
     });
   }
 }

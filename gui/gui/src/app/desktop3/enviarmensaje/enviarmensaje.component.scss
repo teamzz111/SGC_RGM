@@ -11,43 +11,22 @@
   margin-top: 1em;
   display: flex;
   padding: 2%;
-  p {
-    font-family: "Sans";
-    font-weight: 300;
-    font-size: 2em;
-  }
-  .izq {
+  .der {
     display: flex;
     align-content: center;
     align-items: center;
+    flex-direction: column;
     width: 50%;
     border-left: 1px solid rgba(139, 135, 135, .7); //  background-size: cover;
-    img {
-      width: 100%;
+    img{
+        width: 100%;
     }
-  }
-  .der {
+}
+  .izq {
     padding: 2%;
     width: 50%;
     text-align: center;
-    button {
-      background: black;
-      color: white;
-      padding: 1.5%;
-      border: 1px solid white;
-      width: 100%;
-      max-width: 400px;
-      font-size: 1.1em;
-      border-radius: 10px;
-      font-weight: 300;
-      font-family: "Sans";
-      transition: 1s linear;
-      &:hover {
-        cursor: pointer;
-        background: rgba(0, 0, 0, 0.5);
-      }
-    }
-    input[type="text"] {
+    input[type="number"] {
       width: 100%;
       max-width: 450px;
       margin-top: 1%;
@@ -59,31 +38,55 @@
       border: 1px solid transparent;
       border-bottom: 1px solid rgb(97, 97, 97);
     }
-    input[type="radio"] {
-      margin-bottom: 1em;
-      margin-top: 1em;
-    }
-    input[type="submit"] {
-      font-size: 1em;
+    h2 {
+      font-size: 2em;
       font-family: "Sans";
       font-weight: 300;
+    }
+    .botton {
       background: black;
-      padding: 2%;
-      border-radius: 5px;
-      width: 100%;
-      max-width: 450px;
-      color: black;
-      border: 1px solid white;
+      padding: 1.5%;
+      max-width: 350px;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 10px;
       color: white;
-      cursor: pointer;
-    }
-    select {
       font-size: 1em;
       font-family: "Sans";
       font-weight: 300;
-      padding: 1%;
-      margin-top: 1em;
-      margin-bottom: 1em;
+      transition: 1s linear;
+      &:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .info {
+      margin-top: 1.5em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: white;
+      font-family: "Sans";
+      font-weight: 300;
+      font-size: 1em;
+      .block {
+        width: 40%;
+        background: rgb(255, 0, 0);
+        padding: 3%;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .allow {
+        width: 40%;
+        background: rgb(8, 255, 8);
+        padding: 3%;
+        border-radius: 10px;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -100,14 +103,15 @@
   background: rgb(14, 194, 14);
   margin-top: -100%;
 }
+
 @media screen and (max-width: 800px) {
   .papa {
-    .izq {
+    .der {
       display: none;
     }
-    .der {
+    .izq {
       width: 100%;
-      p {
+      h2 {
         font-size: 1.4em;
       }
     }

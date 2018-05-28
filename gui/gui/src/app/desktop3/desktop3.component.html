@@ -8,23 +8,29 @@
     <div class="padre">
       <a (click)="semidesk = 1">
         <button class="boton1 color2">
-           <p id="icon"><img src="assets/img/group-1.png" alt=""></p>
+          <p id="icon">
+            <img src="assets/img/group-1.png" alt="">
+          </p>
           <p id="comuni">Ver usuarios</p>
         </button>
       </a>
-      <a  (click)="semidesk = 2">
+      <a (click)="semidesk = 2">
         <button class="boton1 color2">
-          <p id="icon"><img src="assets/img/user-10.png" alt=""></p>
+          <p id="icon">
+            <img src="assets/img/user-10.png" alt="">
+          </p>
           <p id="comuni">Modificar usuario</p>
         </button>
       </a>
-      <a  (click)="semidesk = 3">
+      <a (click)="semidesk = 3">
         <button class="boton1 color2">
-          <p id="icon"><img src="assets/img/user-2.png" alt=""></p>
+          <p id="icon">
+            <img src="assets/img/user-2.png" alt="">
+          </p>
           <p id="comuni">Añadir usuario</p>
         </button>
       </a>
-      <a  (click)="semidesk = 4">
+      <a (click)="semidesk = 4">
         <button class="boton1 color2">
           <p id="icon">
             <img src="assets/img/user-8.png" alt="">
@@ -33,7 +39,7 @@
           <!--  <p id="name">Añadir</p>-->
         </button>
       </a>
-      <a  (click)="semidesk = 5">
+      <a (click)="semidesk = 5">
         <button class="boton1 color2">
           <p id="icon">
             <img src="assets/img/user-17.png" alt="">
@@ -47,14 +53,17 @@
   <div class="content" *ngIf="semidesk == 1">
     <app-searchuser></app-searchuser>
   </div>
-  <div class="content" *ngIf = "semidesk == 3">
+  <div class="content" *ngIf="semidesk == 3">
     <app-insertuser></app-insertuser>
   </div>
-    <div class="content" *ngIf = "semidesk == 2">
+  <div class="content" *ngIf="semidesk == 2">
     <app-updateuser></app-updateuser>
   </div>
-  <div class="content" *ngIf = "semidesk == 4">
+  <div class="content" *ngIf="semidesk == 4">
     <app-lockuser></app-lockuser>
   </div>
-</main>
+  <div class="content" *ngIf="semidesk == 5">
+    <app-enviarmensaje></app-enviarmensaje>
+  </div>
 
+</main>
