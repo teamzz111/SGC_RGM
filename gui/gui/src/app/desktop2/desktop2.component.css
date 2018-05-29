@@ -3,8 +3,9 @@
   }
 
 #bar{
-    width: 100%;
-    height: 9ex;
+    width: 100%;    
+    max-width: 1200px;
+    margin: auto;
     background-color: #1f4daf;
     -webkit-box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -12,10 +13,18 @@
 }
 
 #whth{
-    width: 65%;
-    height: 9ex;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
     position: fixed;
     background-color: white;
+    text-align: center;
+}
+
+iframe{
+    width: 100%;
+    height: 80vh;
 }
 
 #smyh{
