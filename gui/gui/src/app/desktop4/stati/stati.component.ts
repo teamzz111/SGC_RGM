@@ -15,7 +15,9 @@ export class StatiComponent implements OnInit {
       animationStep: 5,
       foregroundBorderWidth: 14,
       backgroundBorderWidth: 14,
-      percent: 75
+      percent: 75,
+      foregroundColor: 'white',
+      fontColor: 'white'
     });
   }
 

@@ -5,17 +5,8 @@
       <br> Ingresa su cédula
     </h2>
     <input type="number" name="cc" id="cc" required placeholder="Cédula del usuario">
-    <div class="botton" (click)="lock(1)">
+    <div class="botton">
       Buscar
-    </div>
-
-    <div class="info">
-      <div class="block" *ngIf="user == 'Activo' || user == 'Espera'" (click)="lock(2)">
-        Bloquear usuario
-      </div>
-      <div class="allow" *ngIf="user == 'Desactivado'" (click)="lock(3)">
-        Desbloquear usuario
-      </div>
     </div>
   </div>
 

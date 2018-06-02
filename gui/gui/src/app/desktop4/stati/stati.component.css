@@ -12,12 +12,45 @@
   background: White;
 }
 
-.padre .row {
-  width: 25%;
+.padre .contenedores {
+  width: 100%;
+  display: flex;
+  padding: 2%;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  justify-content: space-between;
 }
 
-.padre .est {
-  display: flex;
-  flex-wrap: wrap;
+.padre .contenedores .est {
+  width: 100%;
+  max-width: 300px;
+  padding: 1%;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(6, 61, 179, 0.747);
+  margin-top: 1em;
+}
+
+.padre .contenedores .est h4 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-bottom: -1.5em;
+  color: white;
+}
+
+.padre .contenedores .est .desc {
+  width: 100%;
+  margin: 0;
+  background: #063db3;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 300;
+  padding: 3% 0.5%;
+  font-size: 1.2em;
+}
+
+.padre .contenedores .est .row {
+  width: 100%;
 }
 /*# sourceMappingURL=stati.component.css.map */

@@ -183,5 +183,9 @@
                 echo json_encode('false');
             }
         }
+        else if ($_GET['opt'] == 4){
+            /*NECESITO QUE CUENTES TODOS LOS USUARIOS POR ENCUESTA QUE RESPONDIERON ESA ENCUESTA Y CUÁNTOS 
+            FALTAN DEPENDIENDO DEL CARGO O DE LOS CARGOS QUE ESTÉN AUTORIZADOS EN LA ENCUESTA*/
+        }
     }
 ?>
