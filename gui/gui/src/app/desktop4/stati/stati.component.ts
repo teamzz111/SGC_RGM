@@ -17,7 +17,11 @@ export class StatiComponent implements OnInit {
       backgroundBorderWidth: 14,
       percent: 75,
       foregroundColor: 'white',
-      fontColor: 'white'
+      fontColor: 'white',
+      fontFamily: 'Roboto',
+      title: 'hola',
+      description: 'hasd',
+      textStyle: 'font-family: Roboto'
     });
   }
 

@@ -48,9 +48,22 @@
   font-weight: 300;
   padding: 3% 0.5%;
   font-size: 1.2em;
+  transition: 1s linear;
+}
+
+.padre .contenedores .est .desc:hover {
+  background: #042368;
+  cursor: pointer;
 }
 
 .padre .contenedores .est .row {
   width: 100%;
+}
+
+.padre .contenedores .est .row p {
+  color: white;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-family: 'Roboto';
 }
 /*# sourceMappingURL=stati.component.css.map */
