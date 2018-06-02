@@ -68,16 +68,10 @@ if($_GET['opt'] == 1) {
         $resultado = $con->query($query);
          $array = array();
         if ($resultado)
-        echo $resultado->num_rows;
         {
+            echo $resultado->num_rows;
             if($resultado->num_rows>0)
-            {
-<<<<<<< HEAD
-                
-                $array = array();
-=======
-               
->>>>>>> ccb21725dad86800342a0920e162b6c8acc2592e
+            {      
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     $array[] = array_map('html_entity_decode', $fila);
                 }
