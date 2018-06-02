@@ -77,13 +77,13 @@ if(!isset($_GET['opt'])) {
 				$mail->Host = '	mx1.hostinger.co';  			
 				$mail->SMTPAuth = true;                              
 				$mail->Username = 'support@sgc.andreslargo.com';             
-				$mail->Password = 'nicky246';
+				$mail->Password = 'LrQ2KSSeJ6El';
 				$mail->SMTPSecure = 'tls';                          
 				$mail->Port = 587;        
 				$mail->CharSet = 'UTF-8';
 				$mail->setFrom('support@sgc.andreslargo.com', 'Sistema SGC');
 				$mail->addAddress($Correo);
-				$mail->AddEmbeddedImage('../../img/sgc.png', 'logo_2u');
+				$mail->AddEmbeddedImage('../dist/assets/img/sgc.png', 'logo_2u');
 				$mail->isHTML(true);                           
 				$mail->Subject = 'Registro exitoso';
                 $mail->Body = " 
@@ -100,7 +100,7 @@ if(!isset($_GET['opt'])) {
 
                     <main style= \"color: #fff; font-size: 22px;\">
                         <h3 style= \"color: #fff; font-size: 22px;\">
-                            Al iniciar sesión te pediremos que cambies tu contraseña por seguridad.
+                            Al iniciar sesión te pedimos que cambies tu contraseña por seguridad.
                             <br>
                             Tu contraseña es:
                              </h3>

@@ -172,6 +172,25 @@
                     echo $res;
             if ($result) {echo json_encode('true');}
             else {echo json_encode('false');}
+<<<<<<< HEAD
+=======
+        } 
+        else if ($_GET['opt'] == 3){
+            $inputJSON = file_get_contents('php://input');
+            $result = json_decode($inputJSON, true);
+            $encuesta = $result['id'];
+            $con = new mysqli($host, $user2, $pass2, $db2);
+            $con->query("SET NAMES 'utf8'");
+            $user = $_SESSION['username'];
+            $query = "INSERT INTO Realizado VALUES ('$user', '$encuesta')";
+            $rs = $con->query($query);
+            if($rs){
+                echo json_encode('true');
+            }
+            else {
+                echo json_encode('false');
+            }
+>>>>>>> ccb21725dad86800342a0920e162b6c8acc2592e
         }
     }
 ?>

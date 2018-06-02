@@ -66,13 +66,18 @@ if($_GET['opt'] == 1) {
         $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero  FROM Pregunta   WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
    
         $resultado = $con->query($query);
+         $array = array();
         if ($resultado)
         echo $resultado->num_rows;
         {
             if($resultado->num_rows>0)
             {
+<<<<<<< HEAD
                 
                 $array = array();
+=======
+               
+>>>>>>> ccb21725dad86800342a0920e162b6c8acc2592e
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     $array[] = array_map('html_entity_decode', $fila);
                 }
