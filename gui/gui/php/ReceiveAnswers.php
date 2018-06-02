@@ -152,7 +152,7 @@
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
             $user = $_SESSION['username'];
-            $query = "INSERT INTO Realizado VALUES ('$user', '$Id')";
+            $query = "INSERT INTO Realizado VALUES ('$user', '$encuesta')";
             $rs = $con->query($query);
             if($rs){
                 echo json_encode('true');

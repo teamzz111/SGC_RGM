@@ -65,11 +65,12 @@ if($_GET['opt'] == 1) {
         global $res;
         $query = "SELECT idPregunta, Pregunta, Numero, Respuesta1, Respuesta2, Respuesta3,TipoPregunta, Respuesta4, Respuesta5, Numero  FROM Pregunta   WHERE idEncuesta = '$Id' ORDER BY Numero ASC";
         $resultado = $con->query($query);
+         $array = array();
         if ($resultado)
         {
             if($resultado->num_rows >0)
             {
-                $array = array();
+               
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     $array[] = array_map('html_entity_decode', $fila);
                 }
