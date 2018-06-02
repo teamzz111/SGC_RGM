@@ -4,8 +4,20 @@
 }
 
 .padre {
+  border-radius: 10px;
   width: 100%;
   max-width: 1300px;
-  bacgkround: White;
+  margin: auto;
+  margin-top: 1em;
+  background: White;
+}
+
+.padre .row {
+  width: 25%;
+}
+
+.padre .est {
+  display: flex;
+  flex-wrap: wrap;
 }
 /*# sourceMappingURL=stati.component.css.map */

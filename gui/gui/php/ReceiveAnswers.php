@@ -65,10 +65,6 @@
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
                 $Pregunta = $row['Pregunta'];
                 $Tipo=$row['TipoPregunta'];
-              /*  echo $query;
-                echo '<br>';
-                echo $Tipo;
-                echo '<br>';*/
 
                 if($Tipo=="tp2" || $Tipo=="tp3")
                 {
@@ -84,7 +80,6 @@
                     {
                         $Respuesta= $row['Respuesta1'];
                         $query = "SELECT count(Respuesta) FROM Respuesta WHERE Num= $i AND idEncuesta= '$Id' AND (Respuesta='true' OR Respuesta='$Respuesta')";
-                       // echo $query;
                         $result = $con->query($query);
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador = $row2["count(Respuesta)"];
@@ -103,7 +98,7 @@
                         $Respuesta= $row['Respuesta2'];
                         $query = "SELECT count(Respuesta2) FROM Respuesta WHERE Num= $i AND idEncuesta= '$Id' AND (Respuesta2='true' OR Respuesta='$Respuesta')";
                         $result = $con->query($query);
-                        echo $query;
+                    
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador =$row2["count(Respuesta2)"];
     
@@ -168,12 +163,9 @@
             }*/
             $array1 = array();
             $array1[] = array_map('html_entity_decode', $array);
-            $res = json_encode($array1, JSON_NUMERIC_CHECK);
-                    echo $res;
-            if ($result) {echo json_encode('true');}
-            else {echo json_encode('false');}
-<<<<<<< HEAD
-=======
+            $res = json_encode($array1, JSON_UNESCAPED_UNICODE);
+            echo $res;
+            
         } 
         else if ($_GET['opt'] == 3){
             $inputJSON = file_get_contents('php://input');
@@ -190,7 +182,6 @@
             else {
                 echo json_encode('false');
             }
->>>>>>> ccb21725dad86800342a0920e162b6c8acc2592e
         }
     }
 ?>

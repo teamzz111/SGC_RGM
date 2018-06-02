@@ -3,7 +3,17 @@
     margin: 0;
 }
 .padre{
+    border-radius: 10px;
     width: 100%;
     max-width: 1300px;
+    margin: auto;
+    margin-top: 1em;
     background: White;
+    .row{
+        width: 25%;
+    }
+    .est{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

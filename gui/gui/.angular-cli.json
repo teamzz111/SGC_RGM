@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/css/jquery.circliful.css"
       ],
       "scripts": [
         "assets/js/countrySelect.js",
