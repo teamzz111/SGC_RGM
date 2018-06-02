@@ -21,6 +21,7 @@ import { InsertpollComponent } from './desktop4/insertpoll/insertpoll.component'
 import { PollComponent } from './desktop5/poll/poll.component';
 import { SendmessageComponent } from './desktop3/sendmessage/sendmessage.component';
 import { EnviarmensajeComponent } from './desktop3/enviarmensaje/enviarmensaje.component';
+import { StatiComponent } from './desktop4/stati/stati.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { EnviarmensajeComponent } from './desktop3/enviarmensaje/enviarmensaje.c
     InsertpollComponent,
     PollComponent,
     SendmessageComponent,
-    EnviarmensajeComponent
+    EnviarmensajeComponent,
+    StatiComponent
   ],
   imports: [BrowserModule, HttpModule, FormsModule],
   providers: [UserServiceService],

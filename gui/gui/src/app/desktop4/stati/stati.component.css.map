@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;CACZ;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EACjB,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "stati.component.scss"
+    ],
+    "names": [],
+    "file": "stati.component.css"
+}

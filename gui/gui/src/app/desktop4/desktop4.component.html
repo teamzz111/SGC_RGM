@@ -5,6 +5,7 @@
     </h1>
   </div>
   <div class="padre">
+    <!--
     <a (click)="semidesk = 1">
       <button class="boton1 color2">
         <p id="icon">
@@ -13,7 +14,7 @@
         <p id="comuni">Añadir Seccional</p>
       </button>
     </a>
-    <!--<a (click)="semidesk = 2">
+    <a (click)="semidesk = 2">
       <button class="boton1 color2">
         <p id="icon">
           <img src="assets/img/users.png" alt="">
@@ -30,6 +31,14 @@
         <p id="comuni">Ver usuarios</p>
       </button>
     </a>
+    <a (click)="semidesk = 4">
+      <button class="boton1 color2">
+        <p id="icon">
+          <img src="assets/img/graf.png" alt="">
+        </p>
+        <p id="comuni">Ver usuarios</p>
+      </button>
+    </a>
   </div>
 </div>
   <div class="content" *ngIf="semidesk == 2">
@@ -41,3 +50,7 @@
 <div class="content" *ngIf="semidesk == 3">
   <app-insertpoll></app-insertpoll>
 </div>
+<div class="content" *ngIf="semidesk == 4">
+  <app-stati></app-stati>
+</div>
+
