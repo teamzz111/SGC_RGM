@@ -64,7 +64,7 @@
 				//	$mail->addBCC('bcc@example.com');
 				//	$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 				///	$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-				$mail->AddEmbeddedImage('../../img/sgc.png', 'logo_2u');
+				$mail->AddEmbeddedImage('../dist/assets/img/sgc.png', 'logo_2u');
 				//Content
 				$mail->isHTML(true);                                  // Set email format to HTML
 				$mail->Subject = '¿OLVIDASTE TU CONTRASEÑA?';
