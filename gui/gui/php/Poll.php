@@ -69,7 +69,6 @@ if($_GET['opt'] == 1) {
          $array = array();
         if ($resultado)
         {
-            echo $resultado->num_rows;
             if($resultado->num_rows>0)
             {      
                 while ($fila = mysqli_fetch_assoc($resultado)) {
