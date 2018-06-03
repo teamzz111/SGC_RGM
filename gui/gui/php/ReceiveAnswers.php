@@ -39,7 +39,7 @@
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
            //$Id = $input['id'];
-           $Id='07ATXCE'; 
+           $Id='06D7Y2U'; 
             $input = json_decode($inputJSON, TRUE);
             $query="";
             if ($con->connect_error) 
@@ -55,9 +55,8 @@
 
             $contador=0;
             $Pregunta;
-
-            $array = array();
-
+            global $array4;
+            $arrayy;
             for($i=1; $i<=$NumPreguntas; $i++)
             {
                 $query = "SELECT Pregunta, TipoPregunta FROM Pregunta WHERE Numero = '$i' AND idEncuesta= '$Id'";
@@ -65,10 +64,11 @@
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
                 $Pregunta = $row['Pregunta'];
                 $Tipo=$row['TipoPregunta'];
-
+                $Preg = ""; $Resp1=""; $Cont1=0; $Resp2=""; $Cont2=0; $Resp3=""; $Cont3=0; $Resp4=""; $Cont4=0; $Resp5=""; $Cont5=0;
                 if($Tipo=="tp2" || $Tipo=="tp3")
                 {
-                    array_push($array, $Pregunta);
+                     $Preg = $Pregunta;
+                     //array_push($array, array('Pregunta' => $Pregunta));
 
                     $query = "SELECT count(Respuesta1), Respuesta1 FROM Pregunta WHERE Numero= $i AND idEncuesta= '$Id'";
                   
@@ -83,9 +83,10 @@
                         $result = $con->query($query);
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador = $row2["count(Respuesta)"];
-    
-                        array_push($array, $row['Respuesta1']);
-                        array_push($array, $contador);
+                        $Resp1 = $row['Respuesta1'];
+                        $Cont1 = $contador;
+                        //array_combine($array, array('Respuesta' => $row['Respuesta1']));
+                        //array_combine($array, array('Contador' => $contador));
                     }
     
                     $query = "SELECT count(Respuesta2), Respuesta2 FROM Pregunta WHERE Numero= $i AND idEncuesta= '$Id'";
@@ -101,9 +102,10 @@
                     
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador =$row2["count(Respuesta2)"];
-    
-                        array_push($array, $row['Respuesta2']);
-                        array_push($array, $contador);
+                        $Resp2 = $row['Respuesta2'];
+                        $Cont2 = $contador;
+                        //array_push($array, array('Respuesta2' => $row['Respuesta2']));
+                        //array_push($array, array('Contador2' => $contador));
                     }
     
                     $query = "SELECT count(Respuesta3), Respuesta3 FROM Pregunta WHERE Numero= $i AND idEncuesta= '$Id'";
@@ -117,9 +119,10 @@
                         $result = $con->query($query);
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador = $row2["count(Respuesta3)"];
-    
-                        array_push($array, $row['Respuesta3']);
-                        array_push($array, $contador);
+                        $Resp3 = $row['Respuesta3'];
+                        $Cont3 = $contador;
+                        //array_push($array, array('Respuesta3' => $row['Respuesta3']));
+                        //array_push($array, array('Contador3' => $contador));
                     }
     
                     $query = "SELECT count(Respuesta4), Respuesta4 FROM Pregunta WHERE Numero= $i AND idEncuesta= '$Id'";
@@ -133,9 +136,10 @@
                         $result = $con->query($query);
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador = $row2["count(Respuesta4)"];
-    
-                        array_push($array, $row['Respuesta4']);
-                        array_push($array, $contador);
+                        $Resp4 = $row['Respuesta4'];
+                        $Cont4 = $contador;
+                        //array_push($array, array('Respuesta4' => $row['Respuesta4']));
+                        //array_push($array, array('Contador4' => $contador));
                     }
     
                     $query = "SELECT count(Respuesta5), Respuesta5 FROM Pregunta WHERE Numero= $i AND idEncuesta= '$Id'";
@@ -149,23 +153,32 @@
                         $result = $con->query($query);
                         $row2 = $result ->fetch_array(MYSQLI_ASSOC);
                         $contador = +$row2["count(Respuesta5)"];
-    
-                        array_push($array, $row['Respuesta5']);
-                        array_push($array, $contador);
+                        $Resp5 = $row['Respuesta5'];
+                        $Cont5 = $contador;
+                        //array_push($array, array('Respuesta5' => $row['Respuesta5']));
+                        //array_push($array, array('Contador5' => $contador));
                     }
                 }
-                
+                if($i == 1){
+                    $query = "SELECT Nombre FROM Encuesta WHERE idEncuesta = '$Id'";
+                    $result = $con->query($query);
+                    $row = $result ->fetch_array(MYSQLI_ASSOC);
+                    $contador = $row['Nombre'];
+                    $array4 = array('Nombre' => $contador, 'Pregunta' => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
+                    'Respuesta5' => $Resp5,'Contador5' => $Cont5);
+                    $arrayy = array_map('html_entity_decode', $array4);
+                } else {
+                    $array4 = array("Pregunta$i" => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
+                    'Respuesta5' => $Resp5,'Contador5' => $Cont5);
+                    array_push($arrayy, array_map('html_entity_decode', $array4));
+                }
+
             }
-           /* for ($i=0; $i<count($array); $i++)
-            {
-                echo  $array[$i];
-                echo '<br>';
-            }*/
-            $array1 = array();
-            $array1[] = array_map('html_entity_decode', $array);
-            $res = json_encode($array1, JSON_UNESCAPED_UNICODE);
+        
+            $res = json_encode($arrayy, JSON_UNESCAPED_UNICODE);
+            echo '[';
             echo $res;
-            
+            echo ']';
         } 
         else if ($_GET['opt'] == 3){
             $inputJSON = file_get_contents('php://input');
