@@ -86,4 +86,7 @@ export class UserServiceService {
   omitirEncuesta(data) {
     return this.http.post('../php/ReceiveAnswers.php?opt=3', data);
   }
+  verConteoEncuesta() {
+    return this.http.get('../php/ReceiveAnswers.php?opt=4');
+  }
 }

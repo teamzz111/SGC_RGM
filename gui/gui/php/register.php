@@ -152,7 +152,7 @@ else{
         $array = array();
         while ($fila = mysqli_fetch_assoc($rs)) {
             $count++;
-            $array[] = array_map('utf8_encode', $fila);
+            $array[] = array_map('html_entity_decode', $fila);
         }
         if($count == 0 ) {
             echo json_encode('error');

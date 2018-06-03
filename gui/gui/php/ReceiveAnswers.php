@@ -183,9 +183,78 @@
                 echo json_encode('false');
             }
         }
-        else if ($_GET['opt'] == 4){
-            /*NECESITO QUE CUENTES TODOS LOS USUARIOS POR ENCUESTA QUE RESPONDIERON ESA ENCUESTA Y CUÁNTOS 
-            FALTAN DEPENDIENDO DEL CARGO O DE LOS CARGOS QUE ESTÉN AUTORIZADOS EN LA ENCUESTA*/
+        else if ($_GET['opt'] == 4){ // Se desean obtener las encuestas y los que las han respondid
+            $con = new mysqli($host, $user2, $pass2, $db2);
+            $con2 = new mysqli($host, $user, $pass, $db);
+            
+            $con->query("SET NAMES 'utf8'");
+            
+            $query="";
+            
+            if ($con->connect_error) 
+            {
+                echo json_encode('false');
+                exit;
+            }
+            
+            $query2 = "SELECT idEncuesta, Nombre, Cargo, Cargo2, Cargo3, Cargo4 FROM Encuesta";
+            $result1 = $con->query($query2);
+            $array = array();
+
+
+            while($filita = mysqli_fetch_assoc($result1)){
+                $arrayTemporal = array();
+                $sqlUser = "SELECT count(*) FROM empleado WHERE ";
+                $Inicial = 0; // Esta variable verifica si hubo una insercción despupes del where
+                if($filita['Cargo'] == 'true'){
+                    if($Inicial == 0){
+                      $sqlUser = $sqlUser . "cargo_idCargos = 1 ";  
+                      $Inicial = 1;
+                    }
+                }
+                if($filita['Cargo2'] == 'true'){
+                    if($Inicial == 0){
+                      $sqlUser = $sqlUser . "cargo_idCargos = 2 ";  
+                      $Inicial = 1;
+                    } else {
+                      $sqlUser = $sqlUser . " OR cargo_idCargos = 2 ";  
+                    }
+                }         
+                if($filita['Cargo3'] == 'true'){
+                    if($Inicial == 0){
+                      $sqlUser = $sqlUser . "cargo_idCargos = 3 ";  
+                      $Inicial = 1;
+                    }else {
+                      $sqlUser = $sqlUser . " OR cargo_idCargos = 3 ";  
+                    }
+                }
+                if($filita['Cargo4'] == 'true'){
+                    if($Inicial == 0){
+                      $sqlUser = $sqlUser . "cargo_idCargos = 4";  
+                      $Inicial = 1;
+                    }else {
+                      $sqlUser = $sqlUser . " OR cargo_idCargos = 4 ";  
+                    }
+                }
+
+                $result3 = $con2->query($sqlUser);  
+                $faltantes = mysqli_fetch_assoc($result3);
+                $Id = $filita['idEncuesta'];
+                $query = "SELECT count(*) FROM Realizado WHERE idEncuesta= '$Id'";
+                $result = $con->query($query);        
+
+                $array23 = [
+                    "idEncuesta" => $filita['idEncuesta'],
+                    "Nombre" => $filita['Nombre'],
+                    "Faltantes" => $faltantes['count(*)']
+                ];
+                while ($fila = mysqli_fetch_assoc($result)) {
+                    $array23['Respondido'] = $fila['count(*)'];    
+                    array_push($array, $array23);
+                     
+                }
+            }
+             echo json_encode($array,JSON_UNESCAPED_UNICODE); 
         }
     }
 ?>
