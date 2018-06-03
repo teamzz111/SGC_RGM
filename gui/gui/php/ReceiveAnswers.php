@@ -168,9 +168,10 @@
                     'Respuesta5' => $Resp5,'Contador5' => $Cont5);
                     $arrayy = array_map('html_entity_decode', $array4);
                 } else {
-                    $array4 = array("Pregunta$i" => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
+                    $array4 = array("Pregunta" => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
                     'Respuesta5' => $Resp5,'Contador5' => $Cont5);
-                    array_push($arrayy, array_map('html_entity_decode', $array4));
+                    $arrayy[] = array_map('html_entity_decode', $array4);
+                    
                 }
 
             }

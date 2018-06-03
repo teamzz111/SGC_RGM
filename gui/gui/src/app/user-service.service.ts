@@ -89,4 +89,7 @@ export class UserServiceService {
   verConteoEncuesta() {
     return this.http.get('../php/ReceiveAnswers.php?opt=4');
   }
+  estadisticasEncuesta(data) {
+    return this.http.post('../php/ReceiveAnswers.php?opt=2', data);
+  }
 }
