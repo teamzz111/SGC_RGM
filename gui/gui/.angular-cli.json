@@ -25,7 +25,8 @@
       "scripts": [
         "assets/js/countrySelect.js",
         "assets/js/countries.js",
-        "assets/js/jquery.circliful.min.js"
+        "assets/js/jquery.circliful.min.js",
+        "assets/js/Chart.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,5 +1,7 @@
-<div class="padre">
+<div class="padre" *ngIf = "!lugar">
+  <h2>Estadísticas</h2> 
   <div class="contenedores">
+    <br>
     <div class="est" *ngFor="let u of listado; let i = index">
       <h4>{{u.Nombre}}</h4>
       <div class="row">
@@ -8,13 +10,16 @@
           <p>Completada</p>
         </div>
       </div>
-      <div class="desc">
+      <div class="desc" (click) = "go(i)">
         Ver estadísticas
       </div>
-  
       <span *ngIf="i+1 == max">
         {{ready()}}
       </span>
     </div>
   </div>
+</div>
+<div class="padre" *ngIf = "lugar">
+<canvas id="myChart"></canvas>
+<p id="inservible">{{loadGraphics()}}</p>
 </div>

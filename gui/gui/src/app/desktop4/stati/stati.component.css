@@ -10,6 +10,13 @@
   margin: auto;
   margin-top: 1em;
   background: White;
+  padding: 1%;
+}
+
+.padre h2 {
+  font-size: 3em;
+  font-family: 'Roboto';
+  text-align: center;
 }
 
 .padre .contenedores {
