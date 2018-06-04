@@ -39,7 +39,7 @@
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
            //$Id = $input['id'];
-           $Id='06D7Y2U'; 
+           $Id='00V7OEW'; 
             $input = json_decode($inputJSON, TRUE);
             $query="";
             if ($con->connect_error) 
@@ -59,12 +59,13 @@
             $arrayy;
             for($i=1; $i<=$NumPreguntas; $i++)
             {
-                $query = "SELECT Pregunta, TipoPregunta FROM Pregunta WHERE Numero = '$i' AND idEncuesta= '$Id'";
+                $query = "SELECT Pregunta, TipoPregunta, idPregunta FROM Pregunta WHERE Numero = '$i' AND idEncuesta= '$Id'";
                 $result = $con->query($query);
                 $row = $result ->fetch_array(MYSQLI_ASSOC);
                 $Pregunta = $row['Pregunta'];
                 $Tipo=$row['TipoPregunta'];
                 $Preg = ""; $Resp1=""; $Cont1=0; $Resp2=""; $Cont2=0; $Resp3=""; $Cont3=0; $Resp4=""; $Cont4=0; $Resp5=""; $Cont5=0;
+                $id5 = $row['idPregunta'];
                 if($Tipo=="tp2" || $Tipo=="tp3")
                 {
                      $Preg = $Pregunta;
@@ -160,25 +161,26 @@
                     }
                 }
                 if($i == 1){
-                    $query = "SELECT Nombre FROM Encuesta WHERE idEncuesta = '$Id'";
+                    $query = "SELECT Nombre, idEncuesta FROM Encuesta WHERE idEncuesta = '$Id'";
                     $result = $con->query($query);
                     $row = $result ->fetch_array(MYSQLI_ASSOC);
                     $contador = $row['Nombre'];
-                    $array4 = array('Nombre' => $contador, 'Pregunta' => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
+                    $array4 = array('idPregunta' => $id5, 'NumeroPregunta' => $NumPreguntas, 'Nombre' => $contador, 'Pregunta' => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
                     'Respuesta5' => $Resp5,'Contador5' => $Cont5);
-                    $arrayy = array_map('html_entity_decode', $array4);
+                    $res = json_encode($array4, JSON_UNESCAPED_UNICODE);
+                    echo '[';
+                    echo $res;
                 } else {
-                    $array4 = array("Pregunta" => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
+                    $array4 = array('idPregunta' => $id5, "Pregunta" => $Preg, 'Respuesta1' => $Resp1,'Contador1' => $Cont1, 'Respuesta2' => $Resp2,'Contador2' => $Cont2, 'Respuesta3' => $Resp3,'Contador3' => $Cont3, 'Respuesta4' => $Resp4,'Contador4' => $Cont4,
                     'Respuesta5' => $Resp5,'Contador5' => $Cont5);
-                    $arrayy[] = array_map('html_entity_decode', $array4);
+                    $r = array_map('html_entity_decode', $array4);
+                     $res = json_encode($r, JSON_UNESCAPED_UNICODE);
+                    echo ',';
+                    echo $res;
                     
                 }
 
             }
-        
-            $res = json_encode($arrayy, JSON_UNESCAPED_UNICODE);
-            echo '[';
-            echo $res;
             echo ']';
         } 
         else if ($_GET['opt'] == 3){
