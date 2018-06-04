@@ -38,9 +38,7 @@
             $result = json_decode($inputJSON, true);
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
-           //$Id = $input['id'];
-           $Id='00V7OEW'; 
-            $input = json_decode($inputJSON, TRUE);
+            $Id = $result['id'];
             $query="";
             if ($con->connect_error) 
             {
@@ -52,11 +50,15 @@
             $result = $con->query($query);
             $row = $result ->fetch_array(MYSQLI_ASSOC);
             $NumPreguntas = $row['count(*)'];
-
+            if($NumPreguntas == 0){
+                echo json_encode('sinrespuestas');
+                exit;
+            }
             $contador=0;
             $Pregunta;
             global $array4;
             $arrayy;
+            
             for($i=1; $i<=$NumPreguntas; $i++)
             {
                 $query = "SELECT Pregunta, TipoPregunta, idPregunta FROM Pregunta WHERE Numero = '$i' AND idEncuesta= '$Id'";
@@ -182,6 +184,7 @@
 
             }
             echo ']';
+    
         } 
         else if ($_GET['opt'] == 3){
             $inputJSON = file_get_contents('php://input');
