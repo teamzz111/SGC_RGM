@@ -2,6 +2,19 @@
   box-sizing: border-box;
   margin: 0;
 }
+.notifi {
+  position: absolute;
+  right: .5em;
+  top: 5em;
+  padding: 1.5%;
+  color: white;
+  border-radius: 5px;
+  font-family: "Sans";
+  font-weight: 300;
+  background: #0ec20e;
+  margin-top: -100%;
+}
+
 
 .padre {
   border-radius: 10px;
@@ -11,18 +24,23 @@
   margin-top: 1em;
   background: White;
   padding: 1%;
-    h2{
-      font-size: 3em;
-      font-family: 'Roboto';
-      text-align: center;
-    }
+  h2 {
+    font-size: 3em;
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 3300;
+    margin-top:1em;
+  }
+  canvas{
+    margin-top: 5em;
+  }
   .contenedores {
     width: 100%;
     display: flex;
     padding: 2%;
     flex-wrap: wrap;
     margin-top: 1em;
-    justify-content: space-between;
+    justify-content: space-around;
     .est {
       width: 100%;
       max-width: 300px;
@@ -56,7 +74,6 @@
         padding: 3% 0.5%;
         font-size: 1.2em;
         transition: 1s linear;
-  
         &:hover {
           background: rgb(5, 59, 177);
           cursor: pointer;

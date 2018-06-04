@@ -20,6 +20,17 @@
   </div>
 </div>
 <div class="padre" *ngIf = "lugar">
-<canvas id="myChart"></canvas>
-<p id="inservible">{{loadGraphics()}}</p>
+    <h2>Estadísticas por pregunta</h2>
+    <canvas *ngFor = "let i of idspreguntas; let f = index" id="{{i}}">
+      <span *ngIf="f+1 == max2" id = "inservible">
+        {{loadGraphics()}}
+      </span>
+
+    </canvas>
+  
 </div>
+
+<div class="notifi">
+  ¡Usuario insertado con éxito!
+</div>
+
