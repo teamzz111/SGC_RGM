@@ -1,16 +1,17 @@
-<div class="padre" *ngIf = "!lugar">
-  <h2>Estadísticas</h2> 
+<div class="padre" *ngIf="!lugar">
+  <h2>Estadísticas</h2>
   <div class="contenedores">
     <br>
     <div class="est" *ngFor="let u of listado; let i = index">
       <h4>{{u.Nombre}}</h4>
       <div class="row">
         <div>
-           <div class="test-circle" attr.data-percent="{{porcentajes[i]}}"></div>
+          <div class="test-circle" id="{{u.idEncuesta}}"></div>
+
           <p>Completada</p>
         </div>
       </div>
-      <div class="desc" (click) = "go(i)">
+      <div class="desc" (click)="go(i)">
         Ver estadísticas
       </div>
       <span *ngIf="i+1 == max">
@@ -19,18 +20,21 @@
     </div>
   </div>
 </div>
-<div class="padre" *ngIf = "lugar">
-    <h2>Estadísticas por pregunta</h2>
-    <canvas *ngFor = "let i of idspreguntas; let f = index" id="{{i}}">
-      <span *ngIf="f+1 == max2" id = "inservible">
-        {{loadGraphics()}}
-      </span>
+<div class="padre" *ngIf="lugar">
+  <h2>Estadísticas por pregunta</h2>
+  <div *ngFor="let i of idspreguntas; let f = index">
 
-    </canvas>
-  
+    <canvas id="{{i}}"></canvas>
+    
+    <span *ngIf="f == max2-1" id="inservible">
+      {{loadGraphics()}}
+    </span>
+
+  </div>
+
+
 </div>
 
 <div class="notifi">
   ¡Usuario insertado con éxito!
 </div>
-
