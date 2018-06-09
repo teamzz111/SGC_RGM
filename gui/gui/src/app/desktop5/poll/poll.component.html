@@ -14,7 +14,6 @@
     <tr *ngFor="let item of listado; let i = index">
       <td>{{item.idEncuesta}} </td>
       <td>{{item.Nombre}}</td>
-      <!-- <td>{{item.Fecha}}</td> -->
       <td>{{item.FechaCierre}}</td>
       <td>
         <button (click)="show(i)" class="realizar">REALIZAR</button>
@@ -85,8 +84,7 @@
 
             </div>
             <div class="pregunta">
-              <input *ngIf="item.Respuesta5 != ''" type="checkbox" name="{{item.idPregunta}}" value="{{item.Respuesta5}}"> {{item.Respuesta5}}
-
+              <input *ngIf="item.Respuesta5 != ''" type="radio" name="{{item.idPregunta}}" value="{{item.Respuesta5}}"> {{item.Respuesta5}}
             </div>
 
           </div>

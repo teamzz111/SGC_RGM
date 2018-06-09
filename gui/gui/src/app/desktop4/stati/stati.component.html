@@ -1,7 +1,24 @@
-<div class="padre" *ngIf="!lugar">
+<div class="padre">
   <h2>Estadísticas</h2>
   <div class="contenedores">
     <br>
+    <table>
+    <tr>
+      <th>Id</th>
+      <th>Nombre encuesta</th>
+      <th>Acción</th>
+    </tr>
+    <tr *ngFor="let item of listado; let i = index">
+      <td>{{item.idEncuesta}} </td>
+      <td>{{item.Nombre}}</td>
+      <td>
+        <button (click)="go(i)" class="realizar">Revisar</button>
+        <button class="denegar" (click) = "hide(i)">Eliminar</button>
+      </td>
+
+    </tr>
+  </table>  
+    <!-- 
     <div class="est" *ngFor="let u of listado; let i = index">
       <h4>{{u.Nombre}}</h4>
       <div class="row">
@@ -18,18 +35,17 @@
         {{ready()}}
       </span>
     </div>
+ -->
+
   </div>
 </div>
 <div class="padre" *ngIf="lugar">
   <h2>Estadísticas por pregunta</h2>
   <div *ngFor="let i of idspreguntas; let f = index">
-
     <canvas id="{{i}}"></canvas>
-    
     <span *ngIf="f == max2-1" id="inservible">
       {{loadGraphics()}}
     </span>
-
   </div>
 
 

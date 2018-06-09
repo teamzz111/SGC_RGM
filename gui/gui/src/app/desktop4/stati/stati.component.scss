@@ -43,7 +43,7 @@
     .est {
       width: 100%;
       max-width: 300px;
-      padding: 1%;
+
       border-radius: 5px;
       text-align: center;
       background: rgba(73, 155, 234, 1);
@@ -55,6 +55,8 @@
       background: linear-gradient(135deg, rgba(73, 155, 234, 1) 0%, rgba(73, 155, 234, 1) 13%, rgba(32, 124, 229, 1) 57%, rgba(32, 124, 229, 1) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1);
       margin-top: 1em;
+            margin: 1%;
+
       h4 {
         font-family: 'Roboto';
         font-weight: 300;
@@ -66,11 +68,11 @@
       .desc {
         width: 100%;
         margin: 0;
-        background: rgb(31, 88, 212);
+        background: rgb(0, 0, 0);
         color: white;
         font-family: 'Roboto';
         font-weight: 300;
-        padding: 3% 0.5%;
+        padding: 9% 0.5%;
         font-size: 1.2em;
         transition: 1s linear;
         &:hover {

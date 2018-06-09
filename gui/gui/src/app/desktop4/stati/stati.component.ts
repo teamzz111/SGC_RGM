@@ -45,6 +45,7 @@ export class StatiComponent implements OnInit {
         this.lista = data;
         this.preguntas = [];
         this.idspreguntas = [];
+        data.push('testing');
         for (const i of data) {
           if (i.Pregunta !== '') {
            this.idspreguntas.push(i.idPregunta);
@@ -64,9 +65,10 @@ export class StatiComponent implements OnInit {
       for (const i of this.lista) {
         setTimeout(this.cargaChart(i, index), 2000);
         index++;
+      }
     }
   }
-}
+
   cargaChart(i, u) {
       const respu = [];
       const cont = [];
@@ -133,7 +135,6 @@ export class StatiComponent implements OnInit {
   ready() {
       this.max = 0;
       for (let oe = 0; oe < this.idEncuesta.length; oe++ ) {
-//        $('#' + this.idEncuesta[o]).attr('data-percent', this.porcentajes[o]);
       setTimeout(this.ejecuta(this.porcentajes[oe], this.idEncuesta[oe]), 2000);
       }
     }

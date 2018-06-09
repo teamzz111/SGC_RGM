@@ -49,7 +49,6 @@
 .padre .contenedores .est {
   width: 100%;
   max-width: 300px;
-  padding: 1%;
   border-radius: 5px;
   text-align: center;
   background: #499bea;
@@ -61,6 +60,7 @@
   background: linear-gradient(135deg, #499bea 0%, #499bea 13%, #207ce5 57%, #207ce5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1);
   margin-top: 1em;
+  margin: 1%;
 }
 
 .padre .contenedores .est h4 {
@@ -75,11 +75,11 @@
 .padre .contenedores .est .desc {
   width: 100%;
   margin: 0;
-  background: #1f58d4;
+  background: black;
   color: white;
   font-family: 'Roboto';
   font-weight: 300;
-  padding: 3% 0.5%;
+  padding: 9% 0.5%;
   font-size: 1.2em;
   transition: 1s linear;
 }
