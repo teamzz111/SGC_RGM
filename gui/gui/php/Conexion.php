@@ -1,16 +1,16 @@
 <?php
 
   global $host, $db, $pass, $key, $user;
-  $host = "sql139.main-hosting.eu";
+  $host = "sql100.hostlibre.ml";
   //$host = "localhost";
-  $db = "u462448961_bd";
-  $pass = "nicky246";
-  $user = "u462448961_teamz";
+  $db = "teolo_21117533_sgc";
+  $pass = "3192934192321";
+  $user = "teolo_21117533";
   $key = "92AE31B89FEEB2A3"; //llave
 
   
-  $db2 = "u462448961_poll";
-  $pass2 = "O08R1evNKzjw";
-  $user2 = "u462448961_mono";
+  $db2 = "teolo_21117533_encuestas";
+  $pass2 = "3192934192321";
+  $user2 = "teolo_21117533";
 
  ?>
