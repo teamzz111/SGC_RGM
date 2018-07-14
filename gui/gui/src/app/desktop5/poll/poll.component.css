@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .main {
@@ -44,6 +45,7 @@
   border-radius: 5px;
   padding: 0.8em;
   color: white;
+  -webkit-transition: 0.5s linear;
   transition: 0.5s linear;
   background: #3fe73f;
 }
@@ -61,6 +63,7 @@
   padding: 0.8em;
   color: white;
   background: red;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
 }
 
@@ -141,10 +144,13 @@
   padding: 1em;
   border: 1px solid black;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 1.2em;
   font-family: 'Roboto';
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .padre div.pregunta .individual form .pregunta input[type="checkbox"] {

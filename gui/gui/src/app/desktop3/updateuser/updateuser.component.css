@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .papa {
@@ -10,9 +11,12 @@
   border-radius: 10px;
   padding: 2%;
   margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: "Sans";
   font-weight: 300;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
 }
 
@@ -43,6 +47,7 @@
   margin: auto;
   margin-top: 10px;
   color: white;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
 }
 
@@ -74,11 +79,18 @@
 }
 
 .papa .der {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   border-left: 1px solid #5a5a5a;
 }

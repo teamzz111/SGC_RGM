@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .papa {
@@ -8,6 +9,8 @@
   background: white;
   border-radius: 2%;
   margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 2%;
 }
@@ -19,9 +22,14 @@
 }
 
 .papa .izq {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   border-left: 1px solid rgba(139, 135, 135, 0.7);
 }
@@ -37,10 +45,17 @@
 }
 
 .papa .der .caja {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
@@ -60,6 +75,7 @@
   border-radius: 10px;
   font-weight: 300;
   font-family: "Sans";
+  -webkit-transition: 1s linear;
   transition: 1s linear;
 }
 
@@ -200,7 +216,8 @@ label {
   font-size: 1em;
   font-family: 'Sans';
   border: 1px solid #ccc;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #a1a1a1;
 }
 

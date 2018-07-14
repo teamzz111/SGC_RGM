@@ -1,12 +1,14 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 main .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   -webkit-box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 1.2px 3px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -16,13 +18,21 @@ main .contenedor .quehay {
 }
 
 main .contenedor .quehay h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: left;
-  align-content: center;
-  align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: middle;
   justify-items: center;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   height: 100%;
   padding: 1%;
   margin: 0;
@@ -33,10 +43,17 @@ main .contenedor .quehay h1 {
 }
 
 main .contenedor .padre {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 main .contenedor .padre a {
@@ -54,6 +71,7 @@ main .contenedor .padre a .color2:focus {
 
 main .contenedor .padre a .color2:hover {
   background: black;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
   cursor: pointer;
 }
@@ -77,6 +95,7 @@ main .contenedor .padre a .color2 p#comuni {
   font-family: Roboto;
   color: black;
   display: none;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
 }
 
@@ -101,8 +120,12 @@ main .contenedor .padre a .color5 {
 }
 
 main .contenedor .padre a .boton1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Awesome";
   font-size: 3.3em;
   color: white;
@@ -133,6 +156,4 @@ main .contenedor .padre a .boton1 p#name {
   font-family: "Sans";
   font-weight: 300;
 }
-
-/*# sourceMappingURL=desktop3.component.css.map */
 /*# sourceMappingURL=desktop5.component.css.map */

@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @font-face {
@@ -37,16 +38,23 @@ main {
   background: url("../../img/photo.jpg");
   background-size: cover;
   background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
 main .cont {
   -webkit-box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 26px -1px rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   justify-items: center;
   background: white;
@@ -58,10 +66,18 @@ main .cont {
 
 main .cont .der {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   justify-items: center;
 }
 
@@ -100,6 +116,7 @@ main .cont .noti {
   max-width: 350px;
   border-radius: 10px;
   color: white;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
   font-family: "Sans";
   display: none;
@@ -147,6 +164,7 @@ main .cont input[type="submit"] {
   font-size: 1.25em;
   border: 1px solid black;
   border-radius: 5px;
+  -webkit-transition: 1s linear;
   transition: 1s linear;
   font-family: "Sans";
   font-weight: 300;
