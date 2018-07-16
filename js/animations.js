@@ -1,42 +1,11 @@
 $(document).ready(function () {
-
-    var lateral = 0;
-    var contenido = 1;
-    inici();
-
-    setInterval(inici, 12000);
-    function inici(){
-         var tiempo = setTimeout(function(){
-            better('#e2,#e3,#e4','#e1','#e1 .nav .c2','#e1 .nav .c1');
-            tiempo = setTimeout(function(){
-                better('#e1,#e2,#e4','#e3','#e3 .nav .c3','#e3 .nav .c1');
-                tiempo = setTimeout(function(){
-                    better('#e3,#e2,#e1','#e4','#e4 .nav .c4','#e4 .nav .c1');
-                    tiempo = setTimeout(function(){
-                        better('#e4,#e3,#e1','#e2','#e4 .nav .c4','#e4 .nav .c1');
-                        clearTimeout(tiempo);
-                    },4000);
-                },4000);
-            },4000);
-        },4000);
-    }
-    function better(element1, element2,element3,element4, color1, color2){
-        $(element1).css("display","none");
-        $(element2).css("display","block");
-        $(element3).css("color","black");
-        $(element4).css("color","white");
-    }
-
-    $('#lat').click(function () {
-        if ($lateral == 0) {
-            $('.fors').css("marginLeft", "0");
-            $lateral = 1;
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 60){
+            $("header .barra").attr('class', 'barraFixed');
         } else {
-            $('.fors').css("marginLeft", "-100%");
-            $lateral = 0;
+            $("header .barraFixed").attr('class', 'barra');
         }
     });
-
     $('#formulario').submit(function (e) {
         $.ajax({
             type: 'POST',

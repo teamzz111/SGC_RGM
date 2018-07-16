@@ -69,6 +69,44 @@ HEADER
 */
 
 header {
+  .barra{
+    transition-duration: 1s;
+    display: flex;
+    color: white;
+    padding: 1em 0.5em 2em 0.5em;
+    font-size: 1.73em;
+    font-family: 'Roboto';
+    .derecho{
+      width: 50%;
+      text-align: right;
+      font-family: 'Awesome';
+    }
+    .izquierdo{
+      width: 50%;
+      text-align: left;
+    }
+  }
+  .barraFixed{
+    transition-duration: 1s;
+    display: flex;
+    background: white;
+    width: 100%;
+    color: black;
+    position: fixed;
+    padding: 0.6em;
+    font-size: 1.73em;
+    font-family: 'Roboto';
+    .derecho {
+      width: 50%;
+      text-align: right;
+      font-family: 'Awesome';
+    }
+
+    .izquierdo {
+      width: 50%;
+      text-align: left;
+    }
+  }
   background: #00002E;
   padding-bottom: 2em;
   padding-top: 2em;
@@ -94,13 +132,15 @@ header {
 
 section#main {
   padding: 0;
+  margin: 0;
   background: #00002E;
   color: white;
+  padding-bottom: 1em;
   .contenedor {
     .padre {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 6em;
+      //margin-bottom: 0.5em;
       padding: 2%;
       .izquierdo {
         width: 50%;
@@ -110,6 +150,7 @@ section#main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         h1 {
           font-family: 'Roboto';
           font-weight: 700;
@@ -146,7 +187,6 @@ section#main {
   }
   .r {
     padding: 0;
-    height: 95.03px;
     img {
       width: 100%;
       height: 100%;
@@ -155,7 +195,7 @@ section#main {
 }
 
 section#about {
-  background: #F7FAFC;
+  background: white;
   .contenedor {
     .padre {
       padding: 2em;
@@ -190,11 +230,18 @@ section#about {
         .izquierdo {
           width: 100%;
           padding: 1%;
+          padding-bottom: 2em;
         }
       }
     }
     .r {
       height: 100%;
+    }
+  }
+  header{
+    padding: 0;
+    nav{
+      display: none;
     }
   }
 }

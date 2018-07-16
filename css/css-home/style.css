@@ -74,6 +74,55 @@ header {
   padding-top: 2em;
 }
 
+header .barra {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  padding: 1em 0.5em 2em 0.5em;
+  font-size: 1.73em;
+  font-family: 'Roboto';
+}
+
+header .barra .derecho {
+  width: 50%;
+  text-align: right;
+  font-family: 'Awesome';
+}
+
+header .barra .izquierdo {
+  width: 50%;
+  text-align: left;
+}
+
+header .barraFixed {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+  width: 100%;
+  color: black;
+  position: fixed;
+  padding: 0.6em;
+  font-size: 1.73em;
+  font-family: 'Roboto';
+}
+
+header .barraFixed .derecho {
+  width: 50%;
+  text-align: right;
+  font-family: 'Awesome';
+}
+
+header .barraFixed .izquierdo {
+  width: 50%;
+  text-align: left;
+}
+
 header nav {
   width: 100%;
   display: -webkit-box;
@@ -102,8 +151,10 @@ header nav li a {
 
 section#main {
   padding: 0;
+  margin: 0;
   background: #00002E;
   color: white;
+  padding-bottom: 1em;
 }
 
 section#main .contenedor .padre {
@@ -112,7 +163,6 @@ section#main .contenedor .padre {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 6em;
   padding: 2%;
 }
 
@@ -173,7 +223,6 @@ section#main .contenedor .padre .derecho {
 
 section#main .r {
   padding: 0;
-  height: 95.03px;
 }
 
 section#main .r img {
@@ -182,7 +231,7 @@ section#main .r img {
 }
 
 section#about {
-  background: #F7FAFC;
+  background: white;
 }
 
 section#about .contenedor .padre {
@@ -218,9 +267,16 @@ section#about .contenedor .padre .caja p {
   section#main .contenedor .padre .izquierdo {
     width: 100%;
     padding: 1%;
+    padding-bottom: 2em;
   }
   section#main .r {
     height: 100%;
+  }
+  header {
+    padding: 0;
+  }
+  header nav {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
