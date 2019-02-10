@@ -1,6 +1,6 @@
 <?php
 
-  global $host, $db, $pass, $key, $user;
+  global $host, $db, $pass, $key, $user, $con;
   $host = "sql100.hostlibre.ml";
   //$host = "localhost";
   $db = "teolo_21117533_sgc";
@@ -12,5 +12,8 @@
   $db2 = "teolo_21117533_encuestas";
   $pass2 = "3192934192321";
   $user2 = "teolo_21117533";
+
+  $con = new mysqli($host, $user, $pass, $db);
+  $con->query("SET NAMES 'utf8'");
 
  ?>

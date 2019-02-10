@@ -1,10 +1,8 @@
 <?php
-    include 'Security.php';
-    include 'Conexion.php';
+    include '../AppServices/Security/Security.php';
+    include '../AppServices/Connection/Conexion.php';
 
     session_start();
-
-    $con = new mysqli($host, $user, $pass, $db);
 
     if($con -> connect_error){
         die("Conexión errónea: " . $con->connect_error);

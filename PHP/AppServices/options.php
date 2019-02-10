@@ -1,6 +1,6 @@
  <?php
 
-    include 'Conexion.php';
+    require_once 'Connection/Conexion.php';
     
     $con = new mysqli($host, $user, $pass, $db);
         if($con -> connect_error){

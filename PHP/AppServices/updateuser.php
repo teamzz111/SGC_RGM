@@ -1,10 +1,10 @@
 <?php
 
-include 'Conexion.php';
+include 'Connection/Conexion.php';
 session_start();
 if(isset($_GET['opt'])) {
-    $con = new mysqli($host, $user, $pass, $db);
-    $con->query("SET NAMES 'utf8'");
+ 
+
     if($_GET['opt'] == 1)
     {
         //llenar campos

@@ -1,6 +1,6 @@
 <?php
 
-include 'Conexion.php';
+require_once 'Connection/Conexion.php';
 
 if(!isset($_GET['opt'])) {
         $inputJSON = file_get_contents('php://input');
