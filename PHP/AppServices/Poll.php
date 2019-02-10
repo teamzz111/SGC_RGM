@@ -1,5 +1,5 @@
 <?php
-include 'Conexion.php';
+require_once 'Connection/Conexion.php';
 session_start();
 if($_GET['opt'] == 1) {
     $inputJSON = file_get_contents('php://input');

@@ -1,5 +1,5 @@
 ﻿<?php
-    include 'Conexion.php';
+    include 'Connection/Conexion.php';
 
    session_start();
 
@@ -51,7 +51,7 @@
     function show($tipo, $host, $db,  $pass, $user, $key){
         global $a;
         $a = 0;
-        $con = new mysqli($host, $user, $pass, $db);
+
         header('Content-Type: text/html; charset=UTF-8');
         if($con -> connect_error){
             die("Conexión errónea: " . $con->connect_error);

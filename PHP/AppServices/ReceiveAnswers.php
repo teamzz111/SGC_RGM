@@ -1,5 +1,5 @@
 <?php
-    require 'Conexion.php';
+    require_once 'Connection/Conexion.php';
     session_start();
     if(isset($_GET['opt'])){
         if($_GET['opt'] == 1){
