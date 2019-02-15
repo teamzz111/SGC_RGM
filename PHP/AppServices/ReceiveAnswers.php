@@ -26,7 +26,7 @@
                 else
                 {
                     $res=null;
-                    echo json_encode("nel");
+                    echo json_encode("false");
                 }
             }
             mysqli_close($con);

@@ -24,7 +24,7 @@
             if ($con->connect_error) {
                 echo json_encode('false');
             }
-            $idEncuesta="Esto es malo";
+            $idEncuesta='false';
             $resultado;
             do{
                 $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -40,7 +40,7 @@
                 $resultado = $con->query($query1);
                         }
 
-            while ($resultado->num_rows > 0  || $idEncuesta =='Esto es malo'); 
+            while ($resultado->num_rows > 0  || $idEncuesta =='false'); 
            
                 $hoy = getdate();
                 $feh = $hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
@@ -68,7 +68,7 @@
                 $result = json_decode($inputJSON, true);
                 $con = new mysqli($host, $user2, $pass2, $db2);
                  $con->query("SET NAMES 'utf8'");
-                 $idPregunta="Esto es malo";
+                 $idPregunta='false';
                  do {
                      $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
                      $long=strlen($char)-1;
@@ -83,11 +83,9 @@
                      $resultado = $con->query($query1);
                     }
      
-                 while ($resultado->num_rows>0 || $idPregunta=='Esto es malo'); 
+                 while ($resultado->num_rows>0 || $idPregunta=='false'); 
                  
                  $Pregunta = $result['pregunta'];
-                 //$Tipo= $result['tpregunta'];
-                // $Numero = $input['numero'];
                  $R1= $result['r1'];
                  $Num= $_SESSION['NumPregunta'];
                  $IdEn =  $_SESSION['Encuesta'];
@@ -117,7 +115,7 @@
 
                 $con = new mysqli($host, $user2, $pass2, $db2);
                 $con->query("SET NAMES 'utf8'");
-                $idPregunta="Esto es malo";
+                $idPregunta="false";
             do{
                 $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
                 $long=strlen($char)-1;
@@ -131,7 +129,7 @@
                 $query1="SELECT * FROM Pregunta WHERE idPregunta = '$idPregunta'";
                 $resultado = $con->query($query1);}
 
-            while ($resultado->num_rows>0 || $idPregunta=='Esto es malo'); 
+            while ($resultado->num_rows>0 || $idPregunta=='false'); 
             
 
             $input = json_decode($inputJSON, TRUE);

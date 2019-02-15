@@ -15,7 +15,7 @@ if(!isset($_GET['opt'])) {
         $con = new mysqli($host, $user, $pass, $db);
         $con->query("SET NAMES 'utf8'");
         if ($con->connect_error) {
-            echo json_encode('falseC');
+            echo json_encode('false');
         }
             $query = "INSERT INTO seccional VALUES (0, '$Ciudad', '$Pais', '$Departamento', $Direccion, '$Lider', $Tipo)";
             $rs = $con->query($query);

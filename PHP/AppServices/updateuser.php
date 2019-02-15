@@ -37,7 +37,7 @@ if(isset($_GET['opt'])) {
                 }
                 else
                 {
-                    echo json_encode("nel");
+                    echo json_encode('false');
                 }
             }
             else {

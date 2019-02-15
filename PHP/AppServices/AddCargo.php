@@ -11,7 +11,7 @@ if(!isset($_GET['opt'])) {
         $con = new mysqli($host, $user, $pass, $db);
         $con->query("SET NAMES 'utf8'");
         if ($con->connect_error) {
-            echo json_encode('falseC');
+            echo json_encode('false');
         }
 
         $query1="SELECT * FROM cargo WHERE nombre = '$Nombre'";
@@ -19,7 +19,7 @@ if(!isset($_GET['opt'])) {
         $resultado = $con->query($query1);
 
         if ($resultado->num_rows>0) {
-            echo json_encode('nel');//significa que el cargo ya existe 
+            echo json_encode('false');//significa que el cargo ya existe 
         }
         else{
         $lvl =4;

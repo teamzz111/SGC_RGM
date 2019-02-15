@@ -8,7 +8,7 @@
         $result = json_decode($inputJSON, true);
             $con = new mysqli($host, $user2, $pass2, $db2);
             $con->query("SET NAMES 'utf8'");
-            $idRespuesta="Esto es malo";
+            $idRespuesta='False';
             $resultado;
             do{
                 $char='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -23,7 +23,7 @@
                 $query1="SELECT * FROM Respuesta WHERE idRespuesta = '$idRespuesta'";
                 $resultado = $con->query($query1);
                         }
-            while ($resultado->num_rows > 0  || $idRespuesta =='Esto es malo'); 
+            while ($resultado->num_rows > 0  || $idRespuesta =='False'); 
            
             $Id = $result['id'];
             $R1 = $result['r1'];

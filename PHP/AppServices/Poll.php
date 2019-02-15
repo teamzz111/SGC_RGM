@@ -46,7 +46,7 @@ if($_GET['opt'] == 1) {
         else
         {
             $res=null;
-            echo json_encode("nel");
+            echo json_encode("false");
         }
         
     }
@@ -78,7 +78,7 @@ if($_GET['opt'] == 1) {
                 $res = json_encode($array, JSON_UNESCAPED_UNICODE);
         } else {
             $res=null;
-            echo json_encode("nel");
+            echo json_encode("false");
         }
     mysqli_close($con);
     echo $res;
