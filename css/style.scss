@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*
+=================================
+INICIALIZACIÓN
+=================================
+*/
+
+@font-face {
+  font-family: "Awesome";
+  src: url("../fuentes/Awesome/fontawesome-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../fuentes/Sans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../fuentes/Sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../fuentes/Sans/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../fuentes/Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Josefin";
+  src: url("../fuentes/Josefin/Dosis-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Great";
+  src: url('../fuentes/GreaVibes/GreatVibes-Regular.ttf?#iefix') format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fuentes/Roboto.ttf") format("truetype");
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*
+=================================
+HEADER
+=================================
+*/
+
+header {
+  .barra{
+    transition-duration: 1s;
+    display: none;
+    color: white;
+    padding: 1em 0.5em 2em 0.5em;
+    font-size: 1.73em;
+    font-family: 'Roboto';
+    
+    .derecho{
+      width: 50%;
+      text-align: right;
+      font-family: 'Awesome';
+    }
+    .izquierdo{
+      width: 50%;
+      text-align: left;
+    }
+  }
+  .barraFixed{
+    display: none;
+    transition-duration: 1s;
+    background: white;
+    width: 100%;
+    color: black;
+    position: fixed;
+    padding: 0.6em;
+    font-size: 1.73em;
+    font-family: 'Roboto';
+    .derecho {
+      width: 50%;
+      text-align: right;
+      font-family: 'Awesome';
+    }
+
+    .izquierdo {
+      width: 50%;
+      text-align: left;
+    }
+  }
+  background: #00002E;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    li {
+      padding: 1%;
+      font-family: "Roboto";
+      list-style-type: none;
+      a {
+        font-family: 'Sans';
+        font-size: 1.6em;
+        color: white;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+section#main {
+  padding: 0;
+  margin: 0;
+  background: #00002E;
+  color: white;
+  padding-bottom: 1em;
+  .contenedor {
+    .padre {
+      display: flex;
+      flex-wrap: wrap;
+      //margin-bottom: 0.5em;
+      padding: 2%;
+      .izquierdo {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+          font-family: 'Roboto';
+          font-weight: 700;
+          font-size: 3em;
+        }
+        p {
+          font-family: 'Roboto';
+          font-weight: 300;
+          text-align: center;
+          margin-top: 2em;
+          margin-bottom: 2em;
+          font-size: 1.3em;
+          opacity: .7;
+        }
+        button {
+          padding: 2%;
+          padding-left: 4%;
+          padding-right: 4%;
+          font-size: 1.3em;
+          max-width: 200px;
+          background: #0099FF;
+          color: white;
+          border-color: transparent;
+          border-radius: 20px;
+          font-weight: 300;
+          font-family: 'Sans';
+        }
+      }
+      .derecho {
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
+  .r {
+    padding: 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+section#about {
+  background: white;
+  .contenedor {
+    .padre {
+      padding: 2em;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .caja {
+        img {
+          max-height: 183.59px;
+          max-width: 250px;
+          width: 100%;
+        }
+        p {
+          font-family: "Sans";
+          font-weight: 300;
+          text-align: center;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 987px) {
+  section#main {
+    .contenedor {
+      .padre {
+        .derecho {
+          display: none;
+        }
+        .izquierdo {
+          width: 100%;
+          padding: 1%;
+          padding-bottom: 2em;
+        }
+      }
+    }
+    .r {
+      height: 100%;
+    }
+  }
+  header{
+    padding: 0;
+    .barra{
+      display: flex;
+    }
+    nav{
+      display: none;
+    }
+  }
+}

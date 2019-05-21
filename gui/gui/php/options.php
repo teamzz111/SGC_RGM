@@ -1,6 +1,6 @@
  <?php
 
-    include 'Conexion.php';
+    include '../../../Conexion.php';
     
     $con = new mysqli($host, $user, $pass, $db);
         if($con -> connect_error){

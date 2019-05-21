@@ -69,17 +69,15 @@ HEADER
 =================================
 */
 header {
-  background: #00002E;
+  background: #00002b;
   padding-bottom: 2em;
-  padding-top: 2em;
+  padding-top: 0.5em;
 }
 
 header .barra {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   color: white;
   padding: 1em 0.5em 2em 0.5em;
   font-size: 1.73em;
@@ -98,11 +96,9 @@ header .barra .izquierdo {
 }
 
 header .barraFixed {
+  display: none;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background: white;
   width: 100%;
   color: black;
@@ -152,7 +148,7 @@ header nav li a {
 section#main {
   padding: 0;
   margin: 0;
-  background: #00002E;
+  background: #00002B;
   color: white;
   padding-bottom: 1em;
 }
@@ -216,6 +212,11 @@ section#main .contenedor .padre .izquierdo button {
   font-family: 'Sans';
 }
 
+section#main .contenedor .padre .izquierdo button a {
+  color: white;
+  text-decoration: none;
+}
+
 section#main .contenedor .padre .derecho {
   width: 50%;
   text-align: right;
@@ -260,6 +261,102 @@ section#about .contenedor .padre .caja p {
   font-size: 1.2em;
 }
 
+section#contacto {
+  background: #00002B;
+  padding: 1%;
+  padding-top: 3em;
+}
+
+section#contacto .contenedor .padre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#contacto .contenedor .padre .izquierdo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 50%;
+  text-align: center;
+}
+
+section#contacto .contenedor .padre .izquierdo h2 {
+  font-size: 3em;
+  font-family: 'Roboto';
+  color: white;
+}
+
+section#contacto .contenedor .padre .izquierdo img {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
+section#contacto .contenedor .padre .derecho {
+  width: 50%;
+}
+
+section#contacto .contenedor .padre .derecho #formulario2 {
+  padding: 4% 3% 4% 3%;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+section#contacto .contenedor .padre .derecho #formulario2 h2 {
+  font-size: 3em;
+  font-family: 'Roboto';
+  text-align: center;
+  font-weight: 300;
+  margin-top: 0.6em;
+}
+
+section#contacto .contenedor .padre .derecho #formulario2 #nombre,
+section#contacto .contenedor .padre .derecho #formulario2 #correo,
+section#contacto .contenedor .padre .derecho #formulario2 #mensaje {
+  padding: 1.5%;
+  margin-top: 1.6em;
+  max-width: 500px;
+  font-family: 'Roboto';
+  font-size: 1.29em;
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+
+section#contacto .contenedor .padre .derecho #formulario2 .alert {
+  display: none;
+}
+
+section#contacto .contenedor .padre .derecho #formulario2 input[type="submit"] {
+  background: black;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.4em;
+  border-radius: 15px;
+  font-family: 'Roboto';
+  padding: 1.5% 10% 1.5% 10%;
+  margin-top: 1em;
+}
+
+footer p {
+  font-size: 1.2em;
+  padding: 3%;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
 @media screen and (max-width: 987px) {
   section#main .contenedor .padre .derecho {
     display: none;
@@ -275,8 +372,32 @@ section#about .contenedor .padre .caja p {
   header {
     padding: 0;
   }
+  header .barra {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .barraFixed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   header nav {
     display: none;
+  }
+  section#contacto {
+    background: rgba(250, 250, 250, 0.89);
+  }
+  section#contacto .contenedor .padre .izquierdo {
+    display: none;
+  }
+  section#contacto .contenedor .padre .derecho {
+    width: 100%;
+  }
+  section#contacto .contenedor .padre .derecho h2 {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

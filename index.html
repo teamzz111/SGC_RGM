@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Sistema SGC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/css-home/style.css" />
 </head>
+
 <body>
     <header>
+        <div class="menuresponsive">
+            
+        </div>
         <div class="barra">
             <div class="izquierdo">LOGOTIPO</div>
             <div class="derecho"></div>
         </div>
         <div class="contenedor">
             <nav>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Acerca</a>
+                </li>
+                <li>
+                    <a href="#">Contacto</a>
+                </li>
             </nav>
-        </div>    
-            
+        </div>
+
     </header>
     <section id="main">
         <div class="contenedor">
@@ -27,7 +38,7 @@
                 <div class="izquierdo">
                     <h1>Sistema SGC</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button>Iniciar sesión</button>
+                    <button> <a href="login.html">Iniciar sesión</a>  </button>
                 </div>
                 <div class="derecho">
                     <img src="img/perrro.png" alt="">
@@ -35,38 +46,65 @@
             </div>
         </div>
     </section>
-    <img width = "100%" src="img/pattern.png" alt="">
+    <img style="border-color: transparent" width="100%" src="img/pattern.png" alt="">
     <section id="about">
         <div class="contenedor">
             <div class="padre">
                 <div class="caja">
                     <div class="img">
-                        <img src="img/1.png" alt="" >
-                    </div>
-                    <p style = "margin-top: 0.44em">Lorem ipsum</p>
-                </div>
-                <div class="caja">
-                    <div class="img">
-                        <img src="img/2.png" alt="" style = "margin-top: 0.46099em">
+                        <img src="img/1.png" alt="">
                     </div>
                     <p>Lorem ipsum</p>
                 </div>
                 <div class="caja">
                     <div class="img">
-                        <img src="img/3.png" alt="" style = "margin-top: -0.19em">
+                        <img src="img/2.png" alt="">
                     </div>
-                    <p style = "margin-top: 0.55em">Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
                 </div>
                 <div class="caja">
                     <div class="img">
-                        <img src="img/4.png" alt="" style = "margin-top: 0.44em">
+                        <img src="img/3.png" alt="">
                     </div>
-                    <p style = "margin-top: 0.15em">Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div class="caja">
+                    <div class="img">
+                        <img src="img/4.png" alt="">
+                    </div>
+                    <p>Lorem ipsum</p>
                 </div>
             </div>
         </div>
     </section>
+    <section id="contacto">
+        <div class="contenedor">
+            <div class="padre">
+                <div class="izquierdo">
+                    <h2>Contáctanos</h2>
+                    <img src="img/contact_management.png" alt="">
+                </div>
+                <div class="derecho">
+                    <form action="login/email.php" method="POST" id="formulario2" required>
+                        <h2>Tú hablas, nosotros te escuchamos.</h2>
+                        <input id="nombre" type="text" name="fname" placeholder="Ingresa tu nombre" required>
+                        <input id="correo" type="email" name="lname" placeholder="Correo electrónico" required>
+                        <textarea id="mensaje" name="textarea" placeholder="Ingresa tu mensaje" rows="4" cols="40" required></textarea>
+                        <br>
+                        <div class="alert">
+                            ¡Mensaje enviado, gracias!
+                        </div>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Diseño realizado por Andrés Largo para SGC. </p>
+    </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/animations.js"></script>
 </body>
+
 </html>

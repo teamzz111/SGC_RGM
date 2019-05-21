@@ -1,7 +1,7 @@
 <?php
 
-include 'Conexion.php';
-include 'Security.php';
+include '../../../Conexion.php';
+include '../../../Security.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

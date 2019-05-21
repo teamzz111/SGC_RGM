@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(window).scroll(function(){
-        if($(this).scrollTop() > 60){
+        if($(this).scrollTop() > 60 && $(window).width() < 987){
             $("header .barra").attr('class', 'barraFixed');
         } else {
             $("header .barraFixed").attr('class', 'barra');
