@@ -74,14 +74,14 @@ if(!isset($_GET['opt'])) {
                 $mail = new PHPMailer(true);    
 				$mail->SMTPDebug = 0;                               
 				$mail->isSMTP();                                 
-				$mail->Host = '	mx1.hostinger.co';  			
+				$mail->Host = 'YOUR_SMTP_HOST';  			
 				$mail->SMTPAuth = true;                              
-				$mail->Username = 'support@sgc.andreslargo.com';             
-				$mail->Password = 'LrQ2KSSeJ6El';
+				$mail->Username = 'your-email@example.com';             
+				$mail->Password = 'YOUR_SMTP_PASSWORD';
 				$mail->SMTPSecure = 'tls';                          
 				$mail->Port = 587;        
 				$mail->CharSet = 'UTF-8';
-				$mail->setFrom('support@sgc.andreslargo.com', 'Sistema SGC');
+				$mail->setFrom('your-email@example.com', 'Sistema SGC');
 				$mail->addAddress($Correo);
 				$mail->AddEmbeddedImage('../dist/assets/img/sgc.png', 'logo_2u');
 				$mail->isHTML(true);                           
