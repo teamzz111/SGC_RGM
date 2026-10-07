@@ -1,6 +1,19 @@
 <p align="center">
 <img src ="http://andreslargo.com/sgc/img/sgc2.png" />
 </p>
+
+## English summary
+
+**SGC_RGM** is a document-oriented **quality management system (SGC, *Sistema de Gestión de Calidad*)** built for a company, to automate its quality-management processes.
+
+- **Features:** login and password recovery by email; user management (create, search, update and lock users, internal messages); job positions (*cargos*) and sections; surveys/polls with answer collection; and a document server for uploading and editing the company's quality documents.
+- **Stack:** Angular 5 (TypeScript) web GUI · PHP 7 services · MySQL/MariaDB · PHPMailer · static HTML/CSS/JS landing page.
+- **Team:** Andrés Largo ([@teamzz111](https://github.com/teamzz111)), Erika Infante ([@MonoAncestral](https://github.com/MonoAncestral)) and Jorge Morales ([@JorgeAMS](https://github.com/JorgeAMS)).
+
+> **Context:** university project (2018). It is kept here as a portfolio reference and is no longer maintained. The original Spanish documentation follows.
+
+---
+
 Automatizando procesos de gestión de calidad haremos un mundo más rápido.
 
 # Iniciando 
