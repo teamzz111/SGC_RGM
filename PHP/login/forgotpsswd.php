@@ -36,8 +36,8 @@
 				$mail->SMTPDebug = 2;                           
 				$mail->isSMTP();                            
 				$mail->SMTPAuth = true;                               
-				$mail->Username = 'contactsgc246@gmail.com';               
-				$mail->Password = 'LrQ2KSSeJ6El';                          
+				$mail->Username = 'your-email@example.com';               
+				$mail->Password = 'YOUR_SMTP_PASSWORD';                          
 				$mail->Host = 'smtp.gmail.com';
 				$mail->Port = 587;
 				$mail->SMTPOptions = array(
@@ -49,7 +49,7 @@
 				);
 				$mail->SMTPAuth = true;                             
 				$mail->CharSet = 'UTF-8';
-				$mail->setFrom('felipeflogxd@gmail.com', 'Sistema SGC');
+				$mail->setFrom('your-email@example.com', 'Sistema SGC');
 				$mail->addAddress($email);          
 				$mail->AddEmbeddedImage('../dist/assets/img/sgc.png', 'logo_2u');
 				$mail->isHTML(true);                             
