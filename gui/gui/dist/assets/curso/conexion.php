@@ -1,16 +1,16 @@
 <?php
 
   global $host, $db, $pass, $key, $user;
-  $host = "sql139.main-hosting.eu";
+  $host = "YOUR_DB_HOST";
   //$host = "localhost";
-  $db = "u462448961_bd";
-  $pass = "nicky246";
-  $user = "u462448961_teamz";
-  $key = "92AE31B89FEEB2A3"; //llave
+  $db = "YOUR_DB_NAME";
+  $pass = "YOUR_DB_PASSWORD";
+  $user = "YOUR_DB_USER";
+  $key = "YOUR_APP_KEY"; //llave
 
   
-  $db2 = "u462448961_poll";
-  $pass2 = "O08R1evNKzjw";
-  $user2 = "u462448961_mono";
+  $db2 = "YOUR_SECOND_DB_NAME";
+  $pass2 = "YOUR_SECOND_DB_PASSWORD";
+  $user2 = "YOUR_SECOND_DB_USER";
 
  ?>
